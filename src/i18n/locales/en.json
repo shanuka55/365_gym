@@ -1,0 +1,42 @@
+{
+  "header": {
+    "aboutUs": "About Us",
+    "membership": "Membership",
+    "classes": "Classes",
+    "locations": "Locations",
+    "facilities": "Facilities",
+    "contact": "Contact",
+    "freeTrial": "Free Trial",
+    "joinNow": "Join Now",
+    "home": "Home",
+    "about": "About"
+  },
+  "membership": {
+    "monthlyPlans": "Monthly Plans",
+    "monthlyDesc": "Flexible month-to-month access",
+    "annualPlans": "Annual Plans",
+    "annualDesc": "Save with yearly membership",
+    "corporatePlans": "Corporate Plans",
+    "corporateDesc": "Group rates for companies"
+  },
+  "services": {
+    "personalTraining": "Personal Training",
+    "personalDesc": "One-on-one sessions",
+    "groupClasses": "Group Classes",
+    "groupDesc": "Train with friends",
+    "onlineCoaching": "Online Coaching",
+    "onlineDesc": "Virtual training programs"
+  },
+  "locations": {
+    "deira": "Deira Muraqqabat (Main Branch)",
+    "deiraDesc": "24/7 Access • Dubai's Largest Facility",
+    "muhaisnah": "Muhaisnah First",
+    "muhaisnahDesc": "Premium Equipment • Expert Trainers",
+    "comingSoon": "🔜 Coming Soon: More locations across Dubai"
+  },
+  "hero": {
+    "title": "24-Hour Gym in Dubai",
+    "subtitle": "Premium Fitness Equipment | Ladies-Only Zones | Expert Personal Trainers",
+    "cta": "Start Your Fitness Journey"
+  }
+}

@@ -1,0 +1,4 @@
+project_id = "zpyccirgwkcbhrzivnyd"
+
+[functions.send-free-trial-email]
+verify_jwt = false
