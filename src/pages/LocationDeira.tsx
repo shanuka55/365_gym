@@ -22,7 +22,7 @@ const LocationDeira = () => {
         { name: "Nutritional Plan", included: false },
         { name: "Group Classes", included: false },
         { name: "Personal Training", included: false },
-        { name: "Private Lockers", included: true },
+        { name: "Private Lockers", included: false },
         { name: "Sauna/Steam", included: true },
       ],
     },
