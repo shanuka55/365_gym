@@ -13,7 +13,7 @@ const LocationDeira = () => {
   const pricingPlans = [
     {
       name: "MONTHLY",
-      price: "200",
+      price: "199",
       duration: "Month",
       features: [
         { name: "Free Consultation", included: true },
@@ -168,23 +168,23 @@ const LocationDeira = () => {
             </h2>
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <div className="aspect-video rounded-xl overflow-hidden">
-                <img 
-                  src={deiraImage} 
-                  alt="Deira Branch Interior" 
+                <img
+                  src={deiraImage}
+                  alt="Deira Branch Interior"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="aspect-video rounded-xl overflow-hidden">
-                <img 
-                  src={deiraImage} 
-                  alt="Deira Branch Equipment" 
+                <img
+                  src={deiraImage}
+                  alt="Deira Branch Equipment"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="aspect-video rounded-xl overflow-hidden">
-                <img 
-                  src={deiraImage} 
-                  alt="Deira Branch Facilities" 
+                <img
+                  src={deiraImage}
+                  alt="Deira Branch Facilities"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
@@ -210,21 +210,21 @@ const LocationDeira = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Personal Training</h3>
                   <p className="text-muted-foreground">
-                    Achieve faster, smarter, and safer results with our Personal Training programs. Our certified personal trainers work closely 
+                    Achieve faster, smarter, and safer results with our Personal Training programs. Our certified personal trainers work closely
                     with you to create custom workout plans, track your progress, and keep you motivated every step of the way.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Body Shaping</h3>
                   <p className="text-muted-foreground">
-                    Sculpt your dream physique with our Body Shaping programs. Whether you're aiming to tone muscles, lose fat, or build definition – 
+                    Sculpt your dream physique with our Body Shaping programs. Whether you're aiming to tone muscles, lose fat, or build definition –
                     our certified trainers and custom workout plans are here to guide your transformation.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Weight Loss Classes</h3>
                   <p className="text-muted-foreground">
-                    Balance your body and mind with our Yoga sessions, designed to improve flexibility, reduce stress, and promote inner peace. 
+                    Balance your body and mind with our Yoga sessions, designed to improve flexibility, reduce stress, and promote inner peace.
                     Want something more energetic? Join our Zumba classes for a fun, high-energy cardio workout.
                   </p>
                 </div>
@@ -261,9 +261,8 @@ const LocationDeira = () => {
                     {plan.features.map((feature) => (
                       <li key={feature.name} className="flex items-start gap-2 text-sm">
                         <Check
-                          className={`h-5 w-5 flex-shrink-0 mt-0.5 ${
-                            feature.included ? "text-primary" : "text-muted-foreground opacity-30"
-                          }`}
+                          className={`h-5 w-5 flex-shrink-0 mt-0.5 ${feature.included ? "text-primary" : "text-muted-foreground opacity-30"
+                            }`}
                         />
                         <span className={feature.included ? "" : "text-muted-foreground line-through"}>
                           {feature.name}
