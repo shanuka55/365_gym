@@ -39,10 +39,10 @@ const trainers = [
     bio: "Certified GPT HIIT Train Fitness by Reps UK. Physical Fitness Trainer NVQ Level 4 and member of Asia Fitness Conference.",
   },
   {
-    name: "Coach Ashcharya",
+    name: "Coach Aya",
     specialty: "Dance Fitness & Zumba",
     image: trainerAshcharya,
-    bio: "Bachelor's Degree in Visual & Performing Arts. 7+ years experience in Dance & Fitness. Founder of Ashcharya Dance & Drama Academy specializing in Kathak, Aerobics, and Children's Fitness Programs.",
+    bio: "certified Personal Trainer and Group Fitness Instructor with expertise in aerobics, Zumba, step cardio, boxing, HIIT, and Tabata. I also specialize in strength training, exercise recovery, and kids’ Zumba classes",
   },
 ];
 
@@ -79,7 +79,7 @@ const Trainers = () => {
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
-                
+
                 {/* Social Icons Overlay */}
                 <div className="absolute top-4 right-4 flex flex-col space-y-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <button className="bg-primary/90 hover:bg-primary p-2 rounded-full transition-colors">
@@ -96,9 +96,9 @@ const Trainers = () => {
                 <h3 className="text-2xl font-bold text-foreground mb-2">{trainer.name}</h3>
                 <p className="text-primary font-semibold mb-3">{trainer.specialty}</p>
                 <p className="text-muted-foreground mb-6">{trainer.bio}</p>
-                
-                <Button 
-                  variant="default" 
+
+                <Button
+                  variant="default"
                   className="w-full"
                   onClick={() => handleBookTrainer(trainer.name)}
                 >
