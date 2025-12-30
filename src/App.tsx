@@ -21,6 +21,7 @@ import OnlineCoaching from "./pages/OnlineCoaching";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
+import Snow from "./components/Snow";
 
 const queryClient = new QueryClient();
 
@@ -42,6 +43,7 @@ const App = () => {
         {isLoading && <LoadingScreen />}
         <BrowserRouter>
           <ScrollToTop />
+          <Snow />
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
