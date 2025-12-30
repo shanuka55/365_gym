@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
 import deiraImage from "@/assets/deira-branch.jpg";
+import img_1 from "@/assets/IMG_Deira_01.jpg";
 
 const LocationDeira = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
@@ -188,8 +189,15 @@ const LocationDeira = () => {
               </div>
               <div className="aspect-video rounded-xl overflow-hidden">
                 <img
-                  src={deiraImage}
+                  src={img_1}
                   alt="Deira Branch Equipment"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={deiraImage}
+                  alt="Deira Branch Facilities"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
