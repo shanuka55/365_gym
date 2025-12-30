@@ -280,7 +280,7 @@ const LocationDeira = () => {
                   >
                     Join Now
                   </Button>
-                  // Display offer if available
+                  {/* // Display offer if available */}
                   {plan.offer && plan.offer.length > 0 && (
                     <div className="mt-4 text-center text-sm text-green-600 font-medium">
                       {plan.offer.map((offer) => (
