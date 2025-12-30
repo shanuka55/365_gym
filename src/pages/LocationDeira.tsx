@@ -62,6 +62,9 @@ const LocationDeira = () => {
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
       ],
+      offer: [
+        { name: "Get Two months free!", included: true },
+      ],
     },
     {
       name: "12 MONTHS",
@@ -76,6 +79,9 @@ const LocationDeira = () => {
         { name: "Personal Training", included: true },
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
+      ],
+      offer: [
+        { name: "Get Three months free!", included: true },
       ],
     },
   ];
