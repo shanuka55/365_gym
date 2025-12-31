@@ -5,7 +5,19 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
-import muhasniah from "@/assets/muhasniah-branch.jpg";
+import m_image2 from "@/assets/muhasniah-branch.jpg";
+import m_image1 from "@/assets/IMG_Muhasnah_01.jpg";
+import m_image2 from "@/assets/IMG_Muhasnah_02.jpg";
+import m_image3 from "@/assets/IMG_Muhasnah_03.jpg";
+import m_image4 from "@/assets/IMG_Muhasnah_04.jpg";
+import m_image5 from "@/assets/IMG_Muhasnah_05.jpg";
+import m_image6 from "@/assets/IMG_Muhasnah_06.jpg";
+import m_image7 from "@/assets/IMG_Muhasnah_07.jpg";
+import m_image8 from "@/assets/IMG_Muhasnah_08.jpg";
+import m_image9 from "@/assets/IMG_Muhasnah_09.jpg";
+import m_image10 from "@/assets/IMG_Muhasnah_10.jpg";
+import m_image11 from "@/assets/IMG_Muhasnah_11.jpg";
+import m_image12 from "@/assets/IMG_Muhasnah_12.jpg";
 
 const LocationMuhaisnah = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
@@ -94,7 +106,7 @@ const LocationMuhaisnah = () => {
         <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${muhasniah})` }}
+            style={{ backgroundImage: `url(${m_image2})` }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
           </div>
@@ -168,23 +180,23 @@ const LocationMuhaisnah = () => {
             </h2>
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <div className="aspect-video rounded-xl overflow-hidden">
-                <img 
-                  src={muhasniah} 
-                  alt="Muhaisnah Branch Interior" 
+                <img
+                  src={m_image1}
+                  alt="Muhaisnah Branch Interior"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="aspect-video rounded-xl overflow-hidden">
-                <img 
-                  src={muhasniah} 
-                  alt="Muhaisnah Branch Equipment" 
+                <img
+                  src={m_image2}
+                  alt="Muhaisnah Branch Equipment"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="aspect-video rounded-xl overflow-hidden">
-                <img 
-                  src={muhasniah} 
-                  alt="Muhaisnah Branch Facilities" 
+                <img
+                  src={m_image3}
+                  alt="Muhaisnah Branch Facilities"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
@@ -210,21 +222,21 @@ const LocationMuhaisnah = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Personal Training</h3>
                   <p className="text-muted-foreground">
-                    Achieve faster, smarter, and safer results with our Personal Training programs. Our certified personal trainers work closely 
+                    Achieve faster, smarter, and safer results with our Personal Training programs. Our certified personal trainers work closely
                     with you to create custom workout plans, track your progress, and keep you motivated every step of the way.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Body Shaping</h3>
                   <p className="text-muted-foreground">
-                    Sculpt your dream physique with our Body Shaping programs. Whether you're aiming to tone muscles, lose fat, or build definition – 
+                    Sculpt your dream physique with our Body Shaping programs. Whether you're aiming to tone muscles, lose fat, or build definition –
                     our certified trainers and custom workout plans are here to guide your transformation.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Weight Loss Classes</h3>
                   <p className="text-muted-foreground">
-                    Balance your body and mind with our Yoga sessions, designed to improve flexibility, reduce stress, and promote inner peace. 
+                    Balance your body and mind with our Yoga sessions, designed to improve flexibility, reduce stress, and promote inner peace.
                     Want something more energetic? Join our Zumba classes for a fun, high-energy cardio workout.
                   </p>
                 </div>
@@ -261,9 +273,8 @@ const LocationMuhaisnah = () => {
                     {plan.features.map((feature) => (
                       <li key={feature.name} className="flex items-start gap-2 text-sm">
                         <Check
-                          className={`h-5 w-5 flex-shrink-0 mt-0.5 ${
-                            feature.included ? "text-primary" : "text-muted-foreground opacity-30"
-                          }`}
+                          className={`h-5 w-5 flex-shrink-0 mt-0.5 ${feature.included ? "text-primary" : "text-muted-foreground opacity-30"
+                            }`}
                         />
                         <span className={feature.included ? "" : "text-muted-foreground line-through"}>
                           {feature.name}
