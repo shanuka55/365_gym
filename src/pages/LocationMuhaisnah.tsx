@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
-import m_image2 from "@/assets/muhasniah-branch.jpg";
+import main_image2 from "@/assets/muhasniah-branch.jpg";
 import m_image1 from "@/assets/IMG_Muhasnah_01.jpg";
 import m_image2 from "@/assets/IMG_Muhasnah_02.jpg";
 import m_image3 from "@/assets/IMG_Muhasnah_03.jpg";
@@ -106,7 +106,7 @@ const LocationMuhaisnah = () => {
         <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${m_image2})` }}
+            style={{ backgroundImage: `url(${main_image2})` }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
           </div>
