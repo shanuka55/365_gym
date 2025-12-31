@@ -200,6 +200,69 @@ const LocationMuhaisnah = () => {
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={m_image4}
+                  alt="Muhaisnah Branch Facilities"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={m_image5}
+                  alt="Muhaisnah Branch Facilities"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={m_image6}
+                  alt="Muhaisnah Branch Facilities"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={m_image7}
+                  alt="Muhaisnah Branch Facilities"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={m_image8}
+                  alt="Muhaisnah Branch Facilities"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={m_image9}
+                  alt="Muhaisnah Branch Facilities"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={m_image10}
+                  alt="Muhaisnah Branch Facilities"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={m_image11}
+                  alt="Muhaisnah Branch Facilities"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={m_image12}
+                  alt="Muhaisnah Branch Facilities"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
             </div>
           </div>
         </section>
