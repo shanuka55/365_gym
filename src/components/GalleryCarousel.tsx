@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
+import gallery1 from "@/assets/IMG_Deira_01.jpg";
+import gallery2 from "@/assets/IMG_Deira_02.jpg";
+import gallery3 from "@/assets/IMG_Deira_03.jpg";
+import gallery4 from "@/assets/IMG_Deira_04.jpg";
 
 const galleryImages = [
   { src: gallery1, alt: "State-of-the-art cardio equipment area" },
@@ -34,7 +34,7 @@ const GalleryCarousel = () => {
     <section className="py-20 bg-background relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
-      
+
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-6xl font-black text-foreground mb-4 uppercase">
@@ -51,9 +51,8 @@ const GalleryCarousel = () => {
             {galleryImages.map((image, index) => (
               <div
                 key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${
-                  index === currentIndex ? "opacity-100" : "opacity-0"
-                }`}
+                className={`absolute inset-0 transition-opacity duration-1000 ${index === currentIndex ? "opacity-100" : "opacity-0"
+                  }`}
               >
                 <img
                   src={image.src}
@@ -89,9 +88,8 @@ const GalleryCarousel = () => {
               <button
                 key={index}
                 onClick={() => setCurrentIndex(index)}
-                className={`h-2 rounded-full transition-all duration-300 ${
-                  index === currentIndex ? "w-12 bg-primary shadow-glow" : "w-2 bg-foreground/50"
-                }`}
+                className={`h-2 rounded-full transition-all duration-300 ${index === currentIndex ? "w-12 bg-primary shadow-glow" : "w-2 bg-foreground/50"
+                  }`}
                 aria-label={`Go to image ${index + 1}`}
               />
             ))}
