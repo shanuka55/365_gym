@@ -5,7 +5,7 @@ import SocialShareButtons from "@/components/SocialShareButtons";
 import gallery1 from "@/assets/gallery-1.jpg";
 import gallery2 from "@/assets/gallery-2.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
-import gallery4 from "@/assets/gallery-4.jpg";
+import gallery4 from "@/assets/IMG_Deira_05.jpg";
 import heroGym from "@/assets/hero-gym.jpg";
 import heroWorkout from "@/assets/hero-workout.jpg";
 import deiraBranch from "@/assets/deira-branch.jpg";
@@ -30,8 +30,8 @@ const Gallery = () => {
 
   const categories = ["All", "Equipment", "Training", "Facilities", "Branches"];
 
-  const filteredImages = filter === "All" 
-    ? galleryImages 
+  const filteredImages = filter === "All"
+    ? galleryImages
     : galleryImages.filter(img => img.category === filter);
 
   return (
@@ -64,11 +64,10 @@ const Gallery = () => {
                 <button
                   key={category}
                   onClick={() => setFilter(category)}
-                  className={`px-6 py-2 rounded-full font-medium transition-all ${
-                    filter === category
+                  className={`px-6 py-2 rounded-full font-medium transition-all ${filter === category
                       ? "bg-primary text-primary-foreground shadow-glow"
                       : "bg-card text-foreground hover:bg-primary/20 border border-border"
-                  }`}
+                    }`}
                 >
                   {category}
                 </button>
