@@ -2,8 +2,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SocialShareButtons from "@/components/SocialShareButtons";
-import gallery1 from "@/assets/gallery-1.jpg";
-import gallery2 from "@/assets/gallery-2.jpg";
+import gallery1 from "@/assets/IMG_Muhasnah_07.jpg";
+import gallery2 from "@/assets/IMG_Muhasnah_06.jpg";
 import gallery3 from "@/assets/gallery-3.jpg";
 import gallery4 from "@/assets/IMG_Deira_05.jpg";
 import heroGym from "@/assets/hero-gym.jpg";
@@ -65,8 +65,8 @@ const Gallery = () => {
                   key={category}
                   onClick={() => setFilter(category)}
                   className={`px-6 py-2 rounded-full font-medium transition-all ${filter === category
-                      ? "bg-primary text-primary-foreground shadow-glow"
-                      : "bg-card text-foreground hover:bg-primary/20 border border-border"
+                    ? "bg-primary text-primary-foreground shadow-glow"
+                    : "bg-card text-foreground hover:bg-primary/20 border border-border"
                     }`}
                 >
                   {category}
