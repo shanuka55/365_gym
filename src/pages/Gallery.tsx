@@ -4,7 +4,7 @@ import WhatsAppButton from "@/components/WhatsAppButton";
 import SocialShareButtons from "@/components/SocialShareButtons";
 import gallery1 from "@/assets/IMG_Muhasnah_07.jpg";
 import gallery2 from "@/assets/IMG_Muhasnah_06.jpg";
-import gallery3 from "@/assets/gallery-3.jpg";
+import gallery3 from "@/assets/IMG_Muhasnah_11.jpg";
 import gallery4 from "@/assets/IMG_Deira_05.jpg";
 import heroGym from "@/assets/hero-gym.jpg";
 import heroWorkout from "@/assets/hero-workout.jpg";
