@@ -17,7 +17,7 @@ const galleryImages = [
   { src: gallery1, title: "Cardio Zone", category: "Equipment" },
   { src: gallery2, title: "Weight Training Area", category: "Equipment" },
   { src: gallery3, title: "Functional Training", category: "Training" },
-  { src: gallery4, title: "Locker Rooms sauna", category: "Facilities" },
+  { src: gallery4, title: "Locker | Rooms | Sauna | Showers", category: "Facilities" },
   { src: heroGym, title: "Main Gym Floor", category: "Equipment" },
   { src: heroWorkout, title: "Training Session", category: "Training" },
   { src: deiraBranch, title: "Deira Branch", category: "Branches" },
