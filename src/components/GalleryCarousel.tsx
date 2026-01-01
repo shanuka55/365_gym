@@ -2,14 +2,18 @@ import { useState, useEffect } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import gallery1 from "@/assets/IMG_Deira_01.jpg";
 import gallery2 from "@/assets/IMG_Deira_02.jpg";
-import gallery3 from "@/assets/IMG_Deira_03.jpg";
-import gallery4 from "@/assets/IMG_Deira_04.jpg";
+import gallery3 from "@/assets/IMG_Muhasnah_01.jpg";
+import gallery4 from "@/assets/IMG_Muhasnah_02.jpg";
+import gallery5 from "@/assets/IMG_Muhasnah_04.jpg";
+import gallery6 from "@/assets/IMG_Muhasnah_08.jpg";
 
 const galleryImages = [
   { src: gallery1, alt: "State-of-the-art cardio equipment area" },
   { src: gallery2, alt: "Premium weight training zone" },
   { src: gallery3, alt: "Functional training area with TRX and battle ropes" },
   { src: gallery4, alt: "Modern locker room facilities" },
+  { src: gallery5, alt: "Spacious group fitness studio" },
+  { src: gallery6, alt: "Premium amenities and facilities" },
 ];
 
 const GalleryCarousel = () => {
