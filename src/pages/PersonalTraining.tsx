@@ -196,7 +196,7 @@ const PersonalTraining = () => {
         <section className="py-16 bg-secondary/20">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-4">
-              Training <span className="text-primary">Packages</span>
+              Individual Training <span className="text-primary">Packages</span>
             </h2>
             <p className="text-center text-muted-foreground mb-12">Choose the package that fits your goals</p>
             <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
