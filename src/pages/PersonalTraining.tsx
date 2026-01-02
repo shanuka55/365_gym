@@ -13,11 +13,11 @@ const PersonalTraining = () => {
   const packages = [
     {
       name: "STARTER PACK",
-      sessions: "8",
-      price: "1,200",
-      duration: "1 Month",
+      sessions: "1",
+      price: "150",
+      duration: "1 day",
       features: [
-        "8 One-on-One Sessions",
+        "One Session",
         "Personalized Workout Plan",
         "Basic Nutrition Guidance",
         "Progress Tracking",
@@ -27,8 +27,8 @@ const PersonalTraining = () => {
     {
       name: "TRANSFORMATION",
       sessions: "24",
-      price: "3,200",
-      duration: "3 Months",
+      price: "1,700",
+      duration: "1 Month",
       popular: true,
       features: [
         "24 One-on-One Sessions",
@@ -42,9 +42,9 @@ const PersonalTraining = () => {
     },
     {
       name: "ELITE COACHING",
-      sessions: "48",
-      price: "5,800",
-      duration: "6 Months",
+      sessions: "30",
+      price: "2,500",
+      duration: "5 months",
       features: [
         "48 One-on-One Sessions",
         "Complete Lifestyle Coaching",
@@ -140,7 +140,7 @@ const PersonalTraining = () => {
                   <div>
                     <h3 className="text-2xl font-bold mb-2">Initial Assessment</h3>
                     <p className="text-muted-foreground">
-                      We start with a comprehensive fitness evaluation - measuring your current fitness level, discussing your goals, 
+                      We start with a comprehensive fitness evaluation - measuring your current fitness level, discussing your goals,
                       medical history, and any limitations. This helps us create the perfect program for you.
                     </p>
                   </div>
@@ -154,7 +154,7 @@ const PersonalTraining = () => {
                   <div>
                     <h3 className="text-2xl font-bold mb-2">Personalized Plan</h3>
                     <p className="text-muted-foreground">
-                      Your trainer designs a custom workout plan tailored to your goals, schedule, and preferences. Every exercise, 
+                      Your trainer designs a custom workout plan tailored to your goals, schedule, and preferences. Every exercise,
                       set, and rep is chosen specifically for your success.
                     </p>
                   </div>
@@ -168,7 +168,7 @@ const PersonalTraining = () => {
                   <div>
                     <h3 className="text-2xl font-bold mb-2">Expert Guidance</h3>
                     <p className="text-muted-foreground">
-                      During each session, your trainer provides hands-on coaching - demonstrating exercises, correcting form, 
+                      During each session, your trainer provides hands-on coaching - demonstrating exercises, correcting form,
                       pushing you safely beyond your comfort zone, and keeping you motivated.
                     </p>
                   </div>
@@ -182,7 +182,7 @@ const PersonalTraining = () => {
                   <div>
                     <h3 className="text-2xl font-bold mb-2">Track Progress</h3>
                     <p className="text-muted-foreground">
-                      We continuously monitor your progress through measurements, photos, and performance metrics. Your program 
+                      We continuously monitor your progress through measurements, photos, and performance metrics. Your program
                       evolves as you get stronger, ensuring you never plateau.
                     </p>
                   </div>
