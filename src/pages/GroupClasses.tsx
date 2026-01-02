@@ -198,7 +198,7 @@ const GroupClasses = () => {
                 Weekly <span className="text-primary">Schedule</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-8">
-                We offer 50+ classes per week across all our locations. Classes run from 6:00 AM to 9:00 PM daily, 
+                We offer 50+ classes per week across all our locations. Classes run from 6:00 AM to 9:00 PM daily,
                 making it easy to find a time that fits your schedule.
               </p>
               <div className="grid md:grid-cols-3 gap-6">
@@ -223,7 +223,7 @@ const GroupClasses = () => {
         </section>
 
         {/* Packages */}
-        <section className="py-16">
+        {/* <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-4">
               Class <span className="text-primary">Packages</span>
@@ -267,7 +267,7 @@ const GroupClasses = () => {
               ))}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-r from-primary/20 to-primary/5">
