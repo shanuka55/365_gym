@@ -46,7 +46,7 @@ const PersonalTraining = () => {
       price: "2,500",
       duration: "5 months",
       features: [
-        "48 One-on-One Sessions",
+        "30 One-on-One Sessions",
         "Complete Lifestyle Coaching",
         "Daily Check-ins & Support",
         "Advanced Nutrition Planning",
