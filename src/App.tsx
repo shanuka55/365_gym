@@ -43,7 +43,7 @@ const App = () => {
         {isLoading && <LoadingScreen />}
         <BrowserRouter>
           <ScrollToTop />
-          <Snow />
+          {/* <Snow /> */}
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/about" element={<About />} />
