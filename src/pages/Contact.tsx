@@ -90,7 +90,7 @@ Message: ${formData.message}`;
                     <div>
                       <h3 className="font-bold text-foreground mb-1">Main Branch - Deira</h3>
                       <p className="text-muted-foreground">
-                        MZ 08, Dubai Municipality Building, Near Muraqqbat Police Station, 
+                        MZ 08, Dubai Municipality Building, Near Muraqqbat Police Station,
                         Salah Al Din Road, Dubai
                       </p>
                     </div>
@@ -107,9 +107,13 @@ Message: ${formData.message}`;
                   <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-glow">
                     <Phone className="w-6 h-6 text-primary flex-shrink-0" />
                     <div>
-                      <h3 className="font-bold text-foreground mb-1">Phone</h3>
-                      <a href="tel:+97143375022" className="text-muted-foreground hover:text-primary transition-colors">
-                        +971 4 337 5022
+                      <h3 className="font-bold text-foreground mb-1">Main Branch - Deira</h3>
+                      <a href="tel:+971547120925" className="text-muted-foreground hover:text-primary transition-colors">
+                        +971 54 712 0925
+                      </a>
+                      <h3 className="font-bold text-foreground mb-1">Muhaisnah Branch</h3>
+                      <a href="tel:+971547120927" className="text-muted-foreground hover:text-primary transition-colors">
+                        +971 54 712 0927
                       </a>
                     </div>
                   </div>
