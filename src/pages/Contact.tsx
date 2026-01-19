@@ -111,6 +111,9 @@ Message: ${formData.message}`;
                       <a href="tel:+971547120925" className="text-muted-foreground hover:text-primary transition-colors">
                         +971 54 712 0925
                       </a>
+                    </div>
+                    <Phone className="w-6 h-6 text-primary flex-shrink-0" />
+                    <div>
                       <h3 className="font-bold text-foreground mb-1">Muhaisnah Branch</h3>
                       <a href="tel:+971547120927" className="text-muted-foreground hover:text-primary transition-colors">
                         +971 54 712 0927
