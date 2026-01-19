@@ -148,8 +148,8 @@ const LocationDeira = () => {
               <Card className="p-6 text-center">
                 <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-bold mb-2">Contact</h3>
-                <a href="tel:+97143375022" className="text-sm text-primary hover:underline">
-                  +971 4 337 5022
+                <a href="tel:+971547120925" className="text-sm text-primary hover:underline">
+                  +971 54 712 0925
                 </a>
               </Card>
               <Card className="p-6 text-center">
