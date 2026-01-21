@@ -146,7 +146,7 @@ const MonthlyPlans = () => {
                   >
                     Join Now
                   </Button>
-                  <h3 className="text-center text-red-500 font-bold mb-8">{plan.status}</h3>
+                  <h3 className="text-center text-red-500 font-bold py-2">{plan.status}</h3>
                 </Card>
               ))}
             </div>
