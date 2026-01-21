@@ -21,6 +21,7 @@ const MonthlyPlans = () => {
         "Locker Facilities",
         "Free Wi-Fi",
       ],
+      status: "Offer Closed",
     },
     {
       name: "STANDARD MONTHLY",
@@ -145,6 +146,7 @@ const MonthlyPlans = () => {
                   >
                     Join Now
                   </Button>
+                  <h3 className="text-center text-red-500 font-bold">{plan.status}</h3>
                 </Card>
               ))}
             </div>
