@@ -39,7 +39,7 @@ const CountryCards = () => {
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
-              
+
               <div className="absolute inset-0 flex flex-col items-center justify-center text-center p-6">
                 <h3 className="text-4xl md:text-5xl font-black text-foreground mb-2 uppercase">
                   {location.name}
@@ -62,11 +62,11 @@ const CountryCards = () => {
           ))}
         </div>
 
-        <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '300ms' }}>
+        {/* <div className="text-center mt-12 animate-fade-in" style={{ animationDelay: '300ms' }}>
           <h2 className="text-3xl md:text-5xl font-black text-foreground uppercase">
             THIS IS <span className="text-primary">365 FITNESS</span>!
           </h2>
-        </div>
+        </div> */}
       </div>
     </section>
   );
