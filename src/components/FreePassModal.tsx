@@ -53,7 +53,7 @@ const FreePassModal = ({ isOpen, onClose }: FreePassModalProps) => {
 
     // Validate form data
     const validation = freeTrialSchema.safeParse(formData);
-    
+
     if (!validation.success) {
       const firstError = validation.error.errors[0];
       toast({
@@ -75,7 +75,7 @@ const FreePassModal = ({ isOpen, onClose }: FreePassModalProps) => {
         `Branch: ${formData.branch}\n` +
         `${formData.notes ? `Notes: ${formData.notes}` : ''}`.trim();
 
-      const waUrl = `https://wa.me/971559889647?text=${encodeURIComponent(waMessage)}`;
+      const waUrl = `https://wa.me/97154160095?text=${encodeURIComponent(waMessage)}`;
 
       // Try to open WhatsApp
       const waWindow = window.open(waUrl, "_blank", "noopener,noreferrer");
