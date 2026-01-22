@@ -34,7 +34,7 @@ const Reviews = () => {
             <span className="text-primary">REVIEWS</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            We're The Best Gym In The GCC And It Don't Just Take Our Word So, It's Just Take One Word!
+            We're The Best Gym In The Dubai And It Don't Just Take Our Word So, It's Just Take One Word!
           </p>
         </div>
 
@@ -46,7 +46,7 @@ const Reviews = () => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <Quote className="absolute top-4 right-4 h-8 w-8 text-primary/20" />
-              
+
               <div className="flex items-center gap-4 mb-4">
                 <div className="w-12 h-12 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
                   <span className="text-primary font-bold">{review.initials}</span>
