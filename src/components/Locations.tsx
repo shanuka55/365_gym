@@ -8,14 +8,14 @@ const locations = [
     address: "MZ 08, Dubai Municipality Building, Near Muraqqbat Police Station, Salah Al Din Road, Dubai",
     phone: "+971 54 712 0925",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3607.5859999999997!2d55.32659!3d25.2692!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5ce94f3aaaab%3A0x6b033809b2e0d877!2s365%20Fitness%20Gym!5e0!3m2!1sen!2sae!4v1234567890",
-    directionsUrl: "https://maps.app.goo.gl/3vzBPS0w19nqjh8Pe",
+    directionsUrl: "https://share.google/GWsRcaqz0c98ecgOa",
   },
   {
     name: "Muhaisnah First Branch",
     address: "6CP7+R99 - Muhaisnah First - Muhaisnah - Dubai",
     phone: "+971 54 712 0927",
     mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3605.845!2d55.43933!3d25.31388!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5e59b6f0e8ed%3A0x8e9f0b5c3d2a1b4c!2s365%20Fitness%20Muhaisnah!5e0!3m2!1sen!2sae!4v1234567890",
-    directionsUrl: "https://maps.app.goo.gl/c3eLmRiOdG4SNRRiR",
+    directionsUrl: "https://share.google/mGZxQWrVmpNI77R2X",
   },
 ];
 
