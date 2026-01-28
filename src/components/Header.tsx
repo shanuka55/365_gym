@@ -138,7 +138,7 @@ const Header = () => {
                   {t('header.locations')} <ChevronRight className="ml-1 h-4 w-4" />
                 </button>
                 {openDropdown === "locations" && (
-                  <div className="absolute top-full left-0 mt-2 w-96 bg-[#0a1628]/98 backdrop-blur-lg border-2 border-primary/30 rounded-xl shadow-glow overflow-hidden animate-fade-in z-50">
+                  <div className="absolute top-full left-0 mt-2 w-96 bg-[#000000]/98 backdrop-blur-lg border-2 border-primary/30 rounded-xl shadow-glow overflow-hidden animate-fade-in z-50">
                     {megaMenuItems.locations.map((item) => (
                       <Link
                         key={item.title}
