@@ -22,8 +22,15 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import Snow from "./components/Snow";
+import usePageTracking from "./hooks/usePageTracking";
 
 const queryClient = new QueryClient();
+
+/* ✅ TRACKER COMPONENT */
+const Tracker = () => {
+  usePageTracking();
+  return null;
+};
 
 const App = () => {
   const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +49,7 @@ const App = () => {
         <Sonner />
         {isLoading && <LoadingScreen />}
         <BrowserRouter>
+          <Tracker />
           <ScrollToTop />
           {/* <Snow /> */}
           <Routes>
