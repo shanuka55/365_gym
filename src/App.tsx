@@ -22,13 +22,10 @@ import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import Snow from "./components/Snow";
-import Tracker from "./components/Tracker";
-
 
 const queryClient = new QueryClient();
 
 const App = () => {
-
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -41,7 +38,6 @@ const App = () => {
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
-        <Tracker />
         <Toaster />
         <Sonner />
         {isLoading && <LoadingScreen />}
