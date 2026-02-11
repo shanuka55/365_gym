@@ -4,5 +4,27 @@
       "source": "/(.*)",
       "destination": "/index.html"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/tag/:slug",
+      "destination": "/locations/deira-muraqqabat",
+      "permanent": true
+    },
+    {
+      "source": "/category/:slug",
+      "destination": "/locations/deira-muraqqabat",
+      "permanent": true
+    },
+    {
+      "source": "/:year/:month/:slug",
+      "destination": "/locations/deira-muraqqabat",
+      "permanent": true
+    },
+    {
+      "source": "/author/:slug",
+      "destination": "/locations/deira-muraqqabat",
+      "permanent": true
+    }
   ]
 }
