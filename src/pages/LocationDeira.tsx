@@ -249,8 +249,8 @@ const LocationDeira = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Extreme Fitness</h3>
                   <p className="text-muted-foreground">
-                    Push beyond your limits at our EXTREME FITNESS zone – built for serious lifters and high-intensity training enthusiasts.
-                    From heavy-duty strength equipment to HIIT setups, this area is designed for those who train hard and never settle.
+                    Push beyond your limits at 365 Fitness Deira – our EXTREME FITNESS zone is built for serious lifters and high‑intensity training lovers in Al Muraqqabat.
+                    From heavy-duty strength machines and free weights to HIIT and functional setups, this dedicated area is designed for members who train hard, chase progress, and never settle.
                   </p>
                 </div>
                 <div>
