@@ -256,8 +256,7 @@ const LocationDeira = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Personal Training</h3>
                   <p className="text-muted-foreground">
-                    Achieve faster, smarter, and safer results with our Personal Training programs. Our certified personal trainers work closely
-                    with you to create custom workout plans, track your progress, and keep you motivated every step of the way.
+                    Achieve faster, smarter, and safer results with our Personal Training programs, designed to match your goals, body type, and fitness level. Our certified personal trainers work one-on-one with you to create custom workout plans, track your progress, correct your form, and keep you motivated every step of the way.
                   </p>
                 </div>
                 <div>
