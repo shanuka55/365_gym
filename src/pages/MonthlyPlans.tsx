@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
 import monthlyPlanImage from "@/assets/monthly-plan.jpg";
+import monthlyPlanImag02 from "@/assets/monthly-plan-img.jpg"
 
 const MonthlyPlans = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
@@ -58,7 +59,7 @@ const MonthlyPlans = () => {
         <section className="relative h-[50vh] min-h-[400px] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${monthlyPlanImage})` }}
+            style={{ backgroundImage: `url(${monthlyPlanImag02})` }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
           </div>
