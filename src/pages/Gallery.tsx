@@ -39,7 +39,7 @@ const Gallery = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[40vh] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
           <img
             src={gallery1}
             alt="365 Fitness Gallery"
