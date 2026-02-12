@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import contactHero from "@/assets/contact-hero.jpg";
+import contactHero2 from "@/assets/contact-img-01.jpg";
 import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -54,7 +55,7 @@ Message: ${formData.message}`;
         {/* Hero Section */}
         <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
           <img
-            src={contactHero}
+            src={contactHero2}
             alt="Contact 365 Fitness"
             className="absolute inset-0 w-full h-full object-cover"
           />
