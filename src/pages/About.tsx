@@ -18,7 +18,7 @@ const About = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[100vh] flex items-center justify-center overflow-hidden">
           <img
             src={aboutHero}
             alt="365 Fitness Team"
@@ -44,18 +44,18 @@ const About = () => {
               </h2>
               <div className="space-y-6 text-lg text-muted-foreground">
                 <p>
-                  365 Fitness Body Building Club has been Dubai's leading fitness destination for over 15 years. 
-                  Founded with a vision to create a world-class training environment, we've grown to become the 
+                  365 Fitness Body Building Club has been Dubai's leading fitness destination for over 15 years.
+                  Founded with a vision to create a world-class training environment, we've grown to become the
                   home of 95,000+ fitness enthusiasts across the UAE.
                 </p>
                 <p>
-                  Our commitment goes beyond just providing equipment and space. We've built a community where 
-                  members push each other to achieve their best, where expert trainers guide you every step of 
+                  Our commitment goes beyond just providing equipment and space. We've built a community where
+                  members push each other to achieve their best, where expert trainers guide you every step of
                   the way, and where your fitness goals become our mission.
                 </p>
                 <p>
-                  With two premium locations in Deira Muraqqabat and Muhaisnah First, we offer 24/7 access to 
-                  state-of-the-art facilities, 400+ free classes monthly, and a team of certified professionals 
+                  With two premium locations in Deira Muraqqabat and Muhaisnah First, we offer 24/7 access to
+                  state-of-the-art facilities, 400+ free classes monthly, and a team of certified professionals
                   dedicated to your transformation.
                 </p>
               </div>
@@ -101,7 +101,7 @@ const About = () => {
                     Our <span className="text-primary">Mission</span>
                   </h3>
                   <p className="text-lg text-muted-foreground">
-                    To empower individuals to achieve their fitness goals through world-class facilities, 
+                    To empower individuals to achieve their fitness goals through world-class facilities,
                     expert guidance, and a supportive community that inspires transformation every single day.
                   </p>
                 </div>
@@ -110,7 +110,7 @@ const About = () => {
                     Our <span className="text-primary">Vision</span>
                   </h3>
                   <p className="text-lg text-muted-foreground">
-                    To be the Middle East's most trusted fitness partner, setting the standard for excellence 
+                    To be the Middle East's most trusted fitness partner, setting the standard for excellence
                     in bodybuilding, strength training, and overall wellness.
                   </p>
                 </div>
