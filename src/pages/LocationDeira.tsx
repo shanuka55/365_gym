@@ -262,15 +262,14 @@ const LocationDeira = () => {
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Body Shaping</h3>
                   <p className="text-muted-foreground">
-                    Sculpt your dream physique with our Body Shaping programs. Whether you're aiming to tone muscles, lose fat, or build definition –
-                    our certified trainers and custom workout plans are here to guide your transformation.
+                    Shape your ideal body with our Body Shaping programs, tailored to help you tone up, burn fat, and build clean muscle definition. With expert trainers, goal-based plans, and structured workouts, we guide your full transformation from start to finish.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Weight Loss Classes</h3>
                   <p className="text-muted-foreground">
-                    Balance your body and mind with our Yoga sessions, designed to improve flexibility, reduce stress, and promote inner peace.
-                    Want something more energetic? Join our Zumba classes for a fun, high-energy cardio workout.
+                    Balance your body and mind with our Yoga sessions, designed to improve flexibility, reduce stress, and help you feel calmer and more centered.
+                    Looking for something more energetic? Join our Zumba classes for a fun, high‑energy cardio workout that mixes music, dance, and fitness to keep you sweating and smiling.
                   </p>
                 </div>
               </div>
