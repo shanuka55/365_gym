@@ -32,6 +32,16 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/location/deira" className="text-muted-foreground hover:text-primary transition-colors">
+                  Deira Muraqqabat
+                </Link>
+              </li>
+              <li>
+                <Link to="/location/muhasnah" className="text-muted-foreground hover:text-primary transition-colors">
+                  Muhasnah First
+                </Link>
+              </li>
+              <li>
                 <Link to="/membership" className="text-muted-foreground hover:text-primary transition-colors">
                   Membership Plans
                 </Link>

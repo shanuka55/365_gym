@@ -122,7 +122,7 @@ const LocationDeira = () => {
               <span className="block text-primary mt-2">(Main Branch)</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-              24 Hour Gym in Deira Muraqqabat | 365 Fitness Gym Dubai
+              24/7 gym in Deira with Boxing, MMA, CrossFit & Personal Training. Join today.
             </p>
             <Button
               size="lg"
