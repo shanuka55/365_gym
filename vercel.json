@@ -1,19 +1,34 @@
 {
   "redirects": [
     {
-      "source": "/deira-muraqqbat-branch",
+      "source": "/deira-muraqqbat-branch/:path*",
       "destination": "/locations/deira-muraqqabat",
       "permanent": true
     },
     {
-      "source": "/deira-muraqqbat-branch/",
+      "source": "/tag/:slug",
+      "destination": "/locations/deira-muraqqabat",
+      "permanent": true
+    },
+    {
+      "source": "/category/:slug",
+      "destination": "/locations/deira-muraqqabat",
+      "permanent": true
+    },
+    {
+      "source": "/:year/:month/:slug",
+      "destination": "/locations/deira-muraqqabat",
+      "permanent": true
+    },
+    {
+      "source": "/author/:slug",
       "destination": "/locations/deira-muraqqabat",
       "permanent": true
     }
   ],
   "rewrites": [
     {
-      "source": "/((?!deira-muraqqbat-branch).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
