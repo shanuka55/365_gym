@@ -1,11 +1,10 @@
 {
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/index.html"
-    }
-  ],
   "redirects": [
+    {
+      "source": "/deira-muraqqbat-branch/:path*",
+      "destination": "/locations/deira-muraqqabat",
+      "permanent": true
+    },
     {
       "source": "/tag/:slug",
       "destination": "/locations/deira-muraqqabat",
@@ -25,6 +24,12 @@
       "source": "/author/:slug",
       "destination": "/locations/deira-muraqqabat",
       "permanent": true
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
