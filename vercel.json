@@ -36,6 +36,11 @@
       "permanent": true
     },
     {
+      "source": "/contact-us/",
+      "destination": "/contact",
+      "permanent": true
+    },
+    {
       "source": "/footer/:slug",
       "destination": "/",
       "permanent": true
