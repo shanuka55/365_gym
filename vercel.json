@@ -11,13 +11,14 @@
       "permanent": true
     },
     {
-      "redirects": [
-        {
-          "source": "/product/:slug",
-          "destination": "/locations/deira-muraqqabat",
-          "permanent": true
-        }
-      ]
+      "source": "/product/:slug",
+      "destination": "/locations/deira-muraqqabat",
+      "permanent": true
+    },
+    {
+      "source": "/footer/:slug",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [
