@@ -9,6 +9,15 @@
       "source": "/deira-muraqqbat-branch/",
       "destination": "/locations/deira-muraqqabat",
       "permanent": true
+    },
+    {
+      "redirects": [
+        {
+          "source": "/product/:slug",
+          "destination": "/locations/deira-muraqqabat",
+          "permanent": true
+        }
+      ]
     }
   ],
   "rewrites": [
