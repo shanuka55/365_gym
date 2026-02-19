@@ -31,7 +31,7 @@
       "permanent": true
     },
     {
-      "source": "/about-us-3",
+      "source": "/about-us-3/",
       "destination": "/about",
       "permanent": true
     },
