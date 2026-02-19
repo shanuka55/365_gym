@@ -16,8 +16,23 @@
       "permanent": true
     },
     {
-      "source": "/footer/:slug",
+      "source": "/products/:slug",
+      "destination": "/locations/deira-muraqqabat",
+      "permanent": true
+    },
+    {
+      "source": "/tag/:slug",
       "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/:year/:month/:day/:slug",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us-3",
+      "destination": "/about",
       "permanent": true
     }
   ],
