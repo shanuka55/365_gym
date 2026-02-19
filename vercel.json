@@ -46,6 +46,11 @@
       "permanent": true
     },
     {
+      "source": "/muhansiah-branchmadinat-badr/",
+      "destination": "/locations/muhansiah-madinat-badr",
+      "permanent": true
+    },
+    {
       "source": "/footer/:slug",
       "destination": "/",
       "permanent": true
