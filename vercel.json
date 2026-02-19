@@ -32,7 +32,7 @@
     },
     {
       "source": "/about-us-3",
-      "destination": "/locations/deira-muraqqabat",
+      "destination": "/about",
       "permanent": true
     },
     {
