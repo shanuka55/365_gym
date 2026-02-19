@@ -34,11 +34,16 @@
       "source": "/about-us-3",
       "destination": "/about",
       "permanent": true
+    },
+    {
+      "source": "/footer/:slug",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [
     {
-      "source": "/((?!deira-muraqqbat-branch).*)",
+      "source": "/(.*)",
       "destination": "/index.html"
     }
   ]
