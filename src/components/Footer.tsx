@@ -32,17 +32,17 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/location/deira" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="//locations/deira-muraqqabat" className="text-muted-foreground hover:text-primary transition-colors">
                   Deira Muraqqabat
                 </Link>
               </li>
               <li>
-                <Link to="/location/muhasnah" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/locations/muhaisnah-first" className="text-muted-foreground hover:text-primary transition-colors">
                   Muhasnah First
                 </Link>
               </li>
               <li>
-                <Link to="/location/deira" className="text-muted-foreground hover:text-primary transition-colors">
+                <Link to="/locations/deira-muraqqabat" className="text-muted-foreground hover:text-primary transition-colors">
                   Membership Plans
                 </Link>
               </li>
