@@ -12,6 +12,7 @@ import img_3 from "@/assets/IMG_Deira_03.jpg";
 import img_4 from "@/assets/IMG_Deira_04.jpg";
 import img_5 from "@/assets/IMG_Deira_05.jpg";
 import img_6 from "@/assets/IMG_Deira_06.jpg";
+import image_deira from "@/assets/365_fitness_gym_cover_image.jpg";
 
 const LocationDeira = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
@@ -109,10 +110,10 @@ const LocationDeira = () => {
       <Header />
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[90vh] min-h-[500px] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${deiraImage})` }}
+            style={{ backgroundImage: `url(${image_deira})` }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
           </div>
@@ -185,6 +186,13 @@ const LocationDeira = () => {
               Branch <span className="text-primary">Gallery</span>
             </h2>
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={image_deira}
+                  alt="Deira Branch Interior"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
               <div className="aspect-video rounded-xl overflow-hidden">
                 <img
                   src={deiraImage}
