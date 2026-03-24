@@ -321,11 +321,16 @@ const LocationDeira = () => {
                   >
                     Join Now
                   </Button>
-                  {/* // Display offer if available
-                  {plan.offer && plan.offer.length > 0 && (
-                    <div className="mt-4 text-center text-sm text-green-600 font-medium">
+                  {/* Display offer only if exists AND has items */}
+                  {/* {Array.isArray(plan.offer) && plan.offer.length > 0 && (
+                    <div className="mt-4 text-center text-sm font-medium">
                       {plan.offer.map((offer) => (
-                        <div key={offer.name}>{offer.name}</div>
+                        <div
+                          key={offer.name}
+                          className={offer.included ? "text-green-600" : "text-muted-foreground line-through opacity-50"}
+                        >
+                          {offer.name}
+                        </div>
                       ))}
                     </div>
                   )} */}
