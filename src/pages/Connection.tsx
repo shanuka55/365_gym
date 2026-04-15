@@ -50,10 +50,10 @@ Message: ${formData.message}`;
 
     return (
         <div className="min-h-screen bg-background">
-            <Header />
+
             <main>
                 {/* Hero Section */}
-                {/* <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+                <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                     <img
                         src={contactHero2}
                         alt="Contact 365 Fitness"
@@ -68,89 +68,14 @@ Message: ${formData.message}`;
                             We're here to help you start your fitness journey
                         </p>
                     </div>
-                </section> */}
+                </section>
 
                 {/* Contact Info & Form */}
                 <section className="py-20 bg-background">
                     <div className="container mx-auto px-4">
                         <div className="grid lg:grid-cols-2 gap-12">
                             {/* Contact Information */}
-                            <div className="space-y-8">
-                                <div>
-                                    <h2 className="text-4xl font-bold text-foreground mb-6">
-                                        Contact <span className="text-primary">Information</span>
-                                    </h2>
-                                    <p className="text-lg text-muted-foreground mb-8">
-                                        Have questions? Reach out to us through any of these channels.
-                                    </p>
-                                </div>
 
-                                <div className="space-y-6">
-                                    <div className="flex items-start gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-glow">
-                                        <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                                        <div>
-                                            <h3 className="font-bold text-foreground mb-1">Main Branch - Deira</h3>
-                                            <p className="text-muted-foreground">
-                                                MZ 08, Dubai Municipality Building, Near Muraqqbat Police Station,
-                                                Salah Al Din Road, Dubai
-                                            </p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-start gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-glow">
-                                        <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                                        <div>
-                                            <h3 className="font-bold text-foreground mb-1">Muhaisnah Branch</h3>
-                                            <p className="text-muted-foreground">Muhaisnah First, Dubai</p>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-glow">
-                                        <Phone className="w-6 h-6 text-primary flex-shrink-0" />
-                                        <div>
-                                            <h3 className="font-bold text-foreground mb-1">Main Branch - Deira</h3>
-                                            <a href="tel:+971547120925" className="text-muted-foreground hover:text-primary transition-colors">
-                                                +971 54 712 0925
-                                            </a>
-                                        </div>
-                                        <Phone className="w-6 h-6 text-primary flex-shrink-0" />
-                                        <div>
-                                            <h3 className="font-bold text-foreground mb-1">Muhaisnah Branch</h3>
-                                            <a href="tel:+971547120927" className="text-muted-foreground hover:text-primary transition-colors">
-                                                +971 54 712 0927
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-glow">
-                                        <Mail className="w-6 h-6 text-primary flex-shrink-0" />
-                                        <div>
-                                            <h3 className="font-bold text-foreground mb-1">Email</h3>
-                                            <a href="mailto:info@365fitness.ae" className="text-muted-foreground hover:text-primary transition-colors">
-                                                info@365fitness.ae
-                                            </a>
-                                        </div>
-                                    </div>
-
-                                    <div className="flex items-start gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-glow">
-                                        <Clock className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
-                                        <div>
-                                            <h3 className="font-bold text-foreground mb-1">Opening Hours</h3>
-                                            <p className="text-muted-foreground">24/7 Access - Open Every Day</p>
-                                        </div>
-                                    </div>
-
-                                    <Button
-                                        variant="hero"
-                                        size="lg"
-                                        className="w-full"
-                                        onClick={() => window.open("https://wa.me/97143375022", "_blank")}
-                                    >
-                                        <MessageCircle className="mr-2" />
-                                        Chat on WhatsApp
-                                    </Button>
-                                </div>
-                            </div>
 
                             {/* Contact Form */}
                             <div className="bg-card border border-border rounded-lg p-8 shadow-glow-lg">
@@ -214,7 +139,7 @@ Message: ${formData.message}`;
                     </div>
                 </section>
             </main>
-            <Footer />
+
             <WhatsAppButton />
         </div>
     );
