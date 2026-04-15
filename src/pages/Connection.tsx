@@ -21,7 +21,7 @@ const Contact = () => {
     const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
 
-        if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+        if (!formData.name || !formData.email || !formData.phone) {
             toast({
                 title: "Missing Information",
                 description: "Please fill in all fields.",
