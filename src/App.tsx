@@ -23,6 +23,7 @@ import BlogPost from "./pages/BlogPost";
 import NotFound from "./pages/NotFound";
 import Snow from "./components/Snow";
 import usePageTracking from "./hooks/usePageTracking";
+import Connection from "./pages/Connection";
 
 const queryClient = new QueryClient();
 
@@ -57,6 +58,7 @@ const App = () => {
             <Route path="/about" element={<About />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/connection" element={<Connection />} />
             <Route path="/locations/deira-muraqqabat" element={<LocationDeira />} />
             <Route path="/locations/muhaisnah-first" element={<LocationMuhaisnah />} />
             <Route path="/plans/monthly-plans" element={<MonthlyPlans />} />
