@@ -62,7 +62,7 @@ Message: ${formData.message}`;
                     <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
                     <div className="relative z-10 container mx-auto px-4 text-center">
                         <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-4 animate-fade-in">
-                            Get In <span className="text-primary">Touch</span>
+                            Free WIFI <span className="text-primary">365 Fitness</span>
                         </h1>
                         <p className="text-xl text-muted-foreground">
                             We're here to help you start your fitness journey
@@ -79,7 +79,7 @@ Message: ${formData.message}`;
                             {/* Contact Form */}
                             <div className="bg-card border border-border rounded-lg p-8 shadow-glow-lg">
                                 <h3 className="text-3xl font-bold text-foreground mb-6">
-                                    Send Us a <span className="text-primary">Message</span>
+                                    Sign In <span className="text-primary">365 fitness guest</span>
                                 </h3>
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div>
@@ -120,7 +120,7 @@ Message: ${formData.message}`;
 
 
                                     <Button type="submit" variant="hero" size="lg" className="w-full">
-                                        Send Message
+                                        Conform
                                     </Button>
                                 </form>
                             </div>
