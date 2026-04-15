@@ -53,7 +53,7 @@ Message: ${formData.message}`;
             <Header />
             <main>
                 {/* Hero Section */}
-                <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
+                {/* <section className="relative h-[50vh] flex items-center justify-center overflow-hidden">
                     <img
                         src={contactHero2}
                         alt="Contact 365 Fitness"
@@ -68,7 +68,7 @@ Message: ${formData.message}`;
                             We're here to help you start your fitness journey
                         </p>
                     </div>
-                </section>
+                </section> */}
 
                 {/* Contact Info & Form */}
                 <section className="py-20 bg-background">
