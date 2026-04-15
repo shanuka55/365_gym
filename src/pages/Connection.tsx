@@ -16,7 +16,6 @@ const Contact = () => {
         name: "",
         email: "",
         phone: "",
-        message: "",
     });
 
     const handleSubmit = (e: React.FormEvent) => {
@@ -34,8 +33,7 @@ const Contact = () => {
         const waMessage = `Contact Form Submission
 Name: ${formData.name}
 Email: ${formData.email}
-Phone: ${formData.phone}
-Message: ${formData.message}`;
+Phone: ${formData.phone}`;
 
         const waUrl = `https://wa.me/971524160054?text=${encodeURIComponent(waMessage)}`;
         window.open(waUrl, "_blank");
@@ -45,7 +43,7 @@ Message: ${formData.message}`;
             description: "We'll get back to you shortly via WhatsApp.",
         });
 
-        setFormData({ name: "", email: "", phone: "", message: "" });
+        setFormData({ name: "", email: "", phone: "" });
     };
 
     return (
