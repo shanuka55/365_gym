@@ -76,7 +76,6 @@ Message: ${formData.message}`;
                         <div className="grid lg:grid-cols-2 gap-12">
                             {/* Contact Information */}
 
-
                             {/* Contact Form */}
                             <div className="bg-card border border-border rounded-lg p-8 shadow-glow-lg">
                                 <h3 className="text-3xl font-bold text-foreground mb-6">
@@ -118,17 +117,7 @@ Message: ${formData.message}`;
                                         />
                                     </div>
 
-                                    <div>
-                                        <Label htmlFor="message">Message *</Label>
-                                        <Textarea
-                                            id="message"
-                                            value={formData.message}
-                                            onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                                            placeholder="How can we help you?"
-                                            rows={5}
-                                            required
-                                        />
-                                    </div>
+
 
                                     <Button type="submit" variant="hero" size="lg" className="w-full">
                                         Send Message
