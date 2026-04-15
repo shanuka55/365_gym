@@ -37,7 +37,7 @@ Email: ${formData.email}
 Phone: ${formData.phone}
 Message: ${formData.message}`;
 
-        const waUrl = `https://wa.me/97143375022?text=${encodeURIComponent(waMessage)}`;
+        const waUrl = `https://wa.me/971524160054?text=${encodeURIComponent(waMessage)}`;
         window.open(waUrl, "_blank");
 
         toast({
