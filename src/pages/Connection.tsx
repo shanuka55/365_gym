@@ -79,7 +79,7 @@ Message: ${formData.message}`;
                             {/* Contact Form */}
                             <div className="bg-card border border-border rounded-lg p-8 shadow-glow-lg">
                                 <h3 className="text-3xl font-bold text-foreground mb-6">
-                                    Sign In <span className="text-primary">365 fitness guest</span>
+                                    Sign In <span className="text-primary">365 fitness Free Wifi</span>
                                 </h3>
                                 <form onSubmit={handleSubmit} className="space-y-6">
                                     <div>
