@@ -1,11 +1,11 @@
 import { MessageCircle, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import trainerAK from "@/assets/trainer-ak.jpg";
-import trainerMashid from "@/assets/trainer-mashid.jpg";
+import trainerMashid from "@/assets/MAHSHID.jpg";
 import trainerAzeem from "@/assets/trainer-azeem.jpg";
 import trainerUnni from "@/assets/trainer-unni.jpg";
-import trainerShan from "@/assets/trainer-shan.jpg";
-import trainerAshcharya from "@/assets/trainer-ashcharya.jpg";
+import trainerShan from "@/assets/SHAN.jpg";
+import trainerFarzana from "@/assets/FARZANA.jpg";
 
 const trainers = [
   {
@@ -41,7 +41,7 @@ const trainers = [
   {
     name: "Coach Aya",
     specialty: "Dance Fitness & Zumba",
-    image: trainerAshcharya,
+    image: trainerFarzana,
     bio: "certified Personal Trainer and Group Fitness Instructor with expertise in aerobics, Zumba, step cardio, boxing, HIIT, and Tabata. I also specialize in strength training, exercise recovery, and kids’ Zumba classes",
   },
 ];
