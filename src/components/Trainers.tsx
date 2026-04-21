@@ -39,7 +39,7 @@ const trainers = [
     bio: "Certified GPT HIIT Train Fitness by Reps UK. Physical Fitness Trainer NVQ Level 4 and member of Asia Fitness Conference.",
   },
   {
-    name: "Coach Aya",
+    name: "Coach Farzana",
     specialty: "Dance Fitness & Zumba",
     image: trainerFarzana,
     bio: "certified Personal Trainer and Group Fitness Instructor with expertise in aerobics, Zumba, step cardio, boxing, HIIT, and Tabata. I also specialize in strength training, exercise recovery, and kids’ Zumba classes",
