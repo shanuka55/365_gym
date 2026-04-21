@@ -6,6 +6,7 @@ import trainerAzeem from "@/assets/AZEEM.jpg";
 import trainerUnni from "@/assets/trainer-unni.jpg";
 import trainerShan from "@/assets/SHAN.jpg";
 import trainerFarzana from "@/assets/FARZANA.jpg";
+import trainerAhmed from "@/assets/AHMED.jpg";
 
 const trainers = [
   {
@@ -27,12 +28,6 @@ const trainers = [
     bio: "Certified Personal Trainer Level 3 from UAE. Expert in muscle building, Les Mills programs, and nutrition planning.",
   },
   {
-    name: "Coach Unni",
-    specialty: "Circuit Training & HIIT",
-    image: trainerUnni,
-    bio: "Certified Fitness Instructor with 8 years experience. NSQF Level 4 trainer specializing in Les Mills programs and peak performance.",
-  },
-  {
     name: "Coach Shan",
     specialty: "CrossFit & Personal Training",
     image: trainerShan,
@@ -43,6 +38,12 @@ const trainers = [
     specialty: "Personal Training & Zumba",
     image: trainerFarzana,
     bio: "certified Personal Trainer and Group Fitness Instructor with expertise in aerobics, Zumba, step cardio, boxing, HIIT, and Tabata. I also specialize in strength training, exercise recovery, and kids’ Zumba classes",
+  },
+  {
+    name: "Coach Ahmed",
+    specialty: "MMA, Boxing, kickbboxing, karate & self defense",
+    image: trainerAhmed,
+    bio: "Certified Personal Trainer and Combat Sports Coach specializing in Boxing, Kickboxing, Karate, and Self-Defense. Experienced in building strength, endurance, and fight skills through structured training programs. Focused on discipline, technique, and helping clients achieve real fitness and combat performance results.",
   },
 ];
 
