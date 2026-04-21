@@ -43,7 +43,7 @@ const trainers = [
     name: "Coach Ahmed",
     specialty: "MMA, Boxing, kickbboxing, karate & self defense",
     image: trainerAhmed,
-    bio: "Certified Personal Trainer and Combat Sports Coach specializing in Boxing, Kickboxing, Karate, and Self-Defense. Experienced in building strength, endurance, and fight skills through structured training programs. Focused on discipline, technique, and helping clients achieve real fitness and combat performance results.",
+    bio: "Certified Combat Sports Coach specializing in Boxing, Kickboxing, Karate, and Self-Defense. Experienced in building strength, endurance, and fight skills through structured training programs. Focused on discipline, technique, and helping clients achieve real fitness and combat performance results.",
   },
 ];
 
