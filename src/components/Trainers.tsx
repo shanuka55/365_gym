@@ -2,7 +2,7 @@ import { MessageCircle, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import trainerAK from "@/assets/trainer-ak.jpg";
 import trainerMashid from "@/assets/MAHSHID.jpg";
-import trainerAzeem from "@/assets/trainer-azeem.jpg";
+import trainerAzeem from "@/assets/AZEEM.jpg";
 import trainerUnni from "@/assets/trainer-unni.jpg";
 import trainerShan from "@/assets/SHAN.jpg";
 import trainerFarzana from "@/assets/FARZANA.jpg";
