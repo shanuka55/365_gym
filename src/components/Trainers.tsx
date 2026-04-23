@@ -1,6 +1,6 @@
 import { MessageCircle, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import trainerAK from "@/assets/trainer-ak.jpg";
+import trainerIsha from "@/assets/ISHA.jpg";
 import trainerMashid from "@/assets/MAHSHID.jpg";
 import trainerAzeem from "@/assets/AZEEM.jpg";
 import trainerUnni from "@/assets/trainer-unni.jpg";
@@ -10,10 +10,10 @@ import trainerAhmed from "@/assets/AHMED.jpg";
 
 const trainers = [
   {
-    name: "Fitness Manager AK",
+    name: "Coach Isha",
     specialty: "Personal Training & Weight Loss",
-    image: trainerAK,
-    bio: "Certified Personal Trainer Level 3 FEA, UAE with 20 years of experience. Expert in bodybuilding preparation and functional training.",
+    image: trainerIsha,
+    bio: "Certified Personal Trainer and Group Fitness Instructor with expertise in aerobics, Zumba, step cardio, boxing, HIIT, and Tabata. I also specialize in strength training, exercise recovery, and kids’ Zumba classes",
   },
   {
     name: "Coach Mashid",
