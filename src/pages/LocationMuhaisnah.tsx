@@ -54,7 +54,7 @@ const LocationMuhaisnah = () => {
         { name: "Sauna/Steam", included: true },
       ],
       offer: [
-        { name: "Discount 30%", included: true },
+        { name: "Offer 1200AED", included: true },
       ],
 
     },
@@ -73,7 +73,7 @@ const LocationMuhaisnah = () => {
         { name: "Sauna/Steam", included: true },
       ],
       offer: [
-        { name: "Discount 30%", included: true },
+        { name: "Offer 1800AED", included: true },
       ],
 
     },
@@ -92,7 +92,7 @@ const LocationMuhaisnah = () => {
         { name: "Sauna/Steam", included: true },
       ],
       offer: [
-        { name: "Discount 30%", included: true },
+        { name: "Offer 2499AED", included: true },
       ],
     },
   ];
