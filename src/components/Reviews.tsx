@@ -4,7 +4,7 @@ const reviews = [
   {
     name: "Ahmed Al-Mansoori",
     rating: 5,
-    date: "2 weeks ago",
+    date: "1 day ago",
     text: "I joined 365 Fitness Gym in Muhaisnah Dubai and it’s one of the best gym memberships I’ve had. The gym is clean, well-equipped, and never too crowded. The trainers are very professional and always ready to help. If you’re looking for an affordable gym membership in Dubai with quality service, this is the place.",
     initials: "AM",
   },
