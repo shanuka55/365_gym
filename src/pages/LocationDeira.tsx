@@ -5,14 +5,14 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
-import deiraImage from "@/assets/deira-branch.jpg";
+import deiraImage from "@/assets/365_fitness_gym_cover_image.jpg";
 import img_1 from "@/assets/IMG_Deira_01.jpg";
 import img_2 from "@/assets/IMG_Deira_02.jpg";
 import img_3 from "@/assets/IMG_Deira_03.jpg";
 import img_4 from "@/assets/IMG_Deira_04.jpg";
 import img_5 from "@/assets/IMG_Deira_05.jpg";
 import img_6 from "@/assets/IMG_Deira_06.jpg";
-import image_deira from "@/assets/365_fitness_gym_cover_image.jpg";
+import img_7 from "@/assets/deira-branch.jpg";
 
 const LocationDeira = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
@@ -113,7 +113,7 @@ const LocationDeira = () => {
         <section className="relative h-[90vh] min-h-[500px] flex items-center justify-center overflow-hidden">
           <div
             className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${image_deira})` }}
+            style={{ backgroundImage: `url(${deiraImage})` }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
           </div>
@@ -188,14 +188,14 @@ const LocationDeira = () => {
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
               <div className="aspect-video rounded-xl overflow-hidden">
                 <img
-                  src={image_deira}
+                  src={deiraImage}
                   alt="Deira Branch Interior"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
               </div>
               <div className="aspect-video rounded-xl overflow-hidden">
                 <img
-                  src={deiraImage}
+                  src={img_7}
                   alt="Deira Branch Interior"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
@@ -330,7 +330,7 @@ const LocationDeira = () => {
                     Join Now
                   </Button>
                   {/* Display offer only if exists AND has items */}
-                  {/* {Array.isArray(plan.offer) && plan.offer.length > 0 && (
+                  {Array.isArray(plan.offer) && plan.offer.length > 0 && (
                     <div className="mt-4 text-center text-sm font-medium">
                       {plan.offer.map((offer) => (
                         <div
@@ -341,7 +341,7 @@ const LocationDeira = () => {
                         </div>
                       ))}
                     </div>
-                  )} */}
+                  )}
                 </Card>
               ))}
             </div>
