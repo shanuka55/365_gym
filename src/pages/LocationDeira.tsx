@@ -52,7 +52,7 @@ const LocationDeira = () => {
         { name: "Sauna/Steam", included: true },
       ],
       offer: [
-        { name: "Get one month free!", included: true },
+        { name: "Get 1 month free!", included: true },
       ],
     },
     {
@@ -70,7 +70,7 @@ const LocationDeira = () => {
         { name: "Sauna/Steam", included: true },
       ],
       offer: [
-        { name: "Get Two months free!", included: true },
+        { name: "Get 2 months free!", included: true },
       ],
     },
     {
@@ -88,7 +88,7 @@ const LocationDeira = () => {
         { name: "Sauna/Steam", included: true },
       ],
       offer: [
-        { name: "Get Three months free!", included: false },
+        { name: "Get 3 months free!", included: true },
       ],
     },
   ];
