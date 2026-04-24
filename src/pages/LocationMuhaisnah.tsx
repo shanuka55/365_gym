@@ -53,6 +53,10 @@ const LocationMuhaisnah = () => {
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
       ],
+      offer: [
+        { name: "Discount 30%", included: true },
+      ],
+
     },
     {
       name: "6 MONTHS",
@@ -68,6 +72,10 @@ const LocationMuhaisnah = () => {
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
       ],
+      offer: [
+        { name: "Discount 30%", included: true },
+      ],
+
     },
     {
       name: "12 MONTHS",
@@ -82,6 +90,9 @@ const LocationMuhaisnah = () => {
         { name: "Personal Training", included: true },
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
+      ],
+      offer: [
+        { name: "Discount 30%", included: true },
       ],
     },
   ];
@@ -352,6 +363,21 @@ const LocationMuhaisnah = () => {
                   >
                     Join Now
                   </Button>
+
+
+                  {/* Display offer only if exists AND has items */}
+                  {Array.isArray(plan.offer) && plan.offer.length > 0 && (
+                    <div className="mt-6 text-center text-2xl font-bold font-medium">
+                      {plan.offer.map((offer) => (
+                        <div
+                          key={offer.name}
+                          className={offer.included ? "text-xl font-bold text-primary" : "text-muted-foreground line-through opacity-50"}
+                        >
+                          {offer.name}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                 </Card>
               ))}
             </div>
