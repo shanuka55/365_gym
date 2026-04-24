@@ -335,7 +335,7 @@ const LocationDeira = () => {
                       {plan.offer.map((offer) => (
                         <div
                           key={offer.name}
-                          className={offer.included ? "text-green-600" : "text-muted-foreground line-through opacity-50"}
+                          className={offer.included ? "text-yellow-800" : "text-muted-foreground line-through opacity-80"}
                         >
                           {offer.name}
                         </div>
