@@ -8,7 +8,7 @@ import blogYoga from "@/assets/blog-yoga.jpg";
 import blogSupplements from "@/assets/blog-supplements.jpg";
 import blogMentalHealth from "@/assets/blog-mental-health.jpg";
 import blogSeniorFitness from "@/assets/blog-senior-fitness.jpg";
-import blogBeginnerGym from "@/assets/blog-beginner-gym.jpg";
+
 
 export interface BlogPost {
   id: number;
@@ -199,32 +199,32 @@ export const blogPosts: BlogPost[] = [
       "Recognize when professional help is needed. While exercise is powerful for mental health, it's not a replacement for therapy or medication when necessary. Combine fitness with appropriate mental health care for best results.",
     ],
   },
-  // {
-  //   id: 10,
-  //   slug: "senior-fitness-active-aging",
-  //   title: "Senior Fitness: Staying Strong and Active at Any Age",
-  //   excerpt: "Age is just a number. Learn how strength training and proper exercise help seniors maintain independence, vitality, and quality of life.",
-  //   image: blogSeniorFitness,
-  //   date: "October 29, 2025",
-  //   readTime: "8 min read",
-  //   category: "Fitness",
-  //   content: [
-  //     "Strength training becomes increasingly important with age, not less. Regular resistance exercise combats muscle loss (sarcopenia), maintains bone density, and preserves the functional capacity necessary for independent living.",
-  //     "Contrary to myth, seniors can and should lift weights. Research shows that even people in their 80s and 90s can gain significant strength and muscle mass from proper resistance training programs.",
-  //     "Balance and stability exercises prevent falls—the leading cause of injury-related deaths in seniors. Single-leg exercises, heel-to-toe walking, and tai chi movements should be incorporated into every training program.",
-  //     "Start conservatively and progress gradually. Begin with bodyweight exercises or light resistance bands. Focus on mastering movement patterns before increasing intensity. Proper form is more important than heavy weights.",
-  //     "Prioritize compound movements that mimic daily activities. Squats (sitting and standing), deadlifts (picking things up), presses (reaching overhead), and rows (pulling) directly transfer to functional independence.",
-  //     "Include cardiovascular exercise for heart health and endurance. Walking, swimming, and cycling are low-impact options that build aerobic capacity without excessive joint stress. Aim for 150 minutes of moderate activity weekly.",
-  //     "Flexibility and mobility work becomes crucial with age. Dedicate 10-15 minutes daily to stretching and mobility exercises. This maintains range of motion and reduces injury risk during both exercise and daily activities.",
-  //     "Work with qualified trainers familiar with senior fitness. Professional guidance ensures appropriate exercise selection, proper progression, and modifications for any existing health conditions or limitations.",
-  //   ],
-  // },
   {
     id: 10,
+    slug: "senior-fitness-active-aging",
+    title: "Senior Fitness: Staying Strong and Active at Any Age",
+    excerpt: "Age is just a number. Learn how strength training and proper exercise help seniors maintain independence, vitality, and quality of life.",
+    image: blogSeniorFitness,
+    date: "October 29, 2025",
+    readTime: "8 min read",
+    category: "Fitness",
+    content: [
+      "Strength training becomes increasingly important with age, not less. Regular resistance exercise combats muscle loss (sarcopenia), maintains bone density, and preserves the functional capacity necessary for independent living.",
+      "Contrary to myth, seniors can and should lift weights. Research shows that even people in their 80s and 90s can gain significant strength and muscle mass from proper resistance training programs.",
+      "Balance and stability exercises prevent falls—the leading cause of injury-related deaths in seniors. Single-leg exercises, heel-to-toe walking, and tai chi movements should be incorporated into every training program.",
+      "Start conservatively and progress gradually. Begin with bodyweight exercises or light resistance bands. Focus on mastering movement patterns before increasing intensity. Proper form is more important than heavy weights.",
+      "Prioritize compound movements that mimic daily activities. Squats (sitting and standing), deadlifts (picking things up), presses (reaching overhead), and rows (pulling) directly transfer to functional independence.",
+      "Include cardiovascular exercise for heart health and endurance. Walking, swimming, and cycling are low-impact options that build aerobic capacity without excessive joint stress. Aim for 150 minutes of moderate activity weekly.",
+      "Flexibility and mobility work becomes crucial with age. Dedicate 10-15 minutes daily to stretching and mobility exercises. This maintains range of motion and reduces injury risk during both exercise and daily activities.",
+      "Work with qualified trainers familiar with senior fitness. Professional guidance ensures appropriate exercise selection, proper progression, and modifications for any existing health conditions or limitations.",
+    ],
+  },
+  {
+    id: 11,
     slug: "beginner-gym-guide-dubai",
     title: "Beginner Gym Guide in Dubai: How to Start Gym the Right Way",
     excerpt: "Starting gym for the first time? Learn the right way to begin your fitness journey in Dubai with simple workout plans, nutrition tips, and expert guidance.",
-    image: blogBeginnerGym,
+    image: blogDiet,
     date: "May 06, 2026",
     readTime: "8 min read",
     category: "Fitness",
@@ -250,4 +250,5 @@ export const blogPosts: BlogPost[] = [
       "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, beginners have access to 24/7 facilities, certified trainers, modern equipment, and a motivating fitness community. With the right support and environment, starting your fitness journey becomes easier and more effective."
     ],
   },
+
 ];
