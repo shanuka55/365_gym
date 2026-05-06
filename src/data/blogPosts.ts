@@ -8,6 +8,7 @@ import blogYoga from "@/assets/blog-yoga.jpg";
 import blogSupplements from "@/assets/blog-supplements.jpg";
 import blogMentalHealth from "@/assets/blog-mental-health.jpg";
 import blogSeniorFitness from "@/assets/blog-senior-fitness.jpg";
+import blogbeginerGym from "@/assets/blog-beginer-gym.jpg";
 
 
 export interface BlogPost {
@@ -23,6 +24,37 @@ export interface BlogPost {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    id: 11,
+    slug: "beginner-gym-guide-dubai",
+    title: "Beginner Gym Guide in Dubai: How to Start Gym the Right Way",
+    excerpt: "Starting gym for the first time? Learn the right way to begin your fitness journey in Dubai with simple workout plans, nutrition tips, and expert guidance.",
+    image: blogbeginerGym,
+    date: "May 06, 2026",
+    readTime: "8 min read",
+    category: "Fitness",
+    content: [
+      "Starting the gym for the first time can feel confusing and intimidating. Many beginners in Dubai don’t know where to begin, what exercises to follow, or how to stay consistent. The key to success is not doing everything at once, but starting with the right foundation and a clear plan.",
+
+      "The first step is setting a clear fitness goal. Whether your goal is to build muscle, lose weight, or improve overall fitness, having a specific target helps you stay motivated and track your progress. Without a goal, it becomes easy to lose focus and skip workouts.",
+
+      "Beginners should always follow a simple and structured workout plan instead of training randomly. A basic split such as chest and triceps, back and biceps, and legs and shoulders allows your body to recover while maintaining consistency. Workouts should be kept between 45 to 60 minutes for best results.",
+
+      "Focusing on fundamental exercises is essential for building a strong base. Movements like bench press, squats, deadlifts, lat pulldowns, and shoulder press target multiple muscle groups and help beginners gain strength faster than complicated routines.",
+
+      "One of the biggest mistakes beginners make is lifting heavy weights with poor form. Proper technique should always come first to avoid injuries and ensure effective muscle development. Starting with lighter weights and learning correct form will lead to better long-term results.",
+
+      "Nutrition plays a major role in your fitness journey. If your goal is muscle gain, you need to eat more calories with enough protein. If your goal is fat loss, you need to control your calorie intake. A balanced diet including chicken, eggs, rice, vegetables, and healthy fats supports recovery and performance.",
+
+      "Consistency is the most important factor in achieving results. Beginners should not expect immediate changes, but with regular training, improvements in strength can be seen within a few weeks and visible body changes within 6 to 8 weeks.",
+
+      "It is also important to avoid common mistakes such as skipping workouts, overtraining in the beginning, not following a proper plan, and comparing yourself to others. Progress takes time, and staying consistent will always bring results.",
+
+      "Choosing the right gym environment can make a big difference for beginners. A supportive and well-equipped gym with professional trainers helps you stay motivated and train safely.",
+
+      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, beginners have access to 24/7 facilities, certified trainers, modern equipment, and a motivating fitness community. With the right support and environment, starting your fitness journey becomes easier and more effective."
+    ],
+  },
   {
     id: 1,
     slug: "building-muscle-complete-guide",
@@ -217,37 +249,6 @@ export const blogPosts: BlogPost[] = [
       "Include cardiovascular exercise for heart health and endurance. Walking, swimming, and cycling are low-impact options that build aerobic capacity without excessive joint stress. Aim for 150 minutes of moderate activity weekly.",
       "Flexibility and mobility work becomes crucial with age. Dedicate 10-15 minutes daily to stretching and mobility exercises. This maintains range of motion and reduces injury risk during both exercise and daily activities.",
       "Work with qualified trainers familiar with senior fitness. Professional guidance ensures appropriate exercise selection, proper progression, and modifications for any existing health conditions or limitations.",
-    ],
-  },
-  {
-    id: 11,
-    slug: "beginner-gym-guide-dubai",
-    title: "Beginner Gym Guide in Dubai: How to Start Gym the Right Way",
-    excerpt: "Starting gym for the first time? Learn the right way to begin your fitness journey in Dubai with simple workout plans, nutrition tips, and expert guidance.",
-    image: blogDiet,
-    date: "May 06, 2026",
-    readTime: "8 min read",
-    category: "Fitness",
-    content: [
-      "Starting the gym for the first time can feel confusing and intimidating. Many beginners in Dubai don’t know where to begin, what exercises to follow, or how to stay consistent. The key to success is not doing everything at once, but starting with the right foundation and a clear plan.",
-
-      "The first step is setting a clear fitness goal. Whether your goal is to build muscle, lose weight, or improve overall fitness, having a specific target helps you stay motivated and track your progress. Without a goal, it becomes easy to lose focus and skip workouts.",
-
-      "Beginners should always follow a simple and structured workout plan instead of training randomly. A basic split such as chest and triceps, back and biceps, and legs and shoulders allows your body to recover while maintaining consistency. Workouts should be kept between 45 to 60 minutes for best results.",
-
-      "Focusing on fundamental exercises is essential for building a strong base. Movements like bench press, squats, deadlifts, lat pulldowns, and shoulder press target multiple muscle groups and help beginners gain strength faster than complicated routines.",
-
-      "One of the biggest mistakes beginners make is lifting heavy weights with poor form. Proper technique should always come first to avoid injuries and ensure effective muscle development. Starting with lighter weights and learning correct form will lead to better long-term results.",
-
-      "Nutrition plays a major role in your fitness journey. If your goal is muscle gain, you need to eat more calories with enough protein. If your goal is fat loss, you need to control your calorie intake. A balanced diet including chicken, eggs, rice, vegetables, and healthy fats supports recovery and performance.",
-
-      "Consistency is the most important factor in achieving results. Beginners should not expect immediate changes, but with regular training, improvements in strength can be seen within a few weeks and visible body changes within 6 to 8 weeks.",
-
-      "It is also important to avoid common mistakes such as skipping workouts, overtraining in the beginning, not following a proper plan, and comparing yourself to others. Progress takes time, and staying consistent will always bring results.",
-
-      "Choosing the right gym environment can make a big difference for beginners. A supportive and well-equipped gym with professional trainers helps you stay motivated and train safely.",
-
-      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, beginners have access to 24/7 facilities, certified trainers, modern equipment, and a motivating fitness community. With the right support and environment, starting your fitness journey becomes easier and more effective."
     ],
   },
 
