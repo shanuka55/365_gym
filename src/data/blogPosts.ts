@@ -9,6 +9,7 @@ import blogSupplements from "@/assets/blog-supplements.jpg";
 import blogMentalHealth from "@/assets/blog-mental-health.jpg";
 import blogSeniorFitness from "@/assets/blog-senior-fitness.jpg";
 import blogbeginerGym from "@/assets/blog-beginer-gym.jpg";
+import blogMuscleGuide from "@/assets/blog-muscle-guide.jpg";
 
 
 export interface BlogPost {
@@ -54,6 +55,45 @@ export const blogPosts: BlogPost[] = [
 
       "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, beginners have access to 24/7 facilities, certified trainers, modern equipment, and a motivating fitness community. With the right support and environment, starting your fitness journey becomes easier and more effective."
     ],
+  },
+  {
+    id: 14,
+    slug: "building-muscle-complete-guide-strength-training",
+    title: "Building Muscle: The Complete Guide to Strength Training",
+    excerpt: "Learn the fundamentals of strength training, muscle growth, workout structure, nutrition, and recovery to build muscle effectively and safely.",
+    image: blogMuscleGuide,
+    date: "May 07, 2026",
+    readTime: "10 min read",
+    category: "Strength Training",
+    content: [
+      "Building muscle is one of the most effective ways to improve strength, increase confidence, and enhance overall health. Whether you are a beginner or returning to the gym after a break, understanding the fundamentals of strength training is essential for achieving long-term results.",
+
+      "Muscle growth, also known as hypertrophy, happens when muscles are challenged through resistance training and allowed to recover properly. Consistent training combined with proper nutrition and recovery creates the foundation for building lean muscle mass.",
+
+      "One of the most important steps in strength training is following a structured workout plan. Training randomly without progression often leads to slow results. A balanced weekly training split helps target all major muscle groups while allowing enough recovery time between sessions.",
+
+      "Compound exercises are considered the foundation of muscle building because they work multiple muscle groups at the same time. Exercises such as squats, bench press, deadlifts, pull-ups, shoulder press, and rows help build overall strength and stimulate greater muscle growth.",
+
+      "Progressive overload is the key principle behind muscle development. This means gradually increasing the challenge placed on your muscles over time by adding more weight, increasing repetitions, improving technique, or reducing rest periods. Without progression, muscle growth can slow down.",
+
+      "Proper form and technique are more important than lifting heavy weights. Beginners should focus on mastering movement patterns before increasing intensity. Correct form reduces the risk of injury and ensures the targeted muscles are being trained effectively.",
+
+      "Nutrition plays a major role in muscle growth. To build muscle, the body requires enough calories and protein to support recovery and repair. High-quality protein sources such as chicken, eggs, fish, lean meat, dairy products, and protein shakes can help support muscle development.",
+
+      "Carbohydrates are equally important because they provide energy for training and help muscles recover after workouts. Foods like rice, oats, potatoes, fruits, and whole grains help maintain performance and energy levels during strength training sessions.",
+
+      "Recovery is often overlooked but is essential for building muscle. Muscles do not grow during workouts; they grow during rest and recovery. Getting enough sleep, staying hydrated, and allowing muscles time to recover between sessions are critical for long-term progress.",
+
+      "Consistency is more important than perfection. Many people quit because they expect immediate results, but muscle building takes time. Visible changes usually begin within several weeks of regular training, while significant transformations require months of discipline and commitment.",
+
+      "Avoiding common mistakes can help improve progress and reduce frustration. Skipping workouts, training without a plan, using poor technique, not eating enough protein, and constantly changing workout programs are some of the biggest reasons people fail to build muscle effectively.",
+
+      "Strength training is not only about appearance. It also improves posture, increases bone density, boosts metabolism, supports mental health, and improves overall physical performance in daily life.",
+
+      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, members have access to professional trainers, modern strength equipment, free weight zones, and personalized training programs designed to support muscle growth and overall fitness goals.",
+
+      "Whether your goal is to gain size, improve strength, or transform your physique, the most important step is starting with the right mindset and staying consistent. With proper training, nutrition, and recovery, anyone can build muscle and achieve lasting results."
+    ]
   },
   {
     id: 1,
