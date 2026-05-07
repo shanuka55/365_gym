@@ -9,7 +9,7 @@ import blogSupplements from "@/assets/blog-supplements.jpg";
 import blogMentalHealth from "@/assets/blog-mental-health.jpg";
 import blogSeniorFitness from "@/assets/blog-senior-fitness.jpg";
 import blogbeginerGym from "@/assets/blog-beginer-gym.jpg";
-import blogMuscleGuide from "@/assets/blog-muscle-guide.jpg";
+import blogMuscleGuide from "@/assets/blog-muscle-guide.jpeg";
 
 
 export interface BlogPost {
