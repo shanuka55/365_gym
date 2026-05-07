@@ -11,6 +11,7 @@ import blogbeginerGym from "@/assets/blog-beginer-gym.jpg";
 import blogMuscleGuide from "@/assets/blog-muscle-guide.jpeg";
 import blogNutritionGuide from "@/assets/blog-diet-plan.jpg";
 import blogWeightLoss from "@/assets/blog-weight-loss-gym.jpg";
+import blogHIIT from "@/assets/blog-hiit-gym.jpg";
 
 
 export interface BlogPost {
@@ -180,22 +181,53 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 4,
-    slug: "hiit-training-maximum-fat-burn",
-    title: "HIIT Training: Maximum Fat Burn in Minimum Time",
-    excerpt: "High-intensity interval training delivers incredible results. Learn how to structure HIIT workouts for maximum effectiveness and fat loss.",
-    image: blogHiit,
-    date: "November 12, 2025",
-    readTime: "6 min read",
-    category: "Fitness",
+    slug: "hiit-training-maximum-fat-burn-minimum-time",
+    title: "HIIT Training: Maximum Fat Burn in Minimum Time | 365 Fitness Dubai",
+    excerpt: "Discover how HIIT training helps you burn maximum fat in minimum time. Learn science-based HIIT workouts, benefits, and fat loss strategies for fast results in Dubai.",
+    image: blogHIIT,
+    date: "May 07, 2026",
+    readTime: "8 min read",
+    category: "Fat Loss",
+
+    // seo: {
+    //   metaTitle: "HIIT Training for Fat Loss | Burn Fat Fast in Minimum Time | 365 Fitness Dubai",
+    //   metaDescription: "HIIT training helps you burn fat faster in less time. Learn the best HIIT workouts, benefits, and fat burning strategies for quick weight loss results.",
+    //   keywords: [
+    //     "HIIT training",
+    //     "HIIT workout for weight loss",
+    //     "fat burning exercises",
+    //     "burn fat fast workout",
+    //     "high intensity interval training",
+    //     "20 minute HIIT workout",
+    //     "fat loss Dubai",
+    //     "quick fat burn workout",
+    //     "HIIT benefits for weight loss"
+    //   ]
+    // },
+
     content: [
-      "High-Intensity Interval Training (HIIT) alternates short bursts of intense exercise with recovery periods. This training method burns more calories in less time compared to steady-state cardio, making it perfect for busy schedules.",
-      "HIIT creates an 'afterburn effect' known as EPOC (Excess Post-Exercise Oxygen Consumption). Your metabolism remains elevated for hours after training, continuing to burn calories long after your workout ends.",
-      "A typical HIIT session lasts just 15-30 minutes. Structure your workouts with 20-60 seconds of maximum effort followed by equal or double recovery time. For beginners, start with 1:2 work-to-rest ratios and progress from there.",
-      "Choose exercises that engage multiple muscle groups: burpees, mountain climbers, jump squats, and sprints are excellent choices. These compound movements maximize calorie burn and cardiovascular benefits.",
-      "Frequency matters for results without overtraining. Perform HIIT 2-3 times weekly, allowing at least 48 hours between sessions. HIIT is demanding on your central nervous system and requires adequate recovery.",
-      "Proper warm-up is crucial. Spend 5-10 minutes gradually increasing intensity before your HIIT intervals. This prepares your cardiovascular system and reduces injury risk during high-intensity efforts.",
-      "Track your heart rate if possible. During work intervals, aim for 85-95% of maximum heart rate. Recovery periods should allow your heart rate to drop to 60-70% before the next interval begins.",
-    ],
+      "HIIT (High-Intensity Interval Training) is one of the most effective and time-efficient methods for burning fat and improving overall fitness. It combines short bursts of intense exercise with recovery periods, allowing you to achieve maximum results in minimum time.",
+
+      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, HIIT training is a key part of our fat loss programs designed to help members burn calories faster and improve body composition effectively.",
+
+      "HIIT works by pushing your body into high-intensity effort followed by short rest periods. This creates an afterburn effect known as EPOC (Excess Post-Exercise Oxygen Consumption), where your body continues burning calories even after the workout ends.",
+
+      "One of the biggest advantages of HIIT is its efficiency. A 20–30 minute HIIT session can burn more calories than traditional cardio workouts that take twice as long.",
+
+      "HIIT also improves cardiovascular health, increases metabolism, and helps preserve muscle mass while reducing body fat, making it ideal for both beginners and advanced fitness levels.",
+
+      "Common HIIT exercises include burpees, jump squats, mountain climbers, high knees, sprint intervals, and push-ups. These movements engage multiple muscle groups and maximize calorie burn.",
+
+      "A simple HIIT workout includes 30 seconds of high-intensity exercise followed by 30–60 seconds of rest, repeated for 15–25 minutes depending on fitness level.",
+
+      "Unlike traditional cardio, HIIT provides faster fat loss results in less time, making it perfect for busy individuals who want effective workouts without spending hours in the gym.",
+
+      "Consistency is key in HIIT training. Performing HIIT workouts 3–5 times per week can significantly improve fat loss, endurance, and overall fitness.",
+
+      "At 365 Fitness Gym, we provide structured HIIT programs guided by expert trainers to ensure safe, effective, and result-driven workouts for all members.",
+
+      "If you are looking for fast fat loss results in Dubai, HIIT training at 365 Fitness Gym is one of the most powerful and effective ways to transform your body."
+    ]
   },
   {
     id: 5,
