@@ -1,6 +1,5 @@
 import blogFitness from "@/assets/blog-fitness.jpg";
 import blogDiet from "@/assets/blog-diet.jpg";
-import blogWeightLoss from "@/assets/blog-weight-loss.jpg";
 import blogHiit from "@/assets/blog-hiit.jpg";
 import blogMealPrep from "@/assets/blog-meal-prep.jpg";
 import blogRecovery from "@/assets/blog-recovery.jpg";
@@ -10,6 +9,8 @@ import blogMentalHealth from "@/assets/blog-mental-health.jpg";
 import blogSeniorFitness from "@/assets/blog-senior-fitness.jpg";
 import blogbeginerGym from "@/assets/blog-beginer-gym.jpg";
 import blogMuscleGuide from "@/assets/blog-muscle-guide.jpeg";
+import blogNutritionGuide from "@/assets/blog-diet-plan.jpg";
+import blogWeightLoss from "@/assets/blog-weight-loss-gym.jpg";
 
 
 export interface BlogPost {
@@ -96,61 +97,86 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 1,
-    slug: "building-muscle-complete-guide",
-    title: "Building Muscle: The Complete Guide to Strength Training",
-    excerpt: "Discover the science-backed methods to maximize muscle growth, from progressive overload to optimal nutrition strategies for serious gains.",
-    image: blogFitness,
-    date: "November 20, 2025",
-    readTime: "8 min read",
-    category: "Fitness",
-    content: [
-      "Building muscle requires a strategic approach combining proper training, nutrition, and recovery. Understanding the fundamentals of hypertrophy is crucial for anyone serious about gaining strength and size.",
-      "Progressive overload is the cornerstone of muscle growth. This means consistently challenging your muscles by increasing weight, reps, or intensity over time. Your body adapts to the stress you place on it, so continuous progression is essential.",
-      "Training frequency and volume play critical roles. Most muscle groups benefit from being trained 2-3 times per week with 10-20 sets per muscle group weekly. This provides enough stimulus for growth while allowing adequate recovery.",
-      "Compound exercises like squats, deadlifts, bench press, and rows should form the foundation of your program. These multi-joint movements recruit multiple muscle groups and allow you to lift heavier weights, creating a stronger growth stimulus.",
-      "Nutrition is equally important. Aim for 1.6-2.2g of protein per kilogram of body weight daily. Carbohydrates fuel your workouts and support recovery, while healthy fats support hormone production crucial for muscle growth.",
-      "Recovery is when growth happens. Ensure 7-9 hours of quality sleep nightly, manage stress levels, and allow at least 48 hours between training the same muscle group intensely.",
-    ],
-  },
-  {
     id: 2,
     slug: "nutrition-essentials-healthy-diet-plan",
-    title: "Nutrition Essentials: Creating Your Perfect Healthy Diet Plan",
-    excerpt: "Learn how to fuel your body with the right nutrients, balance macros, and develop sustainable eating habits that support your fitness goals.",
-    image: blogDiet,
-    date: "November 18, 2025",
-    readTime: "7 min read",
+    title: "Nutrition Essentials: The Complete Healthy Diet Plan Guide",
+    excerpt: "Discover the fundamentals of healthy nutrition, balanced eating, meal planning, and smart diet strategies to support fitness, energy, and overall health.",
+    image: blogNutritionGuide,
+    date: "May 07, 2026",
+    readTime: "9 min read",
     category: "Nutrition",
     content: [
-      "A healthy diet is the foundation of any successful fitness journey. Understanding nutrition basics empowers you to make informed choices that support your goals, whether building muscle, losing fat, or improving overall health.",
-      "Macronutrients - proteins, carbohydrates, and fats - each play unique roles. Protein builds and repairs tissue, carbohydrates provide energy for workouts, and fats support hormone production and vitamin absorption.",
-      "Calculate your daily caloric needs based on your goal. For muscle gain, aim for a 300-500 calorie surplus. For fat loss, create a 300-500 calorie deficit. For maintenance, match your total daily energy expenditure.",
-      "Prioritize whole, minimally processed foods. Fill your plate with lean proteins like chicken, fish, and legumes; complex carbohydrates from oats, rice, and sweet potatoes; and healthy fats from avocados, nuts, and olive oil.",
-      "Meal timing can optimize performance and recovery. Consume protein and carbs within 2 hours post-workout to maximize muscle protein synthesis. Spread protein intake evenly across 4-5 meals for optimal results.",
-      "Hydration is often overlooked but critical. Aim for 3-4 liters of water daily, more if training intensely or in hot conditions. Proper hydration supports metabolism, performance, and recovery.",
-      "Consistency trumps perfection. Following your nutrition plan 80-90% of the time allows flexibility for social events while still achieving results. Develop sustainable habits rather than extreme restrictions.",
-    ],
+      "Nutrition is one of the most important parts of achieving any fitness or health goal. Whether your goal is weight loss, muscle gain, improved energy, or overall wellness, the food you eat directly affects your results. A healthy diet provides the body with the nutrients needed for recovery, performance, and long-term health.",
+
+      "Many people believe dieting means starving or avoiding all favorite foods, but true nutrition is about balance and consistency. A healthy diet should include the right combination of protein, carbohydrates, healthy fats, vitamins, minerals, and proper hydration.",
+
+      "Protein plays a major role in muscle recovery and body repair. Foods such as chicken, fish, eggs, lean meat, dairy products, beans, and protein shakes help maintain muscle mass and support fitness progress. Individuals involved in strength training should prioritize protein intake throughout the day.",
+
+      "Carbohydrates are the body’s primary source of energy. Healthy carbohydrate sources such as rice, oats, potatoes, fruits, vegetables, and whole grains provide fuel for workouts and daily activities. Choosing complex carbohydrates over processed sugar helps maintain stable energy levels.",
+
+      "Healthy fats are essential for hormone balance, brain function, and overall health. Foods like nuts, seeds, olive oil, avocado, and fatty fish provide important nutrients that support the body and improve recovery.",
+
+      "Hydration is often overlooked but is critical for performance and health. Drinking enough water throughout the day helps regulate body temperature, improve digestion, support muscle function, and maintain energy levels during workouts.",
+
+      "Meal timing can also improve fitness results. Eating balanced meals before workouts provides energy, while post-workout meals containing protein and carbohydrates help muscle recovery and replenish glycogen stores.",
+
+      "Portion control is important for maintaining a healthy weight. Even healthy foods can lead to weight gain if consumed in excessive amounts. Learning to balance calories based on activity level and fitness goals is essential for long-term success.",
+
+      "For individuals trying to lose weight, creating a moderate calorie deficit combined with regular exercise is the most effective approach. Crash diets and extreme restrictions are difficult to maintain and often lead to temporary results.",
+
+      "For muscle gain, the body requires additional calories and sufficient protein intake to support growth and recovery. Consistency in both training and nutrition is necessary for building lean muscle mass effectively.",
+
+      "One of the biggest nutrition mistakes people make is relying too heavily on processed foods, sugary drinks, and fast food. While occasional treats are acceptable, a diet focused on whole and nutrient-dense foods provides better long-term health benefits.",
+
+      "A healthy lifestyle is not about perfection but about building sustainable habits. Preparing meals in advance, eating balanced portions, staying active, and making smarter food choices daily can significantly improve overall health and fitness.",
+
+      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, members receive professional fitness support, training guidance, and motivation to combine proper exercise with healthy nutrition for the best possible results.",
+
+      "Whether your goal is fat loss, muscle gain, or maintaining a healthy lifestyle, understanding nutrition fundamentals is the key to long-term success. With proper planning, consistency, and balanced eating habits, anyone can improve their health and fitness journey."
+    ]
   },
   {
     id: 3,
-    slug: "sustainable-weight-loss-strategies",
+    slug: "sustainable-weight-loss-science-based-strategies",
     title: "Sustainable Weight Loss: Science-Based Strategies That Actually Work",
-    excerpt: "Cut through the noise with evidence-based approaches to losing weight and keeping it off without crash diets or extreme measures.",
+    excerpt: "Discover effective and sustainable weight loss strategies backed by science. Learn how proper nutrition, exercise, consistency, and healthy habits can help you achieve long-term results in Dubai.",
     image: blogWeightLoss,
-    date: "November 15, 2025",
-    readTime: "9 min read",
+    date: "May 07, 2026",
+    readTime: "11 min read",
     category: "Weight Loss",
     content: [
-      "Sustainable weight loss is about creating a moderate caloric deficit while preserving muscle mass, maintaining metabolic health, and developing habits you can maintain long-term.",
-      "Start with a modest deficit of 300-500 calories below maintenance. This allows for steady fat loss of 0.5-1kg per week while minimizing muscle loss and metabolic adaptation. Extreme deficits often backfire.",
-      "Prioritize protein intake at 2.0-2.4g per kilogram of body weight during weight loss. Higher protein preserves muscle mass, increases satiety, and has a higher thermic effect than other macronutrients.",
-      "Incorporate resistance training 3-4 times weekly. Lifting weights sends a powerful signal to maintain muscle mass even in a caloric deficit. This preserves your metabolism and creates a more aesthetic physique.",
-      "Don't fear carbohydrates. They fuel intense workouts and support recovery. Focus on timing them around training sessions when your body can best utilize them for performance and recovery.",
-      "Track progress beyond the scale. Take measurements, progress photos, and note strength improvements. The scale doesn't tell the complete story, especially when you're building muscle while losing fat.",
-      "Plan for plateaus. Weight loss isn't linear. When progress stalls for 2-3 weeks, consider a diet break at maintenance calories for 1-2 weeks, then resume your deficit with renewed energy and adherence.",
-      "Build sustainable habits. Extreme restrictions lead to rebounds. Focus on adding positive behaviors like daily movement, adequate sleep, and mindful eating rather than solely restricting foods.",
-    ],
+      "Losing weight is one of the most common fitness goals, but many people struggle because they follow unrealistic diets, extreme workout programs, or quick-fix solutions that are difficult to maintain. Sustainable weight loss is not about starving yourself or exercising for hours every day. It is about building healthy habits that create long-term results.",
+
+      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, we help members achieve realistic and sustainable fat loss goals through proper training, nutrition guidance, and structured fitness programs designed for long-term success.",
+
+      "The foundation of weight loss is understanding calories. To lose body fat, the body must burn more calories than it consumes. This is known as a calorie deficit. However, extremely low-calorie diets can slow metabolism, reduce energy levels, and increase the risk of muscle loss. A moderate and balanced approach is more effective for maintaining long-term progress.",
+
+      "Nutrition plays a major role in successful weight loss. A balanced diet focused on lean proteins, healthy carbohydrates, vegetables, fruits, and healthy fats helps control hunger and maintain energy throughout the day. Foods such as chicken, fish, eggs, rice, oats, vegetables, and nuts support both fat loss and overall health.",
+
+      "Protein intake is especially important during weight loss because it helps preserve muscle mass while reducing body fat. High-protein meals also improve satiety, helping individuals feel full for longer periods and reducing unnecessary snacking.",
+
+      "Exercise is another essential component of sustainable fat loss. Combining strength training with cardiovascular exercise is one of the most effective methods for improving body composition. Strength training helps maintain muscle mass and boost metabolism, while cardio helps increase calorie expenditure and improve heart health.",
+
+      "For beginners, a simple workout routine can be highly effective. Training three to five times per week with a combination of resistance training, treadmill walking, cycling, rowing, or HIIT workouts can significantly improve fat loss results over time.",
+
+      "One of the biggest mistakes people make is relying only on cardio without strength training. While cardio burns calories, strength training helps shape the body, improve metabolism, and support long-term weight management. Building muscle also helps the body burn more calories even at rest.",
+
+      "Consistency is more important than perfection. Many people stop their fitness journey because they expect immediate results. Healthy and sustainable weight loss usually happens gradually. Losing around 0.5 to 1 kilogram per week is considered safe and realistic for long-term success.",
+
+      "Sleep and recovery are often ignored during weight loss journeys. Poor sleep can affect hormones related to hunger and appetite, making it more difficult to control cravings and energy levels. Getting enough sleep and managing stress can significantly improve fat loss progress.",
+
+      "Hydration also plays a key role in overall health and performance. Drinking enough water supports digestion, improves workout performance, and can help control appetite throughout the day.",
+
+      "Crash diets and extreme restrictions may provide temporary results, but they are difficult to maintain and often lead to weight regain. Sustainable habits such as meal preparation, consistent workouts, portion control, and balanced nutrition create results that last longer and improve overall health.",
+
+      "At 365 Fitness Gym, members have access to professional trainers, modern cardio and strength equipment, personal training programs, and over 400 monthly group classes including HIIT, fat-burning workouts, spinning, Zumba, and strength training sessions.",
+
+      "Our branches in Deira Muraqqabat and Muhaisnah First provide a motivating and supportive fitness environment for beginners and experienced members looking to improve their health, lose weight, and build confidence.",
+
+      "If you are searching for the best gym in Deira Dubai or a professional fitness center in Muhaisnah First for weight loss transformation, 365 Fitness Gym offers the tools, support, and expert guidance needed to achieve sustainable results.",
+
+      "Weight loss is not about perfection or temporary solutions. It is about creating a healthy lifestyle that you can maintain consistently. With proper nutrition, structured training, and the right support system, anyone can achieve long-term fat loss and improved overall fitness."
+    ]
   },
   {
     id: 4,
