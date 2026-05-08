@@ -83,7 +83,7 @@ const LocationDeira = () => {
         { name: "24 Hour Gym", included: true },
         { name: "Nutritional Plan", included: true },
         { name: "Group Classes", included: true },
-        { name: "Personal Training", included: true },
+        { name: "Personal Training", included: false },
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
       ],
