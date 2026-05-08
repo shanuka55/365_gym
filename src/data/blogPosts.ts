@@ -1,7 +1,7 @@
 import blogFitness from "@/assets/blog-fitness.jpg";
 import blogDiet from "@/assets/blog-diet.jpg";
 import blogHiit from "@/assets/blog-hiit.jpg";
-import blogMealPrep from "@/assets/blog-meal-prep.jpg";
+import blogMealPrep from "@/assets/blog-meal-prep-gym.jpg";
 import blogRecovery from "@/assets/blog-recovery.jpg";
 import blogYoga from "@/assets/blog-yoga.jpg";
 import blogSupplements from "@/assets/blog-supplements.jpg";
@@ -231,23 +231,46 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 5,
-    slug: "meal-prep-mastery-save-time",
+    slug: "meal-prep-mastery-save-time-stay-on-track",
     title: "Meal Prep Mastery: How to Save Time and Stay on Track",
-    excerpt: "Master the art of meal preparation to make healthy eating effortless. Practical strategies for busy people who want to stay consistent.",
+    excerpt: "Learn how meal prep can help you save time, stay consistent with nutrition, support weight loss, and improve fitness results with practical strategies that actually work.",
     image: blogMealPrep,
-    date: "November 10, 2025",
-    readTime: "8 min read",
+    date: "May 08, 2026",
+    readTime: "9 min read",
     category: "Nutrition",
     content: [
-      "Meal prep transforms nutrition from a daily struggle into an automated system. By dedicating 2-3 hours weekly to preparation, you eliminate decision fatigue and ensure consistent nutrition throughout the week.",
-      "Start by planning your weekly menu. Calculate your daily macros and calories, then design 4-5 meals that hit these targets. Repeat successful recipes weekly to streamline shopping and preparation.",
-      "Invest in quality storage containers. Glass containers with secure lids maintain food freshness and are microwave-safe. Use portion-control containers to ensure accurate serving sizes that match your goals.",
-      "Batch cooking is your secret weapon. Cook large quantities of proteins (chicken, fish, ground meat) and carbohydrates (rice, quinoa, sweet potatoes) simultaneously. This efficiency makes prep manageable even with a busy schedule.",
-      "Prepare vegetables strategically. Wash and chop vegetables for the entire week, storing them in airtight containers. Pre-cut vegetables stay fresh for 4-5 days and make assembling meals effortless.",
-      "Create variety within structure. Use different seasonings and sauces to transform the same base ingredients into diverse meals. Mexican, Asian, and Mediterranean flavors can all use similar proteins and carbs.",
-      "Label containers with dates and contents. Proper labeling prevents food waste and ensures you eat meals in the correct order. Most prepared meals stay fresh for 4-5 days when refrigerated properly.",
-      "Don't forget snacks. Prep protein-rich snacks like hard-boiled eggs, Greek yogurt portions, and nut mixes. Having healthy options ready prevents impulsive choices when hunger strikes between meals.",
-    ],
+      "Meal preparation has become one of the most effective strategies for maintaining a healthy lifestyle, saving time, and staying consistent with fitness goals. Whether your goal is weight loss, muscle gain, or simply eating healthier, meal prep helps eliminate poor food choices and supports long-term success.",
+
+      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, we encourage members to combine structured training with smart nutrition habits such as meal prepping to achieve sustainable fitness results.",
+
+      "One of the biggest reasons people struggle with healthy eating is lack of preparation. Busy schedules, work demands, and daily responsibilities often lead to fast food choices and inconsistent eating habits. Preparing meals in advance removes uncertainty and makes healthy eating more convenient.",
+
+      "Meal prep saves time by reducing the need to cook multiple times every day. By dedicating a few hours once or twice a week, individuals can prepare balanced meals that support their nutrition goals throughout the week.",
+
+      "A successful meal prep plan starts with understanding your fitness goal. For weight loss, meals should focus on portion control, lean protein, vegetables, and balanced carbohydrates. For muscle gain, meals should include higher calorie intake with sufficient protein and nutrient-dense foods.",
+
+      "Protein is one of the most important parts of meal prep because it supports muscle recovery and helps maintain fullness throughout the day. Foods such as chicken breast, eggs, fish, lean beef, Greek yogurt, and protein shakes are excellent choices for fitness-focused meal plans.",
+
+      "Healthy carbohydrates provide energy for workouts and daily activities. Rice, oats, potatoes, sweet potatoes, fruits, and whole grains are ideal carbohydrate sources that support performance and recovery while maintaining stable energy levels.",
+
+      "Healthy fats are also essential for overall health and hormone function. Avocados, olive oil, nuts, seeds, and fatty fish can be included in meal prep plans to create balanced and nutritious meals.",
+
+      "Portion control is a major advantage of meal prepping. Preparing meals in advance helps prevent overeating and makes it easier to manage calorie intake. This is especially important for individuals working toward sustainable weight loss goals.",
+
+      "Meal prepping also reduces stress and improves consistency. When healthy meals are already prepared, there is less temptation to order unhealthy food or skip meals entirely. Consistency is one of the biggest factors in achieving long-term fitness success.",
+
+      "Hydration should also be included as part of a healthy nutrition routine. Drinking enough water throughout the day supports digestion, workout performance, recovery, and appetite control.",
+
+      "For beginners, simple meal prep strategies are often the most effective. Start by preparing basic meals such as grilled chicken with rice and vegetables, overnight oats, healthy sandwiches, boiled eggs, and fruit snacks. Simplicity makes meal prep easier to maintain consistently.",
+
+      "Storage and organization are important for successful meal prep. Using quality containers and labeling meals can help maintain freshness and make it easier to follow a nutrition plan during busy schedules.",
+
+      "At 365 Fitness Gym, our professional trainers help members combine effective workout routines with healthy eating strategies to support fat loss, muscle gain, and overall fitness improvement. Members at our Deira Muraqqabat and Muhaisnah First branches receive motivation and guidance to stay consistent with both training and nutrition.",
+
+      "If you are searching for the best gym in Deira Dubai or a professional fitness center in Muhaisnah First that supports complete lifestyle transformation, 365 Fitness Gym provides the environment, support, and fitness community needed to achieve long-term success.",
+
+      "Meal prep is not about perfection—it is about preparation and consistency. Building healthy eating habits through proper planning can save time, reduce stress, improve fitness performance, and help create sustainable results for years to come."
+    ]
   },
   {
     id: 6,
