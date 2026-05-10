@@ -6,7 +6,7 @@ import blogRecoveryRest from "@/assets/blog-recovery-gym.jpg";
 import blogYogaFlexibility from "@/assets/blog-yoga-gym.jpg";
 import blogSupplementsGuide from "@/assets/blog-supplements-gym.jpg";
 import blogMentalHealthFitness from "@/assets/blog-mental-health-gym.jpg";
-import blogSeniorFitness from "@/assets/blog-senior-fitness.jpg";
+import blogSeniorFitness from "@/assets/blog-senior-fitness-gym.jpg";
 import blogbeginerGym from "@/assets/blog-beginer-gym.jpg";
 import blogMuscleGuide from "@/assets/blog-muscle-guide.jpeg";
 import blogNutritionGuide from "@/assets/blog-diet-plan.jpg";
@@ -449,24 +449,47 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 10,
-    slug: "senior-fitness-active-aging",
+    id: 22,
+    slug: "senior-fitness-staying-strong-and-active-at-any-age",
     title: "Senior Fitness: Staying Strong and Active at Any Age",
-    excerpt: "Age is just a number. Learn how strength training and proper exercise help seniors maintain independence, vitality, and quality of life.",
+    excerpt: "Discover how senior fitness and active aging improve strength, mobility, balance, and overall health. Learn safe and effective exercises for staying active at any age.",
     image: blogSeniorFitness,
-    date: "October 29, 2025",
-    readTime: "8 min read",
-    category: "Fitness",
+    date: "May 09, 2026",
+    readTime: "9 min read",
+    category: "Senior Fitness",
     content: [
-      "Strength training becomes increasingly important with age, not less. Regular resistance exercise combats muscle loss (sarcopenia), maintains bone density, and preserves the functional capacity necessary for independent living.",
-      "Contrary to myth, seniors can and should lift weights. Research shows that even people in their 80s and 90s can gain significant strength and muscle mass from proper resistance training programs.",
-      "Balance and stability exercises prevent falls—the leading cause of injury-related deaths in seniors. Single-leg exercises, heel-to-toe walking, and tai chi movements should be incorporated into every training program.",
-      "Start conservatively and progress gradually. Begin with bodyweight exercises or light resistance bands. Focus on mastering movement patterns before increasing intensity. Proper form is more important than heavy weights.",
-      "Prioritize compound movements that mimic daily activities. Squats (sitting and standing), deadlifts (picking things up), presses (reaching overhead), and rows (pulling) directly transfer to functional independence.",
-      "Include cardiovascular exercise for heart health and endurance. Walking, swimming, and cycling are low-impact options that build aerobic capacity without excessive joint stress. Aim for 150 minutes of moderate activity weekly.",
-      "Flexibility and mobility work becomes crucial with age. Dedicate 10-15 minutes daily to stretching and mobility exercises. This maintains range of motion and reduces injury risk during both exercise and daily activities.",
-      "Work with qualified trainers familiar with senior fitness. Professional guidance ensures appropriate exercise selection, proper progression, and modifications for any existing health conditions or limitations.",
-    ],
-  },
+      "Staying active becomes increasingly important with age. Regular exercise helps seniors maintain strength, mobility, balance, independence, and overall quality of life. Contrary to common myths, fitness is not only for younger individuals—people of all ages can benefit from structured exercise and healthy lifestyle habits.",
+
+      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, we believe fitness should be accessible for everyone. Senior fitness programs can help older adults improve physical health, reduce injury risks, and maintain confidence in daily activities.",
+
+      "As the body ages, natural muscle loss and reduced bone density can occur. This process, known as sarcopenia, may lead to weakness, reduced mobility, and increased fall risk. Strength training and regular physical activity are highly effective for slowing down these effects and maintaining functional independence.",
+
+      "Strength training is one of the most beneficial forms of exercise for seniors. Resistance exercises using machines, light dumbbells, resistance bands, or bodyweight movements help improve muscle strength, joint stability, posture, and overall physical performance.",
+
+      "Compound exercises such as squats, seated rows, chest presses, step-ups, and light deadlift variations can support everyday movements like standing, walking, lifting objects, and climbing stairs more safely and efficiently.",
+
+      "Balance and stability exercises are equally important for active aging. Falls are one of the leading causes of injury among older adults, making balance training essential for maintaining safety and confidence during daily activities.",
+
+      "Exercises such as heel-to-toe walking, controlled single-leg movements, stability drills, and light functional exercises help improve coordination and reduce fall risk over time.",
+
+      "Cardiovascular exercise supports heart health, endurance, circulation, and overall energy levels. Low-impact cardio activities such as walking, cycling, treadmill workouts, rowing, and swimming are excellent options for seniors looking to improve fitness safely.",
+
+      "Flexibility and mobility training help maintain healthy joints and reduce stiffness. Stretching exercises and yoga movements can improve posture, movement quality, and overall comfort during both workouts and daily routines.",
+
+      "Recovery is especially important for seniors involved in exercise programs. Proper sleep, hydration, balanced nutrition, and rest days support muscle repair and help prevent excessive fatigue or overtraining.",
+
+      "Nutrition also plays a major role in healthy aging. A balanced diet rich in protein, healthy fats, vitamins, minerals, fruits, vegetables, and proper hydration supports muscle maintenance, bone health, energy levels, and recovery.",
+
+      "One of the biggest benefits of fitness for seniors is improved mental health and confidence. Exercise helps reduce stress, improve mood, support cognitive function, and increase overall emotional well-being.",
+
+      "Many seniors avoid gyms because they feel intimidated or believe they are too old to start exercising. In reality, it is never too late to begin a fitness journey. Starting slowly and progressing safely can lead to major improvements in strength, mobility, and overall health.",
+
+      "At 365 Fitness Gym, our certified trainers provide professional guidance and supportive fitness programs tailored for different fitness levels and age groups. Members at our Deira Muraqqabat and Muhaisnah First branches benefit from modern equipment, spacious workout areas, and a motivating environment designed for safe and effective training.",
+
+      "If you are searching for the best gym in Deira Dubai or a professional fitness center in Muhaisnah First that supports active aging and senior wellness, 365 Fitness Gym offers the facilities, expert guidance, and community support needed to help you stay healthy and active.",
+
+      "Senior fitness is not about extreme workouts or heavy lifting. It is about maintaining movement, improving quality of life, protecting independence, and building strength for everyday living. Staying active at any age can lead to a healthier, more energetic, and more confident lifestyle."
+    ]
+  }
 
 ];
