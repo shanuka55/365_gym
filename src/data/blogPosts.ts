@@ -5,7 +5,7 @@ import blogMealPrep from "@/assets/blog-meal-prep-gym.jpg";
 import blogRecoveryRest from "@/assets/blog-recovery-gym.jpg";
 import blogYogaFlexibility from "@/assets/blog-yoga-gym.jpg";
 import blogSupplementsGuide from "@/assets/blog-supplements-gym.jpg";
-import blogMentalHealth from "@/assets/blog-mental-health.jpg";
+import blogMentalHealthFitness from "@/assets/blog-mental-health-gym.jpg";
 import blogSeniorFitness from "@/assets/blog-senior-fitness.jpg";
 import blogbeginerGym from "@/assets/blog-beginer-gym.jpg";
 import blogMuscleGuide from "@/assets/blog-muscle-guide.jpeg";
@@ -405,23 +405,48 @@ export const blogPosts: BlogPost[] = [
   },
   {
     id: 9,
-    slug: "mental-health-fitness-connection",
+    slug: "mental-health-and-fitness-connection-training-your-mind",
     title: "The Mental Health and Fitness Connection: Training Your Mind",
-    excerpt: "Exercise profoundly impacts mental health. Discover how fitness improves mood, reduces anxiety, and builds psychological resilience.",
-    image: blogMentalHealth,
-    date: "November 1, 2025",
-    readTime: "8 min read",
-    category: "Wellness",
+    excerpt: "Discover how exercise improves mental health, reduces stress, boosts confidence, and supports emotional well-being through consistent fitness and healthy lifestyle habits.",
+    image: blogMentalHealthFitness,
+    date: "May 09, 2026",
+    readTime: "10 min read",
+    category: "Mental Health & Fitness",
     content: [
-      "The connection between physical fitness and mental health is profound and well-documented. Regular exercise is as effective as medication for mild to moderate depression and anxiety in many cases.",
-      "Exercise releases endorphins and other neurotransmitters that improve mood. These 'feel-good' chemicals create a natural high that can last hours after training, contributing to better overall emotional wellbeing.",
-      "Physical training builds mental resilience through progressive challenge. Pushing through difficult workouts teaches you that discomfort is temporary and manageable—a lesson that transfers to life's other challenges.",
-      "Structured fitness routines provide rhythm and purpose. The consistency of regular training sessions creates stability and accomplishment, particularly valuable during uncertain or stressful life periods.",
-      "Group fitness classes combat loneliness and build community. The social connections formed in gyms and classes provide support, accountability, and belonging—all crucial factors for mental health.",
-      "Mindful exercise practices like yoga combine physical and mental training. Focusing on breath and movement creates meditation-like states that reduce rumination and promote present-moment awareness.",
-      "Set process-based goals rather than just outcome goals. Focus on attending workouts consistently, improving form, or adding one more rep. These controllable goals provide regular achievement and positive feedback.",
-      "Recognize when professional help is needed. While exercise is powerful for mental health, it's not a replacement for therapy or medication when necessary. Combine fitness with appropriate mental health care for best results.",
-    ],
+      "Fitness is often associated with physical transformation, muscle growth, and weight loss, but exercise also has a powerful impact on mental health and emotional well-being. Regular physical activity not only strengthens the body but also improves focus, confidence, mood, and stress management.",
+
+      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, we believe fitness is about building both physical and mental strength. A healthy mind and a healthy body work together to improve overall quality of life and long-term wellness.",
+
+      "Exercise helps the body release endorphins, often called 'feel-good hormones,' which naturally improve mood and reduce stress levels. Regular workouts can help individuals feel more energetic, motivated, and mentally refreshed after training sessions.",
+
+      "Stress is one of the most common challenges people face in modern lifestyles. Work pressure, lack of sleep, unhealthy routines, and daily responsibilities can negatively affect both physical and mental health. Exercise provides a healthy outlet to release tension and improve emotional balance.",
+
+      "Strength training, cardio workouts, yoga, boxing, and group fitness classes can all contribute to better mental health. Physical activity helps improve concentration, increase mental resilience, and reduce feelings of anxiety and fatigue.",
+
+      "One of the biggest psychological benefits of fitness is increased self-confidence. Achieving workout goals, improving strength, losing weight, or simply staying consistent can help individuals feel more positive about themselves and their abilities.",
+
+      "Regular exercise also improves sleep quality, which plays a major role in mental recovery and emotional stability. Better sleep helps improve mood, focus, energy levels, and overall cognitive performance throughout the day.",
+
+      "Group fitness environments can create a strong sense of community and motivation. Training alongside supportive people and professional trainers helps individuals stay accountable and maintain a positive mindset during their fitness journey.",
+
+      "For many people, the gym becomes more than just a place to exercise. It becomes a space to disconnect from stress, improve mental clarity, and focus on personal growth. Consistency in fitness often creates positive habits that carry over into other areas of life.",
+
+      "Cardiovascular exercise such as treadmill walking, cycling, rowing, HIIT training, and functional workouts helps improve blood circulation and oxygen flow to the brain, which may support cognitive health and mental performance.",
+
+      "Yoga and stretching exercises can also reduce stress and improve mindfulness. Controlled breathing techniques combined with movement help calm the nervous system and improve relaxation after physically or mentally demanding days.",
+
+      "Nutrition and hydration also influence mental health and workout performance. A balanced diet rich in protein, healthy fats, vitamins, minerals, and proper hydration supports energy levels, focus, and overall well-being.",
+
+      "One of the biggest mistakes people make is expecting instant changes in both fitness and mental health. Just like physical transformation, mental improvement requires patience, consistency, and healthy daily habits.",
+
+      "At 365 Fitness Gym, members have access to professional trainers, modern training equipment, functional workout zones, personal training support, and over 400 monthly fitness classes designed to improve both physical and mental wellness.",
+
+      "Our Deira Muraqqabat and Muhaisnah First branches provide a motivating environment where beginners and experienced gym-goers can build confidence, reduce stress, and improve overall health through structured fitness programs.",
+
+      "If you are searching for the best gym in Deira Dubai or a professional fitness center in Muhaisnah First that supports complete physical and mental wellness, 365 Fitness Gym offers the facilities, expert guidance, and positive fitness community needed to support your transformation journey.",
+
+      "Mental strength and physical strength are deeply connected. Training your body consistently also trains discipline, focus, confidence, and resilience. Fitness is not only about changing your appearance—it is about building a healthier and stronger version of yourself both physically and mentally."
+    ]
   },
   {
     id: 10,
