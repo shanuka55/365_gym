@@ -27,7 +27,7 @@ export interface BlogPost {
 
 export const blogPosts: BlogPost[] = [
   {
-    id: 11,
+    id: 1,
     slug: "beginner-gym-guide-dubai",
     title: "Beginner Gym Guide in Dubai: How to Start Gym the Right Way",
     excerpt: "Starting gym for the first time? Learn the right way to begin your fitness journey in Dubai with simple workout plans, nutrition tips, and expert guidance.",
@@ -58,7 +58,7 @@ export const blogPosts: BlogPost[] = [
     ],
   },
   {
-    id: 14,
+    id: 2,
     slug: "building-muscle-complete-guide-strength-training",
     title: "Building Muscle: The Complete Guide to Strength Training",
     excerpt: "Learn the fundamentals of strength training, muscle growth, workout structure, nutrition, and recovery to build muscle effectively and safely.",
@@ -97,7 +97,7 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 2,
+    id: 3,
     slug: "nutrition-essentials-healthy-diet-plan",
     title: "Nutrition Essentials: The Complete Healthy Diet Plan Guide",
     excerpt: "Discover the fundamentals of healthy nutrition, balanced eating, meal planning, and smart diet strategies to support fitness, energy, and overall health.",
@@ -136,7 +136,7 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 3,
+    id: 4,
     slug: "sustainable-weight-loss-science-based-strategies",
     title: "Sustainable Weight Loss: Science-Based Strategies That Actually Work",
     excerpt: "Discover effective and sustainable weight loss strategies backed by science. Learn how proper nutrition, exercise, consistency, and healthy habits can help you achieve long-term results in Dubai.",
@@ -179,7 +179,7 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 4,
+    id: 5,
     slug: "hiit-training-maximum-fat-burn-minimum-time",
     title: "HIIT Training: Maximum Fat Burn in Minimum Time | 365 Fitness Dubai",
     excerpt: "Discover how HIIT training helps you burn maximum fat in minimum time. Learn science-based HIIT workouts, benefits, and fat loss strategies for fast results in Dubai.",
@@ -229,7 +229,7 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 5,
+    id: 6,
     slug: "meal-prep-mastery-save-time-stay-on-track",
     title: "Meal Prep Mastery: How to Save Time and Stay on Track",
     excerpt: "Learn how meal prep can help you save time, stay consistent with nutrition, support weight loss, and improve fitness results with practical strategies that actually work.",
@@ -272,7 +272,7 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 6,
+    id: 7,
     slug: "recovery-and-rest-days-essential-for-progress",
     title: "Recovery and Rest Days: Why They're Essential for Progress",
     excerpt: "Discover why recovery and rest days are essential for muscle growth, fat loss, performance, and long-term fitness success. Learn how proper recovery improves results and prevents injuries.",
@@ -317,7 +317,7 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 19,
+    id: 8,
     slug: "yoga-and-flexibility-training-for-athletes-and-gym-goers",
     title: "Yoga and Flexibility Training for Athletes and Gym-Goers",
     excerpt: "Discover how yoga and flexibility training improve mobility, recovery, strength, posture, and performance for athletes and gym-goers of all fitness levels.",
@@ -358,7 +358,7 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 20,
+    id: 9,
     slug: "essential-supplements-guide-what-actually-works",
     title: "The Essential Supplements Guide: What Actually Works",
     excerpt: "Discover the most effective fitness supplements for muscle growth, recovery, strength, energy, and overall performance. Learn what actually works and how to use supplements safely.",
@@ -403,7 +403,7 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 9,
+    id: 10,
     slug: "mental-health-and-fitness-connection-training-your-mind",
     title: "The Mental Health and Fitness Connection: Training Your Mind",
     excerpt: "Discover how exercise improves mental health, reduces stress, boosts confidence, and supports emotional well-being through consistent fitness and healthy lifestyle habits.",
@@ -448,7 +448,7 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 22,
+    id: 11,
     slug: "senior-fitness-staying-strong-and-active-at-any-age",
     title: "Senior Fitness: Staying Strong and Active at Any Age",
     excerpt: "Discover how senior fitness and active aging improve strength, mobility, balance, and overall health. Learn safe and effective exercises for staying active at any age.",
@@ -491,7 +491,7 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 23,
+    id: 12,
     slug: "best-gym-in-deira-dubai-for-weight-loss-and-bodybuilding",
     title: "Best Gym in Deira Dubai for Weight Loss and Bodybuilding",
     excerpt: "Looking for the best gym in Dubai for weight loss and bodybuilding? Discover professional training, modern equipment, group classes, and expert fitness support at 365 Fitness Gym.",
@@ -536,7 +536,7 @@ export const blogPosts: BlogPost[] = [
     ]
   },
   {
-    id: 24,
+    id: 13,
     slug: "why-muhaisnah-residents-are-choosing-professional-fitness-coaching",
     title: "Why Muhaisnah Residents Are Choosing Professional Fitness Coaching",
     excerpt: "Discover why more people in Muhaisnah are choosing professional fitness coaching for weight loss, muscle gain, strength training, and long-term health results at 365 Fitness Gym.",
