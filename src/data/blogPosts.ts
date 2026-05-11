@@ -1,6 +1,3 @@
-import blogFitness from "@/assets/blog-fitness.jpg";
-import blogDiet from "@/assets/blog-diet.jpg";
-import blogHiit from "@/assets/blog-hiit.jpg";
 import blogMealPrep from "@/assets/blog-meal-prep-gym.jpg";
 import blogRecoveryRest from "@/assets/blog-recovery-gym.jpg";
 import blogYogaFlexibility from "@/assets/blog-yoga-gym.jpg";
