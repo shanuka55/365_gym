@@ -10,17 +10,20 @@ import heroGym from "@/assets/hero-gym.jpg";
 import heroWorkout from "@/assets/hero-workout.jpg";
 import deiraBranch from "@/assets/deira-branch.jpg";
 import muhansniahBranch from "@/assets/muhasniah-branch.jpg";
+import deira_image from "@/assets/365_fitness_gym_cover_image.jpg";
 import { useState } from "react";
 import { X } from "lucide-react";
 
 const galleryImages = [
+  { src: deira_image, title: "Cardio Zone", category: "Equipment" },
   { src: gallery1, title: "Cardio Zone", category: "Equipment" },
+  { src: deiraBranch, title: "Cardio Zone", category: "Equipment" },
   { src: gallery2, title: "Weight Training Area", category: "Equipment" },
   { src: gallery3, title: "Functional Training", category: "Training" },
   { src: gallery4, title: "Locker | Rooms | Sauna | Showers", category: "Facilities" },
   { src: heroGym, title: "Main Gym Floor", category: "Equipment" },
   { src: heroWorkout, title: "Training Session", category: "Training" },
-  { src: deiraBranch, title: "Deira Branch", category: "Branches" },
+  { src: deira_image, title: "Deira Branch", category: "Branches" },
   { src: muhansniahBranch, title: "Muhaisnah Branch", category: "Branches" },
 ];
 
@@ -39,7 +42,7 @@ const Gallery = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[60vh] flex items-center justify-center overflow-hidden">
+        <section className="relative h-[80vh] flex items-center justify-center overflow-hidden">
           <img
             src={gallery1}
             alt="365 Fitness Gallery"

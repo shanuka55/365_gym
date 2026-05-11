@@ -9,7 +9,7 @@ import blogMuscleGuide from "@/assets/blog-muscle-guide.jpeg";
 import blogNutritionGuide from "@/assets/blog-diet-plan.jpg";
 import blogWeightLoss from "@/assets/blog-weight-loss-gym.jpg";
 import blogHIIT from "@/assets/blog-hiit-gym.jpg";
-import blogBestGymDubai from "@/assets/blog-best-gym-dubai.jpg";
+import blogBestGymDubai from "@/assets/blog-Best-Gym-near.jpg";
 import blogFitnessCoaching from "@/assets/blog-Fitness-Coaching-Muhasnah.jpg";
 
 
