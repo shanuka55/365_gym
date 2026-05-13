@@ -101,7 +101,7 @@ Message: ${formData.message}`;
                     <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-bold text-foreground mb-1">Muhaisnah Branch</h3>
-                      <p className="text-muted-foreground">Muhaisnah First, Dubai</p>
+                      <p className="text-muted-foreground">Shop Number 32, Madinat Badr, Muhaisnah First, Dubai</p>
                     </div>
                   </div>
 
