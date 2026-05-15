@@ -11,6 +11,7 @@ import blogWeightLoss from "@/assets/blog-weight-loss-gym.jpg";
 import blogHIIT from "@/assets/blog-hiit-gym.jpg";
 import blogBestGymDubai from "@/assets/blog-Best-Gym-near.jpg";
 import blogFitnessCoaching from "@/assets/blog-Fitness-Coaching-Muhasnah.jpg";
+import blogTransformLifestyle from "@/assets/transform-your-lifestyle-with-365-fitness-gym.jpg";
 
 
 export interface BlogPost {
@@ -578,6 +579,136 @@ export const blogPosts: BlogPost[] = [
       "If you are searching for the best gym in Muhaisnah First with expert personal training, customized coaching, modern equipment, and a motivating fitness environment, 365 Fitness Gym offers the support and professional guidance needed for long-term success.",
 
       "Professional fitness coaching is more than just exercise instruction. It is a complete support system that helps individuals build discipline, improve health, stay motivated, and achieve sustainable fitness results with confidence."
+    ]
+  },
+  {
+    id: 14,
+    slug: "transform-your-lifestyle-with-365-fitness-gym",
+    title: "Transform Your Lifestyle with 365 Fitness GYM",
+    excerpt: "Transform your lifestyle with 365 Fitness GYM. Discover how professional training, modern equipment, and a motivating fitness environment help you lose weight, build muscle, and improve confidence.",
+    image: blogTransformLifestyle,
+    date: "May 10, 2026",
+    readTime: "11 min read",
+    category: "Lifestyle & Fitness",
+    content: [
+      "This is how you not gain weight in #stayhome & home office times!",
+
+      "Transform Your Lifestyle with 365 Fitness GYM",
+
+      "Your Fitness Journey Starts Here",
+
+      "In today’s fast-moving world, long working hours, stress, and inactive lifestyles have become normal. Many people spend most of their day sitting in offices or working from home, leaving little time for health and fitness. Over time, this routine leads to weight gain, low energy, stress, and loss of confidence.",
+
+      "But the good news is — one decision can change everything.",
+
+      "That decision starts at 365 Fitness GYM.",
+
+      "We are more than just a gym. We are a fitness community built to help people become stronger, healthier, more confident, and more disciplined every single day.",
+
+      "Why Fitness Should Be Your Priority",
+
+      "Your body is your greatest investment.",
+
+      "Regular exercise does more than improve appearance. It helps you:",
+
+      "• Burn fat and build lean muscle",
+      "• Increase daily energy levels",
+      "• Improve mental focus and productivity",
+      "• Reduce stress and anxiety",
+      "• Sleep better",
+      "• Strengthen immunity",
+      "• Boost confidence and self-esteem",
+
+      "Fitness is not about perfection. It is about becoming a better version of yourself.",
+
+      "At 365 Fitness GYM, we help you create a lifestyle that delivers real and lasting results.",
+
+      "A Gym Designed for Results",
+
+      "Whether you are a beginner starting your journey or an experienced athlete pushing your limits, 365 Fitness GYM provides everything you need under one roof.",
+
+      "Our premium fitness environment includes:",
+
+      "• Advanced strength training equipment",
+      "• Modern cardio machines",
+      "• Functional training zones",
+      "• Personal training support",
+      "• Professional fitness guidance",
+      "• Spacious workout areas",
+      "• High-energy atmosphere",
+      "• Clean and motivating environment",
+
+      "Every workout at 365 Fitness GYM is designed to move you closer to your goals.",
+
+      "Train with Motivation Around You",
+
+      "Motivation is one of the biggest challenges in fitness. Training alone at home often leads to inconsistency, distractions, and loss of discipline.",
+
+      "That’s why environment matters.",
+
+      "At 365 Fitness GYM, you are surrounded by:",
+
+      "• Motivated members",
+      "• Professional trainers",
+      "• Positive energy",
+      "• A strong fitness community",
+
+      "Being around people who are working hard inspires you to stay committed and focused on your own transformation.",
+
+      "Personal Training That Delivers Real Results",
+
+      "Many people struggle because they don’t know:",
+
+      "• Which workouts to do",
+      "• How to lose weight effectively",
+      "• How to build muscle correctly",
+      "• How to stay consistent",
+
+
+
+      "Our certified trainers help you with:",
+
+      "• Customized workout plans",
+      "• Fat loss programs",
+      "• Muscle building routines",
+      "• Strength improvement",
+      "• Fitness assessments",
+      "• Nutrition guidance",
+      "• Motivation and accountability",
+
+      "At 365 Fitness GYM, your goals become our mission.",
+
+      "Stop Waiting — Start Your Transformation Today",
+
+      "There is never a “perfect time” to start fitness.",
+
+      "The best time is now.",
+
+      "Every workout brings you closer to:",
+
+      "• Better health",
+      "• More confidence",
+      "• Greater strength",
+      "• Higher energy",
+      "• A better lifestyle",
+
+      "Your future self will thank you for the decision you make today.",
+
+      "Join 365 Fitness GYM",
+
+      "If you are ready to:",
+      "",
+      "• Lose weight",
+      "• Build muscle",
+      "• Improve fitness",
+      "• Increase confidence",
+      "• Transform your lifestyle",
+
+      "Then 365 Fitness GYM is ready for you.",
+
+      "Take the first step toward a stronger, healthier, and more confident version of yourself.",
+
+      "Your fitness journey starts today at 365 Fitness GYM."
     ]
   }
 
