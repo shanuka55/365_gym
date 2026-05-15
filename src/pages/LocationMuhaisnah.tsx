@@ -19,6 +19,10 @@ import m_image10 from "@/assets/IMG_Muhasnah_10.jpg";
 import m_image11 from "@/assets/IMG_Muhasnah_11.jpg";
 import m_image12 from "@/assets/IMG_Muhasnah_12.jpg";
 
+import img_01 from "@/assets/365 FITNESS GYM MUHASNAH 01.jpg";
+import img_02 from "@/assets/365 FITNESS GYM MUHASNAH 02.jpg";
+
+
 const LocationMuhaisnah = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
 
@@ -190,6 +194,20 @@ const LocationMuhaisnah = () => {
               Branch <span className="text-primary">Gallery</span>
             </h2>
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={img_01}
+                  alt="Muhaisnah Branch Interior"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={img_02}
+                  alt="Muhaisnah Branch Interior"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
               <div className="aspect-video rounded-xl overflow-hidden">
                 <img
                   src={m_image1}
