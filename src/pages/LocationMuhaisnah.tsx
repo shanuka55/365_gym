@@ -21,6 +21,16 @@ import m_image12 from "@/assets/IMG_Muhasnah_12.jpg";
 
 import img_01 from "@/assets/365 FITNESS GYM MUHASNAH 01.jpg";
 import img_02 from "@/assets/365 FITNESS GYM MUHASNAH 02.jpg";
+import img_03 from "@/assets/365 FITNESS GYM MUHASNAH 03.jpg";
+import img_04 from "@/assets/365 FITNESS GYM MUHASNAH 04.jpg";
+import img_05 from "@/assets/365 FITNESS GYM MUHASNAH 05.jpg";
+import img_06 from "@/assets/365 FITNESS GYM MUHASNAH 06.jpg";
+import img_07 from "@/assets/365 FITNESS GYM MUHASNAH 07.jpg";
+import img_08 from "@/assets/365 FITNESS GYM MUHASNAH 08.jpg";
+import img_09 from "@/assets/365 FITNESS GYM MUHASNAH 09.jpg";
+import img_10 from "@/assets/365 FITNESS GYM MUHASNAH 10.jpg";
+import img_11 from "@/assets/365 FITNESS GYM MUHASNAH 11.jpg";
+import img_12 from "@/assets/365 FITNESS GYM MUHASNAH 12.jpg";
 
 
 const LocationMuhaisnah = () => {
@@ -204,6 +214,62 @@ const LocationMuhaisnah = () => {
               <div className="aspect-video rounded-xl overflow-hidden">
                 <img
                   src={img_02}
+                  alt="Muhaisnah Branch Interior"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={img_03}
+                  alt="Muhaisnah Branch Interior"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={img_04}
+                  alt="Muhaisnah Branch Interior"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={img_05}
+                  alt="Muhaisnah Branch Interior"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={img_06}
+                  alt="Muhaisnah Branch Interior"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={img_07}
+                  alt="Muhaisnah Branch Interior"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={img_08}
+                  alt="Muhaisnah Branch Interior"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={img_09}
+                  alt="Muhaisnah Branch Interior"
+                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+              <div className="aspect-video rounded-xl overflow-hidden">
+                <img
+                  src={img_10}
                   alt="Muhaisnah Branch Interior"
                   className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                 />
