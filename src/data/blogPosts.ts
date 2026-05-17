@@ -12,7 +12,7 @@ import blogHIIT from "@/assets/blog-hiit-gym.jpg";
 import blogBestGymDubai from "@/assets/blog-Best-Gym-near.jpg";
 import blogFitnessCoaching from "@/assets/blog-Fitness-Coaching-Muhasnah.jpg";
 import blogTransformLifestyle from "@/assets/transform-your-lifestyle-with-365-fitness-gym.jpg";
-
+import blogKidsKickboxing from "@/assets/blog-kids-kickboxing-gym.jpg";
 
 export interface BlogPost {
   id: number;
@@ -709,6 +709,59 @@ export const blogPosts: BlogPost[] = [
       "Take the first step toward a stronger, healthier, and more confident version of yourself.",
 
       "Your fitness journey starts today at 365 Fitness GYM."
+    ]
+  },
+  {
+    id: 26,
+    slug: "why-kickboxing-is-the-best-workout-for-kids",
+    title: "Why Kickboxing is the Best Workout for Kids",
+    excerpt: "Discover how kids kickboxing classes at 365 Fitness Gym help children improve discipline, confidence, fitness, focus in school, and self-defense skills in a safe and motivating environment.",
+    image: blogKidsKickboxing,
+    date: "May 10, 2026",
+    readTime: "9 min read",
+    category: "Kids Fitness",
+    content: [
+      "Why Kickboxing is the Best Workout for Kids",
+
+      "In today’s digital world, many children spend more time on phones, tablets, and video games than physical activity. Lack of movement and exercise can affect a child’s health, confidence, focus, and overall development.",
+
+      "That is why more parents in Dubai are enrolling their children in kickboxing classes to improve fitness, discipline, confidence, and self-defense skills in a positive and structured environment.",
+
+      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, our kids kickboxing programs are designed to help children become stronger, healthier, more focused, and more confident while learning valuable life skills.",
+
+      "Kickboxing is more than just punches and kicks. It is a complete physical and mental workout that helps children build discipline, respect, concentration, coordination, and self-control.",
+
+      "One of the biggest benefits of kids kickboxing is improved physical fitness. Kickboxing classes help children stay active, improve stamina, strengthen muscles, increase flexibility, and develop better balance and coordination.",
+
+      "Regular training also helps maintain a healthy body weight and improves overall cardiovascular health. Instead of spending hours inactive at home, children participate in fun and energetic workouts that keep them moving and engaged.",
+
+      "Discipline is another important benefit of kickboxing training. Children learn how to follow instructions, respect coaches, stay consistent, and remain focused during training sessions. These habits often carry into daily life and school routines.",
+
+      "Many parents notice improved behavior and responsibility after their children start martial arts and kickboxing programs. Structured training helps children understand the importance of patience, dedication, and hard work.",
+
+      "Confidence building is one of the strongest advantages of kickboxing for kids. Learning new techniques, improving fitness levels, and achieving personal progress helps children feel more confident in themselves and their abilities.",
+
+      "Children who are shy or lack self-confidence often become more social, motivated, and positive after joining kickboxing classes. Training in a supportive environment helps them overcome fear and build stronger self-esteem.",
+
+      "Self-defense is another major reason parents choose kickboxing programs for their children. Kids learn how to protect themselves, stay aware of their surroundings, and react calmly in difficult situations.",
+
+      "At 365 Fitness Gym, safety is always a top priority. Our professional trainers focus on controlled training, discipline, respect, and proper technique in a safe and positive atmosphere suitable for all skill levels.",
+
+      "Kickboxing also improves focus and concentration in school. Training requires children to listen carefully, follow instructions, remember combinations, and stay mentally engaged throughout each class.",
+
+      "These mental skills often help improve classroom focus, memory, discipline, and academic performance. Many parents report better concentration and improved study habits after their children begin regular martial arts training.",
+
+      "Another major benefit of kids kickboxing is stress relief and emotional balance. Physical activity helps children release energy in a healthy way while reducing stress, anxiety, and frustration.",
+
+      "At 365 Fitness Gym, our kids kickboxing classes combine fitness, fun, discipline, and motivation to create a positive learning environment where children can grow physically and mentally.",
+
+      "Our Deira Muraqqabat and Muhaisnah First branches provide professional training facilities, experienced coaches, spacious workout areas, and structured classes designed specifically for children of different age groups and fitness levels.",
+
+      "Parents looking for the best kids kickboxing classes in Dubai choose 365 Fitness Gym because of our supportive environment, experienced trainers, and focus on building strong, confident, and disciplined children.",
+
+      "Whether your child wants to improve fitness, learn self-defense, increase confidence, stay active, or develop better focus in school, kickboxing is one of the best activities for long-term physical and mental growth.",
+
+      "Give your child the opportunity to become stronger, healthier, more disciplined, and more confident with kids kickboxing classes at 365 Fitness Gym."
     ]
   }
 
