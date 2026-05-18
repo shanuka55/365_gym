@@ -24,6 +24,7 @@ import NotFound from "./pages/NotFound";
 import Snow from "./components/Snow";
 import usePageTracking from "./hooks/usePageTracking";
 import Connection from "./pages/Connection";
+import MembershipAgreement from "./pages/MembershipAgreement";
 
 const queryClient = new QueryClient();
 
@@ -59,6 +60,7 @@ const App = () => {
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/connection" element={<Connection />} />
+            <Route path="/membership-agreement" element={<MembershipAgreement />} />
             <Route path="/locations/deira-muraqqabat" element={<LocationDeira />} />
             <Route path="/locations/muhaisnah-first" element={<LocationMuhaisnah />} />
             <Route path="/plans/monthly-plans" element={<MonthlyPlans />} />

@@ -13,6 +13,7 @@ import blogBestGymDubai from "@/assets/blog-Best-Gym-near.jpg";
 import blogFitnessCoaching from "@/assets/blog-Fitness-Coaching-Muhasnah.jpg";
 import blogTransformLifestyle from "@/assets/transform-your-lifestyle-with-365-fitness-gym.jpg";
 import blogKidsKickboxing from "@/assets/blog-kids-kickboxing-gym.jpg";
+import blogWeightLossMistakes from "@/assets/blog-weight-loss-mistakes-gym.jpg";
 
 export interface BlogPost {
   id: number;
@@ -762,6 +763,61 @@ export const blogPosts: BlogPost[] = [
       "Whether your child wants to improve fitness, learn self-defense, increase confidence, stay active, or develop better focus in school, kickboxing is one of the best activities for long-term physical and mental growth.",
 
       "Give your child the opportunity to become stronger, healthier, more disciplined, and more confident with kids kickboxing classes at 365 Fitness Gym."
+    ]
+  },
+  {
+    id: 27,
+    slug: "top-mistakes-people-make-when-trying-to-lose-weight",
+    title: "Top Mistakes People Make When Trying to Lose Weight",
+    excerpt: "Discover the biggest weight loss mistakes people make and learn how to achieve sustainable fat loss with proper training, nutrition, recovery, and consistency at 365 Fitness Gym Dubai.",
+    image: blogWeightLossMistakes,
+    date: "May 10, 2026",
+    readTime: "10 min read",
+    category: "Weight Loss",
+    content: [
+      "Top Mistakes People Make When Trying to Lose Weight",
+
+      "Losing weight is one of the most common fitness goals, but many people struggle to see long-term results because of simple mistakes that slow down progress. Crash diets, inconsistent workouts, poor recovery, and unrealistic expectations often lead to frustration and loss of motivation.",
+
+      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, we help members follow smarter and more sustainable fitness strategies that support healthy fat loss, improved fitness, and long-term body transformation.",
+
+      "One of the biggest mistakes people make when trying to lose weight is skipping meals. Many individuals believe eating less automatically leads to faster fat loss, but skipping meals can slow metabolism, reduce energy levels, increase cravings, and lead to overeating later in the day.",
+
+      "Healthy weight loss requires balanced nutrition with proper portions of protein, healthy fats, complex carbohydrates, and hydration. Consistent healthy eating habits support energy, recovery, and long-term fat-burning results.",
+
+      "Another common mistake is overtraining. Many beginners try to lose weight by training excessively every day without allowing the body enough time to recover. While exercise is important, recovery is equally necessary for muscle repair, energy balance, and sustainable progress.",
+
+      "Overtraining can lead to fatigue, poor performance, muscle soreness, lack of motivation, and even increased injury risk. Proper workout programming combined with rest days helps improve performance and maintain long-term consistency.",
+
+      "Lack of consistency is one of the biggest reasons people fail to achieve weight loss goals. Many individuals start highly motivated for a few weeks but stop training once they do not see instant results.",
+
+      "Real fitness transformation takes time, patience, and discipline. Small consistent improvements in workouts, nutrition, sleep, and lifestyle habits create long-term results that last.",
+
+      "Bad sleep habits also play a major role in weight gain and poor recovery. Lack of sleep can increase hunger hormones, reduce energy levels, slow recovery, and negatively affect workout performance.",
+
+      "People who consistently sleep poorly often struggle with cravings, stress eating, low motivation, and slower fat loss progress. Improving sleep quality helps support metabolism, hormone balance, recovery, and overall health.",
+
+      "Another major mistake is relying only on cardio workouts while ignoring strength training. Cardio helps burn calories, but strength training helps build lean muscle, improve metabolism, and support long-term fat loss.",
+
+      "At 365 Fitness Gym, we encourage members to combine cardio training, resistance workouts, and functional exercises for better overall body composition and fitness improvement.",
+
+      "Many people also follow unrealistic diet trends or extreme weight loss programs found online. Quick-fix diets may provide temporary results, but they are difficult to maintain and often lead to weight regain.",
+
+      "Sustainable fat loss comes from creating healthy habits that can be followed long-term rather than relying on short-term restrictions.",
+
+      "Another common problem is training without proper guidance. Beginners often waste time doing random exercises without structure or progression.",
+
+      "Our certified trainers at 365 Fitness Gym help members follow customized workout plans, proper exercise techniques, fat-loss programs, and nutrition strategies tailored to individual goals and fitness levels.",
+
+      "Motivation alone is not enough for long-term success. Building discipline and maintaining consistency are the true keys to lasting transformation.",
+
+      "At our Deira Muraqqabat and Muhaisnah First branches, members have access to modern cardio equipment, advanced strength machines, functional training areas, personal training support, and over 400 monthly group fitness classes including HIIT, Zumba, spinning, strength training, boxing, and fat-burning workouts.",
+
+      "Weight loss is not only about changing appearance. It is about improving health, energy, confidence, mental well-being, and overall lifestyle quality.",
+
+      "If you are searching for the best gym in Deira Dubai or Muhaisnah First for professional weight loss programs, personal training, fitness coaching, and sustainable body transformation, 365 Fitness Gym provides the environment, support, and expert guidance needed for real results.",
+
+      "Avoiding common mistakes and following a structured fitness plan can help you achieve healthier, faster, and more sustainable weight loss success."
     ]
   }
 
