@@ -544,7 +544,7 @@ export const blogPosts: BlogPost[] = [
     title: "Why Muhaisnah Residents Are Choosing Professional Fitness Coaching",
     excerpt: "Discover why more people in Muhaisnah are choosing professional fitness coaching for weight loss, muscle gain, strength training, and long-term health results at 365 Fitness Gym.",
     image: blogFitnessCoaching,
-    date: "May 10, 2026",
+    date: "May 11, 2026",
     readTime: "10 min read",
     category: "Personal Training",
     content: [
@@ -589,7 +589,7 @@ export const blogPosts: BlogPost[] = [
     title: "Transform Your Lifestyle with 365 Fitness GYM",
     excerpt: "Transform your lifestyle with 365 Fitness GYM. Discover how professional training, modern equipment, and a motivating fitness environment help you lose weight, build muscle, and improve confidence.",
     image: blogTransformLifestyle,
-    date: "May 10, 2026",
+    date: "May 12, 2026",
     readTime: "11 min read",
     category: "Lifestyle & Fitness",
     content: [
@@ -719,7 +719,7 @@ export const blogPosts: BlogPost[] = [
     title: "Why Kickboxing is the Best Workout for Kids",
     excerpt: "Discover how kids kickboxing classes at 365 Fitness Gym help children improve discipline, confidence, fitness, focus in school, and self-defense skills in a safe and motivating environment.",
     image: blogKidsKickboxing,
-    date: "May 10, 2026",
+    date: "May 13, 2026",
     readTime: "9 min read",
     category: "Kids Fitness",
     content: [
@@ -772,7 +772,7 @@ export const blogPosts: BlogPost[] = [
     title: "Top Mistakes People Make When Trying to Lose Weight",
     excerpt: "Discover the biggest weight loss mistakes people make and learn how to achieve sustainable fat loss with proper training, nutrition, recovery, and consistency at 365 Fitness Gym Dubai.",
     image: blogWeightLossMistakes,
-    date: "May 10, 2026",
+    date: "May 14, 2026",
     readTime: "10 min read",
     category: "Weight Loss",
     content: [
@@ -827,7 +827,7 @@ export const blogPosts: BlogPost[] = [
     title: "Best Meal Plan for Weight Loss Beginners",
     excerpt: "Looking for a beginner-friendly weight loss meal plan in Dubai? Discover simple nutrition strategies, healthy meals, and sustainable fat-loss tips from 365 Fitness Gym.",
     image: blogWeightLossMealPlan,
-    date: "May 10, 2026",
+    date: "May 15, 2026",
     readTime: "10 min read",
     category: "Nutrition & Weight Loss",
     content: [
