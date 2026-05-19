@@ -14,6 +14,7 @@ import blogFitnessCoaching from "@/assets/blog-Fitness-Coaching-Muhasnah.jpg";
 import blogTransformLifestyle from "@/assets/transform-your-lifestyle-with-365-fitness-gym.jpg";
 import blogKidsKickboxing from "@/assets/blog-kids-kickboxing-gym.jpg";
 import blogWeightLossMistakes from "@/assets/blog-weight-loss-mistakes-gym.jpg";
+import blogWeightLossMealPlan from "@/assets/blog-weight-loss-meal-plan-gym.jpg";
 
 export interface BlogPost {
   id: number;
@@ -818,6 +819,76 @@ export const blogPosts: BlogPost[] = [
       "If you are searching for the best gym in Deira Dubai or Muhaisnah First for professional weight loss programs, personal training, fitness coaching, and sustainable body transformation, 365 Fitness Gym provides the environment, support, and expert guidance needed for real results.",
 
       "Avoiding common mistakes and following a structured fitness plan can help you achieve healthier, faster, and more sustainable weight loss success."
+    ]
+  },
+  {
+    id: 28,
+    slug: "best-meal-plan-for-weight-loss-beginners",
+    title: "Best Meal Plan for Weight Loss Beginners",
+    excerpt: "Looking for a beginner-friendly weight loss meal plan in Dubai? Discover simple nutrition strategies, healthy meals, and sustainable fat-loss tips from 365 Fitness Gym.",
+    image: blogWeightLossMealPlan,
+    date: "May 10, 2026",
+    readTime: "10 min read",
+    category: "Nutrition & Weight Loss",
+    content: [
+      "Best Meal Plan for Weight Loss Beginners",
+
+      "Starting a weight loss journey can feel confusing for beginners, especially with so many diet trends and conflicting nutrition advice online. Many people think they need extreme diets or starvation plans to lose weight, but sustainable fat loss starts with balanced nutrition and consistency.",
+
+      "At 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First, we help members achieve healthier and long-lasting results through structured fitness programs, professional guidance, and beginner-friendly nutrition strategies.",
+
+      "One of the biggest mistakes beginners make is skipping meals or following very low-calorie diets. While these methods may show short-term weight changes, they are difficult to maintain and often lead to cravings, low energy, muscle loss, and weight regain.",
+
+      "A proper weight loss meal plan should focus on balance, portion control, protein intake, hydration, and consistency rather than extreme restrictions.",
+
+      "Protein is one of the most important nutrients for weight loss. High-protein meals help keep you full longer, support muscle recovery, and improve metabolism. Good protein sources include chicken breast, eggs, fish, lean beef, Greek yogurt, cottage cheese, and protein shakes.",
+
+      "Healthy carbohydrates are also important for maintaining energy levels and workout performance. Beginners should focus on complex carbohydrates such as oats, brown rice, sweet potatoes, whole grains, fruits, and vegetables instead of processed sugars and junk food.",
+
+      "Healthy fats support hormone balance and overall health. Foods like avocados, nuts, seeds, olive oil, and fatty fish can be included in moderation as part of a balanced diet.",
+
+      "Hydration is another important part of successful weight loss. Drinking enough water helps improve digestion, control appetite, support metabolism, and maintain workout performance.",
+
+      "At 365 Fitness Gym, our trainers encourage members to combine healthy eating with regular exercise for faster and more sustainable results. Nutrition alone is important, but combining proper meal planning with strength training and cardio workouts helps improve body composition more effectively.",
+
+      "A beginner-friendly weight loss meal plan should be simple and realistic to follow. Complicated diets often fail because they are difficult to maintain long-term.",
+
+      "Here is an example of a simple beginner weight loss meal plan:",
+
+      "Breakfast:",
+      "• Oats with banana and peanut butter",
+      "• Boiled eggs or Greek yogurt",
+      "• Black coffee or green tea",
+
+      "Lunch:",
+      "• Grilled chicken breast or fish",
+      "• Brown rice or sweet potato",
+      "• Mixed vegetables or salad",
+
+      "Snack:",
+      "• Protein shake",
+      "• Almonds or fruits",
+
+      "Dinner:",
+      "• Lean protein source",
+      "• Steamed vegetables",
+      "• Small portion of healthy carbs",
+
+      "This type of balanced nutrition helps beginners stay satisfied, maintain energy levels, and support healthy fat loss without feeling deprived.",
+
+      "Consistency is the most important factor in achieving long-term results. Many people fail because they expect instant transformation within a few weeks.",
+
+      "Healthy weight loss takes time, discipline, and sustainable habits. Small daily improvements in nutrition and exercise create lasting results over time.",
+
+      "At our Deira Muraqqabat and Muhaisnah First branches, members have access to professional fitness coaching, personalized training programs, advanced gym equipment, cardio zones, strength training areas, and over 400 monthly group classes including HIIT, spinning, Zumba, strength training, and fat-burning workouts.",
+
+      "Our certified trainers also help beginners understand proper nutrition, calorie balance, meal timing, and workout strategies based on their individual goals and fitness levels.",
+
+      "Whether your goal is losing belly fat, improving fitness, building confidence, or starting a healthier lifestyle, having the right nutrition plan and professional support can make a huge difference.",
+
+      "If you are searching for the best gym in Deira Dubai or Muhaisnah First for weight loss programs, beginner fitness coaching, nutrition guidance, and sustainable body transformation, 365 Fitness Gym provides the support, motivation, and expert environment needed for success.",
+
+      "Healthy eating is not about being perfect. It is about making smarter choices consistently and building habits that improve your health, energy, and confidence for the long term."
     ]
   }
 
