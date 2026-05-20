@@ -166,6 +166,68 @@ const AGREEMENT_TERMS = [
       },
     ],
   },
+  {
+    title: "9. Pregnancy Training and Participation",
+    items: [
+      {
+        label: "9.1 Medical Clearance",
+        text: "Pregnant members must obtain approval from a qualified medical professional before participating in any fitness activities, classes, or personal training sessions at 365 Fitness.",
+      },
+      {
+        label: "9.2 Personal Responsibility",
+        text: "Pregnant members participate in all activities at their own risk and are responsible for monitoring their physical condition during exercise.",
+      },
+      {
+        label: "9.3 Trainer Limitations",
+        text: "365 Fitness trainers and staff are not medical professionals and cannot provide medical advice, diagnosis, or treatment related to pregnancy.",
+      },
+      {
+        label: "9.4 Exercise Modifications",
+        text: "Pregnant members must follow all safety instructions and modifications provided by trainers. Certain exercises or equipment may be restricted for safety reasons.",
+      },
+      {
+        label: "9.5 Emergency Situations",
+        text: "If a pregnant member experiences dizziness, pain, bleeding, breathing difficulty, or any medical discomfort during exercise, they must stop immediately and seek medical attention.",
+      },
+      {
+        label: "9.6 Liability Waiver",
+        text: "365 Fitness shall not be held responsible for any injury, health complication, or medical issue related to participation in fitness activities during pregnancy.",
+      },
+    ],
+  },
+  {
+    title: "10. Children Under 14 Policy",
+    items: [
+      {
+        label: "10.1 Parent or Guardian Consent",
+        text: "Children under the age of 14 may only access designated programs or classes with written consent from a parent or legal guardian.",
+      },
+      {
+        label: "10.2 Supervision Requirement",
+        text: "Children under 14 must be supervised by a parent, guardian, or authorized coach at all times while inside the facility.",
+      },
+      {
+        label: "10.3 Restricted Areas",
+        text: "Children under 14 are not permitted to use heavy gym equipment, free weights, or restricted training areas unless specifically authorized by 365 Fitness staff.",
+      },
+      {
+        label: "10.4 Safety Responsibility",
+        text: "Parents or guardians are fully responsible for the child's safety, behavior, and conduct while on the premises.",
+      },
+      {
+        label: "10.5 Appropriate Behavior",
+        text: "Children must follow all gym rules and behave respectfully toward staff, members, and equipment. Disruptive or unsafe behavior may result in removal from the facility.",
+      },
+      {
+        label: "10.6 Injury and Liability",
+        text: "Participation in physical activity carries inherent risks. 365 Fitness shall not be liable for injuries sustained by children during participation in gym activities, classes, or programs.",
+      },
+      {
+        label: "10.7 Damage to Property",
+        text: "Parents or guardians are financially responsible for any damage caused by the child to gym property or equipment.",
+      },
+    ],
+  },
 ];
 
 const agreementSchema = z.object({
