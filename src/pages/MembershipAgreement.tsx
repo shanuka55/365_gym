@@ -297,7 +297,10 @@ const MembershipAgreement = () => {
     setIsSubmitting(true);
 
     try {
+      const agreementId = crypto.randomUUID();
+      const submittedAt = new Date().toISOString();
       const payload = {
+        id: agreementId,
         full_name: validation.data.fullName,
         email: validation.data.email,
         phone: validation.data.phone,
@@ -324,9 +327,40 @@ const MembershipAgreement = () => {
         throw error;
       }
 
+      const { error: emailError } = await supabase.functions.invoke(
+        "send-membership-agreement-email",
+        {
+          body: {
+            id: agreementId,
+            fullName: validation.data.fullName,
+            email: validation.data.email,
+            phone: validation.data.phone,
+            dateOfBirth: validation.data.dateOfBirth,
+            emiratesId: validation.data.emiratesId,
+            address: validation.data.address,
+            emergencyContactName: validation.data.emergencyContactName,
+            emergencyContactPhone: validation.data.emergencyContactPhone,
+            branch: validation.data.branch,
+            membershipType: validation.data.membershipType,
+            startDate: validation.data.startDate,
+            medicalNotes: validation.data.medicalNotes || null,
+            signature: validation.data.signature,
+            acceptsTerms: validation.data.acceptsTerms,
+            acceptsHealthDeclaration: validation.data.acceptsHealthDeclaration,
+            submittedAt,
+          },
+        },
+      );
+
+      if (emailError) {
+        console.error("Membership agreement email failed:", emailError);
+      }
+
       toast({
         title: "Agreement Submitted",
-        description: "Thank you. Your signed membership agreement has been saved.",
+        description: emailError
+          ? "Thank you. Your signed membership agreement has been saved. 365 Fitness will review it shortly."
+          : "Thank you. Your signed membership agreement has been saved and emailed to 365 Fitness.",
       });
 
       setFormData(initialFormData);

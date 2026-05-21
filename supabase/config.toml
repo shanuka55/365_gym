@@ -1,4 +1,7 @@
-project_id = "zpyccirgwkcbhrzivnyd"
+project_id = "ayznlnnolkhezfcgkhyu"
 
 [functions.send-free-trial-email]
+verify_jwt = false
+
+[functions.send-membership-agreement-email]
 verify_jwt = false
