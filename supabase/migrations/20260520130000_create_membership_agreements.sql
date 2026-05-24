@@ -14,7 +14,6 @@ create table if not exists public.membership_agreements (
   membership_type text not null,
   start_date date not null,
   medical_notes text,
-  
   signature text not null,
   accepts_terms boolean not null default false,
   accepts_health_declaration boolean not null default false,
@@ -23,9 +22,6 @@ create table if not exists public.membership_agreements (
 );
 
 alter table public.membership_agreements enable row level security;
-
-drop policy if exists "Anyone can submit membership agreements"
-on public.membership_agreements;
 
 create policy "Anyone can submit membership agreements"
 on public.membership_agreements
