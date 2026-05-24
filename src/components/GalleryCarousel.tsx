@@ -12,20 +12,25 @@ import gallery9 from "@/assets/365 FITNESS GYM MUHASNAH 03.jpg";
 import gallery10 from "@/assets/365 FITNESS GYM MUHASNAH 04.jpg";
 import gallery11 from "@/assets/365 FITNESS GYM MUHASNAH 05.jpg";
 import gallery12 from "@/assets/365 FITNESS GYM MUHASNAH 06.jpg";
+import gallery13 from "@/assets/365 FITNESS GYM MUHASNAH 07.jpg";
+import gallery14 from "@/assets/365 FITNESS GYM MUHASNAH 08.jpg";
 
 const galleryImages = [
-  { src: gallery1, alt: "State-of-the-art cardio equipment area" },
-  { src: gallery2, alt: "Premium weight training zone" },
-  { src: gallery3, alt: "Functional training area with TRX and battle ropes" },
-  { src: gallery4, alt: "Modern locker room facilities" },
-  { src: gallery5, alt: "Spacious group fitness studio" },
-  { src: gallery6, alt: "Premium amenities and facilities" },
   { src: gallery7, alt: "Modern amenities and facilities" },
   { src: gallery8, alt: "State-of-the-art cardio equipment area" },
   { src: gallery9, alt: "Premium weight training zone" },
   { src: gallery10, alt: "Functional training area with TRX and battle ropes" },
   { src: gallery11, alt: "Modern locker room facilities" },
   { src: gallery12, alt: "Spacious group fitness studio" },
+  { src: gallery13, alt: "Modern amenities and facilities" },
+  { src: gallery14, alt: "State-of-the-art cardio equipment area" },
+  { src: gallery1, alt: "State-of-the-art cardio equipment area" },
+  { src: gallery2, alt: "Premium weight training zone" },
+  { src: gallery3, alt: "Functional training area with TRX and battle ropes" },
+  { src: gallery4, alt: "Modern locker room facilities" },
+  { src: gallery5, alt: "Spacious group fitness studio" },
+  { src: gallery6, alt: "Premium amenities and facilities" },
+
 ];
 
 const GalleryCarousel = () => {
