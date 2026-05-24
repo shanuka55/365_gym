@@ -13,8 +13,8 @@ const stats = [
   },
   {
     icon: DollarSign,
-    number: "99",
-    label: "AED MONTHLY",
+    number: "Good Offer",
+    label: "Membership Plans",
   },
   {
     icon: Clock,
