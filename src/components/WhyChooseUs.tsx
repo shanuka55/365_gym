@@ -8,7 +8,7 @@ const stats = [
   },
   {
     icon: Users,
-    number: "95,000+",
+    number: "95,0+",
     label: "MEMBERS",
   },
   {
@@ -23,12 +23,12 @@ const stats = [
   },
   {
     icon: Dumbbell,
-    number: "400+",
+    number: "40+",
     label: "FREE CLASSES",
   },
   {
     icon: Zap,
-    number: "500+",
+    number: "199+",
     label: "MACHINES",
   },
 ];
