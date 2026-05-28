@@ -8,7 +8,7 @@ const stats = [
   },
   {
     icon: Users,
-    number: "95,0+",
+    number: "25,00+",
     label: "MEMBERS",
   },
   {
