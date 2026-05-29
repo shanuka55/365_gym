@@ -7,9 +7,9 @@ import { Award, Users, TrendingUp, Target } from "lucide-react";
 
 const About = () => {
   const stats = [
-    { icon: Users, value: "95,000+", label: "Active Members" },
+    { icon: Users, value: "2500+", label: "Active Members" },
     { icon: Award, value: "15+", label: "Years Experience" },
-    { icon: TrendingUp, value: "400+", label: "Free Classes Monthly" },
+    { icon: TrendingUp, value: "40+", label: "Free Classes Monthly" },
     { icon: Target, value: "2", label: "Premium Locations" },
   ];
 
