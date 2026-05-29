@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Youtube, Video, MapPin, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
+import logo from "@/assets/logo-header.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -13,7 +13,15 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Brand Section */}
           <div>
-            <img src={logo} alt="365 Fitness" className="h-16 w-auto mb-4" />
+            <img
+              src={logo}
+              alt="365 Fitness"
+              className="h-16 w-auto mb-4"
+              loading="lazy"
+              decoding="async"
+              width="180"
+              height="165"
+            />
             <p className="text-muted-foreground mb-4">
               Dubai's premier fitness destination. Transform your body, elevate your mind.
             </p>

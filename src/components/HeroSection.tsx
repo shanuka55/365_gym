@@ -1,6 +1,8 @@
 import { lazy, Suspense, useState } from "react";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import heroGymMobile from "@/assets/hero-gym-mobile.jpg";
+import heroGymTablet from "@/assets/hero-gym-tablet.jpg";
 import heroGym from "@/assets/hero-gym-optimized.jpg";
 
 const FreePassModal = lazy(() => import("./FreePassModal"));
@@ -14,15 +16,19 @@ const HeroSection = () => {
     <section className="relative h-screen w-full overflow-hidden">
       {/* Background Image */}
       <div className="absolute inset-0">
-        <img
-          src={heroGym}
-          alt="24-hour gym in Dubai with modern fitness equipment and ladies-only zones at 365 Fitness Gym Al Muraqqabat"
-          className="w-full h-full object-cover"
-          width="1920"
-          height="1088"
-          fetchPriority="high"
-          decoding="async"
-        />
+        <picture>
+          <source media="(max-width: 640px)" srcSet={heroGymMobile} />
+          <source media="(max-width: 1024px)" srcSet={heroGymTablet} />
+          <img
+            src={heroGym}
+            alt="24-hour gym in Dubai with modern fitness equipment and ladies-only zones at 365 Fitness Gym Al Muraqqabat"
+            className="w-full h-full object-cover"
+            width="1920"
+            height="1088"
+            fetchPriority="high"
+            decoding="async"
+          />
+        </picture>
         <div className="absolute inset-0 bg-gradient-to-r from-black/95 via-black/70 to-black/50" />
       </div>
 
