@@ -3,28 +3,27 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { useState, useEffect } from "react";
-import LoadingScreen from "./components/LoadingScreen";
+import { lazy, Suspense } from "react";
 import ScrollToTop from "./components/ScrollToTop";
 import Index from "./pages/Index";
-import About from "./pages/About";
-import Gallery from "./pages/Gallery";
-import Contact from "./pages/Contact";
-import LocationDeira from "./pages/LocationDeira";
-import LocationMuhaisnah from "./pages/LocationMuhaisnah";
-import MonthlyPlans from "./pages/MonthlyPlans";
-import AnnualPlans from "./pages/AnnualPlans";
-import CorporatePlans from "./pages/CorporatePlans";
-import PersonalTraining from "./pages/PersonalTraining";
-import GroupClasses from "./pages/GroupClasses";
-import OnlineCoaching from "./pages/OnlineCoaching";
-import Blog from "./pages/Blog";
-import BlogPost from "./pages/BlogPost";
-import NotFound from "./pages/NotFound";
-import Snow from "./components/Snow";
 import usePageTracking from "./hooks/usePageTracking";
-import Connection from "./pages/Connection";
-import MembershipAgreement from "./pages/MembershipAgreement";
+
+const About = lazy(() => import("./pages/About"));
+const Gallery = lazy(() => import("./pages/Gallery"));
+const Contact = lazy(() => import("./pages/Contact"));
+const LocationDeira = lazy(() => import("./pages/LocationDeira"));
+const LocationMuhaisnah = lazy(() => import("./pages/LocationMuhaisnah"));
+const MonthlyPlans = lazy(() => import("./pages/MonthlyPlans"));
+const AnnualPlans = lazy(() => import("./pages/AnnualPlans"));
+const CorporatePlans = lazy(() => import("./pages/CorporatePlans"));
+const PersonalTraining = lazy(() => import("./pages/PersonalTraining"));
+const GroupClasses = lazy(() => import("./pages/GroupClasses"));
+const OnlineCoaching = lazy(() => import("./pages/OnlineCoaching"));
+const Blog = lazy(() => import("./pages/Blog"));
+const BlogPost = lazy(() => import("./pages/BlogPost"));
+const Connection = lazy(() => import("./pages/Connection"));
+const MembershipAgreement = lazy(() => import("./pages/MembershipAgreement"));
+const NotFound = lazy(() => import("./pages/NotFound"));
 
 const queryClient = new QueryClient();
 
@@ -35,45 +34,35 @@ const Tracker = () => {
 };
 
 const App = () => {
-  const [isLoading, setIsLoading] = useState(true);
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2500);
-    return () => clearTimeout(timer);
-  }, []);
-
   return (
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <Toaster />
         <Sonner />
-        {isLoading && <LoadingScreen />}
         <BrowserRouter>
           <Tracker />
           <ScrollToTop />
-          {/* <Snow /> */}
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/gallery" element={<Gallery />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/connection" element={<Connection />} />
-            <Route path="/locations/deira-muraqqabat" element={<LocationDeira />} />
-            <Route path="/locations/muhaisnah-first" element={<LocationMuhaisnah />} />
-            <Route path="/plans/monthly-plans" element={<MonthlyPlans />} />
-            <Route path="/plans/annual-plans" element={<AnnualPlans />} />
-            <Route path="/plans/corporate-plans" element={<CorporatePlans />} />
-            <Route path="/services/personal-training" element={<PersonalTraining />} />
-            <Route path="/services/group-classes" element={<GroupClasses />} />
-            <Route path="/services/online-coaching" element={<OnlineCoaching />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/membership-agreement" element={<MembershipAgreement />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+          <Suspense fallback={null}>
+            <Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/gallery" element={<Gallery />} />
+              <Route path="/contact" element={<Contact />} />
+              <Route path="/connection" element={<Connection />} />
+              <Route path="/locations/deira-muraqqabat" element={<LocationDeira />} />
+              <Route path="/locations/muhaisnah-first" element={<LocationMuhaisnah />} />
+              <Route path="/plans/monthly-plans" element={<MonthlyPlans />} />
+              <Route path="/plans/annual-plans" element={<AnnualPlans />} />
+              <Route path="/plans/corporate-plans" element={<CorporatePlans />} />
+              <Route path="/services/personal-training" element={<PersonalTraining />} />
+              <Route path="/services/group-classes" element={<GroupClasses />} />
+              <Route path="/services/online-coaching" element={<OnlineCoaching />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/membership-agreement" element={<MembershipAgreement />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </Suspense>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>

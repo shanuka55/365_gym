@@ -1,13 +1,15 @@
+import { lazy, Suspense } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
-import CountryCards from "@/components/CountryCards";
-import GalleryCarousel from "@/components/GalleryCarousel";
-import Locations from "@/components/Locations";
-import WhyChooseUs from "@/components/WhyChooseUs";
-import Reviews from "@/components/Reviews";
-import Trainers from "@/components/Trainers";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
+
+const CountryCards = lazy(() => import("@/components/CountryCards"));
+const GalleryCarousel = lazy(() => import("@/components/GalleryCarousel"));
+const Locations = lazy(() => import("@/components/Locations"));
+const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
+const Reviews = lazy(() => import("@/components/Reviews"));
+const Trainers = lazy(() => import("@/components/Trainers"));
 
 const Index = () => {
   return (
@@ -15,12 +17,14 @@ const Index = () => {
       <Header />
       <main>
         <HeroSection />
-        <CountryCards />
-        <GalleryCarousel />
-        <Locations />
-        <WhyChooseUs />
-        <Reviews />
-        <Trainers />
+        <Suspense fallback={null}>
+          <CountryCards />
+          <GalleryCarousel />
+          <Locations />
+          <WhyChooseUs />
+          <Reviews />
+          <Trainers />
+        </Suspense>
       </main>
       <Footer />
       <WhatsAppButton />

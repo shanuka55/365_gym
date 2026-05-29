@@ -15,11 +15,14 @@
     <meta name="author" content="365 Fitness Gym" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://365fitness.ae" />
+    <link rel="preload" as="image" href="/src/assets/hero-gym-optimized.jpg" fetchpriority="high" />
     
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" /></noscript>
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
@@ -48,8 +51,6 @@
     <meta name="google-site-verification" content="XhxgPnr0EzNnqQrvJw7mRhZnfyOPbHxewTGUtTslM7s">
   
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
     <!-- <link rel="dns-prefetch" href="//www.googletagmanager.com">
     <link rel="dns-prefetch" href="//fonts.googleapis.com"> -->
@@ -83,53 +84,31 @@
       ]
     }
     </script>
-    <!-- Google Tag Manager -->
-    <script>
-      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-      })(window,document,'script','dataLayer','GTM-T7B3DGFV');
-    </script>
-  <!-- End Google Tag Manager -->
-   <!-- Google tag (gtag.js) event -->
-    <script>
-      gtag('event', 'page_view', {
-        // <event_parameters>
-      });
-    </script>
-    <!-- Google tag (gtag.js) event -->
-    <script>
-      gtag('event', 'click', {
-        // <event_parameters>
-      });
-    </script>
-    <!-- Google tag (gtag.js) event -->
-    <script>
-      gtag('event', 'user_engagement', {
-        // <event_parameters>
-      });
-    </script>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17508974002"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+      window.gtag = window.gtag || function(){dataLayer.push(arguments);};
 
-      gtag('config', 'AW-17508974002');
+      window.addEventListener('load', function () {
+        var schedule = window.requestIdleCallback || function (callback) { setTimeout(callback, 1200); };
+
+        schedule(function () {
+          (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+          new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+          j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+          'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+          })(window,document,'script','dataLayer','GTM-T7B3DGFV');
+
+          var ads = document.createElement('script');
+          ads.async = true;
+          ads.src = 'https://www.googletagmanager.com/gtag/js?id=AW-17508974002';
+          document.head.appendChild(ads);
+
+          gtag('js', new Date());
+          gtag('config', 'AW-17508974002');
+          gtag('config', 'G-E8QRDCMWC9');
+        });
+      });
     </script>
-
-    
-    <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-E8QRDCMWC9"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-E8QRDCMWC9');
-  </script>
 
   </head>
 

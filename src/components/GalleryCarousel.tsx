@@ -69,19 +69,15 @@ const GalleryCarousel = () => {
         <div className="relative max-w-6xl mx-auto">
           {/* Main Image */}
           <div className="relative aspect-[16/9] rounded-2xl overflow-hidden shadow-glow-lg border-2 border-primary/20">
-            {galleryImages.map((image, index) => (
-              <div
-                key={index}
-                className={`absolute inset-0 transition-opacity duration-1000 ${index === currentIndex ? "opacity-100" : "opacity-0"
-                  }`}
-              >
-                <img
-                  src={image.src}
-                  alt={image.alt}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-            ))}
+            <img
+              src={galleryImages[currentIndex].src}
+              alt={galleryImages[currentIndex].alt}
+              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-500"
+              loading="lazy"
+              decoding="async"
+              width="1200"
+              height="675"
+            />
 
             {/* Overlay gradient */}
             <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent pointer-events-none" />

@@ -1,10 +1,8 @@
-import { useState, useEffect } from "react";
+import { lazy, Suspense, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronRight, Search, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo.png";
-import FreePassModal from "./FreePassModal";
-import JoinNowModal from "./JoinNowModal";
+import logo from "@/assets/logo-header.png";
 import deiraBranch from "@/assets/365_fitness_gym_cover_image.jpg";
 import muhansniahBranch from "@/assets/IMG_Muhasnah_06.jpg";
 import monthlyPlan from "@/assets/monthly-plan.jpg";
@@ -14,6 +12,9 @@ import personalTraining from "@/assets/personal-training.jpg";
 import groupClasses from "@/assets/group-classes.jpg";
 import onlineCoaching from "@/assets/online-coaching.jpg";
 import { useLanguage } from "@/hooks/useLanguage";
+
+const FreePassModal = lazy(() => import("./FreePassModal"));
+const JoinNowModal = lazy(() => import("./JoinNowModal"));
 
 const Header = () => {
   const { t, changeLanguage, currentLanguage } = useLanguage();
@@ -60,7 +61,14 @@ const Header = () => {
           <div className="flex items-center justify-between py-3">
             {/* Logo */}
             <Link to="/" className="flex items-center hover:opacity-90 transition-opacity z-10">
-              <img src={logo} alt="365 Fitness Gym Dubai - 24 Hour Fitness Center" className="h-12 w-auto" />
+              <img
+                src={logo}
+                alt="365 Fitness Gym Dubai - 24 Hour Fitness Center"
+                className="h-12 w-auto"
+                width="180"
+                height="165"
+                decoding="async"
+              />
             </Link>
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center space-x-1">
@@ -381,8 +389,10 @@ const Header = () => {
         </div>
       )}
 
-      <FreePassModal isOpen={isFreePassOpen} onClose={() => setIsFreePassOpen(false)} />
-      <JoinNowModal isOpen={isJoinNowOpen} onClose={() => setIsJoinNowOpen(false)} />
+      <Suspense fallback={null}>
+        {isFreePassOpen && <FreePassModal isOpen={isFreePassOpen} onClose={() => setIsFreePassOpen(false)} />}
+        {isJoinNowOpen && <JoinNowModal isOpen={isJoinNowOpen} onClose={() => setIsJoinNowOpen(false)} />}
+      </Suspense>
     </>
   );
 };

@@ -77,6 +77,10 @@ const Trainers = () => {
                   src={trainer.image}
                   alt={trainer.name}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                  loading="lazy"
+                  decoding="async"
+                  width="480"
+                  height="640"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent" />
 

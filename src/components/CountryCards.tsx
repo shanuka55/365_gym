@@ -37,6 +37,10 @@ const CountryCards = () => {
                 src={location.image}
                 alt={location.name}
                 className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                loading="lazy"
+                decoding="async"
+                width="640"
+                height="480"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/50 to-transparent" />
 
