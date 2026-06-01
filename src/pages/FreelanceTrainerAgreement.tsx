@@ -192,25 +192,52 @@ const AGREEMENT_TERMS = [
     },
 ];
 
+const stringFromInput = (message: string) =>
+    z.coerce.string().trim().min(1, message);
+
+const optionalStringFromInput = z.preprocess(
+    (value) => {
+        if (value === null || value === undefined) {
+            return undefined;
+        }
+
+        const stringValue = String(value).trim();
+        return stringValue === "" ? undefined : stringValue;
+    },
+    z.string().optional(),
+);
+
+const optionalStringWithMax = (max: number, message: string) =>
+    optionalStringFromInput.pipe(z.string().max(max, message).optional());
+
 const trainerAgreementSchema = z.object({
-    fullName: z.string().trim().min(2, "Full name is required").max(120, "Full name is too long"),
-    email: z.string().trim().email("Valid email is required").max(255, "Email is too long"),
-    phone: z.string().trim().regex(/^[0-9+\s()-]+$/, "Valid phone number is required").max(30, "Phone number is too long"),
-    dateOfBirth: z.string().min(1, "Date of birth is required"),
-    emiratesId: z.string().trim().min(5, "Emirates ID or ID number is required").max(50, "ID number is too long"),
-    address: z.string().trim().min(5, "Address is required").max(300, "Address is too long"),
-    emergencyContactName: z.string().trim().min(2, "Emergency contact name is required").max(120, "Emergency contact name is too long"),
-    emergencyContactPhone: z.string().trim().regex(/^[0-9+\s()-]+$/, "Valid emergency contact phone is required").max(30, "Emergency phone is too long"),
-    bankName: z.string().trim().optional(),
-    accountHolderName: z.string().trim().optional(),
-    iban: z.string().trim().optional(),
+    fullName: stringFromInput("Full name is required").min(2, "Full name is required").max(120, "Full name is too long"),
+    email: stringFromInput("Email is required").email("Valid email is required").max(255, "Email is too long"),
+    phone: stringFromInput("Phone number is required").regex(/^[0-9+\s()-]+$/, "Valid phone number is required").max(30, "Phone number is too long"),
+    dateOfBirth: stringFromInput("Date of birth is required"),
+    emiratesId: stringFromInput("Emirates ID or ID number is required").min(5, "Emirates ID or ID number is required").max(50, "ID number is too long"),
+    address: stringFromInput("Address is required").min(5, "Address is required").max(300, "Address is too long"),
+    emergencyContactName: stringFromInput("Emergency contact name is required").min(2, "Emergency contact name is required").max(120, "Emergency contact name is too long"),
+    emergencyContactPhone: stringFromInput("Emergency contact phone is required").regex(/^[0-9+\s()-]+$/, "Valid emergency contact phone is required").max(30, "Emergency phone is too long"),
+    bankName: optionalStringFromInput,
+    accountHolderName: optionalStringFromInput,
+    iban: optionalStringFromInput,
     specializations: z.array(z.string()).min(1, "Please select at least one specialization"),
-    experienceYears: z.string().min(1, "Years of experience is required"),
-    availableTimes: z.string().trim().max(500, "Available times description is too long").optional(),
-    bio: z.string().trim().max(800, "Bio is too long").optional(),
+    experienceYears: z.coerce.number({ invalid_type_error: "Years of experience is required" }).min(0, "Years of experience is required").max(70, "Years of experience is too high"),
+    availableTimes: optionalStringWithMax(500, "Available times description is too long"),
+    bio: optionalStringWithMax(800, "Bio is too long"),
     qualifications: z.array(z.string()).optional(),
-    ratePerSession: z.string().regex(/^\d+(\.\d{1,2})?$/, "Valid rate is required").optional(),
-    signature: z.string().trim().min(2, "Please type your full name as signature").max(120, "Signature is too long"),
+    ratePerSession: z.preprocess(
+        (value) => {
+            if (value === null || value === undefined || String(value).trim() === "") {
+                return undefined;
+            }
+
+            return value;
+        },
+        z.coerce.number({ invalid_type_error: "Valid rate is required" }).min(0, "Valid rate is required").optional(),
+    ),
+    signature: stringFromInput("Please type your full name as signature").min(2, "Please type your full name as signature").max(120, "Signature is too long"),
     acceptsTerms: z.boolean().refine((value) => value, "You must accept the agreement terms"),
     acceptsConfidentiality: z.boolean().refine((value) => value, "You must accept the confidentiality agreement"),
     acceptsLiability: z.boolean().refine((value) => value, "You must accept the liability waiver"),
@@ -231,11 +258,11 @@ const initialFormData: TrainerAgreementFormData = {
     accountHolderName: "",
     iban: "",
     specializations: [],
-    experienceYears: "",
+    experienceYears: 0,
     availableTimes: "",
     bio: "",
     qualifications: [],
-    ratePerSession: "",
+    ratePerSession: undefined,
     signature: "",
     acceptsTerms: false,
     acceptsConfidentiality: false,
@@ -296,11 +323,11 @@ const FreelanceTrainerAgreement = () => {
                 account_holder_name: validation.data.accountHolderName || "",
                 iban: validation.data.iban || "",
                 specializations: validation.data.specializations.join(","),
-                experience_years: parseInt(validation.data.experienceYears, 10),
+                experience_years: validation.data.experienceYears,
                 available_times: validation.data.availableTimes || null,
                 bio: validation.data.bio || null,
                 qualifications: validation.data.qualifications?.join(",") || null,
-                rate_per_session: validation.data.ratePerSession ? parseFloat(validation.data.ratePerSession) : null,
+                rate_per_session: validation.data.ratePerSession ?? null,
                 signature: validation.data.signature,
                 accepts_terms: validation.data.acceptsTerms,
                 accepts_confidentiality: validation.data.acceptsConfidentiality,
@@ -337,7 +364,7 @@ const FreelanceTrainerAgreement = () => {
                         availableTimes: validation.data.availableTimes || null,
                         bio: validation.data.bio || null,
                         qualifications: validation.data.qualifications || null,
-                        ratePerSession: validation.data.ratePerSession || null,
+                        ratePerSession: validation.data.ratePerSession ?? null,
                         signature: validation.data.signature,
                         acceptsTerms: validation.data.acceptsTerms,
                         acceptsConfidentiality: validation.data.acceptsConfidentiality,
@@ -552,7 +579,7 @@ const FreelanceTrainerAgreement = () => {
                                             max="70"
                                             placeholder="5"
                                             value={formData.experienceYears}
-                                            onChange={(e) => updateField("experienceYears", e.target.value)}
+                                            onChange={(e) => updateField("experienceYears", e.target.valueAsNumber || 0)}
                                         />
                                     </div>
 
@@ -601,7 +628,7 @@ const FreelanceTrainerAgreement = () => {
                                         <Checkbox
                                             id="acceptsTerms"
                                             checked={formData.acceptsTerms}
-                                            onCheckedChange={(checked) => updateField("acceptsTerms", checked as boolean)}
+                                            onCheckedChange={(checked) => updateField("acceptsTerms", checked === true)}
                                         />
                                         <Label
                                             htmlFor="acceptsTerms"
@@ -615,7 +642,7 @@ const FreelanceTrainerAgreement = () => {
                                         <Checkbox
                                             id="acceptsConfidentiality"
                                             checked={formData.acceptsConfidentiality}
-                                            onCheckedChange={(checked) => updateField("acceptsConfidentiality", checked as boolean)}
+                                            onCheckedChange={(checked) => updateField("acceptsConfidentiality", checked === true)}
                                         />
                                         <Label
                                             htmlFor="acceptsConfidentiality"
@@ -629,7 +656,7 @@ const FreelanceTrainerAgreement = () => {
                                         <Checkbox
                                             id="acceptsLiability"
                                             checked={formData.acceptsLiability}
-                                            onCheckedChange={(checked) => updateField("acceptsLiability", checked as boolean)}
+                                            onCheckedChange={(checked) => updateField("acceptsLiability", checked === true)}
                                         />
                                         <Label
                                             htmlFor="acceptsLiability"

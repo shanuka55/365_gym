@@ -22,11 +22,11 @@ interface FreelanceTrainerAgreementRequest {
     accountHolderName: string;
     iban: string;
     specializations: string[];
-    experienceYears: number;
-    availableTimes?: string;
-    bio?: string;
+    experienceYears: number | string;
+    availableTimes?: string | null;
+    bio?: string | null;
     qualifications?: string[];
-    ratePerSession?: number;
+    ratePerSession?: number | string | null;
     signature: string;
     acceptsTerms: boolean;
     acceptsConfidentiality: boolean;
@@ -49,7 +49,20 @@ const tableRow = (label: string, value: unknown) => `
   </tr>
 `;
 
+const agreementTermsSummary = `
+  <div style="margin-top: 20px; padding: 16px; background: #fff8d8; border: 1px solid #f0d35b;">
+    <h2 style="margin: 0 0 10px; color: #0a1628; font-size: 18px;">Digital Agreement Confirmation</h2>
+    <p style="margin: 0 0 8px; color: #333;">
+      This document confirms the trainer digitally signed and submitted the 365 Fitness Freelance Trainer Agreement.
+    </p>
+    <p style="margin: 0; color: #333;">
+      The trainer accepted the agreement terms, client confidentiality requirements, and liability waiver by digital signature.
+    </p>
+  </div>
+`;
+
 const agreementTable = (agreement: FreelanceTrainerAgreementRequest) => `
+  <h2 style="color: #0a1628; font-size: 18px; margin: 0 0 12px;">Signed Freelance Trainer Agreement Details</h2>
   <table style="width: 100%; border-collapse: collapse; background: #ffffff;">
     ${tableRow("Agreement ID", agreement.id)}
     ${tableRow("Submitted At", agreement.submittedAt)}
@@ -75,6 +88,7 @@ const agreementTable = (agreement: FreelanceTrainerAgreementRequest) => `
     ${tableRow("Accepted Confidentiality Agreement", agreement.acceptsConfidentiality ? "Yes" : "No")}
     ${tableRow("Accepted Liability Waiver", agreement.acceptsLiability ? "Yes" : "No")}
   </table>
+  ${agreementTermsSummary}
 `;
 
 const emailShell = (title: string, content: string) => `
@@ -127,10 +141,10 @@ const handler = async (req: Request): Promise<Response> => {
             reply_to: agreement.email,
             subject: `New Freelance Trainer Agreement - ${agreement.fullName}`,
             html: emailShell(
-                "365 Fitness - Freelance Trainer Agreement Submission",
+                "365 Fitness - Signed Freelance Trainer Agreement",
                 `
           <p style="margin-top: 0; color: #333;">
-            ${escapeHtml(agreement.fullName)} has submitted a freelance trainer agreement. The submission has been saved in Supabase.
+            ${escapeHtml(agreement.fullName)} has submitted and digitally signed a freelance trainer agreement. The signed agreement details are below and the submission has been saved in Supabase.
           </p>
           ${agreementTable(agreement)}
         `,
@@ -141,15 +155,15 @@ const handler = async (req: Request): Promise<Response> => {
             from: "365 Fitness <noreply@365fitness.ae>",
             to: [agreement.email],
             reply_to: "info@365fitness.ae",
-            subject: "Your 365 Fitness Freelance Trainer Agreement Submission Confirmation",
+            subject: "Your 365 Fitness Freelance Trainer Agreement Copy",
             html: emailShell(
-                "Your 365 Fitness Freelance Trainer Agreement",
+                "Your 365 Fitness Freelance Trainer Agreement Copy",
                 `
           <p style="margin-top: 0; color: #333;">
             Dear ${escapeHtml(agreement.fullName)},
           </p>
           <p style="color: #333;">
-            Thank you for submitting your freelance trainer agreement to 365 Fitness. A copy of your submitted agreement details is below.
+            Thank you for submitting and digitally signing your freelance trainer agreement to 365 Fitness. A copy of your submitted agreement document is below.
           </p>
           ${agreementTable(agreement)}
           <p style="color: #333;">
