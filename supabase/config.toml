@@ -5,3 +5,6 @@ verify_jwt = false
 
 [functions.send-membership-agreement-email]
 verify_jwt = false
+
+[functions.send-freelance-trainer-agreement-email]
+verify_jwt = false
