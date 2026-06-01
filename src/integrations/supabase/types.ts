@@ -77,6 +77,84 @@ export type Database = {
         }
         Relationships: []
       }
+      freelance_trainer_agreements: {
+        Row: {
+          accepts_confidentiality: boolean
+          accepts_liability: boolean
+          accepts_terms: boolean
+          account_holder_name: string | null
+          address: string
+          bank_name: string | null
+          bio: string | null
+          created_at: string
+          date_of_birth: string
+          email: string
+          emergency_contact_name: string
+          emergency_contact_phone: string
+          experience_years: number
+          full_name: string
+          id: string
+          iban: string | null
+          qualifications: string | null
+          rate_per_session: number | null
+          signature: string
+          specializations: string
+          user_agent: string | null
+          available_times: string | null
+          emirates_id: string
+        }
+        Insert: {
+          accepts_confidentiality?: boolean
+          accepts_liability?: boolean
+          accepts_terms?: boolean
+          account_holder_name?: string | null
+          address: string
+          bank_name?: string | null
+          bio?: string | null
+          created_at?: string
+          date_of_birth: string
+          email: string
+          emergency_contact_name: string
+          emergency_contact_phone: string
+          experience_years: number
+          full_name: string
+          id?: string
+          iban?: string | null
+          qualifications?: string | null
+          rate_per_session?: number | null
+          signature: string
+          specializations: string
+          user_agent?: string | null
+          available_times?: string | null
+          emirates_id: string
+        }
+        Update: {
+          accepts_confidentiality?: boolean
+          accepts_liability?: boolean
+          accepts_terms?: boolean
+          account_holder_name?: string | null
+          address?: string
+          bank_name?: string | null
+          bio?: string | null
+          created_at?: string
+          date_of_birth?: string
+          email?: string
+          emergency_contact_name?: string
+          emergency_contact_phone?: string
+          experience_years?: number
+          full_name?: string
+          id?: string
+          iban?: string | null
+          qualifications?: string | null
+          rate_per_session?: number | null
+          signature?: string
+          specializations?: string
+          user_agent?: string | null
+          available_times?: string | null
+          emirates_id?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never

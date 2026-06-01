@@ -266,11 +266,7 @@ const FreelanceTrainerAgreement = () => {
     const handleSubmit = async (event: React.FormEvent) => {
         event.preventDefault();
 
-        const validation = trainerAgreementSchema.safeParse({
-            ...formData,
-            experienceYears: formData.experienceYears ? parseInt(formData.experienceYears) : NaN,
-            ratePerSession: formData.ratePerSession ? parseFloat(formData.ratePerSession) : undefined,
-        });
+        const validation = trainerAgreementSchema.safeParse(formData);
 
         if (!validation.success) {
             toast({
@@ -300,11 +296,11 @@ const FreelanceTrainerAgreement = () => {
                 account_holder_name: validation.data.accountHolderName || "",
                 iban: validation.data.iban || "",
                 specializations: validation.data.specializations.join(","),
-                experience_years: validation.data.experienceYears,
+                experience_years: parseInt(validation.data.experienceYears, 10),
                 available_times: validation.data.availableTimes || null,
                 bio: validation.data.bio || null,
                 qualifications: validation.data.qualifications?.join(",") || null,
-                rate_per_session: validation.data.ratePerSession || null,
+                rate_per_session: validation.data.ratePerSession ? parseFloat(validation.data.ratePerSession) : null,
                 signature: validation.data.signature,
                 accepts_terms: validation.data.acceptsTerms,
                 accepts_confidentiality: validation.data.acceptsConfidentiality,
