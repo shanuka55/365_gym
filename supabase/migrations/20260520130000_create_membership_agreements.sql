@@ -23,8 +23,16 @@ create table if not exists public.membership_agreements (
 
 alter table public.membership_agreements enable row level security;
 
+drop policy if exists "Anyone can submit membership agreements"
+on public.membership_agreements;
+
 create policy "Anyone can submit membership agreements"
 on public.membership_agreements
 for insert
 to anon, authenticated
 with check (accepts_terms = true and accepts_health_declaration = true);
+
+grant usage on schema public to anon, authenticated;
+grant insert on table public.membership_agreements to anon, authenticated;
+
+notify pgrst, 'reload schema';

@@ -27,8 +27,16 @@ create table if not exists public.freelance_trainer_agreements (
 
 alter table public.freelance_trainer_agreements enable row level security;
 
+drop policy if exists "Anyone can submit trainer agreements"
+on public.freelance_trainer_agreements;
+
 create policy "Anyone can submit trainer agreements"
 on public.freelance_trainer_agreements
 for insert
 to anon, authenticated
 with check (accepts_terms = true and accepts_confidentiality = true and accepts_liability = true);
+
+grant usage on schema public to anon, authenticated;
+grant insert on table public.freelance_trainer_agreements to anon, authenticated;
+
+notify pgrst, 'reload schema';
