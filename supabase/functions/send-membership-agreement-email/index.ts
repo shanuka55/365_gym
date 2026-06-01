@@ -57,11 +57,25 @@ const tableRow = (label: string, value: unknown) => `
 
 const summaryCard = (label: string, value: unknown) => `
   <td style="width: 50%; padding: 0 6px 12px 0;">
-    <div style="background: #0f1b2d; border-radius: 12px; padding: 16px; min-height: 66px;">
-      <div style="color: #9ca3af; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;">${escapeHtml(label)}</div>
-      <div style="color: #ffffff; font-size: 17px; font-weight: 800; margin-top: 7px;">${displayValue(value)}</div>
+    <div style="background: #f8fafc; border: 1px solid #e3e8ef; border-radius: 12px; padding: 16px; min-height: 66px;">
+      <div style="color: #64748b; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em;">${escapeHtml(label)}</div>
+      <div style="color: #0a1628; font-size: 17px; font-weight: 800; margin-top: 7px;">${displayValue(value)}</div>
     </div>
   </td>
+`;
+
+const signatureCertificate = (agreement: MembershipAgreementRequest) => `
+  <div style="margin-top: 18px; border: 1px solid #d7dee8; border-radius: 14px; overflow: hidden; background: #ffffff;">
+    <div style="padding: 14px 18px; background: #07111f; color: #ffcc00; font-size: 14px; font-weight: 900; letter-spacing: .04em; text-transform: uppercase;">
+      Digital Signature Certificate
+    </div>
+    <table style="width: 100%; border-collapse: collapse;">
+      ${tableRow("Signed By", agreement.signature)}
+      ${tableRow("Agreement Holder", agreement.fullName)}
+      ${tableRow("Agreement Reference", agreement.id)}
+      ${tableRow("Signed Timestamp", agreement.submittedAt)}
+    </table>
+  </div>
 `;
 
 const agreementNotice = (agreementType: string) => `
@@ -74,6 +88,10 @@ const agreementNotice = (agreementType: string) => `
 `;
 
 const agreementTable = (agreement: MembershipAgreementRequest) => `
+  <div style="margin-bottom: 18px; padding: 14px 18px; background: #0a1628; border-radius: 12px;">
+    <div style="color: #ffcc00; font-size: 12px; font-weight: 900; letter-spacing: .12em; text-transform: uppercase;">Official Digital Record</div>
+    <div style="color: #ffffff; font-size: 15px; margin-top: 6px;">Membership Agreement submitted through 365fitness.ae</div>
+  </div>
   <table role="presentation" style="width: 100%; border-collapse: collapse; margin: 0 0 8px;">
     <tr>
       ${summaryCard("Member", agreement.fullName)}
@@ -108,6 +126,7 @@ const agreementTable = (agreement: MembershipAgreementRequest) => `
       ${tableRow("Accepted Health Declaration", agreement.acceptsHealthDeclaration ? "Yes" : "No")}
     </table>
   </div>
+  ${signatureCertificate(agreement)}
   ${agreementNotice("Membership Agreement")}
 `;
 
@@ -117,7 +136,8 @@ const emailShell = (title: string, preview: string, content: string) => `
     <div style="max-width: 760px; margin: 0 auto; padding: 28px 14px;">
       <div style="background: #07111f; border-radius: 18px 18px 0 0; padding: 28px 30px; text-align: center;">
         <div style="color: #ffcc00; font-size: 13px; font-weight: 900; letter-spacing: .14em; text-transform: uppercase;">365 Fitness</div>
-        <h1 style="margin: 10px 0 0; color: #ffffff; font-size: 26px; line-height: 1.25; font-weight: 900;">${escapeHtml(title)}</h1>
+        <h1 style="margin: 10px 0 0; color: #ffffff; font-size: 24px; line-height: 1.25; font-weight: 900;">${escapeHtml(title)}</h1>
+        <div style="margin-top: 14px; display: inline-block; padding: 7px 12px; border-radius: 999px; background: #ffcc00; color: #07111f; font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .05em;">Signed Agreement Copy</div>
       </div>
       <div style="background: #ffffff; border: 1px solid #e3e8ef; border-top: 0; border-radius: 0 0 18px 18px; padding: 28px;">
         ${content}
@@ -163,7 +183,7 @@ const handler = async (req: Request): Promise<Response> => {
       from: "365 Fitness <noreply@365fitness.ae>",
       to: adminRecipients,
       reply_to: agreement.email,
-      subject: `New Signed Membership Agreement - ${agreement.fullName}`,
+      subject: `Signed Membership Agreement - ${agreement.fullName}`,
       html: emailShell(
         "365 Fitness - Signed Membership Agreement",
         `${agreement.fullName} signed a 365 Fitness membership agreement.`,
@@ -180,7 +200,7 @@ const handler = async (req: Request): Promise<Response> => {
       from: "365 Fitness <noreply@365fitness.ae>",
       to: [agreement.email],
       reply_to: "info@365fitness.ae",
-      subject: "Your 365 Fitness Membership Agreement Copy",
+      subject: "Your Signed 365 Fitness Membership Agreement",
       html: emailShell(
         "Your 365 Fitness Membership Agreement Copy",
         "Thank you for signing your 365 Fitness membership agreement.",
