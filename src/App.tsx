@@ -20,6 +20,7 @@ const Blog = lazy(() => import("./pages/Blog"));
 const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Connection = lazy(() => import("./pages/Connection"));
 const MembershipAgreement = lazy(() => import("./pages/MembershipAgreement"));
+const FreelanceTrainerAgreement = lazy(() => import("./pages/FreelanceTrainerAgreement"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const Tracker = () => {
@@ -71,6 +72,7 @@ const App = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/membership-agreement" element={<MembershipAgreement />} />
+          <Route path="/freelance-trainer-agreement" element={<FreelanceTrainerAgreement />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
