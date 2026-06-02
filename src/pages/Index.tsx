@@ -8,6 +8,7 @@ const Locations = lazy(() => import("@/components/Locations"));
 const WhyChooseUs = lazy(() => import("@/components/WhyChooseUs"));
 const Reviews = lazy(() => import("@/components/Reviews"));
 const Trainers = lazy(() => import("@/components/Trainers"));
+const FAQ = lazy(() => import("@/components/FAQ"));
 const Footer = lazy(() => import("@/components/Footer"));
 const WhatsAppButton = lazy(() => import("@/components/WhatsAppButton"));
 
@@ -40,6 +41,7 @@ const Index = () => {
             <Locations />
             <WhyChooseUs />
             <Reviews />
+            <FAQ />
             <Trainers />
           </Suspense>
         )}
