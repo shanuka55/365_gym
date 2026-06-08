@@ -190,6 +190,176 @@ const AGREEMENT_TERMS = [
             },
         ],
     },
+    {
+        title: "10. Prohibited Activities",
+        items: [
+            {
+                label: "10.1 Member Solicitation",
+                text: "Trainers must not contact, recruit, solicit, market, or provide personal training services to existing 365 Fitness members without prior written approval from management.",
+            },
+            {
+                label: "10.2 Unauthorized Contact Information",
+                text: "Trainers must not collect, exchange, or share personal contact details with existing gym members without authorization.",
+            },
+            {
+                label: "10.3 Unauthorized Services",
+                text: "Trainers must not conduct group classes, workshops, boot camps, seminars, nutrition consultations, or coaching services without written approval.",
+            },
+            {
+                label: "10.4 Misrepresentation",
+                text: "Trainers must not represent themselves as employees, agents, or official representatives of 365 Fitness.",
+            },
+            {
+                label: "10.5 Misconduct",
+                text: "Harassment, discrimination, abusive behavior, or any conduct that conflicts with the interests of 365 Fitness is strictly prohibited.",
+            },
+        ],
+    },
+    {
+        title: "11. Communication, Complaints and Requests",
+        items: [
+            {
+                label: "11.1 Facility Concerns",
+                text: "Trainers may report concerns regarding facilities, equipment, maintenance, cleanliness, operations, or safety directly to management.",
+            },
+            {
+                label: "11.2 Feedback Submission",
+                text: "Suggestions, complaints, and feedback must be submitted through official communication channels provided by 365 Fitness.",
+            },
+            {
+                label: "11.3 Professional Communication",
+                text: "Trainers must communicate professionally and must not create disturbances, confrontations, or disruptions while raising concerns.",
+            },
+        ],
+    },
+    {
+        title: "12. Relationship with 365 Fitness Trainers",
+        items: [
+            {
+                label: "12.1 Mutual Respect",
+                text: "Official 365 Fitness trainers and freelance trainers must maintain a professional and respectful working relationship.",
+            },
+            {
+                label: "12.2 Non-Interference",
+                text: "Neither party shall intentionally interfere with the duties, responsibilities, clients, or business activities of the other.",
+            },
+            {
+                label: "12.3 Professional Environment",
+                text: "All trainers are expected to contribute to a positive, safe, and professional gym environment.",
+            },
+        ],
+    },
+    {
+        title: "13. Breach of Agreement",
+        items: [
+            {
+                label: "13.1 Solicitation Violations",
+                text: "Soliciting, recruiting, or contacting existing gym members without authorization constitutes a breach of this agreement.",
+            },
+            {
+                label: "13.2 Policy Violations",
+                text: "Violations of gym policies, facility rules, or operational procedures shall constitute a breach of this agreement.",
+            },
+            {
+                label: "13.3 Documentation Failure",
+                text: "Failure to maintain required certifications, licenses, visas, or legal documentation shall be considered a breach.",
+            },
+            {
+                label: "13.4 Misconduct",
+                text: "Harassment, discrimination, disruptive behavior, or unauthorized business activities may result in disciplinary action or termination.",
+            },
+        ],
+    },
+    {
+        title: "14. Termination",
+        items: [
+            {
+                label: "14.1 Immediate Termination",
+                text: "365 Fitness reserves the right to immediately terminate this agreement and revoke facility access if a trainer breaches any provision of these terms.",
+            },
+            {
+                label: "14.2 Access Revocation",
+                text: "Upon termination, all memberships, permissions, training privileges, and facility access rights may be cancelled immediately.",
+            },
+            {
+                label: "14.3 No Refund Policy",
+                text: "No membership fees, trainer fees, deposits, or other payments shall be refunded following termination resulting from a breach of this agreement.",
+            },
+        ],
+    },
+    {
+        title: "15. Membership Validity and Trainer Protection",
+        items: [
+            {
+                label: "15.1 Membership Continuity",
+                text: "Freelance trainers who maintain active memberships and comply with all terms may continue conducting training activities during their membership period.",
+            },
+            {
+                label: "15.2 Protection of Existing Trainers",
+                text: "365 Fitness shall not revoke access rights or terminate memberships of compliant trainers without valid cause.",
+            },
+            {
+                label: "15.3 Existing Membership Terms",
+                text: "Policy changes introduced after a trainer's membership commencement shall not apply until membership renewal unless required by law or safety concerns.",
+            },
+            {
+                label: "15.4 Exceptions",
+                text: "This protection does not apply in cases involving misconduct, fraud, safety violations, legal violations, or failure to maintain required certifications.",
+            },
+        ],
+    },
+    {
+        title: "16. Applicability Across All Branches",
+        items: [
+            {
+                label: "16.1 Branch Coverage",
+                text: "This agreement applies to all existing and future 365 Fitness branches and facilities.",
+            },
+            {
+                label: "16.2 Network Enforcement",
+                text: "All terms, obligations, restrictions, and policies contained in this agreement are enforceable across all 365 Fitness locations.",
+            },
+            {
+                label: "16.3 Cross-Branch Violations",
+                text: "Violations occurring at one branch may be treated as violations throughout the entire 365 Fitness network.",
+            },
+            {
+                label: "16.4 Access Restrictions",
+                text: "A trainer whose agreement is terminated at one branch may have access revoked at all 365 Fitness branches.",
+            },
+        ],
+    },
+    {
+        title: "17. Amendments",
+        items: [
+            {
+                label: "17.1 Right to Amend",
+                text: "365 Fitness reserves the right to amend, modify, update, or introduce policies, rules, procedures, and operational requirements at any time.",
+            },
+            {
+                label: "17.2 Existing Membership Protection",
+                text: "Any amendments shall remain subject to the protections provided to compliant trainers during their active membership period.",
+            },
+        ],
+    },
+    {
+        title: "18. Governing Law and Declaration",
+        items: [
+            {
+                label: "18.1 Governing Law",
+                text: "This agreement shall be governed by and interpreted in accordance with the laws of the United Arab Emirates.",
+            },
+            {
+                label: "18.2 Jurisdiction",
+                text: "Any disputes arising from this agreement shall be subject to the jurisdiction of the courts of Dubai, UAE.",
+            },
+            {
+                label: "18.3 Trainer Declaration",
+                text: "By accepting this agreement, the trainer confirms that they have read, understood, and agreed to comply with all terms, conditions, policies, and requirements of 365 Fitness.",
+            },
+        ],
+    }
+
 ];
 
 const stringFromInput = (message: string) =>
