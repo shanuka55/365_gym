@@ -15,6 +15,7 @@ import blogTransformLifestyle from "@/assets/transform-your-lifestyle-with-365-f
 import blogKidsKickboxing from "@/assets/blog-kids-kickboxing-gym.jpg";
 import blogWeightLossMistakes from "@/assets/blog-weight-loss-mistakes-gym.jpg";
 import blogWeightLossMealPlan from "@/assets/blog-weight-loss-meal-plan-gym.jpg";
+import blogMMATrainingDubai from "@/assets/blog-mma-training-dubai.jpg";
 
 export interface BlogPost {
   id: number;
