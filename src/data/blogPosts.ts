@@ -1016,7 +1016,7 @@ export const blogPosts: BlogPost[] = [
     title: "Best Boxing Classes in Dubai: Build Strength, Confidence & Fitness",
     excerpt: "Looking for the best boxing classes in Dubai? Discover how boxing training improves fitness, weight loss, confidence, self-defense, and overall health at 365 Fitness Gym.",
     image: blogBestBoxingDubai,
-    date: "May 10, 2026",
+    date: "june 25, 2026",
     readTime: "10 min read",
     category: "Boxing",
     content: [
