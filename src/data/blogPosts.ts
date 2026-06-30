@@ -1141,7 +1141,7 @@ export const blogPosts: BlogPost[] = [
 
       "What You Get at 365 Fitness Gym",
 
-      "365 Fitness Gym is one of Dubai's leading fitness destinations with over 15 years of experience and more than 95,000 members across the UAE.",
+      "365 Fitness Gym is one of Dubai's leading fitness destinations with over 15 years of experience and more members across the UAE.",
 
       "Our members enjoy access to premium facilities designed for beginners, experienced lifters, athletes, and anyone looking to improve their health.",
 
@@ -1191,7 +1191,7 @@ export const blogPosts: BlogPost[] = [
 
       "This personalized approach helps members achieve better results while staying motivated and injury-free.",
 
-      "Why Thousands Choose 365 Fitness Gym",
+      "Why Choose 365 Fitness Gym",
 
       "Our members choose us because we combine affordable pricing with premium facilities, professional coaching, and a supportive fitness community.",
 
@@ -1207,7 +1207,7 @@ export const blogPosts: BlogPost[] = [
       "Contact Deira: 054 712 0925",
 
       "365 Fitness Gym – Muhaisnah First",
-      "Our Muhaisnah First branch provides spacious workout areas, premium equipment, certified trainers, ladies-only gym facilities, functional training zones, and over 400 monthly group fitness classes.",
+      "Our Muhaisnah First - Madinat-badr branch provides spacious workout areas, premium equipment, certified trainers, ladies-only gym facilities, functional training zones, and monthly group fitness classes.",
 
       "Contact Muhaisnah: 054 712 0927",
 
