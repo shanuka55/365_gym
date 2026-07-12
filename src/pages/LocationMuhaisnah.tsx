@@ -36,6 +36,8 @@ import img_10 from "@/assets/365 FITNESS GYM MUHASNAH 10.jpg";
 import img_11 from "@/assets/365 FITNESS GYM MUHASNAH 11.jpg";
 import img_12 from "@/assets/365 FITNESS GYM MUHASNAH 12.jpg";
 
+const muhaisnahGoogleProfileUrl = "https://share.google/p80UREIg1DLHQRqO7";
+
 const muhaisnahFaqs = [
   {
     question: "Is your gym open 24 hours?",
@@ -90,6 +92,7 @@ const muhaisnahSeoSchema = {
       "@type": "ExerciseGym",
       name: "365 Fitness Muhaisnah First",
       url: "https://www.365fitness.ae/locations/muhaisnah-first",
+      hasMap: muhaisnahGoogleProfileUrl,
       telephone: "+971547120927",
       address: {
         "@type": "PostalAddress",
@@ -240,11 +243,13 @@ const LocationMuhaisnah = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <Card className="p-6 text-center">
+                <a href={muhaisnahGoogleProfileUrl} target="_blank" rel="noopener noreferrer" className="block group/location">
                 <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-bold mb-2">Address</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground group-hover/location:text-primary transition-colors">
                   6CP7+R99 - Muhaisnah First - Muhaisnah - Dubai
                 </p>
+                </a>
               </Card>
               <Card className="p-6 text-center">
                 <Phone className="h-8 w-8 text-primary mx-auto mb-3" />

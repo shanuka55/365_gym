@@ -1,182 +1,236 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://365fitness.ae/</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/about</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/about</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/gallery</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/gallery</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/contact</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/contact</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/connection</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/connection</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/membership-agreement</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/membership-agreement</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/locations/deira-muraqqabat</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/freelance-trainer-agreement</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.365fitness.ae/locations/deira-muraqqabat</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.365fitness.ae/locations/muhaisnah-first</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://www.365fitness.ae/plans/monthly-plans</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/locations/muhaisnah-first</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/plans/annual-plans</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/plans/monthly-plans</loc>
-    <lastmod>2026-05-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://365fitness.ae/plans/annual-plans</loc>
-    <lastmod>2026-05-18</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://365fitness.ae/plans/corporate-plans</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/plans/corporate-plans</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/services/personal-training</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/services/personal-training</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/services/group-classes</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/services/group-classes</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/services/online-coaching</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/services/online-coaching</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog</loc>
-    <lastmod>2026-05-18</lastmod>
+    <loc>https://www.365fitness.ae/blog</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/beginner-gym-guide-dubai</loc>
+    <loc>https://www.365fitness.ae/blog/beginner-gym-guide-dubai</loc>
     <lastmod>2026-05-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/building-muscle-complete-guide-strength-training</loc>
+    <loc>https://www.365fitness.ae/blog/building-muscle-complete-guide-strength-training</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/nutrition-essentials-healthy-diet-plan</loc>
+    <loc>https://www.365fitness.ae/blog/nutrition-essentials-healthy-diet-plan</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/sustainable-weight-loss-science-based-strategies</loc>
+    <loc>https://www.365fitness.ae/blog/sustainable-weight-loss-science-based-strategies</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/hiit-training-maximum-fat-burn-minimum-time</loc>
+    <loc>https://www.365fitness.ae/blog/hiit-training-maximum-fat-burn-minimum-time</loc>
     <lastmod>2026-05-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/meal-prep-mastery-save-time-stay-on-track</loc>
+    <loc>https://www.365fitness.ae/blog/meal-prep-mastery-save-time-stay-on-track</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/recovery-and-rest-days-essential-for-progress</loc>
+    <loc>https://www.365fitness.ae/blog/recovery-and-rest-days-essential-for-progress</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/yoga-and-flexibility-training-for-athletes-and-gym-goers</loc>
+    <loc>https://www.365fitness.ae/blog/yoga-and-flexibility-training-for-athletes-and-gym-goers</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/essential-supplements-guide-what-actually-works</loc>
+    <loc>https://www.365fitness.ae/blog/essential-supplements-guide-what-actually-works</loc>
     <lastmod>2026-05-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/mental-health-and-fitness-connection-training-your-mind</loc>
+    <loc>https://www.365fitness.ae/blog/mental-health-and-fitness-connection-training-your-mind</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/senior-fitness-staying-strong-and-active-at-any-age</loc>
+    <loc>https://www.365fitness.ae/blog/senior-fitness-staying-strong-and-active-at-any-age</loc>
     <lastmod>2026-05-09</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/best-gym-in-deira-dubai-for-weight-loss-and-bodybuilding</loc>
+    <loc>https://www.365fitness.ae/blog/best-gym-in-deira-dubai-for-weight-loss-and-bodybuilding</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.365fitness.ae/blog/why-muhaisnah-residents-are-choosing-professional-fitness-coaching</loc>
+    <lastmod>2026-05-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.75</priority>
+  </url>
+  <url>
+    <loc>https://www.365fitness.ae/blog/transform-your-lifestyle-with-365-fitness-gym</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/why-muhaisnah-residents-are-choosing-professional-fitness-coaching</loc>
+    <loc>https://www.365fitness.ae/blog/why-kickboxing-is-the-best-workout-for-kids</loc>
     <lastmod>2026-05-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/transform-your-lifestyle-with-365-fitness-gym</loc>
-    <lastmod>2026-05-10</lastmod>
+    <loc>https://www.365fitness.ae/blog/top-mistakes-people-make-when-trying-to-lose-weight</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://365fitness.ae/blog/why-kickboxing-is-the-best-workout-for-kids</loc>
-    <lastmod>2026-05-10</lastmod>
+    <loc>https://www.365fitness.ae/blog/best-meal-plan-for-weight-loss-beginners</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.365fitness.ae/blog/top-benefits-of-mma-training-in-dubai</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.365fitness.ae/blog/personal-training-vs-working-out-alone</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.365fitness.ae/blog/best-boxing-classes-in-dubai</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.365fitness.ae/blog/gym-membership-costs-in-dubai</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.365fitness.ae/blog/sauna-recovery-benefits-after-workout</loc>
+    <lastmod>2026-07-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://www.365fitness.ae/blog/gym-vs-home-workout</loc>
+    <lastmod>2026-07-13</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

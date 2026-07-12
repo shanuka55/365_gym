@@ -18,6 +18,8 @@ import img_5 from "@/assets/IMG_Deira_05.jpg";
 import img_6 from "@/assets/IMG_Deira_06.jpg";
 import img_7 from "@/assets/deira-branch.jpg";
 
+const deiraGoogleProfileUrl = "https://share.google/8ArVq05n3QaSpmVIc";
+
 const deiraFaqs = [
   {
     question: "Is your gym open 24 hours?",
@@ -72,6 +74,7 @@ const deiraSeoSchema = {
       "@type": "ExerciseGym",
       name: "365 Fitness Deira Muraqqabat",
       url: "https://www.365fitness.ae/locations/deira-muraqqabat",
+      hasMap: deiraGoogleProfileUrl,
       telephone: "+971547120925",
       address: {
         "@type": "PostalAddress",
@@ -222,11 +225,13 @@ const LocationDeira = () => {
           <div className="container mx-auto px-4">
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <Card className="p-6 text-center">
+                <a href={deiraGoogleProfileUrl} target="_blank" rel="noopener noreferrer" className="block group/location">
                 <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-bold mb-2">Address</h3>
-                <p className="text-sm text-muted-foreground">
+                <p className="text-sm text-muted-foreground group-hover/location:text-primary transition-colors">
                   MZ 08, Dubai Municipality Building, Near Muraqqbat Police Station, Salah Al Din Road, Dubai
                 </p>
+                </a>
               </Card>
               <Card className="p-6 text-center">
                 <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
