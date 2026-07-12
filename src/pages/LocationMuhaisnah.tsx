@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
 import TrainingRates from "@/components/TrainingRates";
 import PageSeo from "@/components/PageSeo";
+import BranchReviews, { branchReviewData } from "@/components/BranchReviews";
 import main_image2 from "@/assets/muhasniah-branch.jpg";
 import m_image1 from "@/assets/IMG_Muhasnah_01.jpg";
 import m_image2 from "@/assets/IMG_Muhasnah_02.jpg";
@@ -69,6 +70,42 @@ const muhaisnahFaqSchema = {
       text: faq.answer,
     },
   })),
+};
+
+const muhaisnahSeoSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      mainEntity: muhaisnahFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+    {
+      "@type": "ExerciseGym",
+      name: "365 Fitness Muhaisnah First",
+      url: "https://www.365fitness.ae/locations/muhaisnah-first",
+      telephone: "+971547120927",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "6CP7+R99 - Muhaisnah First - Muhaisnah",
+        addressLocality: "Muhaisnah",
+        addressRegion: "Dubai",
+        addressCountry: "AE",
+      },
+      review: branchReviewData.muhaisnah.reviews.map((review) => ({
+        "@type": "Review",
+        author: { "@type": "Person", name: review.name },
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+        reviewBody: review.text,
+      })),
+    },
+  ],
 };
 
 
@@ -168,7 +205,7 @@ const LocationMuhaisnah = () => {
         title="Best Gym in Muhaisnah | 24/7 Fitness Center | 365 Fitness"
         description="Join the best 24/7 gym in Muhaisnah, Dubai. Personal training, ladies section, group classes, CrossFit, MMA, boxing and affordable membership packages."
         canonical="https://www.365fitness.ae/locations/muhaisnah-first"
-        schema={muhaisnahFaqSchema}
+        schema={muhaisnahSeoSchema}
       />
       <Header />
       <div className="min-h-screen bg-background">
@@ -526,6 +563,8 @@ const LocationMuhaisnah = () => {
             </Button>
           </div>
         </section>
+
+        <BranchReviews branch="muhaisnah" />
 
         {/* FAQ */}
         <section className="py-16 bg-secondary/20">

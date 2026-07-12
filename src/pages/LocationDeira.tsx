@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
 import TrainingRates from "@/components/TrainingRates";
 import PageSeo from "@/components/PageSeo";
+import BranchReviews, { branchReviewData } from "@/components/BranchReviews";
 import deiraImage from "@/assets/365_fitness_gym_cover_image.jpg";
 import img_1 from "@/assets/IMG_Deira_01.jpg";
 import img_2 from "@/assets/IMG_Deira_02.jpg";
@@ -51,6 +52,42 @@ const deiraFaqSchema = {
       text: faq.answer,
     },
   })),
+};
+
+const deiraSeoSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "FAQPage",
+      mainEntity: deiraFaqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+          "@type": "Answer",
+          text: faq.answer,
+        },
+      })),
+    },
+    {
+      "@type": "ExerciseGym",
+      name: "365 Fitness Deira Muraqqabat",
+      url: "https://www.365fitness.ae/locations/deira-muraqqabat",
+      telephone: "+971547120925",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: "MZ 08, Dubai Municipality Building, Near Muraqqabat Police Station, Salah Al Din Road",
+        addressLocality: "Deira",
+        addressRegion: "Dubai",
+        addressCountry: "AE",
+      },
+      review: branchReviewData.deira.reviews.map((review) => ({
+        "@type": "Review",
+        author: { "@type": "Person", name: review.name },
+        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
+        reviewBody: review.text,
+      })),
+    },
+  ],
 };
 
 const LocationDeira = () => {
@@ -150,7 +187,7 @@ const LocationDeira = () => {
         title="Best Gym in Deira Muraqqabat | 24/7 Fitness Center | 365 Fitness"
         description="Join the best 24/7 gym in Deira Muraqqabat, Dubai. Personal training, group classes, CrossFit, MMA, boxing and affordable membership packages."
         canonical="https://www.365fitness.ae/locations/deira-muraqqabat"
-        schema={deiraFaqSchema}
+        schema={deiraSeoSchema}
       />
       <Header />
       <div className="min-h-screen bg-background">
@@ -408,6 +445,8 @@ const LocationDeira = () => {
             </Button>
           </div>
         </section>
+
+        <BranchReviews branch="deira" />
 
         {/* FAQ */}
         <section className="py-16 bg-secondary/20">
