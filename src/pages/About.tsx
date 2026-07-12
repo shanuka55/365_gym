@@ -100,7 +100,7 @@ const About = () => {
                   <h3 className="text-3xl font-bold text-foreground mb-4">
                     Our <span className="text-primary">Mission</span>
                   </h3>
-                  <p className="text-lg text-muted-foreground" alter="Our Mission">
+                  <p className="text-lg text-muted-foreground">
                     To empower individuals to achieve their fitness goals through world-class facilities,
                     expert guidance, and a supportive community that inspires transformation every single day.
                   </p>
