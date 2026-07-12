@@ -2,9 +2,12 @@ import { useState } from "react";
 import { MapPin, Phone, Clock, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
+import TrainingRates from "@/components/TrainingRates";
+import PageSeo from "@/components/PageSeo";
 import main_image2 from "@/assets/muhasniah-branch.jpg";
 import m_image1 from "@/assets/IMG_Muhasnah_01.jpg";
 import m_image2 from "@/assets/IMG_Muhasnah_02.jpg";
@@ -31,6 +34,42 @@ import img_09 from "@/assets/365 FITNESS GYM MUHASNAH 09.jpg";
 import img_10 from "@/assets/365 FITNESS GYM MUHASNAH 10.jpg";
 import img_11 from "@/assets/365 FITNESS GYM MUHASNAH 11.jpg";
 import img_12 from "@/assets/365 FITNESS GYM MUHASNAH 12.jpg";
+
+const muhaisnahFaqs = [
+  {
+    question: "Is your gym open 24 hours?",
+    answer: "Yes, 365 Fitness Muhaisnah First is open 24/7, giving members flexible access day and night.",
+  },
+  {
+    question: "Do you have a ladies-only section?",
+    answer: "Yes, our Muhaisnah gym includes a ladies separate area for comfortable and focused training.",
+  },
+  {
+    question: "Do you offer personal training?",
+    answer: "Yes, certified personal trainers are available for weight loss, strength training, body shaping, MMA, and fitness transformation programs.",
+  },
+  {
+    question: "Is parking available?",
+    answer: "Parking is available around the Muhaisnah First, Madinat Badr location for members and visitors.",
+  },
+  {
+    question: "How much is membership?",
+    answer: "Muhaisnah membership packages start from AED 449 monthly, with 3-month, 6-month, and annual options available.",
+  },
+];
+
+const muhaisnahFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: muhaisnahFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 
 
 const LocationMuhaisnah = () => {
@@ -125,6 +164,12 @@ const LocationMuhaisnah = () => {
 
   return (
     <>
+      <PageSeo
+        title="Best Gym in Muhaisnah | 24/7 Fitness Center | 365 Fitness"
+        description="Join the best 24/7 gym in Muhaisnah, Dubai. Personal training, ladies section, group classes, CrossFit, MMA, boxing and affordable membership packages."
+        canonical="https://www.365fitness.ae/locations/muhaisnah-first"
+        schema={muhaisnahFaqSchema}
+      />
       <Header />
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
@@ -137,11 +182,11 @@ const LocationMuhaisnah = () => {
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Muhaisnah First
-              <span className="block text-primary mt-2">Madinat Badr</span>
+              Best Gym in Muhaisnah, Dubai
+              <span className="block text-primary mt-2">Ladies Separate Area</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Premium Equipment • Expert Trainers • 24/7 Access
+              24/7 fitness center in Muhaisnah First with personal training, ladies gym facilities, group classes, CrossFit, MMA, boxing, and affordable membership packages.
             </p>
             <Button
               size="lg"
@@ -366,43 +411,41 @@ const LocationMuhaisnah = () => {
         <section className="py-16 bg-secondary/20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-center mb-12">
-                Why Choose <span className="text-primary">Muhaisnah Branch</span>
+              <h2 className="text-4xl font-bold text-center mb-8">
+                Why Choose <span className="text-primary">365 Fitness Muhaisnah</span>
               </h2>
+              <p className="text-lg text-muted-foreground text-center mb-12">
+                Looking for the best gym in Muhaisnah? 365 Fitness Muhaisnah is a premium 24-hour fitness center in Muhaisnah 1, conveniently located near Madinat Badr, Al Khawaneej, Al Qusais, Mizhar, and Muhaisnah 4. We offer state-of-the-art gym equipment, certified personal trainers, ladies-only workout facilities, group fitness classes, and affordable membership plans designed to help you achieve your fitness goals.
+              </p>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Extreme Fitness</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">About</h3>
                   <p className="text-muted-foreground">
-                    Push beyond your limits at our EXTREME FITNESS zone – built for serious lifters and high-intensity training enthusiasts.
-                    From heavy-duty strength equipment to HIIT setups, this area is designed for those who train hard and never settle.
+                    At 365 Fitness Muhaisnah, we believe fitness should be accessible to everyone. Our spacious gym features modern strength machines, free weights, cardio equipment, functional training zones, stretching areas, and recovery facilities. Whether your goal is weight loss, bodybuilding, muscle gain, or improving your overall health, our experienced team provides the support and motivation you need every step of the way.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Personal Training</h3>
                   <p className="text-muted-foreground">
-                    Achieve faster, smarter, and safer results with our Personal Training programs. Our certified personal trainers work closely
-                    with you to create custom workout plans, track your progress, and keep you motivated every step of the way.
+                    Achieve better results with our professional personal trainers in Muhaisnah. We develop personalized workout programs tailored to your body type, fitness level, and objectives. From fat loss and strength training to muscle building and athletic performance, our trainers monitor your progress, improve your technique, and keep you motivated throughout your fitness journey.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Body Shaping</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">Ladies Gym</h3>
                   <p className="text-muted-foreground">
-                    Sculpt your dream physique with our Body Shaping programs. Whether you're aiming to tone muscles, lose fat, or build definition –
-                    our certified trainers and custom workout plans are here to guide your transformation.
+                    Our dedicated ladies gym in Muhaisnah offers a safe, comfortable, and private workout environment exclusively for women. With customized body transformation programs, strength training, weight management plans, and experienced female trainers, we help women build confidence while reaching their health and fitness goals.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Weight Loss Classes</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">Group Classes</h3>
                   <p className="text-muted-foreground">
-                    Balance your body and mind with our Yoga sessions, designed to improve flexibility, reduce stress, and promote inner peace.
-                    Want something more energetic? Join our Zumba classes for a fun, high-energy cardio workout.
+                    Join our energetic fitness classes in Muhaisnah, including Yoga, Zumba, HIIT, Functional Training, Aerobics, and strength-based group workouts. Our classes are designed to improve flexibility, burn calories, boost endurance, and keep you motivated through fun and engaging sessions suitable for all fitness levels.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
         {/* Pricing */}
         <section className="py-16">
           <div className="container mx-auto px-4">
@@ -465,6 +508,7 @@ const LocationMuhaisnah = () => {
                 </Card>
               ))}
             </div>
+            <TrainingRates branchName="Muhaisnah First Branch" branch="muhaisnah" />
           </div>
         </section>
 
@@ -482,6 +526,38 @@ const LocationMuhaisnah = () => {
             </Button>
           </div>
         </section>
+
+        {/* FAQ */}
+        <section className="py-16 bg-secondary/20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl font-bold text-center mb-12">
+                Muhaisnah Gym <span className="text-primary">FAQ</span>
+              </h2>
+              <Accordion
+                type="single"
+                collapsible
+                defaultValue="item-0"
+                className="bg-card border border-border rounded-lg overflow-hidden"
+              >
+                {muhaisnahFaqs.map((faq, index) => (
+                  <AccordionItem
+                    key={faq.question}
+                    value={`item-${index}`}
+                    className="border-border px-5 md:px-7 last:border-b-0"
+                  >
+                    <AccordionTrigger className="text-left text-base md:text-lg font-bold text-foreground hover:text-primary hover:no-underline py-6">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </section>
       </div>
       <Footer />
       <JoinNowModal isOpen={isJoinModalOpen} onClose={() => setIsJoinModalOpen(false)} />
@@ -490,3 +566,4 @@ const LocationMuhaisnah = () => {
 };
 
 export default LocationMuhaisnah;
+

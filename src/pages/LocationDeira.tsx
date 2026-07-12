@@ -2,9 +2,12 @@ import { useState } from "react";
 import { MapPin, Phone, Clock, Check } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
+import TrainingRates from "@/components/TrainingRates";
+import PageSeo from "@/components/PageSeo";
 import deiraImage from "@/assets/365_fitness_gym_cover_image.jpg";
 import img_1 from "@/assets/IMG_Deira_01.jpg";
 import img_2 from "@/assets/IMG_Deira_02.jpg";
@@ -13,6 +16,42 @@ import img_4 from "@/assets/IMG_Deira_04.jpg";
 import img_5 from "@/assets/IMG_Deira_05.jpg";
 import img_6 from "@/assets/IMG_Deira_06.jpg";
 import img_7 from "@/assets/deira-branch.jpg";
+
+const deiraFaqs = [
+  {
+    question: "Is your gym open 24 hours?",
+    answer: "Yes, 365 Fitness Deira Muraqqabat is open 24/7 for flexible training at any time.",
+  },
+  {
+    question: "Do you have a ladies-only section?",
+    answer: "Please contact the Deira branch team for the latest ladies area availability and training options.",
+  },
+  {
+    question: "Do you offer personal training?",
+    answer: "Yes, our Deira branch offers personal training for weight loss, muscle building, boxing, MMA, strength, and body transformation.",
+  },
+  {
+    question: "Is parking available?",
+    answer: "Parking options are available around the Deira Muraqqabat branch near Salah Al Din Road and Muraqqabat Police Station.",
+  },
+  {
+    question: "How much is membership?",
+    answer: "Deira gym membership starts from AED 199 monthly, with 3-month, 6-month, and annual membership packages available.",
+  },
+];
+
+const deiraFaqSchema = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: deiraFaqs.map((faq) => ({
+    "@type": "Question",
+    name: faq.question,
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: faq.answer,
+    },
+  })),
+};
 
 const LocationDeira = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
@@ -107,6 +146,12 @@ const LocationDeira = () => {
 
   return (
     <>
+      <PageSeo
+        title="Best Gym in Deira Muraqqabat | 24/7 Fitness Center | 365 Fitness"
+        description="Join the best 24/7 gym in Deira Muraqqabat, Dubai. Personal training, group classes, CrossFit, MMA, boxing and affordable membership packages."
+        canonical="https://www.365fitness.ae/locations/deira-muraqqabat"
+        schema={deiraFaqSchema}
+      />
       <Header />
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
@@ -119,11 +164,11 @@ const LocationDeira = () => {
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Deira Muraqqabat
-              <span className="block text-primary mt-2">(Main Branch)</span>
+              Best Gym in Deira Muraqqabat, Dubai
+              <span className="block text-primary mt-2">24/7 Fitness Center</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-              24/7 gym in Deira with Boxing, MMA, CrossFit & Personal Training. Join today.
+              24/7 gym in Deira with personal training, group classes, CrossFit, MMA, boxing, strength training, and affordable membership packages.
             </p>
             <Button
               size="lg"
@@ -250,41 +295,41 @@ const LocationDeira = () => {
         <section className="py-16 bg-secondary/20">
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
-              <h2 className="text-4xl font-bold text-center mb-12">
-                Why Choose <span className="text-primary">Deira Branch</span>
+              <h2 className="text-4xl font-bold text-center mb-8">
+                Why Choose <span className="text-primary">365 Fitness Deira</span>
               </h2>
+              <p className="text-lg text-muted-foreground text-center mb-12">
+                Located in the heart of Al Muraqqabat, Deira, 365 Fitness is one of the leading 24-hour gyms in Deira, offering premium equipment, certified trainers, spacious workout zones, and a motivating fitness community. Whether your goal is weight loss, muscle building, strength training, or overall fitness, our gym provides everything you need to achieve lasting results. We are conveniently located near Rigga, Salah Al Din, Port Saeed, and Union, making us a top choice for anyone looking for the best gym in Deira.
+              </p>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Extreme Fitness</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">About</h3>
                   <p className="text-muted-foreground">
-                    Push beyond your limits at 365 Fitness Deira – our EXTREME FITNESS zone is built for serious lifters and high‑intensity training lovers in Al Muraqqabat.
-                    From heavy-duty strength machines and free weights to HIIT and functional setups, this dedicated area is designed for members who train hard, chase progress, and never settle.
+                    Welcome to 365 Fitness Deira, your destination for professional fitness training in the heart of Dubai. Our EXTREME FITNESS zone is built for serious athletes, bodybuilders, and fitness enthusiasts who want to push beyond their limits. Train with commercial-grade strength equipment, Olympic free weights, functional training stations, and dedicated cardio areas in a clean, modern, and motivating environment. Whether you're a beginner or an experienced lifter, you'll find the perfect space to reach your fitness goals.
                   </p>
                 </div>
                 <div>
                   <h3 className="text-2xl font-bold mb-4 text-primary">Personal Training</h3>
                   <p className="text-muted-foreground">
-                    Achieve faster, smarter, and safer results with our Personal Training programs, designed to match your goals, body type, and fitness level. Our certified personal trainers work one-on-one with you to create custom workout plans, track your progress, correct your form, and keep you motivated every step of the way.
+                    Transform your body with our certified personal trainers in Deira. Every member receives a customized workout program based on their fitness level, body composition, and goals. Our trainers focus on proper exercise techniques, progressive training methods, fat loss strategies, muscle building, nutrition guidance, and continuous progress tracking to help you achieve faster and safer results.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Body Shaping</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">Ladies Gym</h3>
                   <p className="text-muted-foreground">
-                    Shape your ideal body with our Body Shaping programs, tailored to help you tone up, burn fat, and build clean muscle definition. With expert trainers, goal-based plans, and structured workouts, we guide your full transformation from start to finish.
+                    Our team supports women with goal-focused fitness programs, strength training, weight management, and body transformation guidance in a professional and respectful gym environment.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Weight Loss Classes</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">Group Classes</h3>
                   <p className="text-muted-foreground">
-                    Balance your body and mind with our Yoga sessions, designed to improve flexibility, reduce stress, and help you feel calmer and more centered.
-                    Looking for something more energetic? Join our Zumba classes for a fun, high‑energy cardio workout that mixes music, dance, and fitness to keep you sweating and smiling.
+                    Stay motivated with exciting group fitness classes in Deira, including Yoga, Zumba, HIIT, Functional Training, Aerobics, and more. Our professionally guided classes improve cardiovascular health, flexibility, endurance, and overall fitness while creating an energetic and supportive community atmosphere.
                   </p>
                 </div>
               </div>
             </div>
           </div>
         </section>
-
         {/* Pricing */}
         <section className="py-16">
           <div className="container mx-auto px-4">
@@ -345,6 +390,7 @@ const LocationDeira = () => {
                 </Card>
               ))}
             </div>
+            <TrainingRates branchName="Deira Muraqqabat Branch" branch="deira" />
           </div>
         </section>
 
@@ -362,6 +408,38 @@ const LocationDeira = () => {
             </Button>
           </div>
         </section>
+
+        {/* FAQ */}
+        <section className="py-16 bg-secondary/20">
+          <div className="container mx-auto px-4">
+            <div className="max-w-4xl mx-auto">
+              <h2 className="text-4xl font-bold text-center mb-12">
+                Deira Gym <span className="text-primary">FAQ</span>
+              </h2>
+              <Accordion
+                type="single"
+                collapsible
+                defaultValue="item-0"
+                className="bg-card border border-border rounded-lg overflow-hidden"
+              >
+                {deiraFaqs.map((faq, index) => (
+                  <AccordionItem
+                    key={faq.question}
+                    value={`item-${index}`}
+                    className="border-border px-5 md:px-7 last:border-b-0"
+                  >
+                    <AccordionTrigger className="text-left text-base md:text-lg font-bold text-foreground hover:text-primary hover:no-underline py-6">
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent className="text-muted-foreground text-base leading-relaxed pb-6">
+                      {faq.answer}
+                    </AccordionContent>
+                  </AccordionItem>
+                ))}
+              </Accordion>
+            </div>
+          </div>
+        </section>
       </div>
       <Footer />
       <JoinNowModal isOpen={isJoinModalOpen} onClose={() => setIsJoinModalOpen(false)} />
@@ -370,3 +448,5 @@ const LocationDeira = () => {
 };
 
 export default LocationDeira;
+
+
