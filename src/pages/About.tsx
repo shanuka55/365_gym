@@ -1,8 +1,8 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import aboutHero from "@/assets/team-hero.jpg";
-import missionVision from "@/assets/mission-vision.jpg";
+import aboutHero from "@/assets/team-hero.webp";
+import missionVision from "@/assets/mission-vision.webp";
 import { Award, Users, TrendingUp, Target } from "lucide-react";
 
 const About = () => {
@@ -23,6 +23,10 @@ const About = () => {
             src={aboutHero}
             alt="365 Fitness Team"
             className="absolute inset-0 w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
+            width="1600"
+            height="900"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
           <div className="relative z-10 container mx-auto px-4 text-center">
@@ -120,6 +124,10 @@ const About = () => {
                   src={missionVision}
                   alt="Mission and Vision"
                   className="w-full h-full object-cover"
+                  loading="lazy"
+                  decoding="async"
+                  width="900"
+                  height="600"
                 />
               </div>
             </div>

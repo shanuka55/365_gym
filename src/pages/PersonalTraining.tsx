@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
-import personalTrainingImage from "@/assets/personal-training.jpg";
+import personalTrainingImage from "@/assets/personal-training.webp";
 
 const PersonalTraining = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);

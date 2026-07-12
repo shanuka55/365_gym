@@ -1,6 +1,6 @@
 import { MapPin } from "lucide-react";
-import deiraBranch from "@/assets/deira-branch.jpg";
-import muhasniah from "@/assets/muhasniah-branch.jpg";
+import deiraBranch from "@/assets/deira-branch.webp";
+import muhasniah from "@/assets/muhasniah-branch.webp";
 
 const locations = [
   {

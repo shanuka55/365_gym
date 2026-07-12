@@ -1,9 +1,9 @@
 import { lazy, Suspense, useState } from "react";
 import { Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroGymMobile from "@/assets/hero-gym-mobile.jpg";
-import heroGymTablet from "@/assets/hero-gym-tablet.jpg";
-import heroGym from "@/assets/hero-gym-optimized.jpg";
+import heroGymMobile from "@/assets/hero-gym-mobile.webp";
+import heroGymTablet from "@/assets/hero-gym-tablet.webp";
+import heroGym from "@/assets/hero-gym-optimized.webp";
 
 const FreePassModal = lazy(() => import("./FreePassModal"));
 const JoinNowModal = lazy(() => import("./JoinNowModal"));

@@ -28,6 +28,10 @@ const BlogPost = () => {
             src={post.image}
             alt={post.title}
             className="w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
+            width="1600"
+            height="900"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 container mx-auto px-4 pb-12">

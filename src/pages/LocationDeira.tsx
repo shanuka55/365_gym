@@ -9,14 +9,14 @@ import JoinNowModal from "@/components/JoinNowModal";
 import TrainingRates from "@/components/TrainingRates";
 import PageSeo from "@/components/PageSeo";
 import BranchReviews, { branchReviewData } from "@/components/BranchReviews";
-import deiraImage from "@/assets/365_fitness_gym_cover_image.jpg";
-import img_1 from "@/assets/IMG_Deira_01.jpg";
-import img_2 from "@/assets/IMG_Deira_02.jpg";
-import img_3 from "@/assets/IMG_Deira_03.jpg";
-import img_4 from "@/assets/IMG_Deira_04.jpg";
-import img_5 from "@/assets/IMG_Deira_05.jpg";
-import img_6 from "@/assets/IMG_Deira_06.jpg";
-import img_7 from "@/assets/deira-branch.jpg";
+import deiraImage from "@/assets/365_fitness_gym_cover_image.webp";
+import img_1 from "@/assets/IMG_Deira_01.webp";
+import img_2 from "@/assets/IMG_Deira_02.webp";
+import img_3 from "@/assets/IMG_Deira_03.webp";
+import img_4 from "@/assets/IMG_Deira_04.webp";
+import img_5 from "@/assets/IMG_Deira_05.webp";
+import img_6 from "@/assets/IMG_Deira_06.webp";
+import img_7 from "@/assets/deira-branch.webp";
 
 const deiraGoogleProfileUrl = "https://share.google/8ArVq05n3QaSpmVIc";
 
@@ -92,6 +92,17 @@ const deiraSeoSchema = {
     },
   ],
 };
+
+const deiraGalleryImages = [
+  { src: deiraImage, alt: "Deira Branch Interior" },
+  { src: img_7, alt: "Deira Branch Interior" },
+  { src: img_1, alt: "Deira Branch Equipment" },
+  { src: img_2, alt: "Deira Branch Facilities" },
+  { src: img_3, alt: "Deira Branch Facilities" },
+  { src: img_4, alt: "Deira Branch Facilities" },
+  { src: img_5, alt: "Deira Branch Facilities" },
+  { src: img_6, alt: "Deira Branch Facilities" },
+];
 
 const LocationDeira = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
@@ -273,62 +284,19 @@ const LocationDeira = () => {
               Branch <span className="text-primary">Gallery</span>
             </h2>
             <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <img
-                  src={deiraImage}
-                  alt="Deira Branch Interior"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <img
-                  src={img_7}
-                  alt="Deira Branch Interior"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <img
-                  src={img_1}
-                  alt="Deira Branch Equipment"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <img
-                  src={img_2}
-                  alt="Deira Branch Facilities"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <img
-                  src={img_3}
-                  alt="Deira Branch Facilities"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <img
-                  src={img_4}
-                  alt="Deira Branch Facilities"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <img
-                  src={img_5}
-                  alt="Deira Branch Facilities"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
-              <div className="aspect-video rounded-xl overflow-hidden">
-                <img
-                  src={img_6}
-                  alt="Deira Branch Facilities"
-                  className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
-                />
-              </div>
+              {deiraGalleryImages.map((image) => (
+                <div key={image.src} className="aspect-video rounded-xl overflow-hidden">
+                  <img
+                    src={image.src}
+                    alt={image.alt}
+                    className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
+                    loading="lazy"
+                    decoding="async"
+                    width="640"
+                    height="360"
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </section>

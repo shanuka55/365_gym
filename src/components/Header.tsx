@@ -1,16 +1,16 @@
-import { lazy, Suspense, useState, useEffect } from "react";
+import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronRight, Search, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-header.png";
-import deiraBranch from "@/assets/365_fitness_gym_cover_image.jpg";
-import muhansniahBranch from "@/assets/IMG_Muhasnah_06.jpg";
-import monthlyPlan from "@/assets/monthly-plan.jpg";
-import annualPlan from "@/assets/annual-plan.jpg";
-import corporatePlan from "@/assets/corporate-plan.jpg";
-import personalTraining from "@/assets/personal-training.jpg";
-import groupClasses from "@/assets/group-classes.jpg";
-import onlineCoaching from "@/assets/online-coaching.jpg";
+import deiraBranch from "@/assets/365_fitness_gym_cover_image.webp";
+import muhansniahBranch from "@/assets/IMG_Muhasnah_06.webp";
+import monthlyPlan from "@/assets/monthly-plan.webp";
+import annualPlan from "@/assets/annual-plan.webp";
+import corporatePlan from "@/assets/corporate-plan.webp";
+import personalTraining from "@/assets/personal-training.webp";
+import groupClasses from "@/assets/group-classes.webp";
+import onlineCoaching from "@/assets/online-coaching.webp";
 import { useLanguage } from "@/hooks/useLanguage";
 
 const FreePassModal = lazy(() => import("./FreePassModal"));
@@ -23,12 +23,19 @@ const Header = () => {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isFreePassOpen, setIsFreePassOpen] = useState(false);
   const [isJoinNowOpen, setIsJoinNowOpen] = useState(false);
+  const isScrolledRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
+      const nextIsScrolled = window.scrollY > 50;
+
+      if (isScrolledRef.current !== nextIsScrolled) {
+        isScrolledRef.current = nextIsScrolled;
+        setIsScrolled(nextIsScrolled);
+      }
     };
-    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -93,6 +100,8 @@ const Header = () => {
                           src={item.image}
                           alt={`${item.title} - Gym membership plan at 365 Fitness Dubai`}
                           className="w-20 h-20 object-cover rounded-lg border border-primary/20 group-hover:border-primary transition-colors"
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div className="flex-1">
                           <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{item.title}</h3>
@@ -125,6 +134,8 @@ const Header = () => {
                           src={item.image}
                           alt={`${item.title} - Personal training and fitness classes at 365 Fitness Dubai`}
                           className="w-20 h-20 object-cover rounded-lg border border-primary/20 group-hover:border-primary transition-colors"
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div className="flex-1">
                           <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{item.title}</h3>
@@ -157,6 +168,8 @@ const Header = () => {
                           src={item.image}
                           alt={`${item.title} - 365 Fitness Gym location in Dubai with 24-hour access`}
                           className="w-24 h-24 object-cover rounded-lg border border-primary/20 group-hover:border-primary transition-colors"
+                          loading="lazy"
+                          decoding="async"
                         />
                         <div className="flex-1">
                           <h3 className="font-bold text-foreground group-hover:text-primary transition-colors">{item.title}</h3>
@@ -286,7 +299,7 @@ const Header = () => {
                       className="flex items-center gap-3 p-3 hover:bg-secondary/50 rounded-lg transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <img src={item.image} alt={`${item.title} - Affordable gym membership in Dubai`} className="w-12 h-12 object-cover rounded" />
+                      <img src={item.image} alt={`${item.title} - Affordable gym membership in Dubai`} className="w-12 h-12 object-cover rounded" loading="lazy" decoding="async" />
                       <div>
                         <h4 className="font-bold text-sm">{item.title}</h4>
                         <p className="text-xs text-muted-foreground">{item.desc}</p>
@@ -315,7 +328,7 @@ const Header = () => {
                       className="flex items-center gap-3 p-3 hover:bg-secondary/50 rounded-lg transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <img src={item.image} alt={`${item.title} - Fitness classes and personal training in Dubai`} className="w-12 h-12 object-cover rounded" />
+                      <img src={item.image} alt={`${item.title} - Fitness classes and personal training in Dubai`} className="w-12 h-12 object-cover rounded" loading="lazy" decoding="async" />
                       <div>
                         <h4 className="font-bold text-sm">{item.title}</h4>
                         <p className="text-xs text-muted-foreground">{item.desc}</p>
@@ -344,7 +357,7 @@ const Header = () => {
                       className="flex items-center gap-3 p-3 hover:bg-secondary/50 rounded-lg transition-colors"
                       onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      <img src={item.image} alt={`${item.title} - 24-hour gym in Dubai`} className="w-12 h-12 object-cover rounded" />
+                      <img src={item.image} alt={`${item.title} - 24-hour gym in Dubai`} className="w-12 h-12 object-cover rounded" loading="lazy" decoding="async" />
                       <div>
                         <h4 className="font-bold text-sm">{item.title}</h4>
                         <p className="text-xs text-muted-foreground">{item.desc}</p>

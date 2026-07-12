@@ -1,19 +1,19 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import gallery1 from "@/assets/IMG_Deira_01.jpg";
-import gallery2 from "@/assets/IMG_Deira_02.jpg";
-import gallery3 from "@/assets/IMG_Muhasnah_01.jpg";
-import gallery4 from "@/assets/IMG_Muhasnah_02.jpg";
-import gallery5 from "@/assets/IMG_Muhasnah_04.jpg";
-import gallery6 from "@/assets/IMG_Muhasnah_08.jpg";
-import gallery7 from "@/assets/365 FITNESS GYM MUHASNAH 01.jpg";
-import gallery8 from "@/assets/365 FITNESS GYM MUHASNAH 02.jpg";
-import gallery9 from "@/assets/365 FITNESS GYM MUHASNAH 03.jpg";
-import gallery10 from "@/assets/365 FITNESS GYM MUHASNAH 04.jpg";
-import gallery11 from "@/assets/365 FITNESS GYM MUHASNAH 05.jpg";
-import gallery12 from "@/assets/365 FITNESS GYM MUHASNAH 06.jpg";
-import gallery13 from "@/assets/365 FITNESS GYM MUHASNAH 07.jpg";
-import gallery14 from "@/assets/365 FITNESS GYM MUHASNAH 08.jpg";
+import gallery1 from "@/assets/IMG_Deira_01.webp";
+import gallery2 from "@/assets/IMG_Deira_02.webp";
+import gallery3 from "@/assets/IMG_Muhasnah_01.webp";
+import gallery4 from "@/assets/IMG_Muhasnah_02.webp";
+import gallery5 from "@/assets/IMG_Muhasnah_04.webp";
+import gallery6 from "@/assets/IMG_Muhasnah_08.webp";
+import gallery7 from "@/assets/365 FITNESS GYM MUHASNAH 01.webp";
+import gallery8 from "@/assets/365 FITNESS GYM MUHASNAH 02.webp";
+import gallery9 from "@/assets/365 FITNESS GYM MUHASNAH 03.webp";
+import gallery10 from "@/assets/365 FITNESS GYM MUHASNAH 04.webp";
+import gallery11 from "@/assets/365 FITNESS GYM MUHASNAH 05.webp";
+import gallery12 from "@/assets/365 FITNESS GYM MUHASNAH 06.webp";
+import gallery13 from "@/assets/365 FITNESS GYM MUHASNAH 07.webp";
+import gallery14 from "@/assets/365 FITNESS GYM MUHASNAH 08.webp";
 
 const galleryImages = [
   { src: gallery7, alt: "Modern amenities and facilities" },
@@ -34,14 +34,38 @@ const galleryImages = [
 ];
 
 const GalleryCarousel = () => {
+  const sectionRef = useRef<HTMLElement | null>(null);
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
+    const section = sectionRef.current;
+
+    if (!section || !("IntersectionObserver" in window)) {
+      setIsVisible(true);
+      return;
+    }
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { rootMargin: "200px 0px" }
+    );
+
+    observer.observe(section);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!isVisible || document.hidden) {
+      return;
+    }
+
     const timer = setInterval(() => {
       setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
     }, 4000);
+
     return () => clearInterval(timer);
-  }, []);
+  }, [isVisible]);
 
   const goToPrevious = () => {
     setCurrentIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length);
@@ -52,7 +76,7 @@ const GalleryCarousel = () => {
   };
 
   return (
-    <section className="py-20 bg-background relative overflow-hidden">
+    <section ref={sectionRef} className="py-20 bg-background relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-primary to-transparent" />
 

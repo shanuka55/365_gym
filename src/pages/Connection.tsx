@@ -1,13 +1,8 @@
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import contactHero from "@/assets/contact-hero.jpg";
-import contactHero2 from "@/assets/contact-img-01.jpg";
-import { MapPin, Phone, Mail, Clock, MessageCircle } from "lucide-react";
+import contactHero2 from "@/assets/contact-img-01.webp";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 
@@ -56,6 +51,10 @@ Phone: ${formData.phone}`;
                         src={contactHero2}
                         alt="Contact 365 Fitness"
                         className="absolute inset-0 w-full h-full object-cover"
+                        fetchPriority="high"
+                        decoding="async"
+                        width="1600"
+                        height="900"
                     />
                     <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
                     <div className="relative z-10 container mx-auto px-4 text-center">

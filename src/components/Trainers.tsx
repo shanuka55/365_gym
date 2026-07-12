@@ -1,11 +1,11 @@
 import { MessageCircle, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import trainerIsha from "@/assets/ISHA.jpg";
-import trainerMashid from "@/assets/MAHSHID.jpg";
-import trainerAzeem from "@/assets/AZEEM.jpg";
-import trainerShan from "@/assets/SHAN.jpg";
-import trainerFarzana from "@/assets/FARZANA.jpg";
-import trainerAhmed from "@/assets/AHMED.jpg";
+import trainerIsha from "@/assets/ISHA.webp";
+import trainerMashid from "@/assets/MAHSHID.webp";
+import trainerAzeem from "@/assets/AZEEM.webp";
+import trainerShan from "@/assets/SHAN.webp";
+import trainerFarzana from "@/assets/FARZANA.webp";
+import trainerAhmed from "@/assets/AHMED.webp";
 
 const trainers = [
   {

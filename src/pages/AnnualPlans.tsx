@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
-import annualPlanImage from "@/assets/annual-plan.jpg";
+import annualPlanImage from "@/assets/annual-plan.webp";
 
 const AnnualPlans = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);

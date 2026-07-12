@@ -2,15 +2,15 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SocialShareButtons from "@/components/SocialShareButtons";
-import gallery1 from "@/assets/IMG_Muhasnah_07.jpg";
-import gallery2 from "@/assets/IMG_Muhasnah_06.jpg";
-import gallery3 from "@/assets/IMG_Muhasnah_11.jpg";
-import gallery4 from "@/assets/IMG_Deira_05.jpg";
-import heroGym from "@/assets/hero-gym.jpg";
-import heroWorkout from "@/assets/hero-workout.jpg";
-import deiraBranch from "@/assets/deira-branch.jpg";
-import muhansniahBranch from "@/assets/muhasniah-branch.jpg";
-import deira_image from "@/assets/365_fitness_gym_cover_image.jpg";
+import gallery1 from "@/assets/IMG_Muhasnah_07.webp";
+import gallery2 from "@/assets/IMG_Muhasnah_06.webp";
+import gallery3 from "@/assets/IMG_Muhasnah_11.webp";
+import gallery4 from "@/assets/IMG_Deira_05.webp";
+import heroGym from "@/assets/hero-gym.webp";
+import heroWorkout from "@/assets/hero-workout.webp";
+import deiraBranch from "@/assets/deira-branch.webp";
+import muhansniahBranch from "@/assets/muhasniah-branch.webp";
+import deira_image from "@/assets/365_fitness_gym_cover_image.webp";
 import { useState } from "react";
 import { X } from "lucide-react";
 
@@ -47,6 +47,10 @@ const Gallery = () => {
             src={gallery1}
             alt="365 Fitness Gallery"
             className="absolute inset-0 w-full h-full object-cover"
+            fetchPriority="high"
+            decoding="async"
+            width="1600"
+            height="900"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
           <div className="relative z-10 container mx-auto px-4 text-center">
@@ -94,6 +98,10 @@ const Gallery = () => {
                     src={image.src}
                     alt={image.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                    loading={index < 3 ? "eager" : "lazy"}
+                    decoding="async"
+                    width="640"
+                    height="360"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <div className="absolute bottom-4 left-4 right-4">
@@ -125,6 +133,7 @@ const Gallery = () => {
               src={filteredImages[selectedImage].src}
               alt={filteredImages[selectedImage].title}
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-glow-lg"
+              decoding="async"
               onClick={(e) => e.stopPropagation()}
             />
             <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center bg-background/95 backdrop-blur-sm p-6 rounded-2xl border border-border">

@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
-import groupClassesImage from "@/assets/group-classes.jpg";
+import groupClassesImage from "@/assets/group-classes.webp";
 
 const GroupClasses = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);

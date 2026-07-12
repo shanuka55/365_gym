@@ -231,13 +231,14 @@ const handler = async (req: Request): Promise<Response> => {
         ...corsHeaders,
       },
     });
-  } catch (error: any) {
+  } catch (error: unknown) {
     console.error("Error in send-membership-agreement-email function:", error);
+    const message = error instanceof Error ? error.message : "Unexpected error";
 
     return new Response(
       JSON.stringify({
         success: false,
-        error: error.message,
+        error: message,
       }),
       {
         status: 500,
