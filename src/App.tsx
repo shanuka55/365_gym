@@ -1,6 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { lazy, Suspense, useEffect, useState } from "react";
 import ScrollToTop from "./components/ScrollToTop";
+import RouteErrorBoundary from "./components/RouteErrorBoundary";
 import Index from "./pages/Index";
 import usePageTracking from "./hooks/usePageTracking";
 
@@ -45,6 +46,23 @@ const useRenderAfterIdle = () => {
 const App = () => {
   const renderDeferredUi = useRenderAfterIdle();
 
+  useEffect(() => {
+    const handlePreloadError = () => {
+      const reloadKey = "vite-preload-reloaded";
+
+      if (sessionStorage.getItem(reloadKey) === "true") {
+        return;
+      }
+
+      sessionStorage.setItem(reloadKey, "true");
+      window.location.reload();
+    };
+
+    window.addEventListener("vite:preloadError", handlePreloadError);
+
+    return () => window.removeEventListener("vite:preloadError", handlePreloadError);
+  }, []);
+
   return (
     <BrowserRouter>
       <Tracker />
@@ -54,28 +72,30 @@ const App = () => {
           <Toaster />
         </Suspense>
       )}
-      <Suspense fallback={null}>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/connection" element={<Connection />} />
-          <Route path="/locations/deira-muraqqabat" element={<LocationDeira />} />
-          <Route path="/locations/muhaisnah-first" element={<LocationMuhaisnah />} />
-          <Route path="/plans/monthly-plans" element={<MonthlyPlans />} />
-          <Route path="/plans/annual-plans" element={<AnnualPlans />} />
-          <Route path="/plans/corporate-plans" element={<CorporatePlans />} />
-          <Route path="/services/personal-training" element={<PersonalTraining />} />
-          <Route path="/services/group-classes" element={<GroupClasses />} />
-          <Route path="/services/online-coaching" element={<OnlineCoaching />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-          <Route path="/membership-agreement" element={<MembershipAgreement />} />
-          <Route path="/freelance-trainer-agreement" element={<FreelanceTrainerAgreement />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </Suspense>
+      <RouteErrorBoundary>
+        <Suspense fallback={<div className="min-h-screen bg-background" />}>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/connection" element={<Connection />} />
+            <Route path="/locations/deira-muraqqabat" element={<LocationDeira />} />
+            <Route path="/locations/muhaisnah-first" element={<LocationMuhaisnah />} />
+            <Route path="/plans/monthly-plans" element={<MonthlyPlans />} />
+            <Route path="/plans/annual-plans" element={<AnnualPlans />} />
+            <Route path="/plans/corporate-plans" element={<CorporatePlans />} />
+            <Route path="/services/personal-training" element={<PersonalTraining />} />
+            <Route path="/services/group-classes" element={<GroupClasses />} />
+            <Route path="/services/online-coaching" element={<OnlineCoaching />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+            <Route path="/membership-agreement" element={<MembershipAgreement />} />
+            <Route path="/freelance-trainer-agreement" element={<FreelanceTrainerAgreement />} />
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </Suspense>
+      </RouteErrorBoundary>
     </BrowserRouter>
   );
 };
