@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Facebook, Instagram, Youtube, Video, MapPin, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo-header.png";
+import logo from "@/assets/logo-header.webp";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();

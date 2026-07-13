@@ -2,7 +2,7 @@ import { lazy, Suspense, useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X, ChevronRight, Search, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/assets/logo-header.png";
+import logo from "@/assets/logo-header.webp";
 import deiraBranch from "@/assets/365_fitness_gym_cover_image.webp";
 import muhansniahBranch from "@/assets/IMG_Muhasnah_06.webp";
 import monthlyPlan from "@/assets/monthly-plan.webp";

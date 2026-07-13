@@ -98,7 +98,7 @@ const Gallery = () => {
                     src={image.src}
                     alt={image.title}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    loading={index < 3 ? "eager" : "lazy"}
+                    loading="lazy"
                     decoding="async"
                     width="640"
                     height="360"
@@ -133,6 +133,7 @@ const Gallery = () => {
               src={filteredImages[selectedImage].src}
               alt={filteredImages[selectedImage].title}
               className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-glow-lg"
+              loading="lazy"
               decoding="async"
               onClick={(e) => e.stopPropagation()}
             />
