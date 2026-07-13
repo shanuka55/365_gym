@@ -477,6 +477,15 @@ const FreelanceTrainerAgreement = () => {
         setIsSubmitting(true);
 
         try {
+            if (!supabase) {
+                toast({
+                    title: "Submission Unavailable",
+                    description: "Please contact 365 Fitness directly to submit your agreement.",
+                    variant: "destructive",
+                });
+                return;
+            }
+
             const agreementId = crypto.randomUUID();
             const submittedAt = new Date().toISOString();
             const payload = {

@@ -13,7 +13,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { toast } from "@/hooks/use-toast";
-import { supabase } from "@/integrations/supabase/client";
+import { isSupabaseConfigured, supabase } from "@/integrations/supabase/client";
 import { z } from "zod";
 
 const joinNowSchema = z.object({
@@ -75,6 +75,36 @@ const JoinNowModal = ({ isOpen, onClose }: JoinNowModalProps) => {
     setIsSubmitting(true);
 
     try {
+      if (!isSupabaseConfigured || !supabase) {
+        const waMessage = `New Membership Request\n` +
+          `Name: ${formData.fullName}\n` +
+          `Phone: ${formData.phone}\n` +
+          `Email: ${formData.email}\n` +
+          `Branch: ${formData.branch}\n` +
+          `Membership Type: ${formData.membershipType}\n` +
+          `${formData.notes ? `Notes: ${formData.notes}` : ""}`.trim();
+
+        window.open(`https://wa.me/971524160054?text=${encodeURIComponent(waMessage)}`, "_blank", "noopener,noreferrer");
+
+        toast({
+          title: "Membership Request Ready",
+          description: "We've opened WhatsApp with your details. Send the message to complete your request.",
+          duration: 5000,
+        });
+
+        setFormData({
+          fullName: "",
+          phone: "",
+          email: "",
+          branch: "",
+          membershipType: "",
+          notes: "",
+          consent: false,
+        });
+        onClose();
+        return;
+      }
+
       // Send email via edge function
       const { data, error } = await supabase.functions.invoke('send-free-trial-email', {
         body: {
