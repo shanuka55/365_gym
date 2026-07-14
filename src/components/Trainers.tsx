@@ -1,7 +1,6 @@
 import { MessageCircle, Instagram, Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import trainerIsha from "@/assets/ISHA.webp";
-import trainerMashid from "@/assets/MAHSHID.webp";
 import trainerAzeem from "@/assets/AZEEM.webp";
 import trainerShan from "@/assets/SHAN.webp";
 import trainerFarzana from "@/assets/FARZANA.webp";
@@ -13,12 +12,6 @@ const trainers = [
     specialty: "Personal Training & Weight Loss",
     image: trainerIsha,
     bio: "Certified Personal Trainer and Group Fitness Instructor with expertise in aerobics, Zumba, step cardio, boxing, HIIT, and Tabata. I also specialize in strength training, exercise recovery, and kids’ Zumba classes",
-  },
-  {
-    name: "Coach Mashid",
-    specialty: "Women's Fitness & Dance",
-    image: trainerMashid,
-    bio: "Certified Personal Trainer Level III with 20 years experience. Women's Aerobics Champion specializing in corrective movements and functional training.",
   },
   {
     name: "Coach Azeem",
