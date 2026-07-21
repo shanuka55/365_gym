@@ -3,7 +3,7 @@ import { MessageCircle } from "lucide-react";
 const WhatsAppButton = () => {
   const handleClick = () => {
     const message = "Hi 365 Fitness! I'd like to know more about membership options.";
-    window.open(`https://wa.me/97143375022?text=${encodeURIComponent(message)}`, "_blank");
+    window.open(`https://wa.me/971547120925?text=${encodeURIComponent(message)}`, "_blank");
   };
 
   return (

@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 type TrainingRatesProps = {
   branchName: string;
   branch: "deira" | "muhaisnah";
+  whatsappNumber?: string;
 };
 
 type PackageFeature = {
@@ -139,10 +140,10 @@ const muhaisnahPackages: TrainingPackage[] = [
   },
 ];
 
-const TrainingRates = ({ branchName, branch }: TrainingRatesProps) => {
+const TrainingRates = ({ branchName, branch, whatsappNumber: whatsappNumberOverride }: TrainingRatesProps) => {
   const [showPackages, setShowPackages] = useState(false);
   const packages = branch === "muhaisnah" ? muhaisnahPackages : deiraPackages;
-  const whatsappNumber = branch === "muhaisnah" ? "971524160054" : "97143375022";
+  const whatsappNumber = whatsappNumberOverride ?? (branch === "muhaisnah" ? "97154712097" : "971547120925");
 
   const getWhatsAppUrl = (packageName: string) => {
     const message = `Hi 365 Fitness! I want to get the ${packageName} package at ${branchName}.`;

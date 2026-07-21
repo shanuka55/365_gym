@@ -1,11 +1,9 @@
-import { useState } from "react";
-import { MapPin, Phone, Clock, Check } from "lucide-react";
+import { MapPin, Phone, Clock, Check, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import JoinNowModal from "@/components/JoinNowModal";
 import TrainingRates from "@/components/TrainingRates";
 import PageSeo from "@/components/PageSeo";
 import BranchReviews, { branchReviewData } from "@/components/BranchReviews";
@@ -19,6 +17,10 @@ import img_6 from "@/assets/IMG_Deira_06.webp";
 import img_7 from "@/assets/deira-branch.webp";
 
 const deiraGoogleProfileUrl = "https://share.google/8ArVq05n3QaSpmVIc";
+const deiraWhatsAppNumber = "971547120925";
+
+const getDeiraWhatsAppUrl = (message: string) =>
+  `https://wa.me/${deiraWhatsAppNumber}?text=${encodeURIComponent(message)}`;
 
 const deiraFaqs = [
   {
@@ -105,8 +107,6 @@ const deiraGalleryImages = [
 ];
 
 const LocationDeira = () => {
-  const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
-
   const pricingPlans = [
     {
       name: "MONTHLY",
@@ -221,12 +221,14 @@ const LocationDeira = () => {
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
               24/7 gym in Deira with personal training, group classes, CrossFit, MMA, boxing, strength training, and affordable membership packages.
             </p>
-            <Button
-              size="lg"
-              onClick={() => setIsJoinModalOpen(true)}
-              className="text-lg px-8 py-6"
-            >
-              Join This Branch
+            <Button size="lg" asChild className="text-lg px-8 py-6">
+              <a
+                href={getDeiraWhatsAppUrl("Hi 365 Fitness Deira! I'd like to join this branch.")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join This Branch
+              </a>
             </Button>
           </div>
         </section>
@@ -247,8 +249,13 @@ const LocationDeira = () => {
               <Card className="p-6 text-center">
                 <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-bold mb-2">Contact</h3>
-                <a href="tel:+971547120925" className="text-sm text-primary hover:underline">
-                  +971 54 712 0925
+                <a
+                  href={getDeiraWhatsAppUrl("Hi 365 Fitness Deira! I'd like to know more about your memberships.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:underline"
+                >
+                  WhatsApp: +971 54 712 0925
                 </a>
               </Card>
               <Card className="p-6 text-center">
@@ -377,12 +384,14 @@ const LocationDeira = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button
-                    className="w-full"
-                    variant={plan.popular ? "default" : "outline"}
-                    onClick={() => setIsJoinModalOpen(true)}
-                  >
-                    Join Now
+                  <Button className="w-full" variant={plan.popular ? "default" : "outline"} asChild>
+                    <a
+                      href={getDeiraWhatsAppUrl(`Hi 365 Fitness Deira! I'm interested in the ${plan.name} membership plan.`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Join Now
+                    </a>
                   </Button>
                   {/* Display offer only if exists AND has items */}
                   {Array.isArray(plan.offer) && plan.offer.length > 0 && (
@@ -400,7 +409,11 @@ const LocationDeira = () => {
                 </Card>
               ))}
             </div>
-            <TrainingRates branchName="Deira Muraqqabat Branch" branch="deira" />
+            <TrainingRates
+              branchName="Deira Muraqqabat Branch"
+              branch="deira"
+              whatsappNumber={deiraWhatsAppNumber}
+            />
           </div>
         </section>
 
@@ -413,8 +426,14 @@ const LocationDeira = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join Dubai's largest fitness facility today and experience world-class equipment, expert trainers, and 24/7 access.
             </p>
-            <Button size="lg" onClick={() => setIsJoinModalOpen(true)} className="text-lg px-8 py-6">
-              Join Deira Branch Now
+            <Button size="lg" asChild className="text-lg px-8 py-6">
+              <a
+                href={getDeiraWhatsAppUrl("Hi 365 Fitness Deira! I'd like to join the Deira branch.")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join Deira Branch Now
+              </a>
             </Button>
           </div>
         </section>
@@ -454,7 +473,16 @@ const LocationDeira = () => {
         </section>
       </div>
       <Footer />
-      <JoinNowModal isOpen={isJoinModalOpen} onClose={() => setIsJoinModalOpen(false)} />
+      <a
+        href={getDeiraWhatsAppUrl("Hi 365 Fitness Deira! I'd like to know more about membership options.")}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 bg-primary hover:bg-primary/90 text-primary-foreground p-4 rounded-full shadow-glow-lg hover:shadow-glow animate-pulse-glow transition-all duration-300 hover:scale-110 group"
+        aria-label="Contact 365 Fitness Deira on WhatsApp"
+      >
+        <MessageCircle className="h-7 w-7 group-hover:rotate-12 transition-transform duration-300" />
+        <span className="absolute inset-0 rounded-full bg-primary/30 animate-ping" />
+      </a>
     </>
   );
 };

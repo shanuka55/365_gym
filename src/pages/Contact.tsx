@@ -36,7 +36,7 @@ Email: ${formData.email}
 Phone: ${formData.phone}
 Message: ${formData.message}`;
 
-    const waUrl = `https://wa.me/97143375022?text=${encodeURIComponent(waMessage)}`;
+    const waUrl = `https://wa.me/971547120925?text=${encodeURIComponent(waMessage)}`;
     window.open(waUrl, "_blank");
 
     toast({
@@ -147,7 +147,7 @@ Message: ${formData.message}`;
                     variant="hero"
                     size="lg"
                     className="w-full"
-                    onClick={() => window.open("https://wa.me/97143375022", "_blank")}
+                    onClick={() => window.open("https://wa.me/971547120925", "_blank")}
                   >
                     <MessageCircle className="mr-2" />
                     Chat on WhatsApp

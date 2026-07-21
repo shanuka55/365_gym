@@ -1,11 +1,9 @@
-import { useState } from "react";
-import { MapPin, Phone, Clock, Check } from "lucide-react";
+import { MapPin, Phone, Clock, Check, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import JoinNowModal from "@/components/JoinNowModal";
 import TrainingRates from "@/components/TrainingRates";
 import PageSeo from "@/components/PageSeo";
 import BranchReviews, { branchReviewData } from "@/components/BranchReviews";
@@ -36,6 +34,10 @@ import img_11 from "@/assets/365 FITNESS GYM MUHASNAH 11.webp";
 import img_12 from "@/assets/365 FITNESS GYM MUHASNAH 12.webp";
 
 const muhaisnahGoogleProfileUrl = "https://share.google/p80UREIg1DLHQRqO7";
+const muhaisnahWhatsAppNumber = "97154712097";
+
+const getMuhaisnahWhatsAppUrl = (message: string) =>
+  `https://wa.me/${muhaisnahWhatsAppNumber}?text=${encodeURIComponent(message)}`;
 
 const muhaisnahFaqs = [
   {
@@ -92,7 +94,7 @@ const muhaisnahSeoSchema = {
       name: "365 Fitness Muhaisnah First",
       url: "https://www.365fitness.ae/locations/muhaisnah-first",
       hasMap: muhaisnahGoogleProfileUrl,
-      telephone: "+971547120927",
+      telephone: "+97154712097",
       address: {
         "@type": "PostalAddress",
         streetAddress: "6CP7+R99 - Muhaisnah First - Muhaisnah",
@@ -137,8 +139,6 @@ const muhaisnahGalleryImages = [
 
 
 const LocationMuhaisnah = () => {
-  const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
-
   const pricingPlans = [
     {
       name: "MONTHLY",
@@ -214,6 +214,13 @@ const LocationMuhaisnah = () => {
     },
   ];
 
+  const familyFriendsPlans = [
+    { name: "MONTHLY", price: "399", duration: "Month" },
+    { name: "3 MONTHS", price: "1099", duration: "3 Months", popular: true },
+    { name: "6 MONTHS", price: "1599", duration: "6 Months" },
+    { name: "12 MONTHS", price: "2299", duration: "1 Year" },
+  ];
+
   const services = [
     { name: "Weight Training", icon: "🏋️" },
     { name: "Personal Training", icon: "👤" },
@@ -252,12 +259,14 @@ const LocationMuhaisnah = () => {
             <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
               24/7 fitness center in Muhaisnah First with personal training, ladies gym facilities, group classes, CrossFit, MMA, boxing, and affordable membership packages.
             </p>
-            <Button
-              size="lg"
-              onClick={() => setIsJoinModalOpen(true)}
-              className="text-lg px-8 py-6"
-            >
-              Join This Branch
+            <Button size="lg" asChild className="text-lg px-8 py-6">
+              <a
+                href={getMuhaisnahWhatsAppUrl("Hi 365 Fitness Muhaisnah! I'd like to join this branch.")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join This Branch
+              </a>
             </Button>
           </div>
         </section>
@@ -278,8 +287,13 @@ const LocationMuhaisnah = () => {
               <Card className="p-6 text-center">
                 <Phone className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-bold mb-2">Contact</h3>
-                <a href="tel:+971547120927" className="text-sm text-primary hover:underline">
-                  +971 54 712 0927
+                <a
+                  href={getMuhaisnahWhatsAppUrl("Hi 365 Fitness Muhaisnah! I'd like to know more about your memberships.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-primary hover:underline"
+                >
+                  WhatsApp: +971 54 712 097
                 </a>
               </Card>
               <Card className="p-6 text-center">
@@ -408,12 +422,14 @@ const LocationMuhaisnah = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button
-                    className="w-full"
-                    variant={plan.popular ? "default" : "outline"}
-                    onClick={() => setIsJoinModalOpen(true)}
-                  >
-                    Join Now
+                  <Button className="w-full" variant={plan.popular ? "default" : "outline"} asChild>
+                    <a
+                      href={getMuhaisnahWhatsAppUrl(`Hi 365 Fitness Muhaisnah! I'm interested in the ${plan.name} membership plan.`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Join Now
+                    </a>
                   </Button>
 
 
@@ -433,7 +449,59 @@ const LocationMuhaisnah = () => {
                 </Card>
               ))}
             </div>
-            <TrainingRates branchName="Muhaisnah First Branch" branch="muhaisnah" />
+
+            <div className="mt-16">
+              <h2 className="text-4xl font-bold text-center mb-4">
+                Family &amp; Friends <span className="text-primary">Special</span>
+              </h2>
+              <p className="text-center text-muted-foreground mb-12">
+                Join with a friend and enjoy these exclusive rates. Prices are per person.
+              </p>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
+                {familyFriendsPlans.map((plan) => (
+                  <Card
+                    key={plan.name}
+                    className={`p-6 relative ${plan.popular ? "border-primary border-2" : ""}`}
+                  >
+                    {plan.popular && (
+                      <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-primary-foreground px-4 py-1 rounded-full text-sm font-bold">
+                        POPULAR
+                      </div>
+                    )}
+                    <h3 className="text-xl font-bold mb-4 text-center">{plan.name}</h3>
+                    <div className="text-center mb-6">
+                      <span className="text-sm text-muted-foreground">AED</span>
+                      <div className="text-5xl font-bold text-primary">{plan.price}</div>
+                      <span className="text-sm text-muted-foreground">/{plan.duration} each</span>
+                    </div>
+                    <ul className="space-y-3 mb-6">
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-5 w-5 flex-shrink-0 mt-0.5 text-primary" />
+                        <span>Exclusive rate for two or more people joining together</span>
+                      </li>
+                      <li className="flex items-start gap-2 text-sm">
+                        <Check className="h-5 w-5 flex-shrink-0 mt-0.5 text-primary" />
+                        <span>Available at Muhaisnah First branch</span>
+                      </li>
+                    </ul>
+                    <Button className="w-full" variant={plan.popular ? "default" : "outline"} asChild>
+                      <a
+                        href={getMuhaisnahWhatsAppUrl(`Hi 365 Fitness Muhaisnah! I'm interested in the Family & Friends ${plan.name} special at AED ${plan.price} each.`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        Join on WhatsApp
+                      </a>
+                    </Button>
+                  </Card>
+                ))}
+              </div>
+            </div>
+            <TrainingRates
+              branchName="Muhaisnah First Branch"
+              branch="muhaisnah"
+              whatsappNumber={muhaisnahWhatsAppNumber}
+            />
           </div>
         </section>
 
@@ -446,8 +514,14 @@ const LocationMuhaisnah = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join our premium Muhaisnah facility today and experience expert trainers, top-tier equipment, and 24/7 access.
             </p>
-            <Button size="lg" onClick={() => setIsJoinModalOpen(true)} className="text-lg px-8 py-6">
-              Join Muhaisnah Branch Now
+            <Button size="lg" asChild className="text-lg px-8 py-6">
+              <a
+                href={getMuhaisnahWhatsAppUrl("Hi 365 Fitness Muhaisnah! I'd like to join the Muhaisnah branch.")}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Join Muhaisnah Branch Now
+              </a>
             </Button>
           </div>
         </section>
@@ -487,7 +561,16 @@ const LocationMuhaisnah = () => {
         </section>
       </div>
       <Footer />
-      <JoinNowModal isOpen={isJoinModalOpen} onClose={() => setIsJoinModalOpen(false)} />
+      <a
+        href={getMuhaisnahWhatsAppUrl("Hi 365 Fitness Muhaisnah! I'd like to know more about membership options.")}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="fixed bottom-8 right-8 z-50 bg-primary hover:bg-primary/90 text-primary-foreground p-4 rounded-full shadow-glow-lg hover:shadow-glow animate-pulse-glow transition-all duration-300 hover:scale-110 group"
+        aria-label="Contact 365 Fitness Muhaisnah on WhatsApp"
+      >
+        <MessageCircle className="h-7 w-7 group-hover:rotate-12 transition-transform duration-300" />
+        <span className="absolute inset-0 rounded-full bg-primary/30 animate-ping" />
+      </a>
     </>
   );
 };
