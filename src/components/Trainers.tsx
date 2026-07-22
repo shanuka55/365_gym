@@ -6,6 +6,7 @@ import trainerShan from "@/assets/SHAN.webp";
 import trainerFarzana from "@/assets/FARZANA.webp";
 import trainerAhmed from "@/assets/AHMED.webp";
 import trainerMannu from "@/assets/MANU.jpg";
+import trainerLeaLea from "@/assets/LEA LEA.jpg";
 
 const trainers = [
   {
@@ -43,6 +44,12 @@ const trainers = [
     specialty: "CrossFit & Personal Training",
     image: trainerMannu,
     bio: "Level 3 Certified Personal Trainer (ICREPS) | REPs UAE Registered | Certified First Aid & CPR/AED | Specializing in Personal Training, Weight Loss, Muscle Building, Strength & Conditioning, HIIT, Functional Training & Nutrition.",
+  },
+  {
+    name: "Coach Lea Lea",
+    specialty: "Personal Training & Zumba",
+    image: trainerLeaLea,
+    bio: "certified Personal Trainer and Group Fitness Instructor with expertise in aerobics, Zumba, step cardio, boxing, HIIT, and Tabata. I also specialize in strength training, exercise recovery, and kids’ Zumba classes",
   },
 ];
 
