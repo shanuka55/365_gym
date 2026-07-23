@@ -8,8 +8,10 @@ import trainerAhmed from "@/assets/AHMED.webp";
 import trainerMannu from "@/assets/MANU.jpg";
 import trainerLeaLea from "@/assets/LEA LEA.jpg";
 import trainerShabaz from "@/assets/SHABAZ.jpg";
+import trainerRonnie from "@/assets/RONNIE.jpg";
 
 const trainers = [
+
   {
     name: "Coach Isha",
     specialty: "Personal Training & Weight Loss",
@@ -27,6 +29,12 @@ const trainers = [
     specialty: "CrossFit & Personal Training",
     image: trainerShan,
     bio: "Certified GPT HIIT Train Fitness by Reps UK. Physical Fitness Trainer NVQ Level 4 and member of Asia Fitness Conference.",
+  },
+  {
+    name: "Coach Ronnie",
+    specialty: "Personal Training & strength training",
+    image: trainerRonnie,
+    bio: "Certified Personal Trainer with expertise in muscle building, strength training, and functional fitness. Passionate about helping clients achieve their fitness goals through personalized training programs.",
   },
   {
     name: "Coach Farzana",
