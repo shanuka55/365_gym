@@ -7,6 +7,7 @@ import trainerFarzana from "@/assets/FARZANA.webp";
 import trainerAhmed from "@/assets/AHMED.webp";
 import trainerMannu from "@/assets/MANU.jpg";
 import trainerLeaLea from "@/assets/LEA LEA.jpg";
+import trainerShabaz from "@/assets/SHABAZ.jpg";
 
 const trainers = [
   {
@@ -50,6 +51,12 @@ const trainers = [
     specialty: "Personal Training & Zumba",
     image: trainerLeaLea,
     bio: "certified Personal Trainer and Group Fitness Instructor with expertise in aerobics, Zumba, step cardio, boxing, HIIT, and Tabata. I also specialize in strength training, exercise recovery, and kids’ Zumba classes",
+  },
+  {
+    name: "Coach Shabaz",
+    specialty: "Personal Training & Nutrition",
+    image: trainerShabaz,
+    bio: "Certified Nutritionist and Personal Trainer with a focus on holistic health and wellness. Expert in creating personalized nutrition plans to support fitness goals.",
   },
 ];
 
