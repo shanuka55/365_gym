@@ -4,6 +4,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { blogPosts } from "@/data/blogPosts";
+import fitnessBlogHero from "@/assets/fitness-blog-hero.png";
 
 const Blog = () => {
   return (
@@ -11,14 +12,22 @@ const Blog = () => {
       <Header />
       <main>
         {/* Hero Section */}
-        <section className="relative h-[40vh] min-h-[400px] bg-gradient-to-br from-background via-secondary to-background flex items-center justify-center overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,204,0,0.1),transparent_50%)]" />
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_50%,rgba(255,204,0,0.05),transparent_50%)]" />
+        <section className="relative h-[40vh] min-h-[400px] flex items-center justify-center overflow-hidden">
+          <img
+            src={fitnessBlogHero}
+            alt=""
+            aria-hidden="true"
+            className="absolute inset-0 h-full w-full object-cover object-[68%_center]"
+            fetchPriority="high"
+          />
+          <div className="absolute inset-0 bg-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-black/60" />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-background/20" />
           <div className="container mx-auto px-4 relative z-10 text-center">
-            <h1 className="text-5xl md:text-7xl font-black text-foreground mb-4 uppercase">
+            <h1 className="text-5xl md:text-7xl font-black text-white mb-4 uppercase drop-shadow-2xl">
               Fitness Blog
             </h1>
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl text-white/80 max-w-2xl mx-auto drop-shadow-lg">
               Expert insights on fitness, nutrition, and wellness from 365 Fitness Dubai
             </p>
           </div>
