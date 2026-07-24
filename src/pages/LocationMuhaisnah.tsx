@@ -456,6 +456,9 @@ const LocationMuhaisnah = () => {
               </h2>
               <p className="text-center text-muted-foreground mb-12">
                 Join with a friend and enjoy these exclusive rates. Prices are per person.
+                <span className="mt-2 block font-bold text-primary">
+                  Offer valid until the end of this month.
+                </span>
               </p>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                 {familyFriendsPlans.map((plan) => (

@@ -82,9 +82,9 @@ const muhaisnahPackages: TrainingPackage[] = [
     duration: "Individual Coaching",
     features: [
       { label: "1 Session", price: "AED 250" },
-      { label: "6 Sessions", price: "AED 1,350", offer: "Offer AED 1,200" },
-      { label: "12 Sessions", price: "AED 2,400", offer: "Offer AED 2,000" },
-      { label: "20 Sessions", price: "AED 3,400", offer: "Offer AED 2,500" },
+      { label: "6 Sessions", price: "AED 1,350" },
+      { label: "12 Sessions", price: "AED 2,400" },
+      { label: "20 Sessions", price: "AED 3,400" },
       { label: "Monthly", price: "AED 4,200" },
     ],
   },
