@@ -353,7 +353,13 @@ const LocationDeira = () => {
             <h2 className="text-4xl font-bold text-center mb-4">
               Pricing Plans & <span className="text-primary">Memberships</span>
             </h2>
-            <p className="text-center text-muted-foreground mb-12">Choose the perfect plan for your fitness journey</p>
+            <p className="text-center text-muted-foreground mb-5">Choose the perfect plan for your fitness journey</p>
+            <div className="mx-auto mb-12 flex w-fit items-center gap-3 rounded-full border-2 border-primary bg-primary/10 px-6 py-3 text-center shadow-lg shadow-primary/10">
+              <Clock className="h-5 w-5 flex-shrink-0 text-primary" />
+              <p className="font-black uppercase tracking-wide text-foreground">
+                Offer prices valid until the end of July
+              </p>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {pricingPlans.map((plan) => (
                 <Card
