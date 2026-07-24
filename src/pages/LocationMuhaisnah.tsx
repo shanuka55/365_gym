@@ -34,7 +34,7 @@ import img_11 from "@/assets/365 FITNESS GYM MUHASNAH 11.webp";
 import img_12 from "@/assets/365 FITNESS GYM MUHASNAH 12.webp";
 
 const muhaisnahGoogleProfileUrl = "https://share.google/p80UREIg1DLHQRqO7";
-const muhaisnahWhatsAppNumber = "971547120925";
+const muhaisnahWhatsAppNumber = "971547120927";
 
 const getMuhaisnahWhatsAppUrl = (message: string) =>
   `https://wa.me/${muhaisnahWhatsAppNumber}?text=${encodeURIComponent(message)}`;
@@ -94,7 +94,7 @@ const muhaisnahSeoSchema = {
       name: "365 Fitness Muhaisnah First",
       url: "https://www.365fitness.ae/locations/muhaisnah-first",
       hasMap: muhaisnahGoogleProfileUrl,
-      telephone: "+971547120925",
+      telephone: "+971547120927",
       address: {
         "@type": "PostalAddress",
         streetAddress: "6CP7+R99 - Muhaisnah First - Muhaisnah",
@@ -293,7 +293,7 @@ const LocationMuhaisnah = () => {
                   rel="noopener noreferrer"
                   className="text-sm text-primary hover:underline"
                 >
-                  WhatsApp: +971 54 712 0925
+                  WhatsApp: +971 54 712 0927
                 </a>
               </Card>
               <Card className="p-6 text-center">

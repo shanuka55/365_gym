@@ -84,7 +84,7 @@ const JoinNowModal = ({ isOpen, onClose }: JoinNowModalProps) => {
           `Membership Type: ${formData.membershipType}\n` +
           `${formData.notes ? `Notes: ${formData.notes}` : ""}`.trim();
 
-        const whatsappNumber = "971547120925";
+        const whatsappNumber = formData.branch.includes("Deira") ? "971547120925" : "971547120927";
         window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`, "_blank", "noopener,noreferrer");
 
         toast({

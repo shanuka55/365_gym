@@ -143,7 +143,7 @@ const muhaisnahPackages: TrainingPackage[] = [
 const TrainingRates = ({ branchName, branch, whatsappNumber: whatsappNumberOverride }: TrainingRatesProps) => {
   const [showPackages, setShowPackages] = useState(false);
   const packages = branch === "muhaisnah" ? muhaisnahPackages : deiraPackages;
-  const whatsappNumber = whatsappNumberOverride ?? "971547120925";
+  const whatsappNumber = whatsappNumberOverride ?? (branch === "muhaisnah" ? "971547120927" : "971547120925");
 
   const getWhatsAppUrl = (packageName: string) => {
     const message = `Hi 365 Fitness! I want to get the ${packageName} package at ${branchName}.`;
