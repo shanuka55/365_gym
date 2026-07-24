@@ -460,12 +460,15 @@ const LocationMuhaisnah = () => {
               <h2 className="text-4xl font-bold text-center mb-4">
                 Family &amp; Friends <span className="text-primary">Special</span>
               </h2>
-              <p className="text-center text-muted-foreground mb-12">
+              <p className="text-center text-muted-foreground mb-5">
                 Join with a friend and enjoy these exclusive rates. Prices are per person.
-                <span className="mt-2 block font-bold text-primary">
-                  Offer valid until the end of July.
-                </span>
               </p>
+              <div className="mx-auto mb-12 flex w-fit items-center gap-3 rounded-full border-2 border-primary bg-primary/10 px-6 py-3 text-center shadow-lg shadow-primary/10">
+                <Clock className="h-5 w-5 flex-shrink-0 text-primary" />
+                <p className="font-black uppercase tracking-wide text-foreground">
+                  Offer prices valid until the end of July
+                </p>
+              </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                 {familyFriendsPlans.map((plan) => (
                   <Card
