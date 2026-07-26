@@ -6,6 +6,25 @@ import gallery1 from "@/assets/IMG_Muhasnah_07.webp";
 import gallery2 from "@/assets/IMG_Muhasnah_06.webp";
 import gallery3 from "@/assets/IMG_Muhasnah_11.webp";
 import gallery4 from "@/assets/IMG_Deira_05.webp";
+import muhaisnah01 from "@/assets/IMG_Muhasnah_01.webp";
+import muhaisnah02 from "@/assets/IMG_Muhasnah_02.webp";
+import muhaisnah03 from "@/assets/IMG_Muhasnah_03.webp";
+import muhaisnah04 from "@/assets/IMG_Muhasnah_04.webp";
+import muhaisnah05 from "@/assets/IMG_Muhasnah_05.webp";
+import muhaisnah08 from "@/assets/IMG_Muhasnah_08.webp";
+import muhaisnah09 from "@/assets/IMG_Muhasnah_09.webp";
+import muhaisnah10 from "@/assets/IMG_Muhasnah_10.webp";
+import muhaisnah12 from "@/assets/IMG_Muhasnah_12.webp";
+import muhaisnahGym01 from "@/assets/365 FITNESS GYM MUHASNAH 01.webp";
+import muhaisnahGym02 from "@/assets/365 FITNESS GYM MUHASNAH 02.webp";
+import muhaisnahGym03 from "@/assets/365 FITNESS GYM MUHASNAH 03.webp";
+import muhaisnahGym04 from "@/assets/365 FITNESS GYM MUHASNAH 04.webp";
+import muhaisnahGym05 from "@/assets/365 FITNESS GYM MUHASNAH 05.webp";
+import muhaisnahGym06 from "@/assets/365 FITNESS GYM MUHASNAH 06.webp";
+import muhaisnahGym07 from "@/assets/365 FITNESS GYM MUHASNAH 07.webp";
+import muhaisnahGym08 from "@/assets/365 FITNESS GYM MUHASNAH 08.webp";
+import muhaisnahGym09 from "@/assets/365 FITNESS GYM MUHASNAH 09.webp";
+import muhaisnahGym10 from "@/assets/365 FITNESS GYM MUHASNAH 10.webp";
 import heroGym from "@/assets/hero-gym.webp";
 import heroWorkout from "@/assets/hero-workout.webp";
 import deiraBranch from "@/assets/deira-branch.webp";
@@ -25,6 +44,25 @@ const galleryImages = [
   { src: heroWorkout, title: "Training Session", category: "Training" },
   { src: deira_image, title: "Deira Branch", category: "Branches" },
   { src: muhansniahBranch, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnahGym01, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnahGym02, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnahGym03, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnahGym04, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnahGym05, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnahGym06, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnahGym07, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnahGym08, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnahGym09, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnahGym10, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnah01, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnah02, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnah03, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnah04, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnah05, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnah08, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnah09, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnah10, title: "Muhaisnah Branch", category: "Branches" },
+  { src: muhaisnah12, title: "Muhaisnah Branch", category: "Branches" },
 ];
 
 const Gallery = () => {
