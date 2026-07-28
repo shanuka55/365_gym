@@ -10,6 +10,9 @@ import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
 
+const deiraGoogleProfileUrl = "https://share.google/8ArVq05n3QaSpmVIc";
+const muhaisnahGoogleProfileUrl = "https://share.google/p80UREIg1DLHQRqO7";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -89,24 +92,38 @@ Message: ${formData.message}`;
                 </div>
 
                 <div className="space-y-6">
-                  <div className="flex items-start gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-glow">
+                  <a
+                    href={deiraGoogleProfileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open 365 Fitness Deira location on Google"
+                    className="flex items-start gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-glow group/location"
+                  >
                     <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-bold text-foreground mb-1">Main Branch - Deira</h3>
-                      <p className="text-muted-foreground">
+                      <p className="text-muted-foreground group-hover/location:text-primary transition-colors">
                         MZ 08, Dubai Municipality Building, Near Muraqqbat Police Station,
                         Salah Al Din Road, Dubai
                       </p>
                     </div>
-                  </div>
+                  </a>
 
-                  <div className="flex items-start gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-glow">
+                  <a
+                    href={muhaisnahGoogleProfileUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="Open 365 Fitness Muhaisnah location on Google"
+                    className="flex items-start gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-glow group/location"
+                  >
                     <MapPin className="w-6 h-6 text-primary flex-shrink-0 mt-1" />
                     <div>
                       <h3 className="font-bold text-foreground mb-1">Muhaisnah Branch</h3>
-                      <p className="text-muted-foreground">Shop Number 32, Madinat Badr, Muhaisnah First, Dubai</p>
+                      <p className="text-muted-foreground group-hover/location:text-primary transition-colors">
+                        Shop Number 32, Madinat Badr, Muhaisnah First, Dubai
+                      </p>
                     </div>
-                  </div>
+                  </a>
 
                   <div className="flex items-center gap-4 p-4 bg-card border border-border rounded-lg hover:border-primary transition-all hover:shadow-glow">
                     <Phone className="w-6 h-6 text-primary flex-shrink-0" />
