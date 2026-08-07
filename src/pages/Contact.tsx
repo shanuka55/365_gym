@@ -103,8 +103,8 @@ Message: ${formData.message}`;
                     <div>
                       <h3 className="font-bold text-foreground mb-1">Main Branch - Deira</h3>
                       <p className="text-muted-foreground group-hover/location:text-primary transition-colors">
-                        MZ 08, Dubai Municipality Building, Near Muraqqbat Police Station,
-                        Salah Al Din Road, Dubai
+                        MZ 08, Dubai Municipality Building, Near Muraqqabat Police Station,
+                        Salah Al Din Road, Al Muraqqabat, Dubai
                       </p>
                     </div>
                   </a>

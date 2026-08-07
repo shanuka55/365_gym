@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown, Clock, Dumbbell, MessageCircle, Music, Shield, Users } from "lucide-react";
+import { ChevronDown, Dumbbell, MessageCircle, Music, Shield, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 
@@ -156,14 +156,6 @@ const TrainingRates = ({ branchName, branch, whatsappNumber: whatsappNumberOverr
         <p className="mb-4 text-sm font-bold uppercase tracking-[0.2em] text-muted-foreground">
           Training Rates - {branchName}
         </p>
-        {branch === "deira" && (
-          <div className="mx-auto mb-5 flex w-fit items-center gap-3 rounded-full border-2 border-primary bg-primary/10 px-6 py-3 text-center shadow-lg shadow-primary/10">
-            <Clock className="h-5 w-5 flex-shrink-0 text-primary" />
-            <p className="font-black uppercase tracking-wide text-foreground">
-              Offer prices valid until the end of July
-            </p>
-          </div>
-        )}
         <Button
           size="lg"
           onClick={() => setShowPackages((current) => !current)}

@@ -1,6 +1,7 @@
 import { lazy, Suspense, useEffect, useState } from "react";
 import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
+import PageSeo from "@/components/PageSeo";
 
 const CountryCards = lazy(() => import("@/components/CountryCards"));
 const GalleryCarousel = lazy(() => import("@/components/GalleryCarousel"));
@@ -31,6 +32,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background">
+      <PageSeo
+        title="365 Fitness | 24/7 Gyms in Dubai"
+        description="Train 24/7 at 365 Fitness gyms in Deira and Muhaisnah, Dubai, with strength and cardio equipment, personal training and group classes."
+        canonical="https://www.365fitness.ae/"
+      />
       <Header />
       <main>
         <HeroSection />

@@ -75,6 +75,22 @@ const BlogPost = () => {
                   {post.content.map((paragraph, index) => (
                     <p key={index}>{paragraph}</p>
                   ))}
+                  {post.slug === "best-gym-in-deira-dubai-for-weight-loss-and-bodybuilding" && (
+                    <p>
+                      Explore facilities, memberships and directions for our{" "}
+                      <Link to="/locations/deira-muraqqabat" className="font-bold text-primary hover:underline">
+                        Deira Al Muraqqabat gym
+                      </Link>.
+                    </p>
+                  )}
+                  {post.slug === "why-muhaisnah-residents-are-choosing-professional-fitness-coaching" && (
+                    <p>
+                      Explore facilities, memberships and directions for our{" "}
+                      <Link to="/locations/muhaisnah-first" className="font-bold text-primary hover:underline">
+                        Muhaisnah First Gym
+                      </Link>.
+                    </p>
+                  )}
                 </div>
               </article>
 

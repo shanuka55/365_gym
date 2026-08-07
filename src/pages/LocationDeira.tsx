@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Check, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Clock, Check, MessageCircle, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -6,7 +6,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TrainingRates from "@/components/TrainingRates";
 import PageSeo from "@/components/PageSeo";
-import BranchReviews, { branchReviewData } from "@/components/BranchReviews";
+import useBranchCtaTracking from "@/hooks/useBranchCtaTracking";
+import BranchReviews from "@/components/BranchReviews";
 import deiraImage from "@/assets/365_fitness_gym_cover_image.webp";
 import img_1 from "@/assets/IMG_Deira_01.webp";
 import img_2 from "@/assets/IMG_Deira_02.webp";
@@ -18,45 +19,39 @@ import img_7 from "@/assets/deira-branch.webp";
 
 const deiraGoogleProfileUrl = "https://share.google/8ArVq05n3QaSpmVIc";
 const deiraWhatsAppNumber = "971547120925";
+const deiraCanonical = "https://www.365fitness.ae/locations/deira-muraqqabat";
+const deiraTitle = "24/7 Gym in Deira, Al Muraqqabat | 365 Fitness";
+const deiraDescription = "Train 24/7 at 365 Fitness in Al Muraqqabat, Deira. Premium equipment, personal training, group classes, MMA, boxing and flexible memberships. Contact us today.";
 
 const getDeiraWhatsAppUrl = (message: string) =>
   `https://wa.me/${deiraWhatsAppNumber}?text=${encodeURIComponent(message)}`;
 
 const deiraFaqs = [
   {
-    question: "Is your gym open 24 hours?",
+    question: "Is 365 Fitness Deira open 24 hours?",
     answer: "Yes, 365 Fitness Deira Muraqqabat is open 24/7 for flexible training at any time.",
   },
   {
-    question: "Do you have a ladies-only section?",
-    answer: "Please contact the Deira branch team for the latest ladies area availability and training options.",
+    question: "Where is 365 Fitness Deira located?",
+    answer: "The gym is at MZ 08, Dubai Municipality Building, near Muraqqabat Police Station on Salah Al Din Road, Al Muraqqabat, Dubai.",
   },
   {
-    question: "Do you offer personal training?",
+    question: "Do you offer personal training in Deira?",
     answer: "Yes, our Deira branch offers personal training for weight loss, muscle building, boxing, MMA, strength, and body transformation.",
+  },
+  {
+    question: "What group classes are available?",
+    answer: "The Deira branch offers guided classes including Yoga, Zumba, HIIT, functional training and aerobics. Contact the branch for the current timetable.",
   },
   {
     question: "Is parking available?",
     answer: "Parking options are available around the Deira Muraqqabat branch near Salah Al Din Road and Muraqqabat Police Station.",
   },
   {
-    question: "How much is membership?",
-    answer: "Deira gym membership starts from AED 199 monthly, with 3-month, 6-month, and annual membership packages available.",
+    question: "What membership offers are currently available?",
+    answer: "The confirmed Deira offer is 6 months plus 2 months free for AED 769. Tabby and Tamara are accepted, and FAZAA Card holders can receive 30% off. Terms and conditions apply.",
   },
 ];
-
-const deiraFaqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: deiraFaqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
-  })),
-};
 
 const deiraSeoSchema = {
   "@context": "https://schema.org",
@@ -74,23 +69,20 @@ const deiraSeoSchema = {
     },
     {
       "@type": "ExerciseGym",
+      "@id": `${deiraCanonical}#gym`,
       name: "365 Fitness Deira Muraqqabat",
-      url: "https://www.365fitness.ae/locations/deira-muraqqabat",
+      url: deiraCanonical,
       hasMap: deiraGoogleProfileUrl,
       telephone: "+971547120925",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "MZ 08, Dubai Municipality Building, Near Muraqqabat Police Station, Salah Al Din Road",
-        addressLocality: "Deira",
+        streetAddress: "MZ 08, Dubai Municipality Building, Near Muraqqabat Police Station, Salah Al Din Road, Al Muraqqabat",
+        addressLocality: "Dubai",
         addressRegion: "Dubai",
         addressCountry: "AE",
       },
-      review: branchReviewData.deira.reviews.map((review) => ({
-        "@type": "Review",
-        author: { "@type": "Person", name: review.name },
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-        reviewBody: review.text,
-      })),
+      openingHours: "Mo-Su 00:00-23:59",
+      priceRange: "AED",
     },
   ],
 };
@@ -107,6 +99,12 @@ const deiraGalleryImages = [
 ];
 
 const LocationDeira = () => {
+  useBranchCtaTracking({
+    branch: "deira",
+    phone: deiraWhatsAppNumber,
+    mapUrl: deiraGoogleProfileUrl,
+  });
+
   const pricingPlans = [
     {
       name: "MONTHLY",
@@ -147,8 +145,8 @@ const LocationDeira = () => {
     },
     {
       name: "6 MONTHS",
-      price: "770",
-      duration: "7 Months",
+      price: "769",
+      duration: "6 Months + 2 Free",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -160,7 +158,7 @@ const LocationDeira = () => {
         { name: "Sauna/Steam", included: true },
       ],
       offer: [
-        { name: "Get 2 months free!", included: true },
+        { name: "+2 Months FREE", included: true },
       ],
     },
     {
@@ -198,9 +196,9 @@ const LocationDeira = () => {
   return (
     <>
       <PageSeo
-        title="Best Gym in Deira Muraqqabat | 24/7 Fitness Center | 365 Fitness"
-        description="Join the best 24/7 gym in Deira Muraqqabat, Dubai. Personal training, group classes, CrossFit, MMA, boxing and affordable membership packages."
-        canonical="https://www.365fitness.ae/locations/deira-muraqqabat"
+        title={deiraTitle}
+        description={deiraDescription}
+        canonical={deiraCanonical}
         schema={deiraSeoSchema}
       />
       <Header />
@@ -214,22 +212,30 @@ const LocationDeira = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Best Gym in Deira Muraqqabat, Dubai
-              <span className="block text-primary mt-2">24/7 Fitness Center</span>
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6">
+              24/7 Gym in Deira
+              <span className="block text-primary mt-2">– Al Muraqqabat</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-              24/7 gym in Deira with personal training, group classes, CrossFit, MMA, boxing, strength training, and affordable membership packages.
+            <p className="text-base sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+              Train at 365 Fitness, a 24/7 gym in Deira located in Al Muraqqabat near Muraqqabat Police Station and Salah Al Din Road. Enjoy premium strength and cardio equipment, personal training, group classes, MMA, boxing and more.
             </p>
-            <Button size="lg" asChild className="text-lg px-8 py-6">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 max-w-sm sm:max-w-none mx-auto">
+            <Button size="lg" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
               <a
                 href={getDeiraWhatsAppUrl("Hi 365 Fitness Deira! I'd like to join this branch.")}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Join This Branch
+                WhatsApp Now
               </a>
             </Button>
+            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
+              <a href="tel:+971547120925"><Phone className="mr-2 h-5 w-5" />Call Now</a>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
+              <a href={deiraGoogleProfileUrl} target="_blank" rel="noopener noreferrer"><Navigation className="mr-2 h-5 w-5" />Get Directions</a>
+            </Button>
+            </div>
           </div>
         </section>
 
@@ -242,7 +248,7 @@ const LocationDeira = () => {
                 <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-bold mb-2">Address</h3>
                 <p className="text-sm text-muted-foreground group-hover/location:text-primary transition-colors">
-                  MZ 08, Dubai Municipality Building, Near Muraqqbat Police Station, Salah Al Din Road, Dubai
+                  MZ 08, Dubai Municipality Building, Near Muraqqabat Police Station, Salah Al Din Road, Al Muraqqabat, Dubai
                 </p>
                 </a>
               </Card>
@@ -313,10 +319,10 @@ const LocationDeira = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-4xl font-bold text-center mb-8">
-                Why Choose <span className="text-primary">365 Fitness Deira</span>
+                Why Choose <span className="text-primary">365 Fitness Gym in Deira?</span>
               </h2>
               <p className="text-lg text-muted-foreground text-center mb-12">
-                Located in the heart of Al Muraqqabat, Deira, 365 Fitness is one of the leading 24-hour gyms in Deira, offering premium equipment, certified trainers, spacious workout zones, and a motivating fitness community. Whether your goal is weight loss, muscle building, strength training, or overall fitness, our gym provides everything you need to achieve lasting results. We are conveniently located near Rigga, Salah Al Din, Port Saeed, and Union, making us a top choice for anyone looking for the best gym in Deira.
+                Located in Al Muraqqabat, 365 Fitness offers 24/7 access, premium equipment, certified trainers and spacious workout zones. The branch is convenient for members travelling from Rigga, Salah Al Din, Port Saeed and Union.
               </p>
               <div className="grid md:grid-cols-2 gap-8">
                 <div>
@@ -326,7 +332,7 @@ const LocationDeira = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Personal Training</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">Personal Training in Deira</h3>
                   <p className="text-muted-foreground">
                     Transform your body with our certified personal trainers in Deira. Every member receives a customized workout program based on their fitness level, body composition, and goals. Our trainers focus on proper exercise techniques, progressive training methods, fat loss strategies, muscle building, nutrition guidance, and continuous progress tracking to help you achieve faster and safer results.
                   </p>
@@ -338,7 +344,7 @@ const LocationDeira = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Group Classes</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">Group Fitness Classes in Al Muraqqabat</h3>
                   <p className="text-muted-foreground">
                     Stay motivated with exciting group fitness classes in Deira, including Yoga, Zumba, HIIT, Functional Training, Aerobics, and more. Our professionally guided classes improve cardiovascular health, flexibility, endurance, and overall fitness while creating an energetic and supportive community atmosphere.
                   </p>
@@ -351,13 +357,13 @@ const LocationDeira = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-4">
-              Pricing Plans & <span className="text-primary">Memberships</span>
+              Gym Memberships <span className="text-primary">in Deira</span>
             </h2>
             <p className="text-center text-muted-foreground mb-5">Choose the perfect plan for your fitness journey</p>
-            <div className="mx-auto mb-12 flex w-fit items-center gap-3 rounded-full border-2 border-primary bg-primary/10 px-6 py-3 text-center shadow-lg shadow-primary/10">
+            <div className="mx-auto mb-12 flex max-w-3xl items-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-6 py-3 text-center shadow-lg shadow-primary/10">
               <Clock className="h-5 w-5 flex-shrink-0 text-primary" />
               <p className="font-black uppercase tracking-wide text-foreground">
-                Offer prices valid until the end of July
+                6 Months + 2 Months FREE — AED 769 · Tabby &amp; Tamara accepted · 30% OFF with FAZAA Card · T&amp;C applies
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
@@ -430,7 +436,7 @@ const LocationDeira = () => {
               Ready to Start Your <span className="text-primary">Fitness Journey?</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Join Dubai's largest fitness facility today and experience world-class equipment, expert trainers, and 24/7 access.
+              Train on your schedule with 24/7 access, premium equipment, group classes and experienced trainers in Al Muraqqabat.
             </p>
             <Button size="lg" asChild className="text-lg px-8 py-6">
               <a
@@ -478,7 +484,7 @@ const LocationDeira = () => {
           </div>
         </section>
       </div>
-      <Footer />
+      <Footer branch="deira" />
       <a
         href={getDeiraWhatsAppUrl("Hi 365 Fitness Deira! I'd like to know more about membership options.")}
         target="_blank"

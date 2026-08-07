@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Check, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Clock, Check, MessageCircle, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -6,7 +6,8 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import TrainingRates from "@/components/TrainingRates";
 import PageSeo from "@/components/PageSeo";
-import BranchReviews, { branchReviewData } from "@/components/BranchReviews";
+import BranchReviews from "@/components/BranchReviews";
+import useBranchCtaTracking from "@/hooks/useBranchCtaTracking";
 import m_image1 from "@/assets/IMG_Muhasnah_01.webp";
 import m_image2 from "@/assets/IMG_Muhasnah_02.webp";
 import m_image3 from "@/assets/IMG_Muhasnah_03.webp";
@@ -35,21 +36,24 @@ import img_12 from "@/assets/365 FITNESS GYM MUHASNAH 12.webp";
 
 const muhaisnahGoogleProfileUrl = "https://share.google/p80UREIg1DLHQRqO7";
 const muhaisnahWhatsAppNumber = "971547120927";
+const muhaisnahCanonical = "https://www.365fitness.ae/locations/muhaisnah-first";
+const muhaisnahTitle = "24/7 Gym in Muhaisnah First, Dubai | 365 Fitness";
+const muhaisnahDescription = "Train 24/7 at 365 Fitness Muhaisnah First, Madinat Badr. Ladies separate area, personal training, group classes, MMA, boxing and flexible memberships.";
 
 const getMuhaisnahWhatsAppUrl = (message: string) =>
   `https://wa.me/${muhaisnahWhatsAppNumber}?text=${encodeURIComponent(message)}`;
 
 const muhaisnahFaqs = [
   {
-    question: "Is your gym open 24 hours?",
+    question: "Is 365 Fitness Muhaisnah First open 24 hours?",
     answer: "Yes, 365 Fitness Muhaisnah First is open 24/7, giving members flexible access day and night.",
   },
   {
-    question: "Do you have a ladies-only section?",
+    question: "Does the Muhaisnah gym have a ladies separate area?",
     answer: "Yes, our Muhaisnah gym includes a ladies separate area for comfortable and focused training.",
   },
   {
-    question: "Do you offer personal training?",
+    question: "Do you offer personal training in Muhaisnah?",
     answer: "Yes, certified personal trainers are available for weight loss, strength training, body shaping, MMA, and fitness transformation programs.",
   },
   {
@@ -57,23 +61,10 @@ const muhaisnahFaqs = [
     answer: "Parking is available around the Muhaisnah First, Madinat Badr location for members and visitors.",
   },
   {
-    question: "How much is membership?",
-    answer: "Muhaisnah membership packages start from AED 449 monthly, with 3-month, 6-month, and annual options available.",
+    question: "What membership offers are currently available?",
+    answer: "The confirmed annual promotion is 12 months plus 1 month free for AED 2499. Terms and conditions apply. See the membership section or WhatsApp the Muhaisnah team for current rates on other packages.",
   },
 ];
-
-const muhaisnahFaqSchema = {
-  "@context": "https://schema.org",
-  "@type": "FAQPage",
-  mainEntity: muhaisnahFaqs.map((faq) => ({
-    "@type": "Question",
-    name: faq.question,
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: faq.answer,
-    },
-  })),
-};
 
 const muhaisnahSeoSchema = {
   "@context": "https://schema.org",
@@ -91,23 +82,20 @@ const muhaisnahSeoSchema = {
     },
     {
       "@type": "ExerciseGym",
+      "@id": `${muhaisnahCanonical}#gym`,
       name: "365 Fitness Muhaisnah First",
-      url: "https://www.365fitness.ae/locations/muhaisnah-first",
+      url: muhaisnahCanonical,
       hasMap: muhaisnahGoogleProfileUrl,
       telephone: "+971547120927",
       address: {
         "@type": "PostalAddress",
-        streetAddress: "6CP7+R99 - Muhaisnah First - Muhaisnah",
-        addressLocality: "Muhaisnah",
+        streetAddress: "Shop Number 32, Madinat Badr, Muhaisnah First",
+        addressLocality: "Dubai",
         addressRegion: "Dubai",
         addressCountry: "AE",
       },
-      review: branchReviewData.muhaisnah.reviews.map((review) => ({
-        "@type": "Review",
-        author: { "@type": "Person", name: review.name },
-        reviewRating: { "@type": "Rating", ratingValue: "5", bestRating: "5" },
-        reviewBody: review.text,
-      })),
+      openingHours: "Mo-Su 00:00-23:59",
+      priceRange: "AED",
     },
   ],
 };
@@ -139,6 +127,12 @@ const muhaisnahGalleryImages = [
 
 
 const LocationMuhaisnah = () => {
+  useBranchCtaTracking({
+    branch: "muhaisnah",
+    phone: muhaisnahWhatsAppNumber,
+    mapUrl: muhaisnahGoogleProfileUrl,
+  });
+
   const pricingPlans = [
     {
       name: "MONTHLY",
@@ -209,7 +203,7 @@ const LocationMuhaisnah = () => {
         { name: "Sauna/Steam", included: true },
       ],
       offer: [
-        { name: "Offer : 2499AED", included: true },
+        { name: "12 Months + 1 Month FREE — AED 2499 · T&C apply", included: true },
       ],
     },
   ];
@@ -236,9 +230,9 @@ const LocationMuhaisnah = () => {
   return (
     <>
       <PageSeo
-        title="Best Gym in Muhaisnah | 24/7 Fitness Center | 365 Fitness"
-        description="Join the best 24/7 gym in Muhaisnah, Dubai. Personal training, ladies section, group classes, CrossFit, MMA, boxing and affordable membership packages."
-        canonical="https://www.365fitness.ae/locations/muhaisnah-first"
+        title={muhaisnahTitle}
+        description={muhaisnahDescription}
+        canonical={muhaisnahCanonical}
         schema={muhaisnahSeoSchema}
       />
       <Header />
@@ -252,22 +246,30 @@ const LocationMuhaisnah = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
-            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Best Gym in Muhaisnah, Dubai
+            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6">
+              24/7 Gym in Muhaisnah First, Dubai
               <span className="block text-primary mt-2">Ladies Separate Area</span>
             </h1>
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
+            <p className="text-base sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
               24/7 fitness center in Muhaisnah First with personal training, ladies gym facilities, group classes, CrossFit, MMA, boxing, and affordable membership packages.
             </p>
-            <Button size="lg" asChild className="text-lg px-8 py-6">
+            <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 max-w-sm sm:max-w-none mx-auto">
+            <Button size="lg" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
               <a
                 href={getMuhaisnahWhatsAppUrl("Hi 365 Fitness Muhaisnah! I'd like to join this branch.")}
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Join This Branch
+                WhatsApp Now
               </a>
             </Button>
+            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
+              <a href="tel:+971547120927"><Phone className="mr-2 h-5 w-5" />Call Now</a>
+            </Button>
+            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
+              <a href={muhaisnahGoogleProfileUrl} target="_blank" rel="noopener noreferrer"><Navigation className="mr-2 h-5 w-5" />Get Directions</a>
+            </Button>
+            </div>
           </div>
         </section>
 
@@ -280,7 +282,7 @@ const LocationMuhaisnah = () => {
                 <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
                 <h3 className="font-bold mb-2">Address</h3>
                 <p className="text-sm text-muted-foreground group-hover/location:text-primary transition-colors">
-                  6CP7+R99 - Muhaisnah First - Muhaisnah - Dubai
+                  Shop Number 32, Madinat Badr, Muhaisnah First, Dubai
                 </p>
                 </a>
               </Card>
@@ -351,7 +353,7 @@ const LocationMuhaisnah = () => {
           <div className="container mx-auto px-4">
             <div className="max-w-4xl mx-auto">
               <h2 className="text-4xl font-bold text-center mb-8">
-                Why Choose <span className="text-primary">365 Fitness Muhaisnah</span>
+                Why Choose <span className="text-primary">365 Fitness Gym in Muhaisnah?</span>
               </h2>
               <p className="text-lg text-muted-foreground text-center mb-12">
                 Looking for the best gym in Muhaisnah? 365 Fitness Muhaisnah is a premium 24-hour fitness center in Muhaisnah 1, conveniently located near Madinat Badr, Al Khawaneej, Al Qusais, Mizhar, and Muhaisnah 4. We offer state-of-the-art gym equipment, certified personal trainers, ladies-only workout facilities, group fitness classes, and affordable membership plans designed to help you achieve your fitness goals.
@@ -364,19 +366,19 @@ const LocationMuhaisnah = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Personal Training</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-primary">Personal Training in Muhaisnah</h3>
                   <p className="text-muted-foreground">
                     Achieve better results with our professional personal trainers in Muhaisnah. We develop personalized workout programs tailored to your body type, fitness level, and objectives. From fat loss and strength training to muscle building and athletic performance, our trainers monitor your progress, improve your technique, and keep you motivated throughout your fitness journey.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Ladies Gym</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-primary">Ladies Gym in Muhaisnah</h3>
                   <p className="text-muted-foreground">
                     Our dedicated ladies gym in Muhaisnah offers a safe, comfortable, and private workout environment exclusively for women. With customized body transformation programs, strength training, weight management plans, and experienced female trainers, we help women build confidence while reaching their health and fitness goals.
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Group Classes</h3>
+                    <h3 className="text-2xl font-bold mb-4 text-primary">Group Fitness Classes in Muhaisnah</h3>
                   <p className="text-muted-foreground">
                     Join our energetic fitness classes in Muhaisnah, including Yoga, Zumba, HIIT, Functional Training, Aerobics, and strength-based group workouts. Our classes are designed to improve flexibility, burn calories, boost endurance, and keep you motivated through fun and engaging sessions suitable for all fitness levels.
                   </p>
@@ -389,15 +391,9 @@ const LocationMuhaisnah = () => {
         <section className="py-16">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-4">
-              Pricing Plans & <span className="text-primary">Memberships</span>
+              Gym Memberships <span className="text-primary">in Muhaisnah</span>
             </h2>
             <p className="text-center text-muted-foreground mb-5">Choose the perfect plan for your fitness journey</p>
-            <div className="mx-auto mb-12 flex w-fit items-center gap-3 rounded-full border-2 border-primary bg-primary/10 px-6 py-3 text-center shadow-lg shadow-primary/10">
-              <Clock className="h-5 w-5 flex-shrink-0 text-primary" />
-              <p className="font-black uppercase tracking-wide text-foreground">
-                Offer prices valid until the end of July
-              </p>
-            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {pricingPlans.map((plan) => (
                 <Card
@@ -463,12 +459,6 @@ const LocationMuhaisnah = () => {
               <p className="text-center text-muted-foreground mb-5">
                 Join with a friend and enjoy these exclusive rates. Prices are per person.
               </p>
-              <div className="mx-auto mb-12 flex w-fit items-center gap-3 rounded-full border-2 border-primary bg-primary/10 px-6 py-3 text-center shadow-lg shadow-primary/10">
-                <Clock className="h-5 w-5 flex-shrink-0 text-primary" />
-                <p className="font-black uppercase tracking-wide text-foreground">
-                  Offer prices valid until the end of July
-                </p>
-              </div>
               <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
                 {familyFriendsPlans.map((plan) => (
                   <Card
@@ -572,7 +562,7 @@ const LocationMuhaisnah = () => {
           </div>
         </section>
       </div>
-      <Footer />
+      <Footer branch="muhaisnah" />
       <a
         href={getMuhaisnahWhatsAppUrl("Hi 365 Fitness Muhaisnah! I'd like to know more about membership options.")}
         target="_blank"

@@ -3,8 +3,23 @@ import { Facebook, Instagram, Youtube, Video, MapPin, Phone, Mail } from "lucide
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-header.webp";
 
-const Footer = () => {
+type FooterProps = {
+  branch?: "deira" | "muhaisnah";
+};
+
+const Footer = ({ branch = "deira" }: FooterProps) => {
   const currentYear = new Date().getFullYear();
+  const contact = branch === "muhaisnah"
+    ? {
+        address: "Shop Number 32, Madinat Badr, Muhaisnah First, Dubai",
+        phoneHref: "tel:+971547120927",
+        phoneLabel: "+971 54 712 0927",
+      }
+    : {
+        address: "MZ 08, Dubai Municipality Building, Near Muraqqabat Police Station, Salah Al Din Road, Al Muraqqabat, Dubai",
+        phoneHref: "tel:+971547120925",
+        phoneLabel: "+971 54 712 0925",
+      };
 
   return (
     <footer className="bg-black border-t border-primary/20">
@@ -41,12 +56,12 @@ const Footer = () => {
               </li>
               <li>
                 <Link to="/locations/deira-muraqqabat" className="text-muted-foreground hover:text-primary transition-colors">
-                  Deira Muraqqabat
+                  365 Fitness Deira
                 </Link>
               </li>
               <li>
                 <Link to="/locations/muhaisnah-first" className="text-muted-foreground hover:text-primary transition-colors">
-                  Muhasnah First
+                  365 Fitness Muhaisnah
                 </Link>
               </li>
               <li>
@@ -79,13 +94,13 @@ const Footer = () => {
               <li className="flex items-start">
                 <MapPin className="h-5 w-5 text-primary mt-1 mr-2 flex-shrink-0" />
                 <span className="text-muted-foreground text-sm">
-                  MZ 08, Dubai Municipality Building, Near Muraqqbat Police Station, Salah Al Din Road, Dubai
+                  {contact.address}
                 </span>
               </li>
               <li className="flex items-center">
                 <Phone className="h-5 w-5 text-primary mr-2 flex-shrink-0" />
-                <a href="tel:+971547120925" className="text-muted-foreground hover:text-primary transition-colors">
-                  +971 54 712 0925
+                <a href={contact.phoneHref} className="text-muted-foreground hover:text-primary transition-colors">
+                  {contact.phoneLabel}
                 </a>
               </li>
               <li className="flex items-center">
