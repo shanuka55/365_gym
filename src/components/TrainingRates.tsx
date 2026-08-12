@@ -197,12 +197,17 @@ const TrainingRates = ({ branchName, branch, whatsappNumber: whatsappNumberOverr
                     </li>
                   ))}
                 </ul>
-                <Button asChild className="mt-6 w-full">
-                  <a href={getWhatsAppUrl(item.title)} target="_blank" rel="noopener noreferrer">
-                    <MessageCircle className="mr-2 h-4 w-4" />
-                    Get Now
-                  </a>
-                </Button>
+                <div className="mt-6 space-y-3">
+                  <Button asChild className="w-full">
+                    <a href={getWhatsAppUrl(item.title)} target="_blank" rel="noopener noreferrer">
+                      <MessageCircle className="mr-2 h-4 w-4" />
+                      WhatsApp Inquiry
+                    </a>
+                  </Button>
+                  <Button className="w-full" variant="secondary" disabled title="Online payment coming soon">
+                    Pay Online
+                  </Button>
+                </div>
               </Card>
             ))}
           </div>

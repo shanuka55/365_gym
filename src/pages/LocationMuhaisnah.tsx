@@ -136,7 +136,8 @@ const LocationMuhaisnah = () => {
   const pricingPlans = [
     {
       name: "MONTHLY",
-      price: "449",
+      regularPrice: "449",
+      price: "399",
       duration: "Month",
       features: [
         { name: "Free Consultation", included: true },
@@ -151,7 +152,8 @@ const LocationMuhaisnah = () => {
     },
     {
       name: "3 MONTHS",
-      price: "1499",
+      regularPrice: "1499",
+      price: "1099",
       duration: "3 Months",
       popular: true,
       features: [
@@ -164,14 +166,11 @@ const LocationMuhaisnah = () => {
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
       ],
-      offer: [
-        { name: "Offer : 1200AED", included: true },
-      ],
-
     },
     {
       name: "6 MONTHS",
-      price: "2199",
+      regularPrice: "2199",
+      price: "1699",
       duration: "6 Months",
       features: [
         { name: "Free Consultation", included: true },
@@ -183,14 +182,11 @@ const LocationMuhaisnah = () => {
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
       ],
-      offer: [
-        { name: "Offer : 1800AED", included: true },
-      ],
-
     },
     {
       name: "12 MONTHS",
-      price: "3499",
+      regularPrice: "3499",
+      price: "2199",
       duration: "1 Year",
       features: [
         { name: "Free Consultation", included: true },
@@ -198,12 +194,9 @@ const LocationMuhaisnah = () => {
         { name: "24 Hour Gym", included: true },
         { name: "Nutritional Plan", included: true },
         { name: "Group Classes", included: true },
-        { name: "Personal Training", included: true },
+        { name: "Personal Training", included: false },
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
-      ],
-      offer: [
-        { name: "12 Months + 1 Month FREE — AED 2499 · T&C apply", included: true },
       ],
     },
   ];
@@ -254,21 +247,21 @@ const LocationMuhaisnah = () => {
               24/7 fitness center in Muhaisnah First with personal training, ladies gym facilities, group classes, CrossFit, MMA, boxing, and affordable membership packages.
             </p>
             <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 max-w-sm sm:max-w-none mx-auto">
-            <Button size="lg" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
-              <a
-                href={getMuhaisnahWhatsAppUrl("Hi 365 Fitness Muhaisnah! I'd like to join this branch.")}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                WhatsApp Now
-              </a>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
-              <a href="tel:+971547120927"><Phone className="mr-2 h-5 w-5" />Call Now</a>
-            </Button>
-            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
-              <a href={muhaisnahGoogleProfileUrl} target="_blank" rel="noopener noreferrer"><Navigation className="mr-2 h-5 w-5" />Get Directions</a>
-            </Button>
+              <Button size="lg" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
+                <a
+                  href={getMuhaisnahWhatsAppUrl("Hi 365 Fitness Muhaisnah! I'd like to join this branch.")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  WhatsApp Now
+                </a>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
+                <a href="tel:+971547120927"><Phone className="mr-2 h-5 w-5" />Call Now</a>
+              </Button>
+              <Button size="lg" variant="outline" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
+                <a href={muhaisnahGoogleProfileUrl} target="_blank" rel="noopener noreferrer"><Navigation className="mr-2 h-5 w-5" />Get Directions</a>
+              </Button>
             </div>
           </div>
         </section>
@@ -279,11 +272,11 @@ const LocationMuhaisnah = () => {
             <div className="grid md:grid-cols-3 gap-6 max-w-4xl mx-auto">
               <Card className="p-6 text-center">
                 <a href={muhaisnahGoogleProfileUrl} target="_blank" rel="noopener noreferrer" className="block group/location">
-                <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
-                <h3 className="font-bold mb-2">Address</h3>
-                <p className="text-sm text-muted-foreground group-hover/location:text-primary transition-colors">
-                  Shop Number 32, Madinat Badr, Muhaisnah First, Dubai
-                </p>
+                  <MapPin className="h-8 w-8 text-primary mx-auto mb-3" />
+                  <h3 className="font-bold mb-2">Address</h3>
+                  <p className="text-sm text-muted-foreground group-hover/location:text-primary transition-colors">
+                    Shop Number 32, Madinat Badr, Muhaisnah First, Dubai
+                  </p>
                 </a>
               </Card>
               <Card className="p-6 text-center">
@@ -366,19 +359,19 @@ const LocationMuhaisnah = () => {
                   </p>
                 </div>
                 <div>
-                    <h3 className="text-2xl font-bold mb-4 text-primary">Personal Training in Muhaisnah</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">Personal Training in Muhaisnah</h3>
                   <p className="text-muted-foreground">
                     Achieve better results with our professional personal trainers in Muhaisnah. We develop personalized workout programs tailored to your body type, fitness level, and objectives. From fat loss and strength training to muscle building and athletic performance, our trainers monitor your progress, improve your technique, and keep you motivated throughout your fitness journey.
                   </p>
                 </div>
                 <div>
-                    <h3 className="text-2xl font-bold mb-4 text-primary">Ladies Gym in Muhaisnah</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">Ladies Gym in Muhaisnah</h3>
                   <p className="text-muted-foreground">
                     Our dedicated ladies gym in Muhaisnah offers a safe, comfortable, and private workout environment exclusively for women. With customized body transformation programs, strength training, weight management plans, and experienced female trainers, we help women build confidence while reaching their health and fitness goals.
                   </p>
                 </div>
                 <div>
-                    <h3 className="text-2xl font-bold mb-4 text-primary">Group Fitness Classes in Muhaisnah</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">Group Fitness Classes in Muhaisnah</h3>
                   <p className="text-muted-foreground">
                     Join our energetic fitness classes in Muhaisnah, including Yoga, Zumba, HIIT, Functional Training, Aerobics, and strength-based group workouts. Our classes are designed to improve flexibility, burn calories, boost endurance, and keep you motivated through fun and engaging sessions suitable for all fitness levels.
                   </p>
@@ -394,6 +387,12 @@ const LocationMuhaisnah = () => {
               Gym Memberships <span className="text-primary">in Muhaisnah</span>
             </h2>
             <p className="text-center text-muted-foreground mb-5">Choose the perfect plan for your fitness journey</p>
+            <div className="mx-auto mb-12 flex max-w-4xl items-center gap-4 rounded-2xl border-2 border-primary bg-primary/10 px-5 py-5 text-center shadow-lg shadow-primary/10 sm:px-8">
+              <Clock className="h-6 w-6 flex-shrink-0 text-primary" />
+              <p className="w-full text-base font-black uppercase leading-snug tracking-wide text-foreground sm:text-xl">
+                Limited-time Offer valid until September 2026
+              </p>
+            </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {pricingPlans.map((plan) => (
                 <Card
@@ -407,8 +406,18 @@ const LocationMuhaisnah = () => {
                   )}
                   <h3 className="text-xl font-bold mb-4 text-center">{plan.name}</h3>
                   <div className="text-center mb-6">
-                    <span className="text-sm text-muted-foreground">AED</span>
-                    <div className="text-5xl font-bold text-primary">{plan.price}</div>
+                    {plan.regularPrice && (
+                      <div className="mb-1 text-lg font-semibold text-muted-foreground line-through">
+                        AED {plan.regularPrice}
+                      </div>
+                    )}
+                    {plan.regularPrice && (
+                      <div className="text-xs font-bold uppercase tracking-wide text-primary">Actual payable amount</div>
+                    )}
+                    <div className="flex items-baseline justify-center gap-1 text-primary">
+                      <span className="text-lg font-bold">AED</span>
+                      <span className="text-5xl font-bold">{plan.price}</span>
+                    </div>
                     <span className="text-sm text-muted-foreground">/{plan.duration}</span>
                   </div>
                   <ul className="space-y-3 mb-6">
@@ -424,30 +433,20 @@ const LocationMuhaisnah = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full" variant={plan.popular ? "default" : "outline"} asChild>
-                    <a
-                      href={getMuhaisnahWhatsAppUrl(`Hi 365 Fitness Muhaisnah! I'm interested in the ${plan.name} membership plan.`)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Join Now
-                    </a>
-                  </Button>
-
-
-                  {/* Display offer only if exists AND has items */}
-                  {Array.isArray(plan.offer) && plan.offer.length > 0 && (
-                    <div className="mt-6 text-center text-2xl font-bold font-medium">
-                      {plan.offer.map((offer) => (
-                        <div
-                          key={offer.name}
-                          className={offer.included ? "text-xl font-bold text-primary" : "text-muted-foreground line-through opacity-50"}
-                        >
-                          {offer.name}
-                        </div>
-                      ))}
-                    </div>
-                  )}
+                  <div className="space-y-3">
+                    <Button className="w-full" variant={plan.popular ? "default" : "outline"} asChild>
+                      <a
+                        href={getMuhaisnahWhatsAppUrl(`Hi 365 Fitness Muhaisnah! I'm interested in the ${plan.name} membership plan.`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        WhatsApp Inquiry
+                      </a>
+                    </Button>
+                    <Button className="w-full" variant="secondary" disabled title="Online payment coming soon">
+                      Pay Online
+                    </Button>
+                  </div>
                 </Card>
               ))}
             </div>
@@ -486,15 +485,20 @@ const LocationMuhaisnah = () => {
                         <span>Available at Muhaisnah First branch</span>
                       </li>
                     </ul>
-                    <Button className="w-full" variant={plan.popular ? "default" : "outline"} asChild>
-                      <a
-                        href={getMuhaisnahWhatsAppUrl(`Hi 365 Fitness Muhaisnah! I'm interested in the Family & Friends ${plan.name} special at AED ${plan.price} each.`)}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Join on WhatsApp
-                      </a>
-                    </Button>
+                    <div className="space-y-3">
+                      <Button className="w-full" variant={plan.popular ? "default" : "outline"} asChild>
+                        <a
+                          href={getMuhaisnahWhatsAppUrl(`Hi 365 Fitness Muhaisnah! I'm interested in the Family & Friends ${plan.name} special at AED ${plan.price} each.`)}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          WhatsApp Inquiry
+                        </a>
+                      </Button>
+                      <Button className="w-full" variant="secondary" disabled title="Online payment coming soon">
+                        Pay Online
+                      </Button>
+                    </div>
                   </Card>
                 ))}
               </div>
@@ -578,4 +582,3 @@ const LocationMuhaisnah = () => {
 };
 
 export default LocationMuhaisnah;
-

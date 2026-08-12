@@ -360,10 +360,10 @@ const LocationDeira = () => {
               Gym Memberships <span className="text-primary">in Deira</span>
             </h2>
             <p className="text-center text-muted-foreground mb-5">Choose the perfect plan for your fitness journey</p>
-            <div className="mx-auto mb-12 flex max-w-3xl items-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-6 py-3 text-center shadow-lg shadow-primary/10">
-              <Clock className="h-5 w-5 flex-shrink-0 text-primary" />
-              <p className="font-black uppercase tracking-wide text-foreground">
-                6 Months + 2 Months FREE — AED 769 · Tabby &amp; Tamara accepted · 30% OFF with FAZAA Card · T&amp;C applies
+            <div className="relative mx-auto mb-12 flex min-h-[90px] max-w-6xl items-center rounded-2xl border-2 border-primary bg-primary/10 px-16 py-6 text-center shadow-lg shadow-primary/10">
+              <Clock className="absolute left-10 h-7 w-7 text-primary" />
+              <p className="w-full text-xl font-black uppercase tracking-wide text-foreground md:text-2xl">
+                Limited-time Offer valid until September 2026
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
@@ -396,15 +396,20 @@ const LocationDeira = () => {
                       </li>
                     ))}
                   </ul>
-                  <Button className="w-full" variant={plan.popular ? "default" : "outline"} asChild>
-                    <a
-                      href={getDeiraWhatsAppUrl(`Hi 365 Fitness Deira! I'm interested in the ${plan.name} membership plan.`)}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Join Now
-                    </a>
-                  </Button>
+                  <div className="space-y-3">
+                    <Button className="w-full" variant={plan.popular ? "default" : "outline"} asChild>
+                      <a
+                        href={getDeiraWhatsAppUrl(`Hi 365 Fitness Deira! I'm interested in the ${plan.name} membership plan.`)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        WhatsApp Inquiry
+                      </a>
+                    </Button>
+                    <Button className="w-full" variant="secondary" disabled title="Online payment coming soon">
+                      Pay Online
+                    </Button>
+                  </div>
                   {/* Display offer only if exists AND has items */}
                   {Array.isArray(plan.offer) && plan.offer.length > 0 && (
                     <div className="mt-4 text-center text-sm font-medium">
