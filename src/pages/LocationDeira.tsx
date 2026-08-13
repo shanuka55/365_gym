@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Check, MessageCircle, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock, Check, MessageCircle, Navigation, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -49,7 +49,7 @@ const deiraFaqs = [
   },
   {
     question: "What membership offers are currently available?",
-    answer: "The confirmed Deira offer is 6 months plus 2 months free for AED 769. Tabby and Tamara are accepted, and FAZAA Card holders can receive 30% off. Terms and conditions apply.",
+    answer: "The confirmed Deira offer is 6 months plus 2 months free for AED 770. Tabby and Tamara are accepted, and FAZAA Card holders can receive 30% off. Terms and conditions apply.",
   },
 ];
 
@@ -108,8 +108,9 @@ const LocationDeira = () => {
   const pricingPlans = [
     {
       name: "MONTHLY",
-      price: "199",
+      price: "180",
       duration: "Month",
+      paymentUrl: "https://buy.stripe.com/4gM8wP16Lcp2axN0zlaR21g",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -127,7 +128,8 @@ const LocationDeira = () => {
     {
       name: "3 MONTHS",
       price: "504",
-      duration: "3 Months",
+      duration: "3 Months + 1 Free",
+      paymentUrl: "https://buy.stripe.com/3cI9ATdTxbkYdJZ95RaR21h",
       popular: true,
       features: [
         { name: "Free Consultation", included: true },
@@ -145,8 +147,9 @@ const LocationDeira = () => {
     },
     {
       name: "6 MONTHS",
-      price: "769",
+      price: "770",
       duration: "6 Months + 2 Free",
+      paymentUrl: "https://buy.stripe.com/aFa28reXBcp2dJZ5TFaR21i",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -164,7 +167,8 @@ const LocationDeira = () => {
     {
       name: "12 MONTHS",
       price: "1250",
-      duration: "12 Months",
+      duration: "12 Months + 3 Free",
+      paymentUrl: "https://buy.stripe.com/9B66oH8zdagUbBRbdZaR21j",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -393,6 +397,7 @@ const LocationDeira = () => {
                   <div className="text-center mb-6">
                     <span className="text-sm text-muted-foreground">AED</span>
                     <div className="text-5xl font-bold text-primary">{plan.price}</div>
+                    <div className="text-xs font-semibold text-foreground">+ 5% VAT at checkout</div>
                     <span className="text-sm text-muted-foreground">/{plan.duration}</span>
                   </div>
                   <ul className="space-y-3 mb-6">
@@ -418,8 +423,11 @@ const LocationDeira = () => {
                         WhatsApp Inquiry
                       </a>
                     </Button>
-                    <Button className="w-full" variant="secondary" disabled title="Online payment coming soon">
-                      Pay Online
+                    <Button className="payment-button w-full" asChild>
+                      <a href={plan.paymentUrl} target="_blank" rel="noopener noreferrer">
+                        <span>Pay Online</span>
+                        <ArrowUpRight className="payment-button__icon" aria-hidden="true" />
+                      </a>
                     </Button>
                   </div>
                 </Card>
