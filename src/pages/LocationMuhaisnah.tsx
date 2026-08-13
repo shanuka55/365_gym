@@ -1,4 +1,23 @@
-import { MapPin, Phone, Clock, Check, MessageCircle, Navigation, ArrowUpRight } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Clock,
+  Check,
+  MessageCircle,
+  Navigation,
+  ArrowUpRight,
+  Wifi,
+  Flame,
+  CloudFog,
+  LockKeyhole,
+  UserRound,
+  UsersRound,
+  CircleDotDashed,
+  Goal,
+  Crown,
+  ScanLine,
+  CircleParking,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -123,6 +142,20 @@ const muhaisnahGalleryImages = [
   { src: m_image10, alt: "Muhaisnah Branch Facilities" },
   { src: m_image11, alt: "Muhaisnah Branch Facilities" },
   { src: m_image12, alt: "Muhaisnah Branch Facilities" },
+];
+
+const muhaisnahFacilities = [
+  { name: "Free High-Speed Wi-Fi", icon: Wifi },
+  { name: "Sauna", icon: Flame },
+  { name: "Steam Room", icon: CloudFog },
+  { name: "Lockers & Showers", icon: LockKeyhole },
+  { name: "Ladies-Only Section", icon: UserRound },
+  { name: "Separate Male & Female Washrooms", icon: UsersRound },
+  { name: "Pool Table", icon: CircleDotDashed },
+  { name: "Foosball", icon: Goal },
+  { name: "Chess & More", icon: Crown },
+  { name: "Body Composition Analyzer", icon: ScanLine },
+  { name: "Free Parking", icon: CircleParking },
 ];
 
 
@@ -519,6 +552,33 @@ const LocationMuhaisnah = () => {
               branch="muhaisnah"
               whatsappNumber={muhaisnahWhatsAppNumber}
             />
+          </div>
+        </section>
+
+        {/* Facilities & Perks */}
+        <section className="bg-secondary/20 py-10 md:py-12" aria-labelledby="muhaisnah-facilities-heading">
+          <div className="container mx-auto px-4">
+            <div className="mx-auto mb-6 max-w-3xl text-center">
+              <h2 id="muhaisnah-facilities-heading" className="mb-2 text-2xl font-bold text-foreground sm:text-3xl">
+                Free Facilities &amp; <span className="text-primary">Perks</span>
+              </h2>
+              <p className="text-sm text-muted-foreground">
+                Included with your Muhaisnah membership.
+              </p>
+            </div>
+
+            <ul className="mx-auto grid max-w-7xl grid-cols-1 gap-2.5 min-[360px]:grid-cols-2 md:grid-cols-3 lg:flex lg:flex-wrap lg:justify-center lg:gap-3">
+              {muhaisnahFacilities.map(({ name, icon: Icon }) => (
+                <li key={name} className="h-full lg:flex-none lg:basis-[calc((100%_-_3.75rem)/6)]">
+                  <Card className="flex min-h-[68px] h-full items-center gap-2.5 rounded-lg border-border/80 bg-card px-3 py-2.5 transition-all duration-200 motion-reduce:transform-none motion-reduce:transition-none md:hover:-translate-y-0.5 md:hover:border-primary">
+                    <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-md bg-primary/10 text-primary">
+                      <Icon className="h-5 w-5" aria-hidden="true" />
+                    </span>
+                    <span className="text-xs font-bold leading-snug text-foreground sm:text-sm lg:text-xs xl:text-sm">{name}</span>
+                  </Card>
+                </li>
+              ))}
+            </ul>
           </div>
         </section>
 
