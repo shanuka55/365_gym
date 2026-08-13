@@ -48,6 +48,69 @@ All colors MUST be HSL.
   }
 }
 
+@layer components {
+  .payment-button {
+    @apply relative overflow-hidden bg-gradient-to-r from-yellow-300 via-primary to-yellow-500 text-black shadow-glow transition-all duration-300;
+  }
+
+  .payment-button::before {
+    content: "";
+    position: absolute;
+    inset: -100% auto -100% -35%;
+    width: 24%;
+    transform: translateX(-250%) rotate(18deg);
+    background: linear-gradient(90deg, transparent, hsl(0 0% 100% / 0.55), transparent);
+    animation: payment-button-shine 3.6s ease-in-out infinite;
+    pointer-events: none;
+  }
+
+  .payment-button > * {
+    position: relative;
+    z-index: 1;
+  }
+
+  .payment-button__icon {
+    transition: transform 250ms ease;
+  }
+
+  @media (hover: hover) {
+    .payment-button:hover {
+      transform: translateY(-2px) scale(1.02);
+      box-shadow: 0 0 32px hsl(var(--glow) / 0.9);
+    }
+
+    .payment-button:hover .payment-button__icon {
+      transform: translate(2px, -2px);
+    }
+  }
+
+  .payment-button:active {
+    transform: scale(0.98);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .payment-button,
+    .payment-button__icon {
+      transition: none;
+    }
+
+    .payment-button::before {
+      animation: none;
+      display: none;
+    }
+  }
+}
+
+@keyframes payment-button-shine {
+  0%, 72% {
+    transform: translateX(-250%) rotate(18deg);
+  }
+
+  100% {
+    transform: translateX(750%) rotate(18deg);
+  }
+}
+
 @layer base {
   * {
     @apply border-border;
@@ -61,4 +124,3 @@ All colors MUST be HSL.
     @apply font-bold;
   }
 }
-

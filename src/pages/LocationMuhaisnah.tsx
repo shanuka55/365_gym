@@ -1,4 +1,4 @@
-import { MapPin, Phone, Clock, Check, MessageCircle, Navigation } from "lucide-react";
+import { MapPin, Phone, Clock, Check, MessageCircle, Navigation, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -139,6 +139,7 @@ const LocationMuhaisnah = () => {
       regularPrice: "449",
       price: "399",
       duration: "Month",
+      paymentUrl: "https://buy.stripe.com/cNi4gz4iXfBeeO36XJaR21c",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -155,6 +156,7 @@ const LocationMuhaisnah = () => {
       regularPrice: "1499",
       price: "1099",
       duration: "3 Months",
+      paymentUrl: "https://buy.stripe.com/bJebJ18zd4WAbBRa9VaR21d",
       popular: true,
       features: [
         { name: "Free Consultation", included: true },
@@ -172,6 +174,7 @@ const LocationMuhaisnah = () => {
       regularPrice: "2199",
       price: "1699",
       duration: "6 Months",
+      paymentUrl: "https://buy.stripe.com/9B6fZhaHlcp249pci3aR21e",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -188,6 +191,7 @@ const LocationMuhaisnah = () => {
       regularPrice: "3499",
       price: "2199",
       duration: "1 Year",
+      paymentUrl: "https://buy.stripe.com/6oUaEX5n19cQ0Xd2HtaR21f",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -387,12 +391,15 @@ const LocationMuhaisnah = () => {
               Gym Memberships <span className="text-primary">in Muhaisnah</span>
             </h2>
             <p className="text-center text-muted-foreground mb-5">Choose the perfect plan for your fitness journey</p>
-            <div className="mx-auto mb-12 flex max-w-4xl items-center gap-4 rounded-2xl border-2 border-primary bg-primary/10 px-5 py-5 text-center shadow-lg shadow-primary/10 sm:px-8">
+            <div className="mx-auto mb-4 flex max-w-4xl items-center gap-4 rounded-2xl border-2 border-primary bg-primary/10 px-5 py-5 text-center shadow-lg shadow-primary/10 sm:px-8">
               <Clock className="h-6 w-6 flex-shrink-0 text-primary" />
               <p className="w-full text-base font-black uppercase leading-snug tracking-wide text-foreground sm:text-xl">
                 Limited-time Offer valid until September 2026
               </p>
             </div>
+            <p className="mx-auto mb-12 max-w-4xl px-2 text-center text-sm font-semibold text-foreground sm:text-base">
+              Prices shown exclude 5% VAT. VAT is added at checkout.
+            </p>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
               {pricingPlans.map((plan) => (
                 <Card
@@ -412,12 +419,13 @@ const LocationMuhaisnah = () => {
                       </div>
                     )}
                     {plan.regularPrice && (
-                      <div className="text-xs font-bold uppercase tracking-wide text-primary">Actual payable amount</div>
+                      <div className="text-xs font-bold uppercase tracking-wide text-primary">Membership price</div>
                     )}
                     <div className="flex items-baseline justify-center gap-1 text-primary">
                       <span className="text-lg font-bold">AED</span>
                       <span className="text-5xl font-bold">{plan.price}</span>
                     </div>
+                    <div className="text-xs font-semibold text-foreground">+ 5% VAT at checkout</div>
                     <span className="text-sm text-muted-foreground">/{plan.duration}</span>
                   </div>
                   <ul className="space-y-3 mb-6">
@@ -443,8 +451,11 @@ const LocationMuhaisnah = () => {
                         WhatsApp Inquiry
                       </a>
                     </Button>
-                    <Button className="w-full" variant="secondary" disabled title="Online payment coming soon">
-                      Pay Online
+                    <Button className="payment-button w-full" asChild>
+                      <a href={plan.paymentUrl} target="_blank" rel="noopener noreferrer">
+                        <span>Pay Online</span>
+                        <ArrowUpRight className="payment-button__icon" aria-hidden="true" />
+                      </a>
                     </Button>
                   </div>
                 </Card>
