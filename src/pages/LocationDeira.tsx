@@ -378,6 +378,18 @@ const LocationDeira = () => {
                     </div>
                   )}
                   <h3 className="text-xl font-bold mb-4 text-center">{plan.name}</h3>
+                  {Array.isArray(plan.offer) && plan.offer.length > 0 && (
+                    <div className="mb-4 min-h-14 text-center">
+                      {plan.offer.map((offer) => (
+                        <div
+                          key={offer.name}
+                          className={offer.included ? "text-xl font-bold text-primary" : "text-muted-foreground line-through opacity-80"}
+                        >
+                          {offer.name}
+                        </div>
+                      ))}
+                    </div>
+                  )}
                   <div className="text-center mb-6">
                     <span className="text-sm text-muted-foreground">AED</span>
                     <div className="text-5xl font-bold text-primary">{plan.price}</div>
@@ -410,19 +422,6 @@ const LocationDeira = () => {
                       Pay Online
                     </Button>
                   </div>
-                  {/* Display offer only if exists AND has items */}
-                  {Array.isArray(plan.offer) && plan.offer.length > 0 && (
-                    <div className="mt-4 text-center text-sm font-medium">
-                      {plan.offer.map((offer) => (
-                        <div
-                          key={offer.name}
-                          className={offer.included ? "text-xl font-bold text-primary" : "text-muted-foreground line-through opacity-80"}
-                        >
-                          {offer.name}
-                        </div>
-                      ))}
-                    </div>
-                  )}
                 </Card>
               ))}
             </div>
