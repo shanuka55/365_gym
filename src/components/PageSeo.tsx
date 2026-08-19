@@ -6,6 +6,7 @@ type PageSeoProps = {
   canonical: string;
   schema?: Record<string, unknown>;
   image?: string;
+  noIndex?: boolean;
 };
 
 const upsertMeta = (name: string, content: string) => {
@@ -44,7 +45,7 @@ const upsertPropertyMeta = (property: string, content: string) => {
   meta.setAttribute("content", content);
 };
 
-const PageSeo = ({ title, description, canonical, schema, image = "https://www.365fitness.ae/og-banner.jpg" }: PageSeoProps) => {
+const PageSeo = ({ title, description, canonical, schema, image = "https://www.365fitness.ae/og-banner.jpg", noIndex = false }: PageSeoProps) => {
   useEffect(() => {
     document.title = title;
     upsertMeta("description", description);
@@ -57,7 +58,8 @@ const PageSeo = ({ title, description, canonical, schema, image = "https://www.3
     upsertMeta("twitter:description", description);
     upsertMeta("twitter:url", canonical);
     upsertMeta("twitter:image", image);
-  }, [canonical, description, image, title]);
+    upsertMeta("robots", noIndex ? "noindex, nofollow" : "index, follow");
+  }, [canonical, description, image, noIndex, title]);
 
   if (!schema) {
     return null;

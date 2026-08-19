@@ -11,8 +11,10 @@ node_modules
 dist
 dist-ssr
 *.local
+*.tsbuildinfo
 .env
 .env.local
+.env.*.local
 .env.production
 supabase/.temp/
 
@@ -26,3 +28,4 @@ supabase/.temp/
 *.njsproj
 *.sln
 *.sw?
+.vercel

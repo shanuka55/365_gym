@@ -22,6 +22,8 @@ const BlogPost = lazy(() => import("./pages/BlogPost"));
 const Connection = lazy(() => import("./pages/Connection"));
 const MembershipAgreement = lazy(() => import("./pages/MembershipAgreement"));
 const FreelanceTrainerAgreement = lazy(() => import("./pages/FreelanceTrainerAgreement"));
+const Checkout = lazy(() => import("./pages/Checkout"));
+const CheckoutReturn = lazy(() => import("./pages/CheckoutReturn"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const Tracker = () => {
@@ -92,6 +94,8 @@ const App = () => {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/membership-agreement" element={<MembershipAgreement />} />
             <Route path="/freelance-trainer-agreement" element={<FreelanceTrainerAgreement />} />
+            <Route path="/checkout" element={<Checkout />} />
+            <Route path="/checkout/return" element={<CheckoutReturn />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>

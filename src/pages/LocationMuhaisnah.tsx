@@ -27,6 +27,8 @@ import TrainingRates from "@/components/TrainingRates";
 import PageSeo from "@/components/PageSeo";
 import BranchReviews from "@/components/BranchReviews";
 import useBranchCtaTracking from "@/hooks/useBranchCtaTracking";
+import { useMembershipPrices } from "@/hooks/useMembershipPrices";
+import { formatMembershipPrice, type MuhaisnahPlanSlug } from "@/lib/muhaisnahPlans";
 import m_image1 from "@/assets/IMG_Muhasnah_01.webp";
 import m_image2 from "@/assets/IMG_Muhasnah_02.webp";
 import m_image3 from "@/assets/IMG_Muhasnah_03.webp";
@@ -165,12 +167,14 @@ const LocationMuhaisnah = () => {
     phone: muhaisnahWhatsAppNumber,
     mapUrl: muhaisnahGoogleProfileUrl,
   });
+  const { prices: stripePrices, loading: pricesLoading, error: pricesError } = useMembershipPrices();
+  const embeddedCheckoutEnabled = import.meta.env.NEXT_PUBLIC_EMBEDDED_CHECKOUT_ENABLED === "true";
 
   const pricingPlans = [
     {
       name: "MONTHLY",
+      slug: "monthly" as MuhaisnahPlanSlug,
       regularPrice: "449",
-      price: "399",
       duration: "Month",
       paymentUrl: "https://buy.stripe.com/cNi4gz4iXfBeeO36XJaR21c",
       features: [
@@ -186,8 +190,8 @@ const LocationMuhaisnah = () => {
     },
     {
       name: "3 MONTHS",
+      slug: "3-months" as MuhaisnahPlanSlug,
       regularPrice: "1499",
-      price: "1099",
       duration: "3 Months",
       paymentUrl: "https://buy.stripe.com/bJebJ18zd4WAbBRa9VaR21d",
       popular: true,
@@ -204,8 +208,8 @@ const LocationMuhaisnah = () => {
     },
     {
       name: "6 MONTHS",
+      slug: "6-months" as MuhaisnahPlanSlug,
       regularPrice: "2199",
-      price: "1699",
       duration: "6 Months",
       paymentUrl: "https://buy.stripe.com/9B6fZhaHlcp249pci3aR21e",
       features: [
@@ -221,8 +225,8 @@ const LocationMuhaisnah = () => {
     },
     {
       name: "12 MONTHS",
+      slug: "12-months" as MuhaisnahPlanSlug,
       regularPrice: "3499",
-      price: "2199",
       duration: "1 Year",
       paymentUrl: "https://buy.stripe.com/6oUaEX5n19cQ0Xd2HtaR21f",
       features: [
@@ -451,12 +455,16 @@ const LocationMuhaisnah = () => {
                         AED {plan.regularPrice}
                       </div>
                     )}
-                    {plan.regularPrice && (
-                      <div className="text-xs font-bold uppercase tracking-wide text-primary">Membership price</div>
-                    )}
+                    <div className="text-xs font-bold uppercase tracking-wide text-primary">Actual Payable Amount</div>
                     <div className="flex items-baseline justify-center gap-1 text-primary">
-                      <span className="text-lg font-bold">AED</span>
-                      <span className="text-5xl font-bold">{plan.price}</span>
+                      <span className="text-4xl font-bold">
+                        {pricesLoading
+                          ? "Loading…"
+                          : (() => {
+                              const currentPrice = stripePrices.find((price) => price.slug === plan.slug);
+                              return currentPrice ? formatMembershipPrice(currentPrice.unitAmount, currentPrice.currency) : "Unavailable";
+                            })()}
+                      </span>
                     </div>
                     <div className="text-xs font-semibold text-foreground">+ 5% VAT at checkout</div>
                     <span className="text-sm text-muted-foreground">/{plan.duration}</span>
@@ -485,7 +493,11 @@ const LocationMuhaisnah = () => {
                       </a>
                     </Button>
                     <Button className="payment-button w-full" asChild>
-                      <a href={plan.paymentUrl} target="_blank" rel="noopener noreferrer">
+                      <a
+                        href={embeddedCheckoutEnabled ? `/checkout?plan=${plan.slug}` : plan.paymentUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
                         <span>Pay Online</span>
                         <ArrowUpRight className="payment-button__icon" aria-hidden="true" />
                       </a>
@@ -494,6 +506,11 @@ const LocationMuhaisnah = () => {
                 </Card>
               ))}
             </div>
+            {pricesError && (
+              <p className="mx-auto mt-5 max-w-2xl text-center text-sm text-destructive">
+                Current online prices are temporarily unavailable. You can still use WhatsApp to inquire about a membership.
+              </p>
+            )}
 
             <div className="mt-16">
               <h2 className="text-4xl font-bold text-center mb-4">

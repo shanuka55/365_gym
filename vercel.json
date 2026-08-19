@@ -58,11 +58,51 @@
   ],
   "rewrites": [
     {
-      "source": "/assets/:path*",
-      "destination": "/assets/:path*"
+      "source": "/about",
+      "destination": "/index.html"
     },
     {
-      "source": "/(.*)",
+      "source": "/gallery",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/contact",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/connection",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/locations/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/plans/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/services/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/blog/:path*",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/membership-agreement",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/freelance-trainer-agreement",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/checkout",
+      "destination": "/index.html"
+    },
+    {
+      "source": "/checkout/:path*",
       "destination": "/index.html"
     }
   ],
