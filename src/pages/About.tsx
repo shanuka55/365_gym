@@ -1,7 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
-import aboutHero from "@/assets/about-hero.webp";
+import aboutHero from "@/assets/about-hero-generated.png";
 import missionVision from "@/assets/mission-vision.webp";
 import { Award, Users, TrendingUp, Target } from "lucide-react";
 
