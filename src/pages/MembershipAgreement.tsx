@@ -109,8 +109,28 @@ const AGREEMENT_TERMS = [
         text: "Members must provide valid payment information and authorize recurring payments for membership dues. Failure to pay may result in suspension or termination of membership.",
       },
       {
-        label: "4.3 Refunds",
-        text: "Membership fees are non-refundable except as required by law or as outlined in the membership agreement.",
+        label: "4.3 All Sales Are Final",
+        text: "Except where otherwise required by applicable law, all fees and payments for memberships, classes, personal training, coaching, promotions, and any other packages are final and strictly non-refundable. No refund or credit will be provided for any used, partially used, unused, frozen, or expired portion of a package.",
+      },
+      {
+        label: "4.4 No Exchanges or Package Changes",
+        text: "Once a package or membership has been purchased or activated, it cannot be exchanged for, converted to, upgraded to, downgraded to, or replaced with another package or membership plan.",
+      },
+      {
+        label: "4.5 Non-Transferable",
+        text: "All memberships and packages are personal to the registered member and may not be transferred, assigned, shared, resold, or changed into another person’s name.",
+      },
+      {
+        label: "4.6 Annual Membership Cancellation Eligibility",
+        text: "Early membership cancellation is available only to members who have entered into a twelve (12) month annual membership commitment. An annual membership paid by monthly instalments remains a twelve-month subscription and is subject to the same cancellation requirements.",
+      },
+      {
+        label: "4.7 Cancellation Notice and Continuing Payments",
+        text: "An eligible member must provide three (3) full months’ written notice. All membership fees and monthly instalments remain payable throughout the notice period. Monthly, short-term, promotional, class, personal training, coaching, and all other packages that are not a twelve-month annual membership commitment are not eligible for cancellation.",
+      },
+      {
+        label: "4.8 Cancellation Restrictions",
+        text: "Cancellation does not entitle a member to a refund, exchange, credit, package change, or transfer of any amount already paid or any unused portion of a membership or package, except where otherwise required by applicable law. A request is effective only after review, approval, and written confirmation by 365 Fitness.",
       },
     ],
   },
