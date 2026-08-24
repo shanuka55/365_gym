@@ -23,6 +23,7 @@ const Connection = lazy(() => import("./pages/Connection"));
 const MembershipAgreement = lazy(() => import("./pages/MembershipAgreement"));
 const FreelanceTrainerAgreement = lazy(() => import("./pages/FreelanceTrainerAgreement"));
 const TermsAndConditions = lazy(() => import("./pages/TermsAndConditions"));
+const PrivacyPolicy = lazy(() => import("./pages/PrivacyPolicy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
 
 const Tracker = () => {
@@ -94,6 +95,7 @@ const App = () => {
             <Route path="/membership-agreement" element={<MembershipAgreement />} />
             <Route path="/freelance-trainer-agreement" element={<FreelanceTrainerAgreement />} />
             <Route path="/terms" element={<TermsAndConditions />} />
+            <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
