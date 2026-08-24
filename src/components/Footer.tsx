@@ -168,7 +168,7 @@ const Footer = ({ branch = "deira" }: FooterProps) => {
                 Privacy Policy
               </Link>
               <Link to="/terms" className="text-muted-foreground hover:text-primary transition-colors">
-                Terms of Service
+                Terms &amp; Conditions
               </Link>
             </div>
           </div>
