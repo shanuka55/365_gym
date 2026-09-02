@@ -9,7 +9,6 @@ import trainerMannu from "@/assets/MANU.jpg";
 import trainerLeaLea from "@/assets/LEA LEA.jpg";
 import trainerShabaz from "@/assets/SHABAZ.jpg";
 import trainerRonnie from "@/assets/RONNIE.jpg";
-import trainerYanisha from "@/assets/YANISHA.jpg";
 
 const trainers = [
 
@@ -36,12 +35,6 @@ const trainers = [
     specialty: "Personal Training & strength training",
     image: trainerRonnie,
     bio: "Certified Personal Trainer with expertise in muscle building, strength training, and functional fitness. Passionate about helping clients achieve their fitness goals through personalized training programs.",
-  },
-  {
-    name: "Coach Yanisha",
-    specialty: "Personal Training & Professional Nutrition Guidance",
-    image: trainerYanisha,
-    bio: "Certified Personal Trainer & Group Fitness Instructor.specializing in Weight Loss, Fat Loss, Muscle Gain, Strength Training, HIIT, Pilates, Functional Training, Mobility & Stretching, Basic Yoga, and Zumba. Helping clients achieve lasting results with personalized training and nutrition guidance.",
   },
   {
     name: "Coach Farzana",
