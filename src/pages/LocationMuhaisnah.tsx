@@ -169,10 +169,8 @@ const LocationMuhaisnah = () => {
   const pricingPlans = [
     {
       name: "MONTHLY",
-      regularPrice: "449",
-      price: "399",
+      price: "450",
       duration: "Month",
-      paymentUrl: "https://buy.stripe.com/cNi4gz4iXfBeeO36XJaR21c",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -187,9 +185,8 @@ const LocationMuhaisnah = () => {
     {
       name: "3 MONTHS",
       regularPrice: "1499",
-      price: "1099",
+      price: "1199",
       duration: "3 Months",
-      paymentUrl: "https://buy.stripe.com/bJebJ18zd4WAbBRa9VaR21d",
       popular: true,
       features: [
         { name: "Free Consultation", included: true },
@@ -205,9 +202,8 @@ const LocationMuhaisnah = () => {
     {
       name: "6 MONTHS",
       regularPrice: "2199",
-      price: "1699",
+      price: "1799",
       duration: "6 Months",
-      paymentUrl: "https://buy.stripe.com/9B6fZhaHlcp249pci3aR21e",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -220,11 +216,10 @@ const LocationMuhaisnah = () => {
       ],
     },
     {
-      name: "12 MONTHS",
+      name: "12 MONTHS + 1 MONTH FREE",
       regularPrice: "3499",
-      price: "2199",
-      duration: "1 Year",
-      paymentUrl: "https://buy.stripe.com/6oUaEX5n19cQ0Xd2HtaR21f",
+      price: "2499",
+      duration: "13 Months",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -484,11 +479,9 @@ const LocationMuhaisnah = () => {
                         WhatsApp Inquiry
                       </a>
                     </Button>
-                    <Button className="payment-button w-full" asChild>
-                      <a href={plan.paymentUrl} target="_blank" rel="noopener noreferrer">
-                        <span>Pay Online</span>
-                        <ArrowUpRight className="payment-button__icon" aria-hidden="true" />
-                      </a>
+                    <Button className="payment-button w-full" disabled title="Online payment coming soon">
+                      <span>Pay Online</span>
+                      <ArrowUpRight className="payment-button__icon" aria-hidden="true" />
                     </Button>
                   </div>
                 </Card>
