@@ -9,6 +9,7 @@ import trainerMannu from "@/assets/MANU.jpg";
 import trainerLeaLea from "@/assets/LEA LEA.jpg";
 import trainerShabaz from "@/assets/SHABAZ.jpg";
 import trainerRonnie from "@/assets/RONNIE.jpg";
+import trainerSomayeh from "@/assets/DR-SOMAYEH.jpg";
 
 const trainers = [
 
@@ -17,6 +18,12 @@ const trainers = [
     specialty: "Personal Training & Weight Loss",
     image: trainerIsha,
     bio: "Certified Personal Trainer and Group Fitness Instructor with expertise in aerobics, Zumba, step cardio, boxing, HIIT, and Tabata. I also specialize in strength training, exercise recovery, and kids’ Zumba classes",
+  },
+  {
+    name: "Dr. Somayeh",
+    specialty: "Personal Training & Group Fitness",
+    image: trainerSomayeh,
+    bio: "PhD-qualified fitness professional and certified fitness trainer specializing in personal training, strength and conditioning, weight management, body shaping, HIIT, TRX, CrossFit and group fitness classes.",
   },
   {
     name: "Coach Azeem",
