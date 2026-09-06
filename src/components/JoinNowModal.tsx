@@ -121,6 +121,18 @@ const JoinNowModal = ({ isOpen, onClose }: JoinNowModalProps) => {
         throw error;
       }
 
+      if (data?.success !== true) {
+        throw new Error("Membership request was not confirmed successful.");
+      }
+
+      window.dataLayer = window.dataLayer || [];
+      window.dataLayer.push({
+        event: "lead_form_success",
+        form_name: "join_now",
+        branch: formData.branch,
+        membership_type: formData.membershipType,
+      });
+
       console.log("Email sent successfully:", data);
 
       // Show success message
