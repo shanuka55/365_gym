@@ -75,18 +75,18 @@ const JoinNowModal = ({ isOpen, onClose }: JoinNowModalProps) => {
     setIsSubmitting(true);
 
     try {
+      const waMessage = `New Membership Request\n` +
+        `Name: ${formData.fullName}\n` +
+        `Phone: ${formData.phone}\n` +
+        `Email: ${formData.email}\n` +
+        `Branch: ${formData.branch}\n` +
+        `Membership Type: ${formData.membershipType}\n` +
+        `${formData.notes ? `Notes: ${formData.notes}` : ""}`.trim();
+
+      const whatsappNumber = formData.branch.includes("Deira") ? "971547120925" : "971547120927";
+      window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`, "_blank", "noopener,noreferrer");
+
       if (!isSupabaseConfigured || !supabase) {
-        const waMessage = `New Membership Request\n` +
-          `Name: ${formData.fullName}\n` +
-          `Phone: ${formData.phone}\n` +
-          `Email: ${formData.email}\n` +
-          `Branch: ${formData.branch}\n` +
-          `Membership Type: ${formData.membershipType}\n` +
-          `${formData.notes ? `Notes: ${formData.notes}` : ""}`.trim();
-
-        const whatsappNumber = formData.branch.includes("Deira") ? "971547120925" : "971547120927";
-        window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(waMessage)}`, "_blank", "noopener,noreferrer");
-
         toast({
           title: "Membership Request Ready",
           description: "We've opened WhatsApp with your details. Send the message to complete your request.",
