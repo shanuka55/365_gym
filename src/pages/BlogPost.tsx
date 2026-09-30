@@ -6,7 +6,37 @@ import { format } from "date-fns";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SocialShareButtons from "@/components/SocialShareButtons";
-import { blogPosts } from "@/data/blogPosts";
+import { blogPosts, type BlogContentBlock, type BlogInline } from "@/data/blogPosts";
+
+const renderInline = (content: BlogInline[]) => content.map((item, index) =>
+  typeof item === "string" ? item : (
+    <a key={index} href={item.href} className="text-primary underline underline-offset-4">{item.text}</a>
+  ),
+);
+
+const ArticleBlock = ({ block }: { block: string | BlogContentBlock }) => {
+  if (typeof block === "string") return <p>{block}</p>;
+
+  switch (block.type) {
+    case "paragraph":
+      return <p>{renderInline(block.content)}</p>;
+    case "heading": {
+      const Heading = block.level === 2 ? "h2" : "h3";
+      return <Heading id={block.id} className={`scroll-mt-28 font-bold text-foreground ${block.level === 2 ? "text-3xl" : "text-2xl"}`}>{block.text}</Heading>;
+    }
+    case "list":
+      return <ul className="list-disc space-y-2 pl-6">{block.items.map((item, index) => <li key={index}>{renderInline(item)}</li>)}</ul>;
+    case "link":
+      return <p>{renderInline([block])}</p>;
+    case "faq":
+      return (
+        <section aria-labelledby={block.id}>
+          <h3 id={block.id} className="mb-3 scroll-mt-28 text-2xl font-bold text-foreground">{block.question}</h3>
+          <p>{renderInline(block.answer)}</p>
+        </section>
+      );
+  }
+};
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -19,7 +49,6 @@ const BlogPost = () => {
   const currentIndex = blogPosts.findIndex((p) => p.slug === slug);
   const previousPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
   const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null;
-
   const canonical = `https://www.365fitness.ae/blog/${post.slug}`;
   const isWomenStrengthArticle = post.slug === "why-women-should-include-strength-training-in-their-routine";
   const title = isWomenStrengthArticle
@@ -31,6 +60,10 @@ const BlogPost = () => {
   // Preserve the published calendar date without inventing a time or modification date.
   const publishedTime = format(new Date(post.date), "yyyy-MM-dd");
   const image = new URL(post.image, canonical).href;
+  const sections = post.content.filter(
+    (block): block is Extract<BlogContentBlock, { type: "heading" }> =>
+      typeof block !== "string" && block.type === "heading" && block.level === 2,
+  );
   const schema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
@@ -108,10 +141,24 @@ const BlogPost = () => {
               </Link>
 
               {/* Article Body */}
+              {sections.length > 0 && (
+                <nav aria-label="Article contents" className="mb-8 rounded-xl border border-border bg-secondary/30 p-5 text-sm">
+                  <details>
+                    <summary className="cursor-pointer font-bold">In this article</summary>
+                    <ul className="mt-3 grid gap-x-6 gap-y-2 sm:grid-cols-2">
+                      {sections.map((section) => (
+                        <li key={section.id}>
+                          <a href={`#${section.id}`} className="text-primary hover:underline">{section.text}</a>
+                        </li>
+                      ))}
+                    </ul>
+                  </details>
+                </nav>
+              )}
               <article className="prose prose-lg max-w-none">
                 <div className="space-y-6 text-foreground/90 leading-relaxed text-lg">
-                  {post.content.map((paragraph, index) => (
-                    <p key={index}>{paragraph}</p>
+                  {post.content.map((block, index) => (
+                    <ArticleBlock key={index} block={block} />
                   ))}
                   {post.slug === "best-gym-in-deira-dubai-for-weight-loss-and-bodybuilding" && (
                     <p>
@@ -134,7 +181,7 @@ const BlogPost = () => {
 
               {/* Share Section */}
               <div className="mt-12 pt-8 border-t border-border">
-                <h3 className="text-xl font-bold mb-4">Share this article</h3>
+                <h2 className="text-xl font-bold mb-4">Share this article</h2>
                 <SocialShareButtons title={post.title} url={canonical} />
               </div>
 
@@ -149,9 +196,9 @@ const BlogPost = () => {
                       <ArrowLeft className="h-6 w-6 text-primary mt-1 group-hover:-translate-x-1 transition-transform flex-shrink-0" />
                       <div>
                         <p className="text-sm text-muted-foreground mb-2">Previous Article</p>
-                        <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">
+                        <p className="font-bold text-foreground group-hover:text-primary transition-colors">
                           {previousPost.title}
-                        </h4>
+                        </p>
                       </div>
                     </div>
                   </Link>
@@ -165,9 +212,9 @@ const BlogPost = () => {
                       <ArrowRight className="h-6 w-6 text-primary mt-1 group-hover:translate-x-1 transition-transform flex-shrink-0" />
                       <div>
                         <p className="text-sm text-muted-foreground mb-2">Next Article</p>
-                        <h4 className="font-bold text-foreground group-hover:text-primary transition-colors">
+                        <p className="font-bold text-foreground group-hover:text-primary transition-colors">
                           {nextPost.title}
-                        </h4>
+                        </p>
                       </div>
                     </div>
                   </Link>
