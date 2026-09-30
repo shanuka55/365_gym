@@ -2,14 +2,15 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import PageSeo from "@/components/PageSeo";
-import { format } from "date-fns";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SocialShareButtons from "@/components/SocialShareButtons";
 import { blogPosts, type BlogContentBlock, type BlogInline } from "@/data/blogPosts";
 
 const renderInline = (content: BlogInline[]) => content.map((item, index) =>
-  typeof item === "string" ? item : (
+  typeof item === "string" ? item : item.href.startsWith("/") && !item.href.startsWith("//") ? (
+    <Link key={index} to={item.href} className="text-primary underline underline-offset-4">{item.text}</Link>
+  ) : (
     <a key={index} href={item.href} className="text-primary underline underline-offset-4">{item.text}</a>
   ),
 );
@@ -58,7 +59,12 @@ const BlogPost = () => {
     ? "Learn the benefits of strength training for women, beginner exercises and weekly routine tips. Explore coaching at 365 Fitness in Deira and Muhaisnah."
     : post.excerpt;
   // Preserve the published calendar date without inventing a time or modification date.
-  const publishedTime = format(new Date(post.date), "yyyy-MM-dd");
+  const publishedTime = post.datePublished;
+  const relatedPosts = [...new Set(post.relatedSlugs ?? [])]
+    .filter((relatedSlug) => relatedSlug !== post.slug)
+    .map((relatedSlug) => blogPosts.find((candidate) => candidate.slug === relatedSlug))
+    .filter((candidate) => candidate !== undefined)
+    .slice(0, 3);
   const image = new URL(post.image, canonical).href;
   const sections = post.content.filter(
     (block): block is Extract<BlogContentBlock, { type: "heading" }> =>
@@ -116,7 +122,7 @@ const BlogPost = () => {
               <div className="flex items-center gap-6 text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <Calendar className="h-5 w-5" />
-                  <span>{post.date}</span>
+                  <time dateTime={post.datePublished}>{post.date}</time>
                 </div>
                 <div className="flex items-center gap-2">
                   <Clock className="h-5 w-5" />
@@ -160,24 +166,23 @@ const BlogPost = () => {
                   {post.content.map((block, index) => (
                     <ArticleBlock key={index} block={block} />
                   ))}
-                  {post.slug === "best-gym-in-deira-dubai-for-weight-loss-and-bodybuilding" && (
-                    <p>
-                      Explore facilities, memberships and directions for our{" "}
-                      <Link to="/locations/deira-muraqqabat" className="font-bold text-primary hover:underline">
-                        Deira Al Muraqqabat gym
-                      </Link>.
-                    </p>
-                  )}
-                  {post.slug === "why-muhaisnah-residents-are-choosing-professional-fitness-coaching" && (
-                    <p>
-                      Explore facilities, memberships and directions for our{" "}
-                      <Link to="/locations/muhaisnah-first" className="font-bold text-primary hover:underline">
-                        Muhaisnah First Gym
-                      </Link>.
-                    </p>
-                  )}
                 </div>
               </article>
+
+              {relatedPosts.length > 0 && (
+                <section aria-labelledby="related-articles" className="mt-12 border-t border-border pt-8">
+                  <h2 id="related-articles" className="mb-4 text-2xl font-bold">Related articles</h2>
+                  <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+                    {relatedPosts.map((relatedPost) => (
+                      <li key={relatedPost.slug}>
+                        <Link to={`/blog/${relatedPost.slug}`} className="block h-full rounded-xl border border-border bg-secondary/30 p-4 font-bold text-primary hover:underline">
+                          {relatedPost.title}
+                        </Link>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              )}
 
               {/* Share Section */}
               <div className="mt-12 pt-8 border-t border-border">

@@ -51,9 +51,11 @@ export interface BlogPost {
   excerpt: string;
   image: string;
   date: string;
+  datePublished: string; // ISO calendar date (YYYY-MM-DD), matching the displayed date.
   readTime: string;
   category: string;
   content: (string | BlogContentBlock)[];
+  relatedSlugs?: string[];
 }
 
 export const blogPosts: BlogPost[] = [
@@ -64,8 +66,10 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Starting gym for the first time? Learn the right way to begin your fitness journey in Dubai with simple workout plans, nutrition tips, and expert guidance.",
     image: blogbeginerGym,
     date: "May 06, 2026",
+    datePublished: "2026-05-06",
     readTime: "8 min read",
     category: "Fitness",
+    relatedSlugs: ["why-women-should-include-strength-training-in-their-routine"],
     content: [
       "Starting the gym for the first time can feel confusing and intimidating. Many beginners in Dubai don’t know where to begin, what exercises to follow, or how to stay consistent. The key to success is not doing everything at once, but starting with the right foundation and a clear plan.",
 
@@ -74,6 +78,7 @@ export const blogPosts: BlogPost[] = [
       "Beginners should always follow a simple and structured workout plan instead of training randomly. A basic split such as chest and triceps, back and biceps, and legs and shoulders allows your body to recover while maintaining consistency. Workouts should be kept between 45 to 60 minutes for best results.",
 
       "Focusing on fundamental exercises is essential for building a strong base. Movements like bench press, squats, deadlifts, lat pulldowns, and shoulder press target multiple muscle groups and help beginners gain strength faster than complicated routines.",
+      {"type": "paragraph", "content": ["Women starting resistance exercise can explore our guide to ", {"type": "link", "text": "strength training for women", "href": "/blog/why-women-should-include-strength-training-in-their-routine"}, " for benefits and beginner routine tips."]},
 
       "One of the biggest mistakes beginners make is lifting heavy weights with poor form. Proper technique should always come first to avoid injuries and ensure effective muscle development. Starting with lighter weights and learning correct form will lead to better long-term results.",
 
@@ -95,6 +100,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Learn the fundamentals of strength training, muscle growth, workout structure, nutrition, and recovery to build muscle effectively and safely.",
     image: blogMuscleGuide,
     date: "May 07, 2026",
+    datePublished: "2026-05-07",
     readTime: "10 min read",
     category: "Strength Training",
     content: [
@@ -134,6 +140,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover the fundamentals of healthy nutrition, balanced eating, meal planning, and smart diet strategies to support fitness, energy, and overall health.",
     image: blogNutritionGuide,
     date: "May 07, 2026",
+    datePublished: "2026-05-07",
     readTime: "9 min read",
     category: "Nutrition",
     content: [
@@ -173,6 +180,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover effective and sustainable weight loss strategies backed by science. Learn how proper nutrition, exercise, consistency, and healthy habits can help you achieve long-term results in Dubai.",
     image: blogWeightLoss,
     date: "May 07, 2026",
+    datePublished: "2026-05-07",
     readTime: "11 min read",
     category: "Weight Loss",
     content: [
@@ -216,6 +224,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover how HIIT training helps you burn maximum fat in minimum time. Learn science-based HIIT workouts, benefits, and fat loss strategies for fast results in Dubai.",
     image: blogHIIT,
     date: "May 07, 2026",
+    datePublished: "2026-05-07",
     readTime: "8 min read",
     category: "Fat Loss",
 
@@ -266,6 +275,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Learn how meal prep can help you save time, stay consistent with nutrition, support weight loss, and improve fitness results with practical strategies that actually work.",
     image: blogMealPrep,
     date: "May 08, 2026",
+    datePublished: "2026-05-08",
     readTime: "9 min read",
     category: "Nutrition",
     content: [
@@ -309,6 +319,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover why recovery and rest days are essential for muscle growth, fat loss, performance, and long-term fitness success. Learn how proper recovery improves results and prevents injuries.",
     image: blogRecoveryRest,
     date: "May 08, 2026",
+    datePublished: "2026-05-08",
     readTime: "9 min read",
     category: "Recovery",
     content: [
@@ -354,6 +365,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover how yoga and flexibility training improve mobility, recovery, strength, posture, and performance for athletes and gym-goers of all fitness levels.",
     image: blogYogaFlexibility,
     date: "May 08, 2026",
+    datePublished: "2026-05-08",
     readTime: "10 min read",
     category: "Flexibility & Recovery",
     content: [
@@ -395,6 +407,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover the most effective fitness supplements for muscle growth, recovery, strength, energy, and overall performance. Learn what actually works and how to use supplements safely.",
     image: blogSupplementsGuide,
     date: "May 08, 2026",
+    datePublished: "2026-05-08",
     readTime: "10 min read",
     category: "Supplements & Nutrition",
     content: [
@@ -440,6 +453,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover how exercise improves mental health, reduces stress, boosts confidence, and supports emotional well-being through consistent fitness and healthy lifestyle habits.",
     image: blogMentalHealthFitness,
     date: "May 09, 2026",
+    datePublished: "2026-05-09",
     readTime: "10 min read",
     category: "Mental Health & Fitness",
     content: [
@@ -485,6 +499,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover how senior fitness and active aging improve strength, mobility, balance, and overall health. Learn safe and effective exercises for staying active at any age.",
     image: blogSeniorFitness,
     date: "May 09, 2026",
+    datePublished: "2026-05-09",
     readTime: "9 min read",
     category: "Senior Fitness",
     content: [
@@ -528,6 +543,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Looking for the best gym in Dubai for weight loss and bodybuilding? Discover professional training, modern equipment, group classes, and expert fitness support at 365 Fitness Gym.",
     image: blogBestGymDubai,
     date: "May 10, 2026",
+    datePublished: "2026-05-10",
     readTime: "10 min read",
     category: "Fitness",
     content: [
@@ -563,7 +579,8 @@ export const blogPosts: BlogPost[] = [
 
       "If you are searching for the best gym in Deira Dubai or a professional fitness center in Muhaisnah First for weight loss, bodybuilding, strength training, or overall fitness improvement, 365 Fitness Gym offers everything needed to support your transformation journey.",
 
-      "Fitness is not only about changing your appearance—it is about improving health, confidence, discipline, and overall quality of life. With the right training environment, expert guidance, and consistent effort, anyone can achieve long-term fitness success."
+      "Fitness is not only about changing your appearance—it is about improving health, confidence, discipline, and overall quality of life. With the right training environment, expert guidance, and consistent effort, anyone can achieve long-term fitness success.",
+      {"type": "paragraph", "content": ["Explore facilities, memberships and directions for our ", {"type": "link", "text": "Deira Al Muraqqabat gym", "href": "/locations/deira-muraqqabat"}, "."]}
     ]
   },
   {
@@ -573,6 +590,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover why more people in Muhaisnah are choosing professional fitness coaching for weight loss, muscle gain, strength training, and long-term health results at 365 Fitness Gym.",
     image: blogFitnessCoaching,
     date: "May 11, 2026",
+    datePublished: "2026-05-11",
     readTime: "10 min read",
     category: "Personal Training",
     content: [
@@ -608,7 +626,8 @@ export const blogPosts: BlogPost[] = [
 
       "If you are searching for the best gym in Muhaisnah First with expert personal training, customized coaching, modern equipment, and a motivating fitness environment, 365 Fitness Gym offers the support and professional guidance needed for long-term success.",
 
-      "Professional fitness coaching is more than just exercise instruction. It is a complete support system that helps individuals build discipline, improve health, stay motivated, and achieve sustainable fitness results with confidence."
+      "Professional fitness coaching is more than just exercise instruction. It is a complete support system that helps individuals build discipline, improve health, stay motivated, and achieve sustainable fitness results with confidence.",
+      {"type": "paragraph", "content": ["Explore facilities, memberships and directions for our ", {"type": "link", "text": "Muhaisnah First Gym", "href": "/locations/muhaisnah-first"}, "."]}
     ]
   },
   {
@@ -618,6 +637,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Transform your lifestyle with 365 Fitness GYM. Discover how professional training, modern equipment, and a motivating fitness environment help you lose weight, build muscle, and improve confidence.",
     image: blogTransformLifestyle,
     date: "May 12, 2026",
+    datePublished: "2026-05-12",
     readTime: "11 min read",
     category: "Lifestyle & Fitness",
     content: [
@@ -748,6 +768,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover how kids kickboxing classes at 365 Fitness Gym help children improve discipline, confidence, fitness, focus in school, and self-defense skills in a safe and motivating environment.",
     image: blogKidsKickboxing,
     date: "May 13, 2026",
+    datePublished: "2026-05-13",
     readTime: "9 min read",
     category: "Kids Fitness",
     content: [
@@ -801,6 +822,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover the biggest weight loss mistakes people make and learn how to achieve sustainable fat loss with proper training, nutrition, recovery, and consistency at 365 Fitness Gym Dubai.",
     image: blogWeightLossMistakes,
     date: "May 14, 2026",
+    datePublished: "2026-05-14",
     readTime: "10 min read",
     category: "Weight Loss",
     content: [
@@ -856,6 +878,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Looking for a beginner-friendly weight loss meal plan in Dubai? Discover simple nutrition strategies, healthy meals, and sustainable fat-loss tips from 365 Fitness Gym.",
     image: blogWeightLossMealPlan,
     date: "May 15, 2026",
+    datePublished: "2026-05-15",
     readTime: "10 min read",
     category: "Nutrition & Weight Loss",
     content: [
@@ -926,6 +949,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover why MMA training is one of the fastest-growing fitness trends in Dubai. Learn how Mixed Martial Arts improves fitness, confidence, self-defense, strength, and overall health at 365 Fitness Gym.",
     image: blogMMATrainingDubai,
     date: "May 10, 2026",
+    datePublished: "2026-05-10",
     readTime: "10 min read",
     category: "MMA & Combat Sports",
     content: [
@@ -983,6 +1007,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover the key differences between personal training and working out alone. Learn which approach delivers faster results for weight loss, muscle gain, fitness improvement, and long-term success.",
     image: blogPersonalTrainingVsAlone,
     date: "June 14, 2026",
+    datePublished: "2026-06-14",
     readTime: "10 min read",
     category: "Personal Training",
     content: [
@@ -1042,6 +1067,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Looking for the best boxing classes in Dubai? Discover how boxing training improves fitness, weight loss, confidence, self-defense, and overall health at 365 Fitness Gym.",
     image: blogBestBoxingDubai,
     date: "june 25, 2026",
+    datePublished: "2026-06-25",
     readTime: "10 min read",
     category: "Boxing",
     content: [
@@ -1129,6 +1155,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Looking for affordable gym membership costs in Dubai? Learn what affects gym pricing, what to expect from a premium fitness club, and why 365 Fitness Gym offers outstanding value in Deira Muraqqabat and Muhaisnah First.",
     image: blogGymMembershipCostsDubai,
     date: "June 30, 2026",
+    datePublished: "2026-06-30",
     readTime: "9 min read",
     category: "Fitness Guide",
     content: [
@@ -1251,6 +1278,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover the science-backed benefits of sauna recovery after exercise. Learn how sauna sessions help muscle recovery, reduce soreness, improve circulation, and support overall wellness at 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First.",
     image: blogSaunaRecovery,
     date: "May 10, 2026",
+    datePublished: "2026-05-10",
     readTime: "9 min read",
     category: "Recovery & Wellness",
     content: [
@@ -1364,6 +1392,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Wondering whether to train at home or join a gym? Compare gym workouts vs home workouts and discover why 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First helps members achieve faster, safer, and long-lasting fitness results.",
     image: blogGymVsHomeWorkout,
     date: "Jul 11, 2026",
+    datePublished: "2026-07-11",
     readTime: "9 min read",
     category: "Fitness Guide",
     content: [
@@ -1521,6 +1550,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover the most effective strength, cardio, and full-body exercises to burn fat, build lean muscle, and create a balanced weekly workout plan.",
     image: blogWeightLossMuscleGain,
     date: "Jul 15, 2026",
+    datePublished: "2026-07-15",
     readTime: "8 min read",
     category: "Workout Guide",
     content: [
@@ -1602,6 +1632,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover why rest days are essential for muscle recovery, strength, and weight loss. Learn expert recovery tips from 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First to maximize your fitness progress.",
     image: blogRestDayRecovery,
     date: "May 12, 2026",
+    datePublished: "2026-05-12",
     readTime: "10 min read",
     category: "Recovery & Wellness",
     content: [
@@ -1783,6 +1814,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Learn how to lose body fat and build lean muscle at the same time with strength training, cardio, nutrition, protein, and proper recovery. Discover practical tips from 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First.",
     image: blogLoseWeightBuildMuscle,
     date: "July 24, 2026",
+    datePublished: "2026-07-24",
     readTime: "10 min read",
     category: "Weight Loss & Muscle Building",
     content: [
@@ -2009,6 +2041,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Learn the difference between bulking and cutting, how each phase works, what to eat, how to train, and when to choose muscle gain or fat loss. Discover practical fitness tips from 365 Fitness Gym in Deira Muraqqabat and Muhaisnah First.",
     image: blogBulkingVsCutting,
     date: "Jul 26, 2026",
+    datePublished: "2026-07-26",
     readTime: "9 min read",
     category: "Muscle Building & Fat Loss",
     content: [
@@ -2263,6 +2296,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Working long hours in Dubai can make it difficult to stay active and maintain a healthy lifestyle. Discover practical fitness tips for busy professionals, including workout routines, nutrition, recovery, and how to make time for the gym.",
     image: blogLongHoursDubai,
     date: "july 27, 2026",
+    datePublished: "2026-07-27",
     readTime: "8 min read",
     category: "Fitness Tips & Lifestyle",
     content: [
@@ -2527,6 +2561,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Wondering how many calories you should eat to lose weight? Learn how calorie deficits work, how to estimate your calorie needs, and how to combine nutrition and exercise for sustainable weight loss.",
     image: blogCaloriesWeightLoss,
     date: "July 29, 2026",
+    datePublished: "2026-07-29",
     readTime: "8 min read",
     category: "Weight Loss & Nutrition",
     content: [
@@ -2842,6 +2877,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Wondering how often you should work out? Discover the ideal gym schedule for weight loss, muscle building, and overall fitness, plus expert tips from 365 Fitness Gym in Dubai.",
     image: blogGymDays,
     date: "July 29, 2026",
+    datePublished: "2026-07-29",
     readTime: "8 min read",
     category: "Fitness Tips",
     content: [
@@ -3058,6 +3094,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Learn the difference between stretching before and after exercise, discover the benefits of dynamic and static stretching, and improve your workout performance at 365 Fitness Gym in Dubai.",
     image: blogStretching,
     date: "Aug 03, 2026",
+    datePublished: "2026-08-03",
     readTime: "8 min read",
     category: "Fitness Tips",
     content: [
@@ -3220,6 +3257,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover how functional training improves strength, balance, mobility, posture, and everyday movement. Learn why functional fitness at 365 Fitness Gym in Deira and Muhaisnah is one of the best ways to build a stronger, healthier body.",
     image: blogFunctionalTraining,
     date: "June 1, 2026",
+    datePublished: "2026-06-01",
     readTime: "8 min read",
     category: "Functional Fitness",
     content: [
@@ -3371,6 +3409,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Learn how to lose body fat and build lean muscle at the same time with strength training, proper nutrition, cardio, recovery, and professional fitness coaching at 365 Fitness Gym in Deira and Muhaisnah, Dubai.",
     image: blogLoseWeightBuildMusclesametime,
     date: "August 9, 2026",
+    datePublished: "2026-08-09",
     readTime: "10 min read",
     category: "Weight Loss & Muscle Building",
 
@@ -3608,9 +3647,11 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover the benefits of training at a dedicated ladies gym in Muhaisnah. Learn how a comfortable workout environment, 24/7 gym access, personal training, strength training, cardio, and group fitness can support women's weight loss and fitness goals in Dubai.",
     image: blogLadiesGymMuhaisnah,
     date: "June 8, 2026",
+    datePublished: "2026-06-08",
     readTime: "10 min read",
     category: "Ladies Fitness",
 
+    relatedSlugs: ["why-women-should-include-strength-training-in-their-routine"],
     content: [
       "Ladies Gym in Muhaisnah: Benefits of a Dedicated Workout Space",
 
@@ -3662,7 +3703,7 @@ export const blogPosts: BlogPost[] = [
 
       "4. Build Strength and Lean Muscle",
 
-      "Strength training is not only for bodybuilders. Women can benefit greatly from resistance training.",
+      {"type": "paragraph", "content": ["Strength training is not only for bodybuilders. Women can benefit greatly from ", {"type": "link", "text": "resistance training", "href": "/blog/why-women-should-include-strength-training-in-their-routine"}, "."]},
 
       "Regular strength workouts can help improve:",
 
@@ -3876,6 +3917,7 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Avoid common nutrition mistakes and build sustainable eating habits that support weight loss, muscle building, and better workouts at 365 Fitness Gym in Deira and Muhaisnah.",
     image: blogNutritionMistakes,
     date: "September 10, 2026",
+    datePublished: "2026-09-10",
     readTime: "9 min read",
     category: "Nutrition",
     content: [
@@ -4049,13 +4091,15 @@ export const blogPosts: BlogPost[] = [
     excerpt: "Discover how strength training helps women build muscle, support bone health, improve fitness, and gain confidence at 365 Fitness Gym in Deira and Muhaisnah.",
     image: blogWomenStrengthTraining,
     date: "September 23, 2026",
+    datePublished: "2026-09-23",
     readTime: "9 min read",
     category: "Strength Training",
+    relatedSlugs: ["beginner-gym-guide-dubai", "ladies-gym-in-muhaisnah-benefits-of-a-dedicated-workout-space", "building-muscle-complete-guide-strength-training"],
     content: [
       {"type": "paragraph", "content": ["Strength training is no longer just for bodybuilders or athletes. Today, more women are adding strength training to their fitness routines to become stronger, improve body composition, support healthy weight management, and build confidence."]},
       {"type": "paragraph", "content": ["Whether you are a beginner, an experienced gym member, or someone returning to exercise, resistance training can be an important part of a balanced fitness program."]},
       {"type": "paragraph", "content": ["For women living in Dubai, finding the right women's gym in Dubai, ladies gym in Muhaisnah, or gym in Deira can make it easier to build a consistent strength-training routine."]},
-      {"type": "paragraph", "content": ["At 365 Fitness Gym, our Deira Muraqqabat and Muhaisnah First locations provide modern equipment, professional training support, and fitness facilities designed to help women work toward their individual goals."]},
+      {"type": "paragraph", "content": ["At 365 Fitness Gym, our ", {"type": "link", "text": "Deira Muraqqabat", "href": "/locations/deira-muraqqabat"}, " and ", {"type": "link", "text": "Muhaisnah First", "href": "/locations/muhaisnah-first"}, " locations provide modern equipment, professional training support, and fitness facilities designed to help women work toward their individual goals."]},
       {"type": "heading", "level": 2, "id": "what-is-strength-training", "text": "What Is Strength Training?"},
       {"type": "paragraph", "content": ["Strength training, also called resistance training, involves exercises where your muscles work against resistance."]},
       {"type": "paragraph", "content": ["This can include:"]},
@@ -4096,6 +4140,7 @@ export const blogPosts: BlogPost[] = [
       {"type": "paragraph", "content": ["This is especially useful for women who want to lose body fat, build muscle, tone their body, and become stronger."]},
       {"type": "heading", "level": 2, "id": "fitness-levels", "text": "8. Strength Training Can Be Adapted to Any Fitness Level"},
       {"type": "paragraph", "content": ["You don't need to be an experienced athlete to start."]},
+      {"type": "paragraph", "content": ["For help getting started, read our ", {"type": "link", "text": "beginner gym guide in Dubai", "href": "/blog/beginner-gym-guide-dubai"}, "."]},
       {"type": "paragraph", "content": ["A beginner can start with:"]},
       {"type": "list", "items": [["Bodyweight squats"], ["Light dumbbells"], ["Resistance bands"], ["Machine exercises"], ["Basic core movements"], ["Simple functional exercises"]]},
       {"type": "paragraph", "content": ["As your fitness improves, you can gradually increase resistance, repetitions, sets, or exercise complexity."]},
@@ -4121,7 +4166,7 @@ export const blogPosts: BlogPost[] = [
       {"type": "paragraph", "content": ["That's why having convenient access to a 24/7 gym in Dubai can help you choose workout times that fit your lifestyle."]},
       {"type": "paragraph", "content": ["At 365 Fitness Gym, women can train according to their schedules at our Deira Muraqqabat and Muhaisnah First locations."]},
       {"type": "heading", "level": 3, "id": "muhaisnah-training", "text": "Ladies Gym in Muhaisnah for Strength Training"},
-      {"type": "paragraph", "content": ["If you're searching for a ladies gym in Muhaisnah, women's gym near Muhaisnah, gym near Madinat Badr, or a 24/7 gym in Muhaisnah, 365 Fitness Gym Muhaisnah First offers a dedicated ladies-only section."]},
+      {"type": "paragraph", "content": ["If you're searching for a ladies gym in Muhaisnah, women's gym near Muhaisnah, gym near Madinat Badr, or a 24/7 gym in Muhaisnah, 365 Fitness Gym Muhaisnah First offers a ", {"type": "link", "text": "dedicated ladies-only section", "href": "/blog/ladies-gym-in-muhaisnah-benefits-of-a-dedicated-workout-space"}, "."]},
       {"type": "paragraph", "content": ["Women can work on:"]},
       {"type": "list", "items": [["Strength training"], ["Weight loss"], ["Fat loss"], ["Muscle building"], ["Body toning"], ["Functional fitness"], ["Cardio"], ["Personal training"], ["Group fitness"]]},
       {"type": "paragraph", "content": ["📞 Muhaisnah: ", {"type": "link", "text": "054 712 0927", "href": "tel:+971547120927"}]},
@@ -4130,7 +4175,7 @@ export const blogPosts: BlogPost[] = [
       {"type": "paragraph", "content": ["Our fitness environment provides access to strength training, cardio, functional training, personal training, and other fitness activities."]},
       {"type": "paragraph", "content": ["📞 Deira: ", {"type": "link", "text": "054 712 0925", "href": "tel:+971547120925"}]},
       {"type": "heading", "level": 2, "id": "personal-training", "text": "Personal Training for Women"},
-      {"type": "paragraph", "content": ["If you're unsure where to start, personal training for women can provide additional guidance."]},
+      {"type": "paragraph", "content": ["If you're unsure where to start, ", {"type": "link", "text": "personal training for women", "href": "/services/personal-training"}, " can provide additional guidance."]},
       {"type": "paragraph", "content": ["A professional trainer can help you understand:"]},
       {"type": "list", "items": [["Exercise technique"], ["Workout structure"], ["Training intensity"], ["Exercise selection"], ["Strength progression"], ["Recovery"], ["Fitness goals"]]},
       {"type": "paragraph", "content": ["Personal training can be especially useful for beginners who want to learn how to use gym equipment safely and effectively."]},

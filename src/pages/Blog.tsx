@@ -8,6 +8,7 @@ import { blogPosts } from "@/data/blogPosts";
 import fitnessBlogHero from "@/assets/fitness-blog-hero.png";
 
 const Blog = () => {
+  const newestPosts = [...blogPosts].sort((a, b) => b.datePublished.localeCompare(a.datePublished));
   return (
     <div className="min-h-screen bg-background">
       <PageSeo
@@ -44,7 +45,7 @@ const Blog = () => {
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-              {blogPosts.map((post) => (
+              {newestPosts.map((post) => (
                 <article
                   key={post.id}
                   className="bg-secondary/30 rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow group"
@@ -74,7 +75,7 @@ const Blog = () => {
                     <div className="flex items-center gap-4 mb-3 text-sm text-muted-foreground">
                       <div className="flex items-center gap-2">
                         <Calendar className="h-4 w-4" />
-                        <span>{post.date}</span>
+                        <time dateTime={post.datePublished}>{post.date}</time>
                       </div>
                       <div className="flex items-center gap-2">
                         <Clock className="h-4 w-4" />
