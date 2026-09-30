@@ -9,11 +9,14 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { toast } from "@/hooks/use-toast";
+import { enquiryBranches, generalEnquiryUrl, type EnquiryBranch } from "@/lib/whatsapp";
 
 const deiraGoogleProfileUrl = "https://share.google/8ArVq05n3QaSpmVIc";
 const muhaisnahGoogleProfileUrl = "https://share.google/p80UREIg1DLHQRqO7";
 
 const Contact = () => {
+  const [branch, setBranch] = useState<EnquiryBranch | "">("");
+  const [handoffUrl, setHandoffUrl] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -24,30 +27,36 @@ const Contact = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.email || !formData.phone || !formData.message) {
+    if (!branch || !formData.name.trim() || !formData.email.trim() || !formData.phone.trim() || !formData.message.trim()) {
       toast({
         title: "Missing Information",
-        description: "Please fill in all fields.",
+        description: "Please select a branch and fill in all fields.",
         variant: "destructive",
       });
       return;
     }
 
     const waMessage = `Contact Form Submission
+Branch: ${enquiryBranches[branch].label}
 Name: ${formData.name}
 Email: ${formData.email}
 Phone: ${formData.phone}
 Message: ${formData.message}`;
 
-    const waUrl = `https://wa.me/971547120925?text=${encodeURIComponent(waMessage)}`;
-    window.open(waUrl, "_blank");
+    const waUrl = generalEnquiryUrl(branch, waMessage);
+    setHandoffUrl(waUrl);
+    try {
+      // A null result with noopener does not indicate whether the tab opened.
+      window.open(waUrl, "_blank", "noopener,noreferrer");
+    } catch {
+      // The visible link below remains available even if automatic opening fails.
+    }
 
     toast({
-      title: "Message Sent!",
-      description: "We'll get back to you shortly via WhatsApp.",
+      title: "Enquiry Ready",
+      description: "Continue in WhatsApp and send your message to complete your enquiry.",
     });
 
-    setFormData({ name: "", email: "", phone: "", message: "" });
   };
 
   return (
@@ -79,6 +88,13 @@ Message: ${formData.message}`;
         {/* Contact Info & Form */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
+            <div className="mb-8 max-w-md">
+              <Label htmlFor="enquiry-branch">Branch for general enquiries *</Label>
+              <select id="enquiry-branch" value={branch} onChange={(event) => { setBranch(event.target.value as EnquiryBranch | ""); setHandoffUrl(null); }} className="mt-2 w-full rounded border border-border bg-background p-3">
+                <option value="">Select a branch</option>
+                {Object.entries(enquiryBranches).map(([key, value]) => <option key={key} value={key}>{value.label}</option>)}
+              </select>
+            </div>
             <div className="grid lg:grid-cols-2 gap-12">
               {/* Contact Information */}
               <div className="space-y-8">
@@ -164,10 +180,11 @@ Message: ${formData.message}`;
                     variant="hero"
                     size="lg"
                     className="w-full"
-                    onClick={() => window.open("https://wa.me/971547120925", "_blank")}
+                    disabled={!branch}
+                    onClick={() => branch && window.open(generalEnquiryUrl(branch), "_blank")}
                   >
                     <MessageCircle className="mr-2" />
-                    Chat on WhatsApp
+                    General enquiries on WhatsApp
                   </Button>
                 </div>
               </div>
@@ -177,7 +194,7 @@ Message: ${formData.message}`;
                 <h3 className="text-3xl font-bold text-foreground mb-6">
                   Send Us a <span className="text-primary">Message</span>
                 </h3>
-                <form onSubmit={handleSubmit} className="space-y-6">
+                <form onSubmit={handleSubmit} onChange={() => setHandoffUrl(null)} className="space-y-6">
                   <div>
                     <Label htmlFor="name">Full Name *</Label>
                     <Input
@@ -226,8 +243,15 @@ Message: ${formData.message}`;
                   </div>
 
                   <Button type="submit" variant="hero" size="lg" className="w-full">
-                    Send Message
+                    Continue enquiry in WhatsApp
                   </Button>
+                  {handoffUrl && (
+                    <div role="status" className="rounded border border-border p-4">
+                      <p>Continue in WhatsApp and send your message to complete your enquiry.</p>
+                      <a href={handoffUrl} target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-primary underline">Open enquiry in WhatsApp manually</a>
+                    </div>
+                  )}
+                  <Button type="button" variant="outline" onClick={() => { setFormData({ name: "", email: "", phone: "", message: "" }); setHandoffUrl(null); }}>Clear entered details</Button>
                 </form>
               </div>
             </div>
@@ -235,7 +259,7 @@ Message: ${formData.message}`;
         </section>
       </main>
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppButton branch={branch || undefined} chooseBranch />
     </div>
   );
 };

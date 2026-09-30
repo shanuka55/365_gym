@@ -118,7 +118,7 @@ const Blog = () => {
                   to="/contact"
                   className="bg-primary text-background hover:bg-primary/90 font-black text-lg uppercase px-8 py-4 rounded-full transition-all duration-300 hover:shadow-glow inline-flex items-center justify-center gap-2"
                 >
-                  Get Free Trial <ArrowRight className="h-5 w-5" />
+                  General Enquiries <ArrowRight className="h-5 w-5" />
                 </Link>
                 <Link
                   to="/about"
@@ -132,7 +132,7 @@ const Blog = () => {
         </section>
       </main>
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppButton chooseBranch />
     </div>
   );
 };

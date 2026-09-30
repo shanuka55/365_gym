@@ -1,4 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
+import { Fragment, lazy, Suspense, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { enquiryBranches, type EnquiryBranch } from "@/lib/whatsapp";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import PageSeo from "@/components/PageSeo";
@@ -6,6 +9,26 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SocialShareButtons from "@/components/SocialShareButtons";
 import { blogPosts, type BlogContentBlock, type BlogInline } from "@/data/blogPosts";
+
+const FreePassModal = lazy(() => import("@/components/FreePassModal"));
+
+const StrengthTrialCta = ({ id, branch, onBranchChange, onRequest }: {
+  id: string;
+  branch: EnquiryBranch | "";
+  onBranchChange: (branch: EnquiryBranch | "") => void;
+  onRequest: () => void;
+}) => (
+  <aside aria-label="Strength-training trial" className="my-8 rounded-xl border border-primary/30 bg-primary/5 p-5">
+    <p className="mb-3 font-bold">Try strength training at 365 Fitness</p>
+    <label htmlFor={id} className="mb-2 block text-sm">Preferred trial branch</label>
+    <select id={id} value={branch} onChange={(event) => onBranchChange(event.target.value as EnquiryBranch | "")} className="mb-4 w-full rounded border border-border bg-background p-3 text-base">
+      <option value="">Select a branch</option>
+      {Object.entries(enquiryBranches).map(([key, value]) => <option key={key} value={key}>{value.label}</option>)}
+    </select>
+    <Button type="button" onClick={onRequest} disabled={!branch} className="h-auto whitespace-normal py-3">Request a Strength-Training Trial</Button>
+    <p className="mt-3 text-sm">Complete the free-pass form, then send your request to our central free-trial team in WhatsApp.</p>
+  </aside>
+);
 
 const renderInline = (content: BlogInline[]) => content.map((item, index) =>
   typeof item === "string" ? item : item.href.startsWith("/") && !item.href.startsWith("//") ? (
@@ -41,6 +64,8 @@ const ArticleBlock = ({ block }: { block: string | BlogContentBlock }) => {
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
+  const [trialBranch, setTrialBranch] = useState<EnquiryBranch | "">("");
+  const [trialArticle, setTrialArticle] = useState<string | null>(null);
   const post = blogPosts.find((p) => p.slug === slug);
 
   if (!post) {
@@ -52,6 +77,8 @@ const BlogPost = () => {
   const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null;
   const canonical = `https://www.365fitness.ae/blog/${post.slug}`;
   const isWomenStrengthArticle = post.slug === "why-women-should-include-strength-training-in-their-routine";
+  const introductionEnd = post.content.findIndex((block) => typeof block !== "string" && block.type === "heading");
+  const trialCta = (id: string) => <StrengthTrialCta id={id} branch={trialBranch} onBranchChange={setTrialBranch} onRequest={() => setTrialArticle(post.slug)} />;
   const title = isWomenStrengthArticle
     ? "Strength Training for Women: Benefits & Beginner Tips | 365 Fitness"
     : `${post.title} | 365 Fitness`;
@@ -164,7 +191,10 @@ const BlogPost = () => {
               <article className="prose prose-lg max-w-none">
                 <div className="space-y-6 text-foreground/90 leading-relaxed text-lg">
                   {post.content.map((block, index) => (
-                    <ArticleBlock key={index} block={block} />
+                    <Fragment key={index}>
+                      {isWomenStrengthArticle && index === introductionEnd && trialCta("trial-branch-introduction")}
+                      <ArticleBlock block={block} />
+                    </Fragment>
                   ))}
                 </div>
               </article>
@@ -185,6 +215,7 @@ const BlogPost = () => {
               )}
 
               {/* Share Section */}
+              {isWomenStrengthArticle && trialCta("trial-branch-end")}
               <div className="mt-12 pt-8 border-t border-border">
                 <h2 className="text-xl font-bold mb-4">Share this article</h2>
                 <SocialShareButtons title={post.title} url={canonical} />
@@ -239,7 +270,7 @@ const BlogPost = () => {
                     to="/contact"
                     className="bg-primary text-background hover:bg-primary/90 font-black text-lg uppercase px-8 py-4 rounded-full transition-all duration-300 hover:shadow-glow inline-flex items-center justify-center gap-2"
                   >
-                    Get Free Trial <ArrowRight className="h-5 w-5" />
+                    General Enquiries <ArrowRight className="h-5 w-5" />
                   </Link>
                   <Link
                     to="/about"
@@ -254,7 +285,12 @@ const BlogPost = () => {
         </section>
       </main>
       <Footer />
-      <WhatsAppButton />
+      <WhatsAppButton chooseBranch />
+      <Suspense fallback={null}>
+        {isWomenStrengthArticle && trialArticle === post.slug && (
+          <FreePassModal isOpen onClose={() => setTrialArticle(null)} initialBranch={trialBranch || undefined} interest="Strength training" articleUrl={canonical} />
+        )}
+      </Suspense>
     </div>
   );
 };
