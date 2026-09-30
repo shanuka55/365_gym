@@ -1,6 +1,8 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
+import PageSeo from "@/components/PageSeo";
+import { format } from "date-fns";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import SocialShareButtons from "@/components/SocialShareButtons";
@@ -18,8 +20,44 @@ const BlogPost = () => {
   const previousPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
   const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null;
 
+  const canonical = `https://www.365fitness.ae/blog/${post.slug}`;
+  const isWomenStrengthArticle = post.slug === "why-women-should-include-strength-training-in-their-routine";
+  const title = isWomenStrengthArticle
+    ? "Strength Training for Women: Benefits & Beginner Tips | 365 Fitness"
+    : `${post.title} | 365 Fitness`;
+  const description = isWomenStrengthArticle
+    ? "Learn the benefits of strength training for women, beginner exercises and weekly routine tips. Explore coaching at 365 Fitness in Deira and Muhaisnah."
+    : post.excerpt;
+  // Preserve the published calendar date without inventing a time or modification date.
+  const publishedTime = format(new Date(post.date), "yyyy-MM-dd");
+  const image = new URL(post.image, canonical).href;
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${canonical}#article`,
+    url: canonical,
+    mainEntityOfPage: { "@type": "WebPage", "@id": canonical },
+    headline: post.title,
+    description,
+    image,
+    datePublished: publishedTime,
+    articleSection: post.category,
+    inLanguage: "en",
+    publisher: { "@type": "Organization", name: "365 Fitness", url: "https://www.365fitness.ae" },
+  };
+
   return (
     <div className="min-h-screen bg-background">
+      <PageSeo
+        title={title}
+        description={description}
+        canonical={canonical}
+        image={image}
+        type="article"
+        publishedTime={publishedTime}
+        section={post.category}
+        schema={schema}
+      />
       <Header />
       <main>
         {/* Hero Image */}
@@ -97,7 +135,7 @@ const BlogPost = () => {
               {/* Share Section */}
               <div className="mt-12 pt-8 border-t border-border">
                 <h3 className="text-xl font-bold mb-4">Share this article</h3>
-                <SocialShareButtons title={post.title} url={window.location.href} />
+                <SocialShareButtons title={post.title} url={canonical} />
               </div>
 
               {/* Navigation to Previous/Next Posts */}

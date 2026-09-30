@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { Calendar, Clock, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
+import PageSeo from "@/components/PageSeo";
 import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { blogPosts } from "@/data/blogPosts";
@@ -9,6 +10,12 @@ import fitnessBlogHero from "@/assets/fitness-blog-hero.png";
 const Blog = () => {
   return (
     <div className="min-h-screen bg-background">
+      <PageSeo
+        title="Fitness Blog: Training & Nutrition Tips | 365 Fitness"
+        description="Explore fitness, strength training, nutrition and recovery tips from 365 Fitness. Find workout guidance and coaching in Deira and Muhaisnah, Dubai."
+        canonical="https://www.365fitness.ae/blog"
+        image={fitnessBlogHero}
+      />
       <Header />
       <main>
         {/* Hero Section */}
