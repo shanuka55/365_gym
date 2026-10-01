@@ -1,7 +1,7 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { Fragment, lazy, Suspense, useState } from "react";
-import { Button } from "@/components/ui/button";
-import { enquiryBranches, type EnquiryBranch } from "@/lib/whatsapp";
+import BlogTrialCta from "@/components/BlogTrialCta";
+import { type EnquiryBranch } from "@/lib/whatsapp";
 import { Calendar, Clock, ArrowLeft, ArrowRight } from "lucide-react";
 import Header from "@/components/Header";
 import PageSeo from "@/components/PageSeo";
@@ -11,24 +11,6 @@ import SocialShareButtons from "@/components/SocialShareButtons";
 import { blogPosts, type BlogContentBlock, type BlogInline } from "@/data/blogPosts";
 
 const FreePassModal = lazy(() => import("@/components/FreePassModal"));
-
-const StrengthTrialCta = ({ id, branch, onBranchChange, onRequest }: {
-  id: string;
-  branch: EnquiryBranch | "";
-  onBranchChange: (branch: EnquiryBranch | "") => void;
-  onRequest: () => void;
-}) => (
-  <aside aria-label="Strength-training trial" className="my-8 rounded-xl border border-primary/30 bg-primary/5 p-5">
-    <p className="mb-3 font-bold">Try strength training at 365 Fitness</p>
-    <label htmlFor={id} className="mb-2 block text-sm">Preferred trial branch</label>
-    <select id={id} value={branch} onChange={(event) => onBranchChange(event.target.value as EnquiryBranch | "")} className="mb-4 w-full rounded border border-border bg-background p-3 text-base">
-      <option value="">Select a branch</option>
-      {Object.entries(enquiryBranches).map(([key, value]) => <option key={key} value={key}>{value.label}</option>)}
-    </select>
-    <Button type="button" onClick={onRequest} disabled={!branch} className="h-auto whitespace-normal py-3">Request a Strength-Training Trial</Button>
-    <p className="mt-3 text-sm">Complete the free-pass form, then send your request to our central free-trial team in WhatsApp.</p>
-  </aside>
-);
 
 const renderInline = (content: BlogInline[]) => content.map((item, index) =>
   typeof item === "string" ? item : item.href.startsWith("/") && !item.href.startsWith("//") ? (
@@ -76,15 +58,10 @@ const BlogPost = () => {
   const previousPost = currentIndex > 0 ? blogPosts[currentIndex - 1] : null;
   const nextPost = currentIndex < blogPosts.length - 1 ? blogPosts[currentIndex + 1] : null;
   const canonical = `https://www.365fitness.ae/blog/${post.slug}`;
-  const isWomenStrengthArticle = post.slug === "why-women-should-include-strength-training-in-their-routine";
   const introductionEnd = post.content.findIndex((block) => typeof block !== "string" && block.type === "heading");
-  const trialCta = (id: string) => <StrengthTrialCta id={id} branch={trialBranch} onBranchChange={setTrialBranch} onRequest={() => setTrialArticle(post.slug)} />;
-  const title = isWomenStrengthArticle
-    ? "Strength Training for Women: Benefits & Beginner Tips | 365 Fitness"
-    : `${post.title} | 365 Fitness`;
-  const description = isWomenStrengthArticle
-    ? "Learn the benefits of strength training for women, beginner exercises and weekly routine tips. Explore coaching at 365 Fitness in Deira and Muhaisnah."
-    : post.excerpt;
+  const trialCta = (id: string) => <BlogTrialCta id={id} trialType={post.trialType} branch={trialBranch} onBranchChange={setTrialBranch} onRequest={() => setTrialArticle(post.slug)} />;
+  const title = post.seo?.title ?? `${post.title} | 365 Fitness`;
+  const description = post.seo?.description ?? post.excerpt;
   // Preserve the published calendar date without inventing a time or modification date.
   const publishedTime = post.datePublished;
   const relatedPosts = [...new Set(post.relatedSlugs ?? [])]
@@ -107,6 +84,7 @@ const BlogPost = () => {
     description,
     image,
     datePublished: publishedTime,
+    ...(post.dateModified ? { dateModified: post.dateModified } : {}),
     articleSection: post.category,
     inLanguage: "en",
     publisher: { "@type": "Organization", name: "365 Fitness", url: "https://www.365fitness.ae" },
@@ -121,37 +99,40 @@ const BlogPost = () => {
         image={image}
         type="article"
         publishedTime={publishedTime}
+        modifiedTime={post.dateModified}
         section={post.category}
         schema={schema}
       />
       <Header />
       <main>
         {/* Hero Image */}
-        <section className="relative h-[60vh] min-h-[500px] overflow-hidden">
+        <section className="relative min-h-[540px] overflow-hidden">
           <img
             src={post.image}
             alt={post.title}
-            className="w-full h-full object-cover"
+            className="absolute inset-0 w-full h-full object-cover"
             fetchPriority="high"
             decoding="async"
             width="1600"
             height="900"
           />
+          <div className="absolute inset-0 bg-black/55" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-          <div className="absolute bottom-0 left-0 right-0 container mx-auto px-4 pb-12">
+          <div className="relative container mx-auto px-4 pb-12 pt-36 md:pt-48">
             <div className="max-w-4xl">
               <span className="bg-primary text-background px-4 py-2 rounded-full text-sm font-bold uppercase inline-block mb-4">
                 {post.category}
               </span>
-              <h1 className="text-4xl md:text-6xl font-black text-foreground mb-4">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-foreground mb-4 break-words">
                 {post.title}
               </h1>
-              <div className="flex items-center gap-6 text-muted-foreground">
-                <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-muted-foreground">
+                <div className="flex flex-wrap items-center gap-2">
                   <Calendar className="h-5 w-5" />
                   <time dateTime={post.datePublished}>{post.date}</time>
+                  {post.dateModified && <time dateTime={post.dateModified} className="text-sm">Updated {post.dateModified}</time>}
                 </div>
-                <div className="flex items-center gap-2">
+                <div className="flex flex-wrap items-center gap-2">
                   <Clock className="h-5 w-5" />
                   <span>{post.readTime}</span>
                 </div>
@@ -192,7 +173,7 @@ const BlogPost = () => {
                 <div className="space-y-6 text-foreground/90 leading-relaxed text-lg">
                   {post.content.map((block, index) => (
                     <Fragment key={index}>
-                      {isWomenStrengthArticle && index === introductionEnd && trialCta("trial-branch-introduction")}
+                      {index === introductionEnd && trialCta("trial-branch-introduction")}
                       <ArticleBlock block={block} />
                     </Fragment>
                   ))}
@@ -215,7 +196,7 @@ const BlogPost = () => {
               )}
 
               {/* Share Section */}
-              {isWomenStrengthArticle && trialCta("trial-branch-end")}
+              {trialCta("trial-branch-end")}
               <div className="mt-12 pt-8 border-t border-border">
                 <h2 className="text-xl font-bold mb-4">Share this article</h2>
                 <SocialShareButtons title={post.title} url={canonical} />
@@ -258,8 +239,8 @@ const BlogPost = () => {
               </div>
 
               {/* CTA Section */}
-              <div className="mt-16 text-center bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl p-12 border border-primary/20">
-                <h2 className="text-4xl font-black text-foreground mb-4">
+              <div className="mt-16 text-center bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl p-6 sm:p-12 border border-primary/20">
+                <h2 className="text-2xl sm:text-4xl font-black text-foreground mb-4">
                   Ready to Transform Your Body?
                 </h2>
                 <p className="text-xl text-muted-foreground mb-8">
@@ -268,13 +249,13 @@ const BlogPost = () => {
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Link
                     to="/contact"
-                    className="bg-primary text-background hover:bg-primary/90 font-black text-lg uppercase px-8 py-4 rounded-full transition-all duration-300 hover:shadow-glow inline-flex items-center justify-center gap-2"
+                    className="bg-primary text-background hover:bg-primary/90 font-black text-base sm:text-lg uppercase px-6 sm:px-8 py-4 rounded-full transition-all duration-300 hover:shadow-glow inline-flex items-center justify-center gap-2"
                   >
                     General Enquiries <ArrowRight className="h-5 w-5" />
                   </Link>
                   <Link
                     to="/about"
-                    className="bg-secondary text-foreground hover:bg-secondary/80 font-black text-lg uppercase px-8 py-4 rounded-full transition-all duration-300 inline-flex items-center justify-center"
+                    className="bg-secondary text-foreground hover:bg-secondary/80 font-black text-base sm:text-lg uppercase px-6 sm:px-8 py-4 rounded-full transition-all duration-300 inline-flex items-center justify-center"
                   >
                     Learn More
                   </Link>
@@ -287,8 +268,8 @@ const BlogPost = () => {
       <Footer />
       <WhatsAppButton chooseBranch />
       <Suspense fallback={null}>
-        {isWomenStrengthArticle && trialArticle === post.slug && (
-          <FreePassModal isOpen onClose={() => setTrialArticle(null)} initialBranch={trialBranch || undefined} interest="Strength training" articleUrl={canonical} />
+        {trialArticle === post.slug && (
+          <FreePassModal isOpen onClose={() => setTrialArticle(null)} initialBranch={trialBranch || undefined} interest={post.trialType === "strength" ? "Strength training" : "Free gym trial"} articleUrl={canonical} />
         )}
       </Suspense>
     </div>

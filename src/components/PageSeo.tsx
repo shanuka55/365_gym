@@ -8,6 +8,7 @@ type PageSeoProps = {
   image?: string;
   type?: "website" | "article";
   publishedTime?: string;
+  modifiedTime?: string;
   section?: string;
 };
 
@@ -47,7 +48,7 @@ const upsertPropertyMeta = (property: string, content: string) => {
   meta.setAttribute("content", content);
 };
 
-const PageSeo = ({ title, description, canonical, schema, image = "https://www.365fitness.ae/og-banner.jpg", type = "website", publishedTime, section }: PageSeoProps) => {
+const PageSeo = ({ title, description, canonical, schema, image = "https://www.365fitness.ae/og-banner.jpg", type = "website", publishedTime, modifiedTime, section }: PageSeoProps) => {
   useEffect(() => {
     const absoluteImage = new URL(image, canonical).href;
     document.title = title;
@@ -66,6 +67,7 @@ const PageSeo = ({ title, description, canonical, schema, image = "https://www.3
 
     const articleMetadata = {
       "article:published_time": publishedTime,
+      "article:modified_time": modifiedTime,
       "article:section": section,
     };
     Object.entries(articleMetadata).forEach(([property, value]) => {
@@ -81,7 +83,7 @@ const PageSeo = ({ title, description, canonical, schema, image = "https://www.3
         document.querySelector(`meta[property="${property}"]`)?.remove();
       });
     };
-  }, [canonical, description, image, title, type, publishedTime, section]);
+  }, [canonical, description, image, title, type, publishedTime, modifiedTime, section]);
 
   if (!schema) {
     return null;

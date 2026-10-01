@@ -47,7 +47,7 @@ const Blog = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
               {newestPosts.map((post) => (
                 <article
-                  key={post.id}
+                  key={post.slug}
                   className="bg-secondary/30 rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-glow group"
                 >
                   {/* Image */}
