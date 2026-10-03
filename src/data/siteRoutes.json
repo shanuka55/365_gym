@@ -1,0 +1,56 @@
+{
+  "Index": {
+    "path": "/"
+  },
+  "About": {
+    "path": "/about"
+  },
+  "Gallery": {
+    "path": "/gallery"
+  },
+  "Contact": {
+    "path": "/contact"
+  },
+  "Connection": {
+    "path": "/connection"
+  },
+  "LocationDeira": {
+    "path": "/locations/deira-muraqqabat"
+  },
+  "LocationMuhaisnah": {
+    "path": "/locations/muhaisnah-first"
+  },
+  "MonthlyPlans": {
+    "path": "/plans/monthly-plans"
+  },
+  "AnnualPlans": {
+    "path": "/plans/annual-plans"
+  },
+  "CorporatePlans": {
+    "path": "/plans/corporate-plans"
+  },
+  "PersonalTraining": {
+    "path": "/services/personal-training"
+  },
+  "GroupClasses": {
+    "path": "/services/group-classes"
+  },
+  "OnlineCoaching": {
+    "path": "/services/online-coaching"
+  },
+  "Blog": {
+    "path": "/blog"
+  },
+  "MembershipAgreement": {
+    "path": "/membership-agreement"
+  },
+  "FreelanceTrainerAgreement": {
+    "path": "/freelance-trainer-agreement"
+  },
+  "TermsAndConditions": {
+    "path": "/terms"
+  },
+  "PrivacyPolicy": {
+    "path": "/privacy"
+  }
+}

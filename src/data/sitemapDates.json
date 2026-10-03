@@ -1,0 +1,26 @@
+{
+  "pages": {
+    "Index": { "lastmod": "2026-09-04", "evidence": "d4a483e: Trainers adds Dr. Somayeh to the homepage; later PageSeo changes preserve its default output." },
+    "About": { "lastmod": "2026-08-24", "evidence": "284f41c: new About hero image." },
+    "Gallery": { "lastmod": "2026-08-07", "evidence": "5fa453b: shared Footer contact/address/link changes, after gallery additions in 3f989ce on July 27." },
+    "Contact": { "lastmod": "2026-10-01", "evidence": "afa0fb1: branch-specific enquiry handoff, manual links and revised instructions." },
+    "Connection": { "lastmod": "2026-08-07", "evidence": "5fa453b: index.html title, description, social metadata and schema correction. This page has no Footer or PageSeo." },
+    "LocationDeira": { "lastmod": "2026-08-13", "evidence": "7566b0b: published pricing, durations and VAT information changed; payment code is read-only for this task." },
+    "LocationMuhaisnah": { "lastmod": "2026-09-04", "evidence": "20be65e: published membership prices and annual package duration changed." },
+    "MonthlyPlans": { "lastmod": "2026-08-07", "evidence": "5fa453b: shared Footer contact/address/link changes; July image-format optimization is not a content update." },
+    "AnnualPlans": { "lastmod": "2026-08-07", "evidence": "5fa453b: shared Footer contact/address/link changes." },
+    "CorporatePlans": { "lastmod": "2026-08-07", "evidence": "5fa453b: shared Footer contact/address/link changes." },
+    "PersonalTraining": { "lastmod": "2026-08-07", "evidence": "5fa453b: shared Footer contact/address/link changes." },
+    "GroupClasses": { "lastmod": "2026-08-07", "evidence": "5fa453b: shared Footer contact/address/link changes." },
+    "OnlineCoaching": { "lastmod": "2026-08-07", "evidence": "5fa453b: shared Footer contact/address/link changes." },
+    "Blog": { "lastmod": "2026-10-01", "evidence": "452e035/ca6d9b6/ff05167: listing metadata, ordering, excerpts and duplicate removal." },
+    "MembershipAgreement": { "lastmod": "2026-08-24", "evidence": "e4029c8: refund and cancellation terms clarified." },
+    "FreelanceTrainerAgreement": { "lastmod": "2026-08-07", "evidence": "5fa453b: shared Footer contact/address/link changes, after agreement content changes in f4db9e7 on June 8." },
+    "TermsAndConditions": { "lastmod": "2026-08-24", "evidence": "e4029c8: refund and cancellation terms clarified." },
+    "PrivacyPolicy": { "lastmod": "2026-08-24", "evidence": "9d23902: privacy policy published." }
+  },
+  "articleTemplate": {
+    "lastmod": "2026-10-01",
+    "evidence": "452e035/ff05167: metadata, structured content, contextual and related links, contents and trial CTAs for all published articles. Page modification date, not a replacement publication date."
+  }
+}

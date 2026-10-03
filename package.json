@@ -5,11 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "npm run validate:blog && vite build",
-    "build:dev": "npm run validate:blog && vite build --mode development",
+    "build": "npm run validate:blog && npm run generate:sitemap && npm run validate:sitemap && vite build",
+    "build:dev": "npm run validate:blog && npm run generate:sitemap && npm run validate:sitemap && vite build --mode development",
     "validate:blog": "node --test scripts/validate-blog.test.mjs && node scripts/validate-blog.mjs",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate:sitemap": "node scripts/generate-sitemap.mjs",
+    "validate:sitemap": "node --test scripts/sitemap.test.mjs && node scripts/generate-sitemap.mjs --check"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

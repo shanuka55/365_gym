@@ -99,7 +99,26 @@ export function validateBlogContent(records, routes = []) {
   }
 }
 
-export const readAppRoutes = () => [...readFileSync(new URL("../src/App.tsx", import.meta.url), "utf8").matchAll(/<Route path="([^"]+)"/g)].map(m => m[1]);
+export function readAppRoutes() {
+  const inventory = JSON.parse(readFileSync(new URL("../src/data/siteRoutes.json", import.meta.url), "utf8"));
+  const source = readFileSync(new URL("../src/App.tsx", import.meta.url), "utf8");
+  const file = ts.createSourceFile("App.tsx", source, ts.ScriptTarget.Latest, true, ts.ScriptKind.TSX);
+  const paths = [];
+  function visit(node) {
+    if ((ts.isJsxSelfClosingElement(node) || ts.isJsxOpeningElement(node)) && node.tagName.getText(file) === "Route") {
+      const value = node.attributes.properties.find(prop => ts.isJsxAttribute(prop) && prop.name.getText(file) === "path")?.initializer;
+      if (value && ts.isStringLiteral(value)) paths.push(value.text);
+      else {
+        const key = value?.getText(file).match(/^\{siteRoutes\.(\w+)\.path\}$/)?.[1];
+        if (!key || !inventory[key]) throw new Error("Every Route needs a literal path or a known siteRoutes entry.");
+        paths.push(inventory[key].path);
+      }
+    }
+    ts.forEachChild(node, visit);
+  }
+  visit(file);
+  return paths;
+}
 
 export function validateBlogSlugs(records) {
   const seen = new Map();
