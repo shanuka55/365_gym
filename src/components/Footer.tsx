@@ -65,9 +65,15 @@ const Footer = ({ branch = "deira" }: FooterProps) => {
                 </Link>
               </li>
               <li>
-                <Link to="/locations/deira-muraqqabat" className="text-muted-foreground hover:text-primary transition-colors">
-                  Membership Plans
-                </Link>
+                {branch === "muhaisnah" ? (
+                  <a href="/locations/muhaisnah-first#muhaisnah-memberships" className="text-muted-foreground hover:text-primary transition-colors">
+                    Membership Plans
+                  </a>
+                ) : (
+                  <Link to="/locations/deira-muraqqabat" className="text-muted-foreground hover:text-primary transition-colors">
+                    Membership Plans
+                  </Link>
+                )}
               </li>
               <li>
                 <Link to="/services/personal-training" className="text-muted-foreground hover:text-primary transition-colors">

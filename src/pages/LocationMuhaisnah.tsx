@@ -1,3 +1,4 @@
+import { useEffect, useRef, useState } from "react";
 import {
   MapPin,
   Phone,
@@ -39,6 +40,8 @@ import m_image9 from "@/assets/IMG_Muhasnah_09.webp";
 import m_image10 from "@/assets/IMG_Muhasnah_10.webp";
 import m_image11 from "@/assets/IMG_Muhasnah_11.webp";
 import m_image12 from "@/assets/IMG_Muhasnah_12.webp";
+import hero640 from "@/assets/muhaisnah-hero-640.webp";
+import hero1280 from "@/assets/muhaisnah-hero-1280.webp";
 
 import img_01 from "@/assets/365 FITNESS GYM MUHASNAH 01.webp";
 import img_02 from "@/assets/365 FITNESS GYM MUHASNAH 02.webp";
@@ -160,6 +163,44 @@ const muhaisnahFacilities = [
 
 
 const LocationMuhaisnah = () => {
+  const heroRef = useRef<HTMLElement>(null);
+  const floatingWhatsAppRef = useRef<HTMLAnchorElement>(null);
+  const [showFloatingWhatsApp, setShowFloatingWhatsApp] = useState(false);
+
+  useEffect(() => {
+    let frame = 0;
+    const updateFloatingWhatsApp = () => {
+      const floating = floatingWhatsAppRef.current;
+      if (!floating) return;
+      const bounds = floating.getBoundingClientRect();
+      // Keep the hero CTAs clear, and only float where no other control is covered.
+      const heroVisible = (heroRef.current?.getBoundingClientRect().bottom ?? 0) > 0;
+      const coversControl = [...document.querySelectorAll("a, button, input, select, textarea, [role='button']")]
+        .some((control) => {
+          if (control === floating || floating.contains(control)) return false;
+          const rect = control.getBoundingClientRect();
+          return rect.width > 0 && rect.height > 0 && rect.left < bounds.right + 8 &&
+            rect.right > bounds.left - 8 && rect.top < bounds.bottom + 8 && rect.bottom > bounds.top - 8;
+        });
+      setShowFloatingWhatsApp(!heroVisible && !coversControl);
+    };
+    const scheduleUpdate = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(updateFloatingWhatsApp);
+    };
+    const observer = new ResizeObserver(scheduleUpdate);
+    observer.observe(document.body);
+    window.addEventListener("scroll", scheduleUpdate, { passive: true });
+    window.addEventListener("resize", scheduleUpdate);
+    scheduleUpdate();
+    return () => {
+      cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("scroll", scheduleUpdate);
+      window.removeEventListener("resize", scheduleUpdate);
+    };
+  }, []);
+
   useBranchCtaTracking({
     branch: "muhaisnah",
     phone: muhaisnahWhatsAppNumber,
@@ -263,20 +304,29 @@ const LocationMuhaisnah = () => {
       <Header />
       <div className="min-h-screen bg-background">
         {/* Hero Section */}
-        <section className="relative h-[90vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${m_image6})` }}
-          >
+        <section ref={heroRef} className="relative min-h-[90svh] flex items-center justify-center pt-28 pb-10 md:pt-36 md:pb-16">
+          <div className="absolute inset-0">
+            <img
+              src={hero1280}
+              srcSet={`${hero640} 640w, ${hero1280} 1280w`}
+              sizes="100vw"
+              alt=""
+              width="1280"
+              height="698"
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
             <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
             <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6">
-              24/7 Gym in Muhaisnah First, Dubai
-              <span className="block text-primary mt-2">Ladies Separate Area</span>
+              24/7 Gym in Muhaisnah First
             </h1>
+            <p className="text-xl sm:text-2xl md:text-3xl font-bold text-primary mb-4">Separate Ladies Area</p>
             <p className="text-base sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-              24/7 fitness center in Muhaisnah First with personal training, ladies gym facilities, group classes, CrossFit, MMA, boxing, and affordable membership packages.
+              Train any time at 365 Fitness in Madinat Badr, Muhaisnah First, Dubai. Explore memberships, personal training and group classes.
             </p>
             <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 max-w-sm sm:max-w-none mx-auto">
               <Button size="lg" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
@@ -295,6 +345,7 @@ const LocationMuhaisnah = () => {
                 <a href={muhaisnahGoogleProfileUrl} target="_blank" rel="noopener noreferrer"><Navigation className="mr-2 h-5 w-5" />Get Directions</a>
               </Button>
             </div>
+            <a href="#muhaisnah-memberships" className="inline-block mt-5 py-2 text-white underline underline-offset-4 hover:text-primary">View Memberships &amp; Prices</a>
           </div>
         </section>
 
@@ -413,7 +464,7 @@ const LocationMuhaisnah = () => {
           </div>
         </section>
         {/* Pricing */}
-        <section className="py-16">
+        <section id="muhaisnah-memberships" className="py-16 scroll-mt-28">
           <div className="container mx-auto px-4">
             <h2 className="text-4xl font-bold text-center mb-4">
               Gym Memberships <span className="text-primary">in Muhaisnah</span>
@@ -584,7 +635,7 @@ const LocationMuhaisnah = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Join our premium Muhaisnah facility today and experience expert trainers, top-tier equipment, and 24/7 access.
             </p>
-            <Button size="lg" asChild className="text-lg px-8 py-6">
+            <Button size="lg" asChild className="h-auto max-w-full whitespace-normal text-base sm:text-lg px-6 sm:px-8 py-4">
               <a
                 href={getMuhaisnahWhatsAppUrl("Hi 365 Fitness Muhaisnah! I'd like to join the Muhaisnah branch.")}
                 target="_blank"
@@ -632,14 +683,14 @@ const LocationMuhaisnah = () => {
       </div>
       <Footer branch="muhaisnah" />
       <a
+        ref={floatingWhatsAppRef}
         href={getMuhaisnahWhatsAppUrl("Hi 365 Fitness Muhaisnah! I'd like to know more about membership options.")}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-50 bg-primary hover:bg-primary/90 text-primary-foreground p-4 rounded-full shadow-glow-lg hover:shadow-glow animate-pulse-glow transition-all duration-300 hover:scale-110 group"
+        className={`fixed bottom-4 right-4 md:bottom-8 md:right-8 z-30 bg-primary hover:bg-primary/90 text-primary-foreground p-4 rounded-full shadow-glow-lg group ${showFloatingWhatsApp ? "visible" : "invisible pointer-events-none"}`}
         aria-label="Contact 365 Fitness Muhaisnah on WhatsApp"
       >
         <MessageCircle className="h-7 w-7 group-hover:rotate-12 transition-transform duration-300" />
-        <span className="absolute inset-0 rounded-full bg-primary/30 animate-ping" />
       </a>
     </>
   );
