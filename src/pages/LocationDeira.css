@@ -1,5 +1,4 @@
-/* Reserve viewport space for the fixed shared header and persistent contact CTA.
-   Only this branch scrolls in the middle row, so the CTA never covers content. */
+/* Reserve viewport space for the fixed shared header while the branch content scrolls. */
 .deira-page {
   height: 100vh;
   height: 100dvh;
@@ -13,11 +12,6 @@
   min-height: 0;
   overflow-y: auto;
   scroll-padding-block: 1.5rem;
-}
-
-.deira-page__contact {
-  flex-shrink: 0;
-  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
 }
 
 .deira-hero {

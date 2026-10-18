@@ -536,19 +536,17 @@ const LocationDeira = () => {
         </section>
       <Footer branch="deira" />
       </main>
-      <div className="deira-page__contact border-t border-primary/30 bg-background px-4 py-2">
+      </div>
       <a
         href={getDeiraWhatsAppUrl("Hi 365 Fitness Deira! I'd like to know more about membership options.")}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex min-h-11 w-full max-w-sm mx-auto items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 font-bold text-primary-foreground hover:bg-primary/90"
+        className="fixed bottom-8 right-8 z-50 bg-primary hover:bg-primary/90 text-primary-foreground p-4 rounded-full shadow-glow-lg hover:shadow-glow animate-pulse-glow transition-all duration-300 hover:scale-110 group"
         aria-label="Contact 365 Fitness Deira on WhatsApp"
       >
-        <MessageCircle className="h-5 w-5" aria-hidden="true" />
-        WhatsApp Deira
+        <MessageCircle className="h-7 w-7 group-hover:rotate-12 transition-transform duration-300" />
+        <span className="absolute inset-0 rounded-full bg-primary/30 animate-ping" />
       </a>
-      </div>
-      </div>
     </>
   );
 };
