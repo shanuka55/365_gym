@@ -1,5 +1,8 @@
 import blogOvertraining from "@/assets/blog-signs-of-overtraining.webp";
-import blogWomenStrengthTraining from "@/assets/blog-women-strength-training.png";
+import blogWomenStrengthTraining from "@/assets/blog-women-strength-training-1536.webp";
+import blogWomenStrengthTraining480 from "@/assets/blog-women-strength-training-480.webp";
+import blogWomenStrengthTraining768 from "@/assets/blog-women-strength-training-768.webp";
+import blogWomenStrengthTraining1152 from "@/assets/blog-women-strength-training-1152.webp";
 import blogNutritionMistakes from "@/assets/blog-common-nutrition-mistakes.png";
 import blogMealPrep from "@/assets/blog-meal-prep-gym.webp";
 import blogRecoveryRest from "@/assets/blog-recovery-gym.webp";
@@ -54,6 +57,7 @@ export interface BlogPost {
   showFullImage?: boolean;
   imageWidth?: number;
   imageHeight?: number;
+  imageSources?: { src: string; width: number }[];
   date: string;
   datePublished: string; // ISO calendar date (YYYY-MM-DD), matching the displayed date.
   dateModified?: string; // Date of a substantive editorial update, never inferred from a build.
@@ -2055,6 +2059,14 @@ export const blogPosts: BlogPost[] = [
     title: "Why Women Should Include Strength Training in Their Routine",
     excerpt: "Discover how strength training helps women build muscle, support bone health, improve fitness, and gain confidence at 365 Fitness Gym in Deira and Muhaisnah.",
     image: blogWomenStrengthTraining,
+    imageWidth: 1536,
+    imageHeight: 1024,
+    imageSources: [
+      { src: blogWomenStrengthTraining480, width: 480 },
+      { src: blogWomenStrengthTraining768, width: 768 },
+      { src: blogWomenStrengthTraining1152, width: 1152 },
+      { src: blogWomenStrengthTraining, width: 1536 },
+    ],
     date: "September 23, 2026",
     datePublished: "2026-09-23",
     dateModified: "2026-10-01",

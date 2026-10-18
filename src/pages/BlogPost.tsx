@@ -28,7 +28,7 @@ const ArticleBlock = ({ block }: { block: string | BlogContentBlock }) => {
       return <p>{renderInline(block.content)}</p>;
     case "heading": {
       const Heading = block.level === 2 ? "h2" : "h3";
-      return <Heading id={block.id} className={`scroll-mt-28 font-bold text-foreground ${block.level === 2 ? "text-3xl" : "text-2xl"}`}>{block.text}</Heading>;
+      return <Heading id={block.id} className={`scroll-mt-28 font-bold leading-tight text-foreground ${block.level === 2 ? "pt-6 text-2xl sm:text-3xl" : "pt-2 text-xl sm:text-2xl"}`}>{block.text}</Heading>;
     }
     case "list":
       return <ul className="list-disc space-y-2 pl-6">{block.items.map((item, index) => <li key={index}>{renderInline(item)}</li>)}</ul>;
@@ -37,7 +37,7 @@ const ArticleBlock = ({ block }: { block: string | BlogContentBlock }) => {
     case "faq":
       return (
         <section aria-labelledby={block.id}>
-          <h3 id={block.id} className="mb-3 scroll-mt-28 text-2xl font-bold text-foreground">{block.question}</h3>
+          <h3 id={block.id} className="mb-3 scroll-mt-28 pt-2 text-xl sm:text-2xl font-bold leading-tight text-foreground">{block.question}</h3>
           <p>{renderInline(block.answer)}</p>
         </section>
       );
@@ -106,34 +106,36 @@ const BlogPost = () => {
       <Header />
       <main>
         {/* Hero Image */}
-        <section className="relative min-h-[540px] overflow-hidden">
+        <section className="relative md:min-h-[540px]">
           <img
             src={post.image}
+            srcSet={post.imageSources?.map(source => `${source.src} ${source.width}w`).join(", ")}
+            sizes={post.imageSources ? "100vw" : undefined}
             alt={post.title}
             className="absolute inset-0 w-full h-full object-cover"
             fetchPriority="high"
             decoding="async"
-            width="1600"
-            height="900"
+            width={post.imageWidth ?? 1600}
+            height={post.imageHeight ?? 900}
           />
           <div className="absolute inset-0 bg-black/55" />
           <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
-          <div className="relative container mx-auto px-4 pb-12 pt-36 md:pt-48">
+          <div className="relative container mx-auto px-4 pb-8 pt-28 sm:pb-12 md:pt-48">
             <div className="max-w-4xl">
               <span className="bg-primary text-background px-4 py-2 rounded-full text-sm font-bold uppercase inline-block mb-4">
                 {post.category}
               </span>
-              <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-foreground mb-4 break-words">
+              <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-foreground mb-4 break-words leading-tight">
                 {post.title}
               </h1>
               <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-muted-foreground">
                 <div className="flex flex-wrap items-center gap-2">
-                  <Calendar className="h-5 w-5" />
+                  <Calendar className="h-5 w-5 shrink-0" />
                   <time dateTime={post.datePublished}>{post.date}</time>
                   {post.dateModified && <time dateTime={post.dateModified} className="text-sm">Updated {post.dateModified}</time>}
                 </div>
                 <div className="flex flex-wrap items-center gap-2">
-                  <Clock className="h-5 w-5" />
+                  <Clock className="h-5 w-5 shrink-0" />
                   <span>{post.readTime}</span>
                 </div>
               </div>
@@ -142,9 +144,9 @@ const BlogPost = () => {
         </section>
 
         {/* Article Content */}
-        <section className="py-16 bg-background">
+        <section className="py-10 sm:py-16 bg-background">
           <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto">
+            <div className="max-w-[65ch] mx-auto text-lg break-words">
               {/* Back to Blog */}
               <Link
                 to="/blog"
@@ -170,7 +172,7 @@ const BlogPost = () => {
 
               {/* Article Body */}
               {sections.length > 0 && (
-                <nav aria-label="Article contents" className="mb-8 rounded-xl border border-border bg-secondary/30 p-5 text-sm">
+                <nav aria-label="Article contents" className="mb-8 rounded-xl border border-border bg-secondary/30 p-4 sm:p-5 text-base">
                   <details>
                     <summary className="cursor-pointer font-bold">In this article</summary>
                     <ul className="mt-3 grid gap-x-6 gap-y-2 sm:grid-cols-2">
@@ -183,7 +185,7 @@ const BlogPost = () => {
                   </details>
                 </nav>
               )}
-              <article className="prose prose-lg max-w-none">
+              <article className="max-w-none">
                 <div className="space-y-6 text-foreground/90 leading-relaxed text-lg">
                   {post.content.map((block, index) => (
                     <Fragment key={index}>
@@ -221,11 +223,11 @@ const BlogPost = () => {
                 {previousPost && (
                   <Link
                     to={`/blog/${previousPost.slug}`}
-                    className="group p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-all border border-border hover:border-primary/50"
+                    className="group min-w-0 p-4 sm:p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-all border border-border hover:border-primary/50"
                   >
                     <div className="flex items-start gap-4">
                       <ArrowLeft className="h-6 w-6 text-primary mt-1 group-hover:-translate-x-1 transition-transform flex-shrink-0" />
-                      <div>
+                      <div className="min-w-0">
                         <p className="text-sm text-muted-foreground mb-2">Previous Article</p>
                         <p className="font-bold text-foreground group-hover:text-primary transition-colors">
                           {previousPost.title}
@@ -237,11 +239,11 @@ const BlogPost = () => {
                 {nextPost && (
                   <Link
                     to={`/blog/${nextPost.slug}`}
-                    className="group p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-all border border-border hover:border-primary/50 md:text-right"
+                    className="group min-w-0 p-4 sm:p-6 bg-secondary/30 rounded-xl hover:bg-secondary/50 transition-all border border-border hover:border-primary/50 md:text-right"
                   >
                     <div className="flex items-start gap-4 md:flex-row-reverse">
                       <ArrowRight className="h-6 w-6 text-primary mt-1 group-hover:translate-x-1 transition-transform flex-shrink-0" />
-                      <div>
+                      <div className="min-w-0">
                         <p className="text-sm text-muted-foreground mb-2">Next Article</p>
                         <p className="font-bold text-foreground group-hover:text-primary transition-colors">
                           {nextPost.title}
@@ -253,11 +255,11 @@ const BlogPost = () => {
               </div>
 
               {/* CTA Section */}
-              <div className="mt-16 text-center bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl p-6 sm:p-12 border border-primary/20">
+              <div className="mt-12 sm:mt-16 text-center bg-gradient-to-r from-primary/10 via-primary/5 to-primary/10 rounded-2xl p-4 sm:p-8 border border-primary/20">
                 <h2 className="text-2xl sm:text-4xl font-black text-foreground mb-4">
                   Ready to Transform Your Body?
                 </h2>
-                <p className="text-xl text-muted-foreground mb-8">
+                <p className="text-lg sm:text-xl text-muted-foreground mb-6">
                   Join 365 Fitness Dubai and get expert guidance from certified coaches
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -265,7 +267,7 @@ const BlogPost = () => {
                     to="/contact"
                     className="bg-primary text-background hover:bg-primary/90 font-black text-base sm:text-lg uppercase px-6 sm:px-8 py-4 rounded-full transition-all duration-300 hover:shadow-glow inline-flex items-center justify-center gap-2"
                   >
-                    General Enquiries <ArrowRight className="h-5 w-5" />
+                    General Enquiries <ArrowRight className="h-5 w-5 shrink-0" />
                   </Link>
                   <Link
                     to="/about"
