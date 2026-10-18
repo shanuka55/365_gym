@@ -53,7 +53,7 @@ test("dates reflect reviewed shared content and explicit publication/update date
   assert.equal(date("/"), "2026-09-04");
   assert.equal(date("/gallery"), "2026-08-07");
   assert.equal(date("/locations/muhaisnah-first"), "2026-09-04");
-  assert.equal(date("/blog"), "2026-10-01");
+  assert.equal(date("/blog"), "2026-10-18");
   assert.equal(date("/blog/beginner-gym-guide-dubai"), "2026-10-01");
   const copy = structuredClone(inputs);
   delete copy.dates.pages.About;
@@ -98,7 +98,7 @@ test("article dates use the latest evidenced change while preserving publication
   assert.equal(entries.find(entry => entry.loc.endsWith(`/blog/${copy.posts[0].slug}`)).lastmod, "2026-10-03");
   assert.equal(entries.find(entry => entry.loc.endsWith(`/blog/${copy.posts[1].slug}`)).lastmod, "2026-10-02");
   assert.equal(copy.posts[0].datePublished, inputs.posts[0].datePublished);
-  assert.equal(entries.find(entry => entry.loc === `${SITE_ORIGIN}/blog`).lastmod, "2026-10-01");
+  assert.equal(entries.find(entry => entry.loc === `${SITE_ORIGIN}/blog`).lastmod, "2026-10-18");
 });
 
 test("rejects invalid dates, unsupported paths and unevidenced dates", () => {

@@ -154,6 +154,20 @@ const BlogPost = () => {
                 <span className="font-bold">Back to All Articles</span>
               </Link>
 
+              {post.showFullImage && (
+                <figure className="mb-8">
+                  <img
+                    src={post.image}
+                    alt={post.imageAlt ?? post.title}
+                    width={post.imageWidth}
+                    height={post.imageHeight}
+                    loading="lazy"
+                    decoding="async"
+                    className="h-auto w-full rounded-xl"
+                  />
+                </figure>
+              )}
+
               {/* Article Body */}
               {sections.length > 0 && (
                 <nav aria-label="Article contents" className="mb-8 rounded-xl border border-border bg-secondary/30 p-5 text-sm">
