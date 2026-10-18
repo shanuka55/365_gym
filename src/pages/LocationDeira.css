@@ -1,0 +1,33 @@
+/* Reserve viewport space for the fixed shared header and persistent contact CTA.
+   Only this branch scrolls in the middle row, so the CTA never covers content. */
+.deira-page {
+  height: 100vh;
+  height: 100dvh;
+  padding-top: var(--deira-header-height, 72px);
+  display: flex;
+  flex-direction: column;
+}
+
+.deira-page__content {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  scroll-padding-block: 1.5rem;
+}
+
+.deira-page__contact {
+  flex-shrink: 0;
+  padding-bottom: max(0.5rem, env(safe-area-inset-bottom));
+}
+
+.deira-hero {
+  min-height: 440px;
+  padding-block: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .deira-hero {
+    min-height: max(500px, calc(90svh - var(--deira-header-height, 72px)));
+    padding-block: 4rem;
+  }
+}

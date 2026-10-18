@@ -1,3 +1,4 @@
+import { useLayoutEffect, useRef } from "react";
 import { MapPin, Phone, Clock, Check, MessageCircle, Navigation, ArrowUpRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -8,14 +9,24 @@ import TrainingRates from "@/components/TrainingRates";
 import PageSeo from "@/components/PageSeo";
 import useBranchCtaTracking from "@/hooks/useBranchCtaTracking";
 import BranchReviews from "@/components/BranchReviews";
-import deiraImage from "@/assets/365_fitness_gym_cover_image.webp";
-import img_1 from "@/assets/IMG_Deira_01.webp";
-import img_2 from "@/assets/IMG_Deira_02.webp";
-import img_3 from "@/assets/IMG_Deira_03.webp";
-import img_4 from "@/assets/IMG_Deira_04.webp";
-import img_5 from "@/assets/IMG_Deira_05.webp";
-import img_6 from "@/assets/IMG_Deira_06.webp";
-import img_7 from "@/assets/deira-branch.webp";
+import "./LocationDeira.css";
+import deiraImage from "@/assets/deira/365_fitness_gym_cover_image-1800.webp";
+import deiraImageMedium from "@/assets/deira/365_fitness_gym_cover_image-1280.webp";
+import deiraImageSmall from "@/assets/deira/365_fitness_gym_cover_image-640.webp";
+import img_1 from "@/assets/deira/IMG_Deira_01-480.webp";
+import img_1Large from "@/assets/deira/IMG_Deira_01-960.webp";
+import img_2 from "@/assets/deira/IMG_Deira_02-480.webp";
+import img_2Large from "@/assets/deira/IMG_Deira_02-960.webp";
+import img_3 from "@/assets/deira/IMG_Deira_03-480.webp";
+import img_3Large from "@/assets/deira/IMG_Deira_03-960.webp";
+import img_4 from "@/assets/deira/IMG_Deira_04-480.webp";
+import img_4Large from "@/assets/deira/IMG_Deira_04-960.webp";
+import img_5 from "@/assets/deira/IMG_Deira_05-480.webp";
+import img_5Large from "@/assets/deira/IMG_Deira_05-960.webp";
+import img_6 from "@/assets/deira/IMG_Deira_06-480.webp";
+import img_6Large from "@/assets/deira/IMG_Deira_06-960.webp";
+import img_7 from "@/assets/deira/deira-branch-480.webp";
+import img_7Large from "@/assets/deira/deira-branch-960.webp";
 
 const deiraGoogleProfileUrl = "https://share.google/8ArVq05n3QaSpmVIc";
 const deiraWhatsAppNumber = "971547120925";
@@ -88,17 +99,33 @@ const deiraSeoSchema = {
 };
 
 const deiraGalleryImages = [
-  { src: deiraImage, alt: "Deira Branch Interior" },
-  { src: img_7, alt: "Deira Branch Interior" },
-  { src: img_1, alt: "Deira Branch Equipment" },
-  { src: img_2, alt: "Deira Branch Facilities" },
-  { src: img_3, alt: "Deira Branch Facilities" },
-  { src: img_4, alt: "Deira Branch Facilities" },
-  { src: img_5, alt: "Deira Branch Facilities" },
-  { src: img_6, alt: "Deira Branch Facilities" },
+  { src: deiraImageSmall, srcSet: `${deiraImageSmall} 640w, ${deiraImageMedium} 1280w`, alt: "Deira Branch Interior" },
+  { src: img_7, srcSet: `${img_7} 480w, ${img_7Large} 960w`, alt: "Deira Branch Interior" },
+  { src: img_1, srcSet: `${img_1} 480w, ${img_1Large} 960w`, alt: "Deira Branch Equipment" },
+  { src: img_2, srcSet: `${img_2} 480w, ${img_2Large} 960w`, alt: "Deira Branch Facilities" },
+  { src: img_3, srcSet: `${img_3} 480w, ${img_3Large} 960w`, alt: "Deira Branch Facilities" },
+  { src: img_4, srcSet: `${img_4} 480w, ${img_4Large} 960w`, alt: "Deira Branch Facilities" },
+  { src: img_5, srcSet: `${img_5} 480w, ${img_5Large} 960w`, alt: "Deira Branch Facilities" },
+  { src: img_6, srcSet: `${img_6} 480w, ${img_6Large} 960w`, alt: "Deira Branch Facilities" },
 ];
 
 const LocationDeira = () => {
+  const pageRef = useRef<HTMLDivElement>(null);
+
+  useLayoutEffect(() => {
+    const page = pageRef.current;
+    const header = page?.querySelector("header");
+    if (!page || !header) return;
+
+    const updateHeaderHeight = () => {
+      page.style.setProperty("--deira-header-height", `${header.getBoundingClientRect().height}px`);
+    };
+    updateHeaderHeight();
+    const observer = new ResizeObserver(updateHeaderHeight);
+    observer.observe(header);
+    return () => observer.disconnect();
+  }, []);
+
   useBranchCtaTracking({
     branch: "deira",
     phone: deiraWhatsAppNumber,
@@ -205,26 +232,33 @@ const LocationDeira = () => {
         canonical={deiraCanonical}
         schema={deiraSeoSchema}
       />
+      <div ref={pageRef} className="deira-page bg-background">
       <Header />
-      <div className="min-h-screen bg-background">
+      <main className="deira-page__content" tabIndex={0} aria-label="Deira branch information">
         {/* Hero Section */}
-        <section className="relative h-[90vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-          <div
-            className="absolute inset-0 bg-cover bg-center"
-            style={{ backgroundImage: `url(${deiraImage})` }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
-          </div>
+        <section className="deira-hero relative flex items-center justify-center">
+          <img
+            src={deiraImage}
+            srcSet={`${deiraImageSmall} 640w, ${deiraImageMedium} 1280w, ${deiraImage} 1800w`}
+            sizes="100vw"
+            alt=""
+            width="1800"
+            height="1200"
+            fetchPriority="high"
+            loading="eager"
+            decoding="async"
+            className="absolute inset-0 h-full w-full object-cover object-center"
+          />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/70 to-black/50" />
           <div className="relative z-10 container mx-auto px-4 text-center">
-            <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold text-white mb-6">
-              24/7 Gym in Deira
-              <span className="block text-primary mt-2">– Al Muraqqabat</span>
+            <h1 className="text-3xl sm:text-5xl md:text-7xl font-bold text-white mb-4 sm:mb-6">
+              24/7 Gym in Deira,{" "}<span className="block text-primary mt-2">Al Muraqqabat</span>
             </h1>
-            <p className="text-base sm:text-xl md:text-2xl text-white/90 mb-8 max-w-3xl mx-auto">
-              Train at 365 Fitness, a 24/7 gym in Deira located in Al Muraqqabat near Muraqqabat Police Station and Salah Al Din Road. Enjoy premium strength and cardio equipment, personal training, group classes, MMA, boxing and more.
+            <p className="text-base sm:text-xl md:text-2xl text-white/90 mb-6 sm:mb-8 max-w-3xl mx-auto">
+              Train 24/7 at 365 Fitness in Al Muraqqabat, near Muraqqabat Police Station on Salah Al Din Road.
             </p>
             <div className="flex flex-col sm:flex-row sm:flex-wrap justify-center gap-3 max-w-sm sm:max-w-none mx-auto">
-            <Button size="lg" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
+            <Button size="lg" asChild className="w-full sm:w-auto h-12 sm:h-14 text-base sm:text-lg px-6 py-3 sm:py-6">
               <a
                 href={getDeiraWhatsAppUrl("Hi 365 Fitness Deira! I'd like to join this branch.")}
                 target="_blank"
@@ -233,13 +267,16 @@ const LocationDeira = () => {
                 WhatsApp Now
               </a>
             </Button>
-            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
+            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto h-12 sm:h-14 text-base sm:text-lg px-6 py-3 sm:py-6">
               <a href="tel:+971547120925"><Phone className="mr-2 h-5 w-5" />Call Now</a>
             </Button>
-            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto text-base sm:text-lg px-6 py-6">
+            <Button size="lg" variant="outline" asChild className="w-full sm:w-auto h-12 sm:h-14 text-base sm:text-lg px-6 py-3 sm:py-6">
               <a href={deiraGoogleProfileUrl} target="_blank" rel="noopener noreferrer"><Navigation className="mr-2 h-5 w-5" />Get Directions</a>
             </Button>
             </div>
+            <a href="#deira-memberships" className="inline-flex min-h-11 items-center mt-2 sm:mt-3 text-primary font-semibold underline underline-offset-4 hover:text-white">
+              View Deira memberships
+            </a>
           </div>
         </section>
 
@@ -305,6 +342,8 @@ const LocationDeira = () => {
                 <div key={image.src} className="aspect-video rounded-xl overflow-hidden">
                   <img
                     src={image.src}
+                    srcSet={image.srcSet}
+                    sizes="(min-width: 1200px) 368px, (min-width: 768px) calc((100vw - 80px) / 3), calc(100vw - 32px)"
                     alt={image.alt}
                     className="w-full h-full object-cover hover:scale-110 transition-transform duration-500"
                     loading="lazy"
@@ -342,7 +381,7 @@ const LocationDeira = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">Ladies Gym</h3>
+                  <h3 className="text-2xl font-bold mb-4 text-primary">Fitness Support for Women</h3>
                   <p className="text-muted-foreground">
                     Our team supports women with goal-focused fitness programs, strength training, weight management, and body transformation guidance in a professional and respectful gym environment.
                   </p>
@@ -358,15 +397,15 @@ const LocationDeira = () => {
           </div>
         </section>
         {/* Pricing */}
-        <section className="py-16">
+        <section id="deira-memberships" className="py-16 scroll-mt-6" aria-labelledby="deira-memberships-heading">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-4">
+            <h2 id="deira-memberships-heading" className="text-4xl font-bold text-center mb-4">
               Gym Memberships <span className="text-primary">in Deira</span>
             </h2>
             <p className="text-center text-muted-foreground mb-5">Choose the perfect plan for your fitness journey</p>
-            <div className="relative mx-auto mb-12 flex min-h-[90px] max-w-6xl items-center rounded-2xl border-2 border-primary bg-primary/10 px-16 py-6 text-center shadow-lg shadow-primary/10">
-              <Clock className="absolute left-10 h-7 w-7 text-primary" />
-              <p className="w-full text-xl font-black uppercase tracking-wide text-foreground md:text-2xl">
+            <div className="mx-auto mb-12 flex min-h-[90px] max-w-6xl items-center justify-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-4 py-6 text-center shadow-lg shadow-primary/10 sm:px-10">
+              <Clock className="h-7 w-7 shrink-0 text-primary" aria-hidden="true" />
+              <p className="text-base font-black uppercase tracking-wide text-foreground sm:text-xl md:text-2xl">
                 Limited-time Offer valid until September 2026
               </p>
             </div>
@@ -450,7 +489,7 @@ const LocationDeira = () => {
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
               Train on your schedule with 24/7 access, premium equipment, group classes and experienced trainers in Al Muraqqabat.
             </p>
-            <Button size="lg" asChild className="text-lg px-8 py-6">
+            <Button size="lg" asChild className="w-full sm:w-auto text-base sm:text-lg px-4 sm:px-8 py-6">
               <a
                 href={getDeiraWhatsAppUrl("Hi 365 Fitness Deira! I'd like to join the Deira branch.")}
                 target="_blank"
@@ -495,18 +534,21 @@ const LocationDeira = () => {
             </div>
           </div>
         </section>
-      </div>
       <Footer branch="deira" />
+      </main>
+      <div className="deira-page__contact border-t border-primary/30 bg-background px-4 py-2">
       <a
         href={getDeiraWhatsAppUrl("Hi 365 Fitness Deira! I'd like to know more about membership options.")}
         target="_blank"
         rel="noopener noreferrer"
-        className="fixed bottom-8 right-8 z-50 bg-primary hover:bg-primary/90 text-primary-foreground p-4 rounded-full shadow-glow-lg hover:shadow-glow animate-pulse-glow transition-all duration-300 hover:scale-110 group"
+        className="flex min-h-11 w-full max-w-sm mx-auto items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2 font-bold text-primary-foreground hover:bg-primary/90"
         aria-label="Contact 365 Fitness Deira on WhatsApp"
       >
-        <MessageCircle className="h-7 w-7 group-hover:rotate-12 transition-transform duration-300" />
-        <span className="absolute inset-0 rounded-full bg-primary/30 animate-ping" />
+        <MessageCircle className="h-5 w-5" aria-hidden="true" />
+        WhatsApp Deira
       </a>
+      </div>
+      </div>
     </>
   );
 };
