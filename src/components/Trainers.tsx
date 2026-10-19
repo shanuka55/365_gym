@@ -5,7 +5,6 @@ import trainerAzeem from "@/assets/AZEEM.webp";
 import trainerShan from "@/assets/SHAN.webp";
 import trainerFarzana from "@/assets/FARZANA.webp";
 import trainerAhmed from "@/assets/AHMED.webp";
-import trainerMannu from "@/assets/MANU.jpg";
 import trainerLeaLea from "@/assets/LEA LEA.jpg";
 import trainerShabaz from "@/assets/SHABAZ.jpg";
 import trainerRonnie from "@/assets/RONNIE.jpg";
@@ -54,12 +53,6 @@ const trainers = [
     specialty: "MMA, Boxing, kickbboxing, karate & self defense",
     image: trainerAhmed,
     bio: "Certified Combat Sports Coach specializing in Boxing, Kickboxing, Karate, and Self-Defense. Experienced in building strength, endurance, and fight skills through structured training programs. Focused on discipline, technique, and helping clients achieve real fitness and combat performance results.",
-  },
-  {
-    name: "Coach Mannu",
-    specialty: "CrossFit & Personal Training",
-    image: trainerMannu,
-    bio: "Level 3 Certified Personal Trainer (ICREPS) | REPs UAE Registered | Certified First Aid & CPR/AED | Specializing in Personal Training, Weight Loss, Muscle Building, Strength & Conditioning, HIIT, Functional Training & Nutrition.",
   },
   {
     name: "Coach Lea Lea",
