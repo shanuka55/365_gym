@@ -84,7 +84,7 @@ const muhaisnahFaqs = [
   },
   {
     question: "What membership offers are currently available?",
-    answer: "The confirmed annual promotion is 12 months plus 1 month free for AED 2499. Terms and conditions apply. See the membership section or WhatsApp the Muhaisnah team for current rates on other packages.",
+    answer: "The confirmed annual promotion is 12 months plus 1 month free for AED 2699. Terms and conditions apply. See the membership section or WhatsApp the Muhaisnah team for current rates on other packages.",
   },
 ];
 
@@ -210,7 +210,7 @@ const LocationMuhaisnah = () => {
   const pricingPlans = [
     {
       name: "MONTHLY",
-      price: "450",
+      price: "549",
       duration: "Month",
       features: [
         { name: "Free Consultation", included: true },
@@ -225,8 +225,7 @@ const LocationMuhaisnah = () => {
     },
     {
       name: "3 MONTHS",
-      regularPrice: "1499",
-      price: "1199",
+      price: "1249",
       duration: "3 Months",
       popular: true,
       features: [
@@ -242,8 +241,7 @@ const LocationMuhaisnah = () => {
     },
     {
       name: "6 MONTHS",
-      regularPrice: "2199",
-      price: "1799",
+      price: "1849",
       duration: "6 Months",
       features: [
         { name: "Free Consultation", included: true },
@@ -258,8 +256,7 @@ const LocationMuhaisnah = () => {
     },
     {
       name: "12 MONTHS + 1 MONTH FREE",
-      regularPrice: "3499",
-      price: "2499",
+      price: "2699",
       duration: "13 Months",
       features: [
         { name: "Free Consultation", included: true },
@@ -473,7 +470,7 @@ const LocationMuhaisnah = () => {
             <div className="mx-auto mb-4 flex max-w-4xl items-center gap-4 rounded-2xl border-2 border-primary bg-primary/10 px-5 py-5 text-center shadow-lg shadow-primary/10 sm:px-8">
               <Clock className="h-6 w-6 flex-shrink-0 text-primary" />
               <p className="w-full text-base font-black uppercase leading-snug tracking-wide text-foreground sm:text-xl">
-                Limited-time Offer valid until September 2026
+                Limited-Time Membership Offers
               </p>
             </div>
             <p className="mx-auto mb-12 max-w-4xl px-2 text-center text-sm font-semibold text-foreground sm:text-base">

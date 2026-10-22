@@ -406,7 +406,7 @@ const LocationDeira = () => {
             <div className="mx-auto mb-12 flex min-h-[90px] max-w-6xl items-center justify-center gap-3 rounded-2xl border-2 border-primary bg-primary/10 px-4 py-6 text-center shadow-lg shadow-primary/10 sm:px-10">
               <Clock className="h-7 w-7 shrink-0 text-primary" aria-hidden="true" />
               <p className="text-base font-black uppercase tracking-wide text-foreground sm:text-xl md:text-2xl">
-                Limited-time Offer valid until September 2026
+                Limited-Time Membership Offers
               </p>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
