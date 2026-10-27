@@ -53,7 +53,7 @@ test("dates reflect reviewed shared content and explicit publication/update date
   assert.equal(date("/"), "2026-09-04");
   assert.equal(date("/gallery"), "2026-08-07");
   assert.equal(date("/locations/muhaisnah-first"), "2026-09-04");
-  assert.equal(date("/blog"), "2026-10-18");
+  assert.equal(date("/blog"), [inputs.dates.pages.Blog.lastmod, ...inputs.posts.map(post => post.datePublished)].filter(Boolean).sort().at(-1));
   assert.equal(date("/blog/beginner-gym-guide-dubai"), "2026-10-01");
   const copy = structuredClone(inputs);
   delete copy.dates.pages.About;
@@ -78,11 +78,11 @@ test("reviewed listing changes cover removals and edits without changing article
   const copy = structuredClone(inputs);
   const removed = copy.posts.pop();
   copy.dates.pages.Blog = {
-    lastmod: "2026-10-02",
+    lastmod: "2026-12-02",
     evidence: "Editorial review: removed an article and revised listing excerpts.",
   };
   const entries = createSitemapEntries(copy);
-  assert.equal(entries.find(entry => entry.loc === `${SITE_ORIGIN}/blog`).lastmod, "2026-10-02");
+  assert.equal(entries.find(entry => entry.loc === `${SITE_ORIGIN}/blog`).lastmod, "2026-12-02");
   assert.ok(!entries.some(entry => entry.loc === `${SITE_ORIGIN}/blog/${removed.slug}`));
   assert.equal(entries.find(entry => entry.loc === `${SITE_ORIGIN}/blog/${copy.posts[0].slug}`).lastmod, "2026-10-01");
 });
@@ -98,7 +98,7 @@ test("article dates use the latest evidenced change while preserving publication
   assert.equal(entries.find(entry => entry.loc.endsWith(`/blog/${copy.posts[0].slug}`)).lastmod, "2026-10-03");
   assert.equal(entries.find(entry => entry.loc.endsWith(`/blog/${copy.posts[1].slug}`)).lastmod, "2026-10-02");
   assert.equal(copy.posts[0].datePublished, inputs.posts[0].datePublished);
-  assert.equal(entries.find(entry => entry.loc === `${SITE_ORIGIN}/blog`).lastmod, "2026-10-18");
+  assert.equal(entries.find(entry => entry.loc === `${SITE_ORIGIN}/blog`).lastmod, createSitemapEntries(inputs).find(entry => entry.loc === `${SITE_ORIGIN}/blog`).lastmod);
 });
 
 test("rejects invalid dates, unsupported paths and unevidenced dates", () => {
