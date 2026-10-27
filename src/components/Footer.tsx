@@ -142,7 +142,7 @@ const Footer = ({ branch = "deira" }: FooterProps) => {
                 <Instagram className="h-5 w-5 text-foreground" />
               </a>
               <a
-                href="https://www.youtube.com/@365fitnessgymllc"
+                href="https://youtube.com/@365fitness-dxb?si=p8XmyehNsQDwpH6p"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="bg-secondary hover:bg-primary p-3 rounded-full transition-all duration-300 hover:shadow-glow"
