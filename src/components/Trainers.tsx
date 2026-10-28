@@ -9,6 +9,7 @@ import trainerLeaLea from "@/assets/LEA LEA.jpg";
 import trainerShabaz from "@/assets/SHABAZ.jpg";
 import trainerRonnie from "@/assets/RONNIE.jpg";
 import trainerSomayeh from "@/assets/DR-SOMAYEH.jpg";
+import trainerSwalih from "@/assets/SWALIH.jpg";
 
 const trainers = [
 
@@ -53,6 +54,12 @@ const trainers = [
     specialty: "MMA, Boxing, kickbboxing, karate & self defense",
     image: trainerAhmed,
     bio: "Certified Combat Sports Coach specializing in Boxing, Kickboxing, Karate, and Self-Defense. Experienced in building strength, endurance, and fight skills through structured training programs. Focused on discipline, technique, and helping clients achieve real fitness and combat performance results.",
+  },
+  {
+    name: "Coach Swalih",
+    specialty: "MMA Trainer",
+    image: trainerSwalih,
+    bio: "Train in Mixed Martial Arts (MMA) with Coach Swalih. Build your fitness, sharpen your technique, and develop confidence and discipline as you work toward your training goals.",
   },
   {
     name: "Coach Lea Lea",
