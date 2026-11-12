@@ -1,22 +1,20 @@
 import { MapPin } from "lucide-react";
-import deiraBranch from "@/assets/deira-branch.webp";
-import muhasniah from "@/assets/muhasniah-branch.webp";
 
 const locations = [
   {
     name: "UAE",
-    image: deiraBranch,
+    image: "/uae-gym.webp",
     label: "Dubai & Northern Emirates",
   },
   {
     name: "KSA",
-    image: muhasniah,
+    image: "/ksa-gym.webp",
     label: "Coming Soon",
     comingSoon: true,
   },
   {
     name: "PAKISTAN",
-    image: deiraBranch,
+    image: "/pakistan-gym.webp",
     label: "Coming Soon",
     comingSoon: true,
   },
