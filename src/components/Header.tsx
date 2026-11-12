@@ -12,6 +12,7 @@ import personalTraining from "@/assets/personal-training.webp";
 import groupClasses from "@/assets/group-classes.webp";
 import onlineCoaching from "@/assets/online-coaching.webp";
 import { useLanguage } from "@/hooks/useLanguage";
+import siteRoutes from "@/data/siteRoutes.json";
 
 const FreePassModal = lazy(() => import("./FreePassModal"));
 const JoinNowModal = lazy(() => import("./JoinNowModal"));
@@ -41,6 +42,7 @@ const Header = () => {
 
   const megaMenuItems = {
     membership: [
+      { title: "Partner Offers", desc: "Benefits from our local partners", image: corporatePlan, link: siteRoutes.PartnerOffers.path },
       { title: t('membership.monthlyPlans'), desc: t('membership.monthlyDesc'), image: monthlyPlan, link: "/plans/monthly-plans" },
       { title: t('membership.annualPlans'), desc: t('membership.annualDesc'), image: annualPlan, link: "/plans/annual-plans" },
       { title: t('membership.corporatePlans'), desc: t('membership.corporateDesc'), image: corporatePlan, link: "/plans/corporate-plans" },

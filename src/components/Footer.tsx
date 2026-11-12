@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { Facebook, Instagram, Youtube, Video, MapPin, Phone, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo-header.webp";
+import siteRoutes from "@/data/siteRoutes.json";
 
 type FooterProps = {
   branch?: "deira" | "muhaisnah";
@@ -49,6 +50,11 @@ const Footer = ({ branch = "deira" }: FooterProps) => {
           <div>
             <h3 className="text-xl font-bold text-foreground mb-4">Quick Links</h3>
             <ul className="space-y-2">
+              <li>
+                <Link to={siteRoutes.PartnerOffers.path} className="text-muted-foreground hover:text-primary transition-colors">
+                  Partner Offers
+                </Link>
+              </li>
               <li>
                 <Link to="/about" className="text-muted-foreground hover:text-primary transition-colors">
                   About Us

@@ -15,6 +15,7 @@ const LocationMuhaisnah = lazy(() => import("./pages/LocationMuhaisnah"));
 const MonthlyPlans = lazy(() => import("./pages/MonthlyPlans"));
 const AnnualPlans = lazy(() => import("./pages/AnnualPlans"));
 const CorporatePlans = lazy(() => import("./pages/CorporatePlans"));
+const PartnerOffers = lazy(() => import("./pages/PartnerOffers"));
 const PersonalTraining = lazy(() => import("./pages/PersonalTraining"));
 const GroupClasses = lazy(() => import("./pages/GroupClasses"));
 const OnlineCoaching = lazy(() => import("./pages/OnlineCoaching"));
@@ -88,6 +89,7 @@ const App = () => {
             <Route path={siteRoutes.MonthlyPlans.path} element={<MonthlyPlans />} />
             <Route path={siteRoutes.AnnualPlans.path} element={<AnnualPlans />} />
             <Route path={siteRoutes.CorporatePlans.path} element={<CorporatePlans />} />
+            <Route path={siteRoutes.PartnerOffers.path} element={<PartnerOffers />} />
             <Route path={siteRoutes.PersonalTraining.path} element={<PersonalTraining />} />
             <Route path={siteRoutes.GroupClasses.path} element={<GroupClasses />} />
             <Route path={siteRoutes.OnlineCoaching.path} element={<OnlineCoaching />} />
