@@ -64,13 +64,16 @@ test("dates reflect reviewed shared content and explicit publication/update date
 
 test("new publications advance the listing; body-only edits advance only that article", () => {
   const copy = structuredClone(inputs);
-  copy.posts.push({ id: "test", slug: "future-article", datePublished: "2026-11-01" });
+  const newest = Math.max(...copy.posts.map(post => Date.parse(post.datePublished)));
+  const publication = new Date(newest + 86400000).toISOString().slice(0, 10);
+  const modification = new Date(newest + 172800000).toISOString().slice(0, 10);
+  copy.posts.push({ id: "test", slug: "future-article", datePublished: publication });
   let entries = createSitemapEntries(copy);
-  assert.equal(entries.find(entry => entry.loc.endsWith("/blog")).lastmod, "2026-11-01");
-  copy.posts[0].dateModified = "2026-12-01";
+  assert.equal(entries.find(entry => entry.loc.endsWith("/blog")).lastmod, publication);
+  copy.posts[0].dateModified = modification;
   entries = createSitemapEntries(copy);
-  assert.equal(entries.find(entry => entry.loc.endsWith("/blog")).lastmod, "2026-11-01");
-  assert.equal(entries.find(entry => entry.loc.endsWith(`/blog/${copy.posts[0].slug}`)).lastmod, "2026-12-01");
+  assert.equal(entries.find(entry => entry.loc.endsWith("/blog")).lastmod, publication);
+  assert.equal(entries.find(entry => entry.loc.endsWith(`/blog/${copy.posts[0].slug}`)).lastmod, modification);
   assert.deepEqual(inputs.posts, readSitemapInputs().posts);
 });
 
