@@ -86,9 +86,9 @@ function PartnerDetails({ partner, onBack }: { partner: PartnerCompany; onBack: 
                   <p id="partner-referral-help" className="mt-2 text-sm text-muted-foreground">Enter the code given to you by Naturals Salon reception.</p>
                   <p id="partner-verification-note" className="mt-2 text-sm text-muted-foreground">Deira reception will verify your referral code before confirming the discount.</p>
                 </div>
-              ) : (
+              ) : offer.verification === "active-membership" ? (
                 <p className="text-sm text-muted-foreground">Show your active 365 Fitness Deira membership at Naturals Salon reception to claim this offer.</p>
-              )}
+              ) : null}
               <Button type="submit" className="w-full h-auto min-h-12 whitespace-normal gap-2"><MessageCircle className="h-5 w-5 shrink-0" />Continue in WhatsApp</Button>
               <p className="text-sm text-muted-foreground">Your details will be included in a prefilled message. Tap <strong>Send</strong> in WhatsApp to complete your enquiry.</p>
               {handoffUrl && <div role="status" className="rounded-lg border border-primary/40 p-4"><p>Your message is ready. Tap Send in WhatsApp.</p><a href={handoffUrl} target="_blank" rel="noopener noreferrer" className="mt-2 inline-block text-primary underline">Open WhatsApp manually</a></div>}

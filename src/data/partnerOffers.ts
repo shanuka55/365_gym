@@ -8,7 +8,7 @@ export type PartnerOffer = {
   description: string;
   reference: string;
   eligibility: string;
-  verification: "referral-code" | "active-membership";
+  verification: "referral-code" | "active-membership" | "minimum-spend";
   discount?: string;
   plans?: { code: string; duration: string; price: number }[];
 };
@@ -48,14 +48,24 @@ export const partnerCompanies: PartnerCompany[] = [{
     ],
   },
   {
-    id: "naturals-salon",
+    id: "naturals-salon-50-aed",
     eligibleBranches: [deira],
-    title: "50% off at Naturals Salon, Reef Mall",
-    description: "365 Fitness Deira members get 50% off at Naturals Salon, Reef Mall.",
-    reference: "PARTNER-NATURALS-SALON-50OFF",
+    title: "Flat AED 50 off at Naturals Salon, Reef Mall",
+    description: "Receive a flat AED 50 discount on your bill when you spend AED 149 or more on salon services.",
+    reference: "PARTNER-NATURALS-SALON-AED50",
+    verification: "minimum-spend",
+    eligibility: "Minimum spend of AED 149 on salon services at Naturals Salon, Reef Mall.",
+    discount: "Flat AED 50 off",
+  },
+  {
+    id: "naturals-salon-25-percent",
+    eligibleBranches: [deira],
+    title: "Flat 25% off for 365 Fitness Deira members",
+    description: "365 Fitness Deira members receive a flat 25% discount on salon services at Naturals Salon, Reef Mall.",
+    reference: "PARTNER-NATURALS-SALON-25OFF",
     verification: "active-membership",
-    eligibility: "Available to 365 Fitness Deira members at Naturals Salon, Reef Mall.",
-    discount: "50% off",
+    eligibility: "Show your active 365 Fitness Deira membership at Naturals Salon reception to claim this offer.",
+    discount: "Flat 25% off",
   },
   ],
 }];

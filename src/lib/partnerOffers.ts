@@ -21,6 +21,7 @@ export function partnerOfferWhatsAppUrl(partner: PartnerCompany, offer: PartnerO
     `Partner: ${partner.name}, ${partner.location}`,
     `Branch: ${branch.label}`,
     `Offer: ${offer.title}`,
+    `Eligibility: ${offer.eligibility}`,
     plan ? `Membership: ${plan.duration} — ${formatPartnerPrice(plan.price)}` : `Discount: ${offer.discount}`,
     `Customer name: ${name.trim()}`,
     `Customer phone: ${phone.trim()}`,
