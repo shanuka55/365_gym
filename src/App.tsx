@@ -7,6 +7,7 @@ import siteRoutes from "./data/siteRoutes.json";
 import usePageTracking from "./hooks/usePageTracking";
 
 const Toaster = lazy(() => import("@/components/ui/toaster").then((module) => ({ default: module.Toaster })));
+const GymChatbot = lazy(() => import("./components/GymChatbot"));
 const About = lazy(() => import("./pages/About"));
 const Gallery = lazy(() => import("./pages/Gallery"));
 const Contact = lazy(() => import("./pages/Contact"));
@@ -74,6 +75,7 @@ const App = () => {
       {renderDeferredUi && (
         <Suspense fallback={null}>
           <Toaster />
+          <GymChatbot />
         </Suspense>
       )}
       <RouteErrorBoundary>
