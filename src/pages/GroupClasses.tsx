@@ -1,11 +1,19 @@
 import { useState } from "react";
-import { Check, Users, Calendar, Heart, Flame } from "lucide-react";
+import { Link } from "react-router-dom";
+import PageSeo from "@/components/PageSeo";
+import { Users, Calendar, Heart, Flame } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import JoinNowModal from "@/components/JoinNowModal";
 import groupClassesImage from "@/assets/group-classes.webp";
+import hiitImage from "@/assets/class-hiit.webp";
+import yogaImage from "@/assets/class-yoga.webp";
+import zumbaImage from "@/assets/class-zumba.webp";
+import spinningImage from "@/assets/class-spinning.webp";
+import boxingImage from "@/assets/class-boxing.webp";
+import pilatesImage from "@/assets/class-pilates.webp";
 
 const GroupClasses = () => {
   const [isJoinModalOpen, setIsJoinModalOpen] = useState(false);
@@ -13,96 +21,50 @@ const GroupClasses = () => {
   const classes = [
     {
       name: "HIIT",
-      icon: "🔥",
-      description: "High-intensity interval training for maximum calorie burn",
-      duration: "45 min",
-      intensity: "High",
+      description: "HIIT classes combine short bursts of high-intensity exercise with recovery periods. Train your strength and cardiovascular endurance in an energetic group workout that keeps you moving.",
+      image: hiitImage,
+      alt: "High intensity training in the gym",
     },
     {
       name: "Yoga & Stretching",
-      icon: "🧘",
-      description: "Improve flexibility, balance, and inner peace",
-      duration: "60 min",
-      intensity: "Low-Medium",
+      description: "Yoga and stretching classes bring together mindful movement, breathing and flexibility work. Make space in your routine to improve balance, ease tension and unwind.",
+      image: yogaImage,
+      alt: "Yoga and stretching workout",
     },
     {
       name: "Zumba",
-      icon: "💃",
-      description: "Dance-based cardio party workout",
-      duration: "60 min",
-      intensity: "Medium",
+      description: "Zumba classes bring dance-inspired moves and cardio together in an upbeat group workout. Move to the music, build endurance and enjoy a fun way to stay active.",
+      image: zumbaImage,
+      alt: "A group enjoying a dance fitness class",
     },
     {
       name: "Spinning",
-      icon: "🚴",
-      description: "High-energy cycling classes with motivating music",
-      duration: "45 min",
-      intensity: "Medium-High",
+      description: "Spinning classes bring the energy of indoor cycling to a group setting. Ride to motivating music while working on cardiovascular fitness and endurance.",
+      image: spinningImage,
+      alt: "A group riding stationary bikes in a cycling class",
     },
     {
       name: "Boxing",
-      icon: "🥊",
-      description: "Combat-inspired cardio and strength training",
-      duration: "50 min",
-      intensity: "High",
+      description: "Boxing classes combine punches and boxing-inspired movements for an engaging workout. Develop coordination, strength and cardiovascular fitness alongside others.",
+      image: boxingImage,
+      alt: "Boxing training in the gym",
     },
     {
       name: "Pilates",
-      icon: "💪",
-      description: "Core-strengthening and body-toning exercises",
-      duration: "50 min",
-      intensity: "Medium",
-    },
-  ];
-
-  const packages = [
-    {
-      name: "CLASS PASS",
-      classes: "10",
-      price: "450",
-      validity: "1 Month",
-      features: [
-        "10 Group Classes",
-        "Any Class Type",
-        "Flexible Scheduling",
-        "1 Month Validity",
-        "Online Booking",
-      ],
-    },
-    {
-      name: "UNLIMITED",
-      classes: "Unlimited",
-      price: "699",
-      validity: "1 Month",
-      popular: true,
-      features: [
-        "Unlimited Classes",
-        "All Class Types Included",
-        "Priority Booking",
-        "Bring a Friend (2x/month)",
-        "Online Booking",
-        "Towel Service",
-      ],
-    },
-    {
-      name: "ANNUAL UNLIMITED",
-      classes: "Unlimited",
-      price: "6,999",
-      validity: "12 Months",
-      features: [
-        "Unlimited Classes for 1 Year",
-        "All Class Types",
-        "Priority Booking",
-        "Bring a Friend Anytime",
-        "Free Gym Access",
-        "Exclusive Workshops",
-        "Save AED 1,389",
-      ],
+      description: "Pilates classes use controlled movements to work on core strength, posture and balance. Add mindful movement to your fitness routine and build a stronger foundation.",
+      image: pilatesImage,
+      alt: "A group practicing Pilates on mats",
     },
   ];
 
   return (
     <>
+      <PageSeo
+        title="Group Fitness Classes in Dubai | 365 Fitness"
+        description="Explore group fitness classes at 365 Fitness Dubai, including HIIT, yoga, Zumba, spinning, boxing and Pilates. Enquire about classes and schedules."
+        canonical="https://www.365fitness.ae/services/group-classes"
+        image={groupClassesImage}
+      />
       <Header />
       <div className="min-h-screen bg-background pt-24">
         {/* Hero Section */}
@@ -115,10 +77,10 @@ const GroupClasses = () => {
           </div>
           <div className="relative z-10 container mx-auto px-4 text-center">
             <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
-              Group <span className="text-primary">Classes</span>
+              Group Fitness <span className="text-primary">Classes in Dubai</span>
             </h1>
             <p className="text-xl md:text-2xl text-white/90 max-w-3xl mx-auto">
-              Train with friends and stay motivated together
+              Move, train and stay motivated together at 365 Fitness
             </p>
           </div>
         </section>
@@ -165,109 +127,45 @@ const GroupClasses = () => {
         </section>
 
         {/* Class Types */}
-        <section className="py-16">
+        <section className="py-16 md:py-24">
           <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-12">
-              Our <span className="text-primary">Classes</span>
-            </h2>
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-              {classes.map((classItem) => (
-                <Card key={classItem.name} className="p-6 hover:border-primary transition-colors">
-                  <div className="flex items-start gap-4">
-                    <span className="text-5xl">{classItem.icon}</span>
-                    <div className="flex-1">
-                      <h3 className="text-xl font-bold mb-2">{classItem.name}</h3>
-                      <p className="text-sm text-muted-foreground mb-3">{classItem.description}</p>
-                      <div className="flex gap-4 text-xs">
-                        <span className="text-primary font-bold">⏱ {classItem.duration}</span>
-                        <span className="text-muted-foreground">• {classItem.intensity}</span>
-                      </div>
+            <div className="max-w-6xl mx-auto">
+              <div className="text-center mb-12 md:mb-16">
+                <p className="text-primary text-sm font-bold uppercase tracking-[0.2em] mb-3">Find your workout</p>
+                <h2 className="text-4xl font-bold">Our <span className="text-primary">Classes</span></h2>
+                <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">Explore group workouts at 365 Fitness, from high-energy HIIT and indoor cycling to yoga, Pilates and dance fitness. Contact our team to check class availability and schedules at your preferred Dubai branch.</p>
+              </div>
+              <div className="space-y-8">
+                {classes.map((classItem, index) => (
+                  <article key={classItem.name} className="grid md:grid-cols-2 overflow-hidden rounded-xl border border-border bg-card">
+                    <div className={`min-h-[240px] md:min-h-[320px] ${index % 2 === 1 ? "md:order-2" : ""}`}>
+                      <img src={classItem.image} alt={classItem.alt} loading="lazy" className="w-full h-full min-h-[240px] md:min-h-[320px] object-cover" />
                     </div>
-                  </div>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Schedule Info */}
-        <section className="py-16 bg-secondary/20">
-          <div className="container mx-auto px-4">
-            <div className="max-w-4xl mx-auto text-center">
-              <h2 className="text-4xl font-bold mb-6">
-                Weekly <span className="text-primary">Schedule</span>
-              </h2>
-              <p className="text-lg text-muted-foreground mb-8">
-                We offer 50+ classes per week across all our locations. Classes run from 6:00 AM to 9:00 PM daily,
-                making it easy to find a time that fits your schedule.
-              </p>
-              <div className="grid md:grid-cols-3 gap-6">
-                <Card className="p-6">
-                  <h3 className="text-2xl font-bold text-primary mb-2">Morning</h3>
-                  <p className="text-muted-foreground">6:00 AM - 11:00 AM</p>
-                  <p className="text-sm text-muted-foreground mt-2">Start your day energized</p>
-                </Card>
-                <Card className="p-6">
-                  <h3 className="text-2xl font-bold text-primary mb-2">Afternoon</h3>
-                  <p className="text-muted-foreground">12:00 PM - 5:00 PM</p>
-                  <p className="text-sm text-muted-foreground mt-2">Midday fitness boost</p>
-                </Card>
-                <Card className="p-6">
-                  <h3 className="text-2xl font-bold text-primary mb-2">Evening</h3>
-                  <p className="text-muted-foreground">5:30 PM - 9:00 PM</p>
-                  <p className="text-sm text-muted-foreground mt-2">After-work stress relief</p>
-                </Card>
+                    <div className="flex flex-col items-start justify-center p-7 sm:p-10 lg:p-12">
+                      <p className="text-primary text-xs font-bold uppercase tracking-[0.2em] mb-3">Group classes</p>
+                      <h3 className="text-3xl font-bold mb-4">{classItem.name}</h3>
+                      <p className="text-muted-foreground leading-relaxed mb-7">{classItem.description}</p>
+                      <Button onClick={() => setIsJoinModalOpen(true)} aria-label={`Enquire about ${classItem.name}`}>Enquire Now</Button>
+                    </div>
+                  </article>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
-        {/* Packages */}
-        {/* <section className="py-16">
-          <div className="container mx-auto px-4">
-            <h2 className="text-4xl font-bold text-center mb-4">
-              Class <span className="text-primary">Packages</span>
-            </h2>
-            <p className="text-center text-muted-foreground mb-12">Choose the package that fits your lifestyle</p>
-            <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-              {packages.map((pkg) => (
-                <Card
-                  key={pkg.name}
-                  className={`p-8 relative ${pkg.popular ? "border-primary border-2 scale-105" : ""}`}
-                >
-                  {pkg.popular && (
-                    <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-background px-6 py-1 rounded-full text-sm font-bold">
-                      MOST POPULAR
-                    </div>
-                  )}
-                  <h3 className="text-2xl font-bold mb-2 text-center">{pkg.name}</h3>
-                  <p className="text-center text-primary font-bold mb-6">{pkg.classes} Classes</p>
-                  <div className="text-center mb-6">
-                    <span className="text-sm text-muted-foreground">AED</span>
-                    <div className="text-5xl font-bold text-primary">{pkg.price}</div>
-                    <span className="text-sm text-muted-foreground">{pkg.validity}</span>
-                  </div>
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature) => (
-                      <li key={feature} className="flex items-start gap-3 text-sm">
-                        <Check className="h-5 w-5 text-primary flex-shrink-0 mt-0.5" />
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  <Button
-                    className="w-full"
-                    variant={pkg.popular ? "default" : "outline"}
-                    size="lg"
-                    onClick={() => setIsJoinModalOpen(true)}
-                  >
-                    Get Started
-                  </Button>
-                </Card>
-              ))}
-            </div>
+        {/* Schedule and locations */}
+        <section className="py-16 bg-secondary/20">
+          <div className="container mx-auto px-4 text-center max-w-4xl">
+            <h2 className="text-4xl font-bold mb-6">Group Class <span className="text-primary">Schedules</span></h2>
+            <p className="text-lg text-muted-foreground mb-6">
+              Class types and times may vary by location. Contact our team for the latest schedule, availability and booking details at your preferred branch.
+            </p>
+            <p className="text-muted-foreground leading-relaxed">
+              Explore our gyms in <Link className="text-primary underline underline-offset-4" to="/locations/deira-muraqqabat">Deira Muraqqabat</Link> and <Link className="text-primary underline underline-offset-4" to="/locations/muhaisnah-first">Muhaisnah First</Link>, or discover <Link className="text-primary underline underline-offset-4" to="/services/personal-training">personal training</Link> for individual support.
+            </p>
           </div>
-        </section> */}
+        </section>
 
         {/* CTA Section */}
         <section className="py-16 bg-gradient-to-r from-primary/20 to-primary/5">
@@ -276,10 +174,10 @@ const GroupClasses = () => {
               Join the <span className="text-primary">Community</span>
             </h2>
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Book your first class today and experience the power of working out together!
+              Ask our team about group fitness classes and find a workout that fits your goals.
             </p>
             <Button size="lg" onClick={() => setIsJoinModalOpen(true)} className="text-lg px-8 py-6">
-              Book Your First Class
+              Enquire About Classes
             </Button>
           </div>
         </section>
