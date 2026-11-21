@@ -80,14 +80,14 @@ const Header = () => {
               />
             </Link>
             {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center space-x-1">
+            <nav className="hidden xl:flex items-center space-x-1 whitespace-nowrap">
               {/* Membership Dropdown */}
               <div
                 className="relative"
                 onMouseEnter={() => setOpenDropdown("membership")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className="flex items-center text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-4 py-2">
+                <button className="flex items-center text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-2 py-2">
                   {t('header.membership')} <ChevronRight className="ml-1 h-4 w-4" />
                 </button>
                 {openDropdown === "membership" && (
@@ -121,7 +121,7 @@ const Header = () => {
                 onMouseEnter={() => setOpenDropdown("trainers")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className="flex items-center text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-4 py-2">
+                <button className="flex items-center text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-2 py-2">
                   {t('header.classes')} <ChevronRight className="ml-1 h-4 w-4" />
                 </button>
                 {openDropdown === "trainers" && (
@@ -155,7 +155,7 @@ const Header = () => {
                 onMouseEnter={() => setOpenDropdown("locations")}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
-                <button className="flex items-center text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-4 py-2">
+                <button className="flex items-center text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-2 py-2">
                   {t('header.locations')} <ChevronRight className="ml-1 h-4 w-4" />
                 </button>
                 {openDropdown === "locations" && (
@@ -188,32 +188,32 @@ const Header = () => {
 
               <Link
                 to="/gallery"
-                className="text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-4 py-2"
+                className="text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-2 py-2"
               >
                 {t('header.facilities')}
               </Link>
               <Link
                 to="/blog"
-                className="text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-4 py-2"
+                className="text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-2 py-2"
               >
                 Blog
               </Link>
               <Link
                 to="/about"
-                className="text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-4 py-2"
+                className="text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-2 py-2"
               >
                 {t('header.aboutUs')}
               </Link>
               <Link
                 to="/contact"
-                className="text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-4 py-2"
+                className="text-foreground hover:text-primary transition-colors font-bold text-sm uppercase tracking-wider px-2 py-2"
               >
                 {t('header.contact')}
               </Link>
             </nav>
 
             {/* Right Side Actions */}
-            <div className="hidden lg:flex items-center space-x-3">
+            <div className="hidden xl:flex shrink-0 items-center space-x-2">
               {/* Search Icon */}
               <button className="text-foreground hover:text-primary transition-colors p-2">
                 <Search className="h-5 w-5" />
@@ -233,7 +233,7 @@ const Header = () => {
                 variant="outline"
                 size="default"
                 onClick={() => setIsFreePassOpen(true)}
-                className="border-2 border-foreground bg-foreground text-background hover:bg-foreground/90 hover:text-background font-black text-sm uppercase tracking-wider rounded-full px-6 h-11"
+                className="border-2 border-foreground bg-foreground text-background hover:bg-foreground/90 hover:text-background font-black text-sm uppercase tracking-wider rounded-full px-4 h-11"
               >
                 {t('header.freeTrial')} →
               </Button>
@@ -243,7 +243,7 @@ const Header = () => {
                 variant="default"
                 size="default"
                 onClick={() => setIsJoinNowOpen(true)}
-                className="bg-primary text-background hover:bg-primary/90 font-black text-sm uppercase tracking-wider rounded-full px-6 h-11 shadow-glow"
+                className="bg-primary text-background hover:bg-primary/90 font-black text-sm uppercase tracking-wider rounded-full px-4 h-11 shadow-glow"
               >
                 {t('header.joinNow')} →
               </Button>
@@ -251,7 +251,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden text-foreground p-2"
+              className="xl:hidden text-foreground p-2"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -277,7 +277,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-[#0a1628]/98 backdrop-blur-lg lg:hidden pt-20 animate-fade-in">
+        <div className="fixed inset-0 z-40 bg-[#0a1628]/98 backdrop-blur-lg xl:hidden pt-20 animate-fade-in">
           <nav className="container mx-auto px-4 flex flex-col space-y-4">
             <Link to="/" className="text-foreground hover:text-primary transition-colors py-3 border-b border-border">
               {t('header.home')}
