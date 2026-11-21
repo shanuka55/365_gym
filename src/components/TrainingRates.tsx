@@ -22,7 +22,7 @@ type TrainingPackage = {
   features: PackageFeature[];
 };
 
-const deiraPackages: TrainingPackage[] = [
+export const deiraPackages: TrainingPackage[] = [
   {
     title: "Personal Training",
     icon: Dumbbell,
@@ -75,7 +75,7 @@ const deiraPackages: TrainingPackage[] = [
   },
 ];
 
-const muhaisnahPackages: TrainingPackage[] = [
+export const muhaisnahPackages: TrainingPackage[] = [
   {
     title: "Personal Training",
     icon: Dumbbell,
