@@ -1,5 +1,5 @@
 import { useLayoutEffect, useRef } from "react";
-import { MapPin, Phone, Clock, Check, MessageCircle, Navigation, ArrowUpRight } from "lucide-react";
+import { MapPin, Phone, Clock, Check, MessageCircle, Navigation } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -60,7 +60,7 @@ const deiraFaqs = [
   },
   {
     question: "What membership offers are currently available?",
-    answer: "The confirmed Deira offer is 6 months plus 2 months free for AED 770. Tabby and Tamara are accepted, and FAZAA Card holders can receive 30% off. Terms and conditions apply.",
+    answer: "Deira memberships cost AED 150 for 1 month, AED 399 for 3 months, AED 599 for 6 months, and AED 899 for 1 year. Tabby and Tamara are accepted, and FAZAA Card holders can receive 30% off. Terms and conditions apply.",
   },
 ];
 
@@ -135,9 +135,8 @@ const LocationDeira = () => {
   const pricingPlans = [
     {
       name: "MONTHLY",
-      price: "180",
-      duration: "Month",
-      paymentUrl: "https://buy.stripe.com/4gM8wP16Lcp2axN0zlaR21g",
+      price: "150",
+      duration: "1 Month",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -148,15 +147,11 @@ const LocationDeira = () => {
         { name: "Private Lockers", included: false },
         { name: "Sauna/Steam", included: true },
       ],
-      offer: [
-        { name: "Get 10% off on your first month!", included: true },
-      ],
     },
     {
       name: "3 MONTHS",
-      price: "504",
-      duration: "3 Months + 1 Free",
-      paymentUrl: "https://buy.stripe.com/3cI9ATdTxbkYdJZ95RaR21h",
+      price: "399",
+      duration: "3 Months",
       popular: true,
       features: [
         { name: "Free Consultation", included: true },
@@ -168,15 +163,11 @@ const LocationDeira = () => {
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
       ],
-      offer: [
-        { name: "Get 1 month free!", included: true },
-      ],
     },
     {
       name: "6 MONTHS",
-      price: "770",
-      duration: "6 Months + 2 Free",
-      paymentUrl: "https://buy.stripe.com/aFa28reXBcp2dJZ5TFaR21i",
+      price: "599",
+      duration: "6 Months",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -186,16 +177,12 @@ const LocationDeira = () => {
         { name: "Personal Training", included: false },
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
-      ],
-      offer: [
-        { name: "+2 Months FREE", included: true },
       ],
     },
     {
-      name: "12 MONTHS",
-      price: "1250",
-      duration: "12 Months + 3 Free",
-      paymentUrl: "https://buy.stripe.com/9B66oH8zdagUbBRbdZaR21j",
+      name: "1 YEAR",
+      price: "899",
+      duration: "1 Year",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -205,9 +192,6 @@ const LocationDeira = () => {
         { name: "Personal Training", included: false },
         { name: "Private Lockers", included: true },
         { name: "Sauna/Steam", included: true },
-      ],
-      offer: [
-        { name: "Get 3 months free!", included: true },
       ],
     },
   ];
@@ -421,22 +405,10 @@ const LocationDeira = () => {
                     </div>
                   )}
                   <h3 className="text-xl font-bold mb-4 text-center">{plan.name}</h3>
-                  {Array.isArray(plan.offer) && plan.offer.length > 0 && (
-                    <div className="mb-4 min-h-14 text-center">
-                      {plan.offer.map((offer) => (
-                        <div
-                          key={offer.name}
-                          className={offer.included ? "text-xl font-bold text-primary" : "text-muted-foreground line-through opacity-80"}
-                        >
-                          {offer.name}
-                        </div>
-                      ))}
-                    </div>
-                  )}
                   <div className="text-center mb-6">
                     <span className="text-sm text-muted-foreground">AED</span>
                     <div className="text-5xl font-bold text-primary">{plan.price}</div>
-                    <div className="text-xs font-semibold text-foreground">+ 5% VAT at checkout</div>
+                    <div className="text-xs font-semibold text-foreground">+ 5% VAT</div>
                     <span className="text-sm text-muted-foreground">/{plan.duration}</span>
                   </div>
                   <ul className="space-y-3 mb-6">
@@ -462,11 +434,8 @@ const LocationDeira = () => {
                         WhatsApp Inquiry
                       </a>
                     </Button>
-                    <Button className="payment-button w-full" asChild>
-                      <a href={plan.paymentUrl} target="_blank" rel="noopener noreferrer">
-                        <span>Pay Online</span>
-                        <ArrowUpRight className="payment-button__icon" aria-hidden="true" />
-                      </a>
+                    <Button className="payment-button w-full" disabled>
+                      Pay Online Unavailable
                     </Button>
                   </div>
                 </Card>
