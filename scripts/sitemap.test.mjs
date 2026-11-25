@@ -52,7 +52,7 @@ test("dates reflect reviewed shared content and explicit publication/update date
   const date = path => entries.find(entry => entry.loc === SITE_ORIGIN + path).lastmod;
   assert.equal(date("/"), "2026-09-04");
   assert.equal(date("/gallery"), "2026-08-07");
-  assert.equal(date("/locations/muhaisnah-first"), "2026-09-04");
+  assert.equal(date("/locations/muhaisnah-first"), "2026-11-25");
   assert.equal(date("/blog"), [inputs.dates.pages.Blog.lastmod, ...inputs.posts.map(post => post.datePublished)].filter(Boolean).sort().at(-1));
   assert.equal(date("/blog/beginner-gym-guide-dubai"), "2026-10-01");
   const copy = structuredClone(inputs);

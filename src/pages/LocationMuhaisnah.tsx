@@ -84,7 +84,7 @@ const muhaisnahFaqs = [
   },
   {
     question: "What membership offers are currently available?",
-    answer: "The confirmed annual promotion is 12 months plus 1 month free for AED 2699. Terms and conditions apply. See the membership section or WhatsApp the Muhaisnah team for current rates on other packages.",
+    answer: "Muhaisnah memberships cost AED 549 for 1 month, AED 1150 for 3 months, AED 1700 for 6 months, and AED 2300 for 1 year. Prices exclude 5% VAT. Terms and conditions apply. WhatsApp the Muhaisnah team for details.",
   },
 ];
 
@@ -225,7 +225,7 @@ const LocationMuhaisnah = () => {
     },
     {
       name: "3 MONTHS",
-      price: "1249",
+      price: "1150",
       duration: "3 Months",
       popular: true,
       features: [
@@ -241,7 +241,7 @@ const LocationMuhaisnah = () => {
     },
     {
       name: "6 MONTHS",
-      price: "1849",
+      price: "1700",
       duration: "6 Months",
       features: [
         { name: "Free Consultation", included: true },
@@ -255,9 +255,9 @@ const LocationMuhaisnah = () => {
       ],
     },
     {
-      name: "12 MONTHS + 1 MONTH FREE",
-      price: "2699",
-      duration: "13 Months",
+      name: "YEARLY",
+      price: "2300",
+      duration: "1 Year",
       features: [
         { name: "Free Consultation", included: true },
         { name: "Fitness Assessment", included: true },
@@ -489,14 +489,6 @@ const LocationMuhaisnah = () => {
                   )}
                   <h3 className="text-xl font-bold mb-4 text-center">{plan.name}</h3>
                   <div className="text-center mb-6">
-                    {plan.regularPrice && (
-                      <div className="mb-1 text-lg font-semibold text-muted-foreground line-through">
-                        AED {plan.regularPrice}
-                      </div>
-                    )}
-                    {plan.regularPrice && (
-                      <div className="text-xs font-bold uppercase tracking-wide text-primary">Membership price</div>
-                    )}
                     <div className="flex items-baseline justify-center gap-1 text-primary">
                       <span className="text-lg font-bold">AED</span>
                       <span className="text-5xl font-bold">{plan.price}</span>
