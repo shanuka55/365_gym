@@ -32,6 +32,16 @@ const ArticleBlock = ({ block }: { block: string | BlogContentBlock }) => {
     }
     case "list":
       return <ul className="list-disc space-y-2 pl-6">{block.items.map((item, index) => <li key={index}>{renderInline(item)}</li>)}</ul>;
+    case "table":
+      return (
+        <div className="overflow-x-auto rounded-xl border border-border" role="region" aria-label={block.caption} tabIndex={0}>
+          <table className="w-full text-left text-base">
+            <caption className="px-4 py-3 text-left font-bold text-foreground">{block.caption}</caption>
+            <thead className="bg-secondary/50"><tr>{block.headers.map((header, index) => <th key={index} scope="col" className="px-4 py-3 font-bold">{header}</th>)}</tr></thead>
+            <tbody>{block.rows.map((row, index) => <tr key={index} className="border-t border-border">{row.map((cell, column) => <td key={column} className="px-4 py-3">{cell}</td>)}</tr>)}</tbody>
+          </table>
+        </div>
+      );
     case "link":
       return <p>{renderInline([block])}</p>;
     case "faq":

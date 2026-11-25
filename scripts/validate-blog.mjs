@@ -90,6 +90,10 @@ export function validateBlogContent(records, routes = []) {
         case "list":
           if (!Array.isArray(block.items) || !block.items.length) fail("Lists need items.");
           block.items.forEach(checkInline); break;
+        case "table":
+          if (!block.caption?.trim() || !Array.isArray(block.headers) || !block.headers.length || block.headers.some(cell => typeof cell !== "string" || !cell.trim())) fail("Tables need a caption and column headers.");
+          if (!Array.isArray(block.rows) || !block.rows.length || block.rows.some(row => !Array.isArray(row) || row.length !== block.headers.length || row.some(cell => typeof cell !== "string" || !cell.trim()))) fail("Table rows must match the headers and contain text.");
+          break;
         case "faq": if (!block.question?.trim()) fail("Empty FAQ question."); checkInline(block.answer); break;
         case "link": checkLink(block); break;
         default: fail(`Unknown content block: ${block.type}`);

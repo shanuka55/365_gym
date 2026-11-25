@@ -56,6 +56,21 @@ test("rejects the audited duplicate even when article IDs differ", () => {
   assert.throws(() => validateBlogSlugs(records), /Duplicate blog slug.*IDs 36 and 43/);
 });
 
+test("protein tables reject missing cells and missing headers", () => {
+  const records = readBlogRecords(source);
+  const protein = records.find(post => post.slug === "how-much-protein-do-you-need-every-day");
+  assert.equal(protein.content.filter(block => block.type === "table").length, 2);
+  for (const mutate of [
+    table => { table.rows[0].pop(); },
+    table => { table.headers = []; },
+    table => { table.caption = ""; },
+  ]) {
+    const invalid = structuredClone(records);
+    mutate(invalid.find(post => post.slug === protein.slug).content.find(block => block.type === "table"));
+    assert.throws(() => validateBlogContent(invalid, readAppRoutes()), /Table/);
+  }
+});
+
 test("checks only article slugs, allowing references to the same URL in content", () => {
   const records = readBlogRecords(`export const blogPosts = [
     { id: 1, slug: "first", content: [{ slug: "second" }] },

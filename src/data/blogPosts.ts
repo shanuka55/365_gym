@@ -1,3 +1,4 @@
+import blogDailyProtein from "@/assets/blog-daily-protein-guide.webp";
 import blogHiitFatLoss from "@/assets/blog-hiit-workouts-fat-loss.png";
 import blogFitnessConsistency from "@/assets/blog-fitness-consistency.png";
 import blogOvertraining from "@/assets/blog-signs-of-overtraining.webp";
@@ -46,6 +47,7 @@ export type BlogContentBlock =
   | { type: "paragraph"; content: BlogInline[] }
   | { type: "heading"; level: 2 | 3; id: string; text: string }
   | { type: "list"; items: BlogInline[][] }
+  | { type: "table"; caption: string; headers: string[]; rows: string[][] }
   | BlogLink
   | { type: "faq"; id: string; question: string; answer: BlogInline[] };
 
@@ -5063,6 +5065,1105 @@ export const blogPosts: BlogPost[] = [
           "href": "/locations/muhaisnah-first"
         },
         " to get started."
+      ]
+    }
+  ]
+},
+{
+  "id": 49,
+  "slug": "how-much-protein-do-you-need-every-day",
+  "title": "How Much Protein Do You Need Every Day? Complete Protein Guide for Muscle Building & Weight Loss in Dubai",
+  "excerpt": "Learn how much protein you need daily for muscle building, weight loss and recovery, with body-weight targets, high-protein foods and practical meal ideas.",
+  "image": blogDailyProtein,
+  "imageAlt": "Daily protein requirements for muscle building, weight loss, and fitness training at 365 Fitness Gym Dubai.",
+  "showFullImage": true,
+  "imageWidth": 1536,
+  "imageHeight": 1024,
+  "date": "November 25, 2026",
+  "datePublished": "2026-11-25",
+  "readTime": "11 min read",
+  "category": "Nutrition",
+  "trialType": "strength",
+  "relatedSlugs": [
+    "common-nutrition-mistakes-beginners-make",
+    "building-muscle-complete-guide-strength-training"
+  ],
+  "seo": {
+    "title": "How Much Protein Do You Need Every Day? | 365 Fitness Dubai",
+    "description": "Find out how much protein you need daily for muscle building, weight loss and recovery. Visit 365 Fitness Gym in Deira Muraqqabat or Muhaisnah First, Dubai."
+  },
+  "content": [
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein is one of the most important nutrients for anyone looking to build muscle, lose weight, improve strength, or maintain a healthy lifestyle. Whether you are a beginner starting your fitness journey or an experienced gym member working toward a body transformation, understanding how much protein you need every day can help you get better results from your workouts."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Many people who train at the gym in Dubai focus on lifting weights, cardio, and burning calories but often overlook their daily protein intake. Eating the right amount of protein can support muscle recovery, help maintain lean muscle during weight loss, and contribute to overall fitness progress."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "At 365 Fitness Gym, with branches in Deira Muraqqabat and Muhaisnah First, Dubai, we believe that fitness is about combining effective workouts, balanced nutrition, recovery, and consistency."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "In this guide, you will learn how much protein you need daily, the best protein-rich foods, and how to include protein in your diet whether your goal is muscle building, fat loss, or general fitness."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "what-is-protein-and-why-is-it-important-for-fitness",
+      "text": "What Is Protein and Why Is It Important for Fitness?"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein is a macronutrient made up of amino acids that your body uses to build and repair tissues. It plays an important role in muscle repair, recovery, and many other functions throughout the body."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "When you perform strength training, your muscles experience stress. Your body uses protein and other nutrients to repair and adapt to that training."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein is important because it helps:"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        [
+          "Build and maintain muscle mass"
+        ],
+        [
+          "Repair muscles after strength training"
+        ],
+        [
+          "Support recovery between workouts"
+        ],
+        [
+          "Maintain lean muscle during weight loss"
+        ],
+        [
+          "Support normal body functions"
+        ],
+        [
+          "Help you feel satisfied after meals"
+        ],
+        [
+          "Support your overall fitness and health"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "If you regularly train at a gym in Deira or Muhaisnah, eating enough protein alongside a balanced diet can help support your training goals."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "how-much-protein-do-you-need-every-day",
+      "text": "How Much Protein Do You Need Every Day?"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Your daily protein requirement depends on your body weight, activity level, fitness goals, age, and overall health."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "For generally healthy adults, the basic recommended dietary allowance is around 0.8 grams of protein per kilogram of body weight per day. People who exercise regularly, especially those involved in resistance training, may benefit from higher amounts."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "For many active adults who strength train, a daily intake around 1.4–2.0 grams per kilogram of body weight is a commonly used range to support muscle development and recovery."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "daily-protein-guide-by-body-weight",
+      "text": "Daily Protein Guide by Body Weight"
+    },
+    {
+      "type": "table",
+      "caption": "Daily Protein Guide by Body Weight",
+      "headers": [
+        "Body Weight",
+        "Basic Daily Intake (0.8 g/kg)",
+        "Active Training Range (1.4–2.0 g/kg)"
+      ],
+      "rows": [
+        [
+          "50 kg",
+          "40 g",
+          "70–100 g"
+        ],
+        [
+          "60 kg",
+          "48 g",
+          "84–120 g"
+        ],
+        [
+          "70 kg",
+          "56 g",
+          "98–140 g"
+        ],
+        [
+          "80 kg",
+          "64 g",
+          "112–160 g"
+        ],
+        [
+          "90 kg",
+          "72 g",
+          "126–180 g"
+        ],
+        [
+          "100 kg",
+          "80 g",
+          "140–200 g"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "These are general estimates, not personalized prescriptions. Your ideal protein intake may differ depending on your health, diet, training, and body composition."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "protein-requirements-for-different-fitness-goals",
+      "text": "Protein Requirements for Different Fitness Goals"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Your protein needs may vary depending on what you want to achieve at the gym."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "1-protein-for-muscle-building",
+      "text": "1. Protein for Muscle Building"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "If your goal is to build muscle, your body needs sufficient protein to support muscle repair and growth alongside progressive resistance training."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "For many people who train regularly, around 1.6–2.0 grams per kilogram of body weight per day is a practical target range."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "For example, a person weighing 70 kg may aim for approximately 112–140 grams of protein daily."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Muscle building also requires:"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        [
+          "Consistent strength training"
+        ],
+        [
+          "Enough total calories"
+        ],
+        [
+          "Proper sleep"
+        ],
+        [
+          "Progressive overload"
+        ],
+        [
+          "Adequate recovery"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Eating more protein alone will not build muscle without an appropriate training stimulus."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "2-protein-for-weight-loss-and-fat-loss",
+      "text": "2. Protein for Weight Loss and Fat Loss"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "When you are trying to lose weight, protein can help you maintain lean muscle mass while reducing body fat, particularly when combined with resistance training."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein-rich meals can also help you feel fuller, making it easier for some people to manage their calorie intake."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "If your goal is weight loss at a gym in Dubai, focus on:"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        [
+          "Maintaining an appropriate calorie deficit"
+        ],
+        [
+          "Eating protein-rich meals throughout the day"
+        ],
+        [
+          "Including resistance training"
+        ],
+        [
+          "Staying physically active"
+        ],
+        [
+          "Getting sufficient sleep"
+        ],
+        [
+          "Maintaining consistency"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Avoid extreme diets that reduce calories too aggressively and make it difficult to train or recover."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "3-protein-for-beginners-at-the-gym",
+      "text": "3. Protein for Beginners at the Gym"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Beginners do not need complicated nutrition plans to start improving their fitness."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "If you are new to strength training at 365 Fitness Gym Deira or Muhaisnah, begin by including a protein source in your regular meals."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Good options include:"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        [
+          "Eggs"
+        ],
+        [
+          "Chicken"
+        ],
+        [
+          "Fish"
+        ],
+        [
+          "Lean meat"
+        ],
+        [
+          "Lentils"
+        ],
+        [
+          "Beans"
+        ],
+        [
+          "Tofu"
+        ],
+        [
+          "Suitable dairy products"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Start with simple improvements to your diet and build healthy habits over time."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "4-protein-for-maintaining-muscle",
+      "text": "4. Protein for Maintaining Muscle"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein is also important for people who are not trying to gain more muscle but want to maintain their existing muscle mass."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Regular strength training and adequate protein intake can help support muscle maintenance, especially as people get older or become less active."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Maintaining muscle is important for strength, movement, physical independence, and everyday activities."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "best-high-protein-foods-for-muscle-building-and-weight-loss",
+      "text": "Best High-Protein Foods for Muscle Building and Weight Loss"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "You do not have to rely on supplements to meet your daily protein needs. Many everyday foods provide protein and other essential nutrients."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Chicken Breast"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Lean protein for muscle building and recovery."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Fish"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein with beneficial fats, depending on the type of fish."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Eggs"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "A convenient source of complete protein."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Lentils & Beans"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Plant protein with fibre and carbohydrates."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Tofu"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "A versatile plant-based protein source."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Lean Beef"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Provides protein, iron, and other nutrients."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "high-protein-food-sources-and-approximate-protein-content",
+      "text": "High-Protein Food Sources and Approximate Protein Content"
+    },
+    {
+      "type": "table",
+      "caption": "High-Protein Food Sources and Approximate Protein Content",
+      "headers": [
+        "Food",
+        "Serving Size",
+        "Approx. Protein"
+      ],
+      "rows": [
+        [
+          "Chicken breast, cooked",
+          "100 g",
+          "30–31 g"
+        ],
+        [
+          "Tuna, canned and drained",
+          "100 g",
+          "24–26 g"
+        ],
+        [
+          "Salmon, cooked",
+          "100 g",
+          "22–25 g"
+        ],
+        [
+          "Lean beef, cooked",
+          "100 g",
+          "25–29 g"
+        ],
+        [
+          "Eggs",
+          "2 large",
+          "12–13 g"
+        ],
+        [
+          "Lentils, cooked",
+          "1 cup",
+          "17–18 g"
+        ],
+        [
+          "Chickpeas, cooked",
+          "1 cup",
+          "14–15 g"
+        ],
+        [
+          "Tofu",
+          "100 g",
+          "10–15 g"
+        ],
+        [
+          "Greek yogurt",
+          "100 g",
+          "8–10 g, varies by product"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein amounts are estimates and may vary by food variety, preparation method, brand, and portion size."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "how-to-spread-protein-throughout-the-day",
+      "text": "How to Spread Protein Throughout the Day"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Instead of consuming most of your protein in a single meal, try spreading it across your meals."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "For active adults, a practical approach is to include approximately 20–40 grams of protein per main meal, adjusting for your total daily target, body size, and food preferences."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "example-high-protein-daily-meal-plan",
+      "text": "Example High-Protein Daily Meal Plan"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Breakfast"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "3 eggs, whole-grain toast, and fruit"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "~22–25 g protein"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Lunch"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Grilled chicken, rice, and vegetables"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "~40–45 g protein"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Snack"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Tuna sandwich on whole-grain bread"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "~25–30 g protein"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Dinner"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Baked fish, potatoes, and vegetables"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "~30–35 g protein"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Example total: approximately 117–135 g protein per day."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "This is an example, not a personalized meal plan. Portions can be adjusted according to your calorie requirements, body weight, and goals."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "do-you-need-protein-supplements-to-build-muscle",
+      "text": "Do You Need Protein Supplements to Build Muscle?"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein supplements are convenient, but they are not necessary for everyone."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "If you can meet your protein requirements through regular food, you may not need protein powder."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein powders can be useful for people who:"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        [
+          "Have difficulty eating enough protein from meals"
+        ],
+        [
+          "Need a convenient option after training"
+        ],
+        [
+          "Have busy work schedules"
+        ],
+        [
+          "Want a quick snack with protein"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Common options include whey protein, casein protein, soy protein, and other plant-based protein blends."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Choose supplements carefully, check the ingredients, and consider any food allergies or intolerances. If you have a medical condition affecting kidney function or protein metabolism, consult your healthcare professional before significantly increasing your protein intake."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "when-is-the-best-time-to-eat-protein",
+      "text": "When Is the Best Time to Eat Protein?"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "The total amount of protein you consume throughout the day is generally more important than consuming it at one exact time."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "However, eating protein around your workout can be a convenient way to support recovery."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "before-your-workout",
+      "text": "Before Your Workout"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "A meal containing protein and carbohydrates approximately 1–3 hours before training can provide energy and nutrients."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Examples:"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        [
+          "Chicken and rice"
+        ],
+        [
+          "Eggs and toast"
+        ],
+        [
+          "Tuna sandwich"
+        ],
+        [
+          "Tofu and rice"
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "after-your-workout",
+      "text": "After Your Workout"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "After your gym session, have a balanced meal containing protein and carbohydrates."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Examples:"
+      ]
+    },
+    {
+      "type": "list",
+      "items": [
+        [
+          "Grilled chicken and potatoes"
+        ],
+        [
+          "Fish and rice"
+        ],
+        [
+          "Eggs and toast"
+        ],
+        [
+          "Lentils with rice"
+        ]
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "If you train at 365 Fitness Gym in Deira or Muhaisnah, plan your meals around your work schedule and training time. You do not need to rush to consume a shake immediately after your last repetition."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "common-protein-mistakes-gym-beginners-make",
+      "text": "Common Protein Mistakes Gym Beginners Make"
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "1-eating-too-little-protein",
+      "text": "1. Eating Too Little Protein"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Some beginners focus only on calories and forget to include enough protein-rich foods in their daily meals."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "If you exercise regularly, make sure your diet includes suitable protein sources to support your training and recovery."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "2-thinking-more-protein-always-means-more-muscle",
+      "text": "2. Thinking More Protein Always Means More Muscle"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Eating excessive amounts of protein does not automatically lead to greater muscle growth. Training, total calories, recovery, and overall nutrition all matter."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "3-skipping-meals-and-eating-protein-only-at-dinner",
+      "text": "3. Skipping Meals and Eating Protein Only at Dinner"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Consuming nearly all your daily protein in one meal can make it harder to meet your needs comfortably. Including protein in multiple meals can be a more practical approach."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "4-depending-only-on-protein-shakes",
+      "text": "4. Depending Only on Protein Shakes"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein shakes can be convenient, but whole foods provide additional nutrients, fibre, vitamins, and minerals. Build your nutrition around a balanced diet."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "5-ignoring-calories",
+      "text": "5. Ignoring Calories"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein still contributes calories. If your goal is weight loss, eating high-protein foods without considering your overall energy intake may not lead to the results you want."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 3,
+      "id": "6-not-being-consistent-with-training",
+      "text": "6. Not Being Consistent With Training"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Nutrition alone will not transform your body. Consistent resistance training, progressive overload, sleep, and recovery are essential parts of a muscle-building program."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "how-protein-supports-your-gym-training-at-365-fitness",
+      "text": "How Protein Supports Your Gym Training at 365 Fitness"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "If you train at a gym in Dubai, your protein intake should support the type of exercise you perform."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Strength Training"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Protein supports muscle repair and adaptation when combined with regular resistance training."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Cardio & Weight Loss"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Adequate protein can help maintain lean mass while you work on improving cardiovascular fitness and weight management."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Personal Training"
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Trainers can help you structure your workouts, develop exercise technique, and stay consistent with your training plan."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "At 365 Fitness Gym, our facilities in Deira Muraqqabat and Muhaisnah First support a variety of fitness goals, including muscle building, weight loss, strength training, and general fitness."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "If you are unsure how to structure your training, our personal training services can help you work toward a routine suited to your needs."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "frequently-asked-questions-about-daily-protein-intake",
+      "text": "Frequently Asked Questions About Daily Protein Intake"
+    },
+    {
+      "type": "faq",
+      "id": "how-much-protein-do-i-need-per-day-to-build-muscle",
+      "question": "How much protein do I need per day to build muscle?",
+      "answer": [
+        "Many adults who regularly strength train aim for around 1.4–2.0 grams of protein per kilogram of body weight daily. Your ideal amount depends on your training, diet, and individual needs."
+      ]
+    },
+    {
+      "type": "faq",
+      "id": "how-much-protein-do-i-need-to-lose-weight",
+      "question": "How much protein do I need to lose weight?",
+      "answer": [
+        "Protein needs vary during weight loss. A higher protein intake may help preserve muscle while losing body fat, especially when combined with resistance training and an appropriate calorie deficit."
+      ]
+    },
+    {
+      "type": "faq",
+      "id": "can-i-build-muscle-without-protein-powder",
+      "question": "Can I build muscle without protein powder?",
+      "answer": [
+        "Yes. You can build muscle using protein from whole foods such as chicken, fish, eggs, lean meat, lentils, beans, and tofu. Protein supplements are optional."
+      ]
+    },
+    {
+      "type": "faq",
+      "id": "is-protein-good-for-beginners-at-the-gym",
+      "question": "Is protein good for beginners at the gym?",
+      "answer": [
+        "Yes. Protein supports muscle repair and recovery for beginners as they adapt to resistance training. Beginners should focus on balanced nutrition and consistent workouts rather than supplements alone."
+      ]
+    },
+    {
+      "type": "faq",
+      "id": "should-i-eat-protein-every-day-even-on-rest-days",
+      "question": "Should I eat protein every day even on rest days?",
+      "answer": [
+        "Yes. Muscle repair and recovery continue on rest days, so maintaining adequate daily protein intake is beneficial even when you are not working out."
+      ]
+    },
+    {
+      "type": "faq",
+      "id": "what-are-the-best-protein-foods-for-weight-loss",
+      "question": "What are the best protein foods for weight loss?",
+      "answer": [
+        "Chicken breast, fish, eggs, lean meat, lentils, beans, and tofu are useful options. Choose foods that fit your nutritional needs and calorie targets."
+      ]
+    },
+    {
+      "type": "faq",
+      "id": "where-can-i-find-a-gym-for-muscle-building-in-deira-or-muhaisnah",
+      "question": "Where can I find a gym for muscle building in Deira or Muhaisnah?",
+      "answer": [
+        "365 Fitness Gym has branches in Deira Muraqqabat and Muhaisnah First, Dubai. Both offer gym facilities to support strength training, muscle building, cardio, and general fitness."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "start-your-fitness-journey-at-365-fitness-gym-dubai",
+      "text": "Start Your Fitness Journey at 365 Fitness Gym Dubai"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Building muscle, losing fat, and improving your strength are not only about how hard you train. Your nutrition, recovery, and consistency also play important roles in your results."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "By eating sufficient protein, following a structured workout plan, staying hydrated, and getting enough rest, you can build habits that support your long-term fitness goals."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Whether you are searching for a gym in Deira, a gym in Muhaisnah, a 24/7 gym in Dubai, personal training, or a fitness centre to help you build muscle and lose weight, 365 Fitness Gym is ready to support your journey."
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "365-fitness-gym-deira-muraqqabat",
+      "text": "365 Fitness Gym – Deira Muraqqabat"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Looking for a gym near Al Muraqqabat, Al Rigga, or Deira Dubai? Train with modern strength and cardio equipment and work toward your fitness goals."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Phone: ",
+        {
+          "type": "link",
+          "text": "054 712 0925",
+          "href": "tel:+971547120925"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "level": 2,
+      "id": "365-fitness-gym-muhaisnah-first",
+      "text": "365 Fitness Gym – Muhaisnah First"
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Searching for a gym near Muhaisnah First or Madinat Badr? Discover a motivating workout environment, cardio and strength facilities, and a dedicated ladies-only section."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Phone: ",
+        {
+          "type": "link",
+          "text": "054 712 0927",
+          "href": "tel:+971547120927"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        "Train today. Achieve tomorrow. Your fitness journey starts at 365 Fitness Gym."
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": [
+        {
+          "type": "link",
+          "text": "Explore our Deira Muraqqabat gym",
+          "href": "/locations/deira-muraqqabat"
+        },
+        " or ",
+        {
+          "type": "link",
+          "text": "visit our Muhaisnah First gym",
+          "href": "/locations/muhaisnah-first"
+        },
+        ". For help structuring your workouts, explore ",
+        {
+          "type": "link",
+          "text": "personal training at 365 Fitness",
+          "href": "/services/personal-training"
+        },
+        "."
       ]
     }
   ]
