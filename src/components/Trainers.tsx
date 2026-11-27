@@ -3,7 +3,6 @@ import { Button } from "@/components/ui/button";
 import trainerIsha from "@/assets/ISHA.webp";
 import trainerAzeem from "@/assets/AZEEM.webp";
 import trainerShan from "@/assets/SHAN.webp";
-import trainerFarzana from "@/assets/FARZANA.webp";
 import trainerAhmed from "@/assets/AHMED.webp";
 import trainerLeaLea from "@/assets/LEA LEA.jpg";
 import trainerShabaz from "@/assets/SHABAZ.jpg";
@@ -42,12 +41,6 @@ const trainers = [
     specialty: "Personal Training & strength training",
     image: trainerRonnie,
     bio: "Certified Personal Trainer with expertise in muscle building, strength training, and functional fitness. Passionate about helping clients achieve their fitness goals through personalized training programs.",
-  },
-  {
-    name: "Coach Farzana",
-    specialty: "Personal Training & Zumba",
-    image: trainerFarzana,
-    bio: "certified Personal Trainer and Group Fitness Instructor with expertise in aerobics, Zumba, step cardio, boxing, HIIT, and Tabata. I also specialize in strength training, exercise recovery, and kids’ Zumba classes",
   },
   {
     name: "Coach Ahmed",
